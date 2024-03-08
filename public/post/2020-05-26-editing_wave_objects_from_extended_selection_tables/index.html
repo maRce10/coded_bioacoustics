@@ -58,16 +58,16 @@ Manipulating clips from extended selection tables can be pretty straightforward.
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : ""
+    "name" : "Marcelo Araya-Salas"
   },
   "headline": "Editing wave objects from extended selection tables",
   "description" : "\u0026ldquo;Is there a simple way to remove noise from the clips in an extended table \u0026ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy \u0026hellip; so again, am I missing something simple?\u0026rdquo;\nManipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don\u0026rsquo;t mess with any time related feature (i.",
   "inLanguage" : "en",
   "wordCount":  700 ,
-  "datePublished" : "0001-01-01T00:00:00",
-  "dateModified" : "0001-01-01T00:00:00",
+  "datePublished" : "2020-05-25T00:00:00",
+  "dateModified" : "2020-05-25T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
-  "keywords" : [ "" ],
+  "keywords" : [ "annotations" ],
   "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2020-05-26-editing_wave_objects_from_extended_selection_tables\/",
   "publisher" : {
     "@type": "Organization",
@@ -133,12 +133,6 @@ if (!doNotTrack) {
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-        
-          
-            <li>
-              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
-            </li>
-          
         
           
             <li class="navlinks-container">
@@ -266,7 +260,7 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  <i class="fas fa-calendar"></i>&nbsp;Posted on May 25, 2020
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
@@ -276,7 +270,9 @@ if (!doNotTrack) {
   
   
     
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
     
   
   
@@ -325,7 +321,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
-</span></span></code></pre></div><img src="./img/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="900px" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-2-1.png?v=8263bae2b3ce02d2441abee9b8a24450" alt="" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
 <p>Clips are stored in an attribute call &lsquo;wave.objects&rsquo;. In this particular example the list of clips can be called like this: <code>attributes(lbh.est)$wave.objects</code>.</p>
 <p>We can apply a bandpass filter from 4 to 10 kHz over each element of this list using <code>lapply()</code> and <code>ffilter()</code> (from <a href="http://rug.mnhn.fr/seewave">seewave</a>):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># filter out freqs below 4 kHz</span>
@@ -347,7 +366,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
-</span></span></code></pre></div><img src="./img/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="900px" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-4-1.png?v=4595b9b1c788b5c66e046f96651f5ebd" alt="" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
 <p>So any <a href="http://rug.mnhn.fr/seewave">seewave</a> function that works on &lsquo;wave&rsquo; objects and returns &lsquo;wave&rsquo; objects as well, can be used. For instance, applying a linear frequency shift to increase pitch in 2 kHz:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># load data</span>
 </span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;lbh.est&#34;</span><span class="p">)</span>
@@ -371,7 +413,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
-</span></span></code></pre></div><img src="./img/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="900px" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-5-1.png?v=f9f5062a976e9ef29e64d9d89b66d2be" alt="" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
 <p>Again, this should be OK as long as you don&rsquo;t modify any time related feature. If temporal features change then the time annotations are no longer useful.</p>
 <hr>
 <p><font size="4">Session information</font></p>
@@ -421,6 +486,12 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="c1">## [23] compiler_3.6.1  htmltools_0.4.0</span>
 </span></span></code></pre></div>
 
+        
+          <div class="blog-tags">
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/annotations/">annotations</a>&nbsp;
+            
+          </div>
         
 
         
@@ -491,12 +562,12 @@ if (!doNotTrack) {
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="marce10.github.io/coded_bioacustics/post/2019-08-13-group_signature_xcorr/" data-toggle="tooltip" data-placement="top" title="Evaluating group acoustic signatures using cross-correlation">&larr; Previous Post</a>
+              <a href="marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/" data-toggle="tooltip" data-placement="top" title="Automatic signal detection: a case study">&larr; Previous Post</a>
             </li>
           
           
             <li class="next">
-              <a href="marce10.github.io/coded_bioacustics/post/2016-12-22-download_a_single_recording_for_each_species_in_a_site_from_xeno-canto/" data-toggle="tooltip" data-placement="top" title="Download a single recording for each species in a country from Xeno-Canto">Next Post &rarr;</a>
+              <a href="marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/" data-toggle="tooltip" data-placement="top" title="dynaSpec: dynamic spectrograms in R">Next Post &rarr;</a>
             </li>
           
         </ul>

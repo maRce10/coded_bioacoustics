@@ -16,11 +16,18 @@
       <description>The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.&#xA;To install dynaSpec from github you will need the R package devtools:&#xA;# From github devtools::install_github(&amp;#34;maRce10/dynaSpec&amp;#34;) #load package library(dynaSpec) Examples To run the following examples you will also need to load a few more packages:</description>
     </item>
     <item>
+      <title>Editing wave objects from extended selection tables</title>
+      <link>marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/</guid>
+      <description>&amp;ldquo;Is there a simple way to remove noise from the clips in an extended table &amp;ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &amp;hellip; so again, am I missing something simple?&amp;rdquo;&#xA;Manipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don&amp;rsquo;t mess with any time related feature (i.</description>
+    </item>
+    <item>
       <title>Automatic signal detection: a case study</title>
       <link>marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/</link>
       <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/</guid>
-      <description>Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&amp;rsquo;s disc-winged bats (Thyroptera tricolor).&#xA;Inquiry calls were recorded while the bats were flying in a flight cage.</description>
+      <description>Mar-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&amp;rsquo;s disc-winged bats (Thyroptera tricolor).&#xA;Inquiry calls were recorded while the bats were flying in a flight cage.</description>
     </item>
     <item>
       <title>Interactive maps from Xeno-Canto recording localities in xc_maps()</title>
@@ -91,13 +98,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2016-12-22-download_a_single_recording_for_each_species_in_a_site_from_xeno-canto/</guid>
       <description>A warbleR user asks if &amp;ldquo;there is any method for downloading from xeno canto a SINGLE individual of each species in Costa Rica&amp;rdquo;.&#xA;This can be done by 1) downloading the metadata of all recordings in a given site (in this case Costa Rica) using the querxc function from the package warbleR (which searches and downloads recordings from Xeno-Canto), 2) filtering the metadata to have only one recording per species, and 3) input the filtered metadata back into querxcto download the selected recordings.</description>
-    </item>
-    <item>
-      <title>Editing wave objects from extended selection tables</title>
-      <link>marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/</guid>
-      <description>&amp;ldquo;Is there a simple way to remove noise from the clips in an extended table &amp;ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &amp;hellip; so again, am I missing something simple?&amp;rdquo;&#xA;Manipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don&amp;rsquo;t mess with any time related feature (i.</description>
     </item>
     <item>
       <title>Evaluating group acoustic signatures using cross-correlation</title>

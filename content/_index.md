@@ -1,0 +1,2 @@
+Programming allows to do custom made analyses that better fit the research questions and the characteristics of the signals. This blog aims to create a space for sharing case-specific acoustic analysis routines as well as overviews of new available tools, aiming to diversify the toolkit of the bioacoustics research community. 
+

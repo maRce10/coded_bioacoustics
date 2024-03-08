@@ -11,7 +11,8 @@
 
 
       <title>Coded bioacoustics</title>
-  <script type="application/ld+json">
+  
+  <meta name="description" content="In bioacustics (as in everything else) the advantage of programming over most GUI (graphical user interface) software (e.g. Raven, SAP, Avisoft) is its higher flexibility, which allows the implementation of custom made analyses that better fit the research questions and the characteristics of the vocalizations. However, this requires some proficiency in coding that may dissuade beginners. Hopefully the codes I make available here will encourage bioacousticians to take advantage of this powerful tool."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -33,12 +34,14 @@
 </script>
 
 <meta property="og:title" content="Coded bioacoustics" />
+<meta property="og:description" content="In bioacustics (as in everything else) the advantage of programming over most GUI (graphical user interface) software (e.g. Raven, SAP, Avisoft) is its higher flexibility, which allows the implementation of custom made analyses that better fit the research questions and the characteristics of the vocalizations. However, this requires some proficiency in coding that may dissuade beginners. Hopefully the codes I make available here will encourage bioacousticians to take advantage of this powerful tool.">
 <meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
 <meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Coded bioacoustics" />
 
   <meta name="twitter:title" content="Coded bioacoustics" />
+  <meta name="twitter:description" content="In bioacustics (as in everything else) the advantage of programming over most GUI (graphical user interface) software (e.g. Raven, SAP, Avisoft) is its higher flexibility, which allows the …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
@@ -80,12 +83,6 @@ if (!doNotTrack) {
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-        
-          
-            <li>
-              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
-            </li>
-          
         
           
             <li class="navlinks-container">
@@ -195,38 +192,8 @@ if (!doNotTrack) {
 
 
   
-    <div id="header-big-imgs" data-num-img=1
-      
-         
-          data-img-src-1="img/cod_bio.jpg"
-         
-         
-      ></div>
-  
 
-  <header class="header-section has-img">
-    
-      
-      <div class="intro-header big-img" style="background-image: url('img/cod_bio.jpg');">
-        
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-              <div class="page-heading">
-                <h1>Coded bioacoustics</h1>
-                  
-                    
-                      <hr class="small">
-                      <span class="page-subheading">Code for the analysis of nature&#39;s sounds</span>
-                    
-                  
-                  
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="img-desc" style="display: none;"></span>
-      </div>
+  <header class="header-section ">
     
     
     <div class="intro-header no-img">
@@ -260,9 +227,57 @@ if (!doNotTrack) {
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
+          <div class="well">
+            <p>In bioacustics (as in everything else) the advantage of programming over most GUI (graphical user interface) software (e.g. Raven, SAP, Avisoft) is its higher flexibility, which allows the implementation of custom made analyses that better fit the research questions and the characteristics of the vocalizations. However, this requires some proficiency in coding that may dissuade beginners. Hopefully the codes I make available here will encourage bioacousticians to take advantage of this powerful tool.</p>
+
+          </div>
+        
 
         <div class="posts-list">
           
+          
+            <article class="post-preview">
+    <a href="marce10.github.io/coded_bioacustics/post/2017-03-17-creating_song_catalogs/">
+        <h2 class="post-title">Creating song catalogs</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1114&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and/or sites. The new warbleR function catalog aims to simplify this task.
+This is how it works:
+The function plots a matrix of spectrograms from signals listed in a selection table (a data frame similar to the example data frame selec.
+        <a href="marce10.github.io/coded_bioacustics/post/2017-03-17-creating_song_catalogs/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
           
             <article class="post-preview">
     <a href="marce10.github.io/coded_bioacustics/post/2016-12-22-download_a_single_recording_for_each_species_in_a_site_from_xeno-canto/">
@@ -299,48 +314,6 @@ if (!doNotTrack) {
         A warbleR user asks if &ldquo;there is any method for downloading from xeno canto a SINGLE individual of each species in Costa Rica&rdquo;.
 This can be done by 1) downloading the metadata of all recordings in a given site (in this case Costa Rica) using the querxc function from the package warbleR (which searches and downloads recordings from Xeno-Canto), 2) filtering the metadata to have only one recording per species, and 3) input the filtered metadata back into querxcto download the selected recordings.
         <a href="marce10.github.io/coded_bioacustics/post/2016-12-22-download_a_single_recording_for_each_species_in_a_site_from_xeno-canto/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/">
-        <h2 class="post-title">Editing wave objects from extended selection tables</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;700&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        &ldquo;Is there a simple way to remove noise from the clips in an extended table &ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &hellip; so again, am I missing something simple?&rdquo;
-Manipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don&rsquo;t mess with any time related feature (i.
-        <a href="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/" class="post-read-more">[Read More]</a>
         
     </div>
 
