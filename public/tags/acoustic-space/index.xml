@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>acoustic space on Coded bioacoustics</title>
+    <link>marce10.github.io/coded_bioacustics/tags/acoustic-space/</link>
+    <description>Recent content in acoustic space on Coded bioacoustics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="marce10.github.io/coded_bioacustics/tags/acoustic-space/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acoustic space scatter plot</title>
+      <link>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</link>
+      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</guid>
+      <description>Some people have asked for the code we used to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace Smith-Vidaurre, so thanks to Grace for sharing.&#xA;The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping.</description>
+    </item>
+  </channel>
+</rss>

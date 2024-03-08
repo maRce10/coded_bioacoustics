@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Editing wave objects from extended selection tables - Coded bioacoustics</title>
+
+  <meta name="description" content="&ldquo;Is there a simple way to remove noise from the clips in an extended table &ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &hellip; so again, am I missing something simple?&rdquo;
+Manipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don&rsquo;t mess with any time related feature (i."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Coded bioacoustics",
+    
+    "url": "marce10.github.io\/coded_bioacustics\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "marce10.github.io\/coded_bioacustics\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/post\/2020-05-26-editing_wave_objects_from_extended_selection_tables\/",
+          "name": "Editing wave objects from extended selection tables"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Editing wave objects from extended selection tables",
+  "description" : "\u0026ldquo;Is there a simple way to remove noise from the clips in an extended table \u0026ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy \u0026hellip; so again, am I missing something simple?\u0026rdquo;\nManipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don\u0026rsquo;t mess with any time related feature (i.",
+  "inLanguage" : "en",
+  "wordCount":  700 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2020-05-26-editing_wave_objects_from_extended_selection_tables\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "marce10.github.io\/coded_bioacustics\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Editing wave objects from extended selection tables" />
+<meta property="og:description" content="&ldquo;Is there a simple way to remove noise from the clips in an extended table &ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &hellip; so again, am I missing something simple?&rdquo;
+Manipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don&rsquo;t mess with any time related feature (i.">
+<meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+<meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Coded bioacoustics" />
+
+  <meta name="twitter:title" content="Editing wave objects from extended selection tables" />
+  <meta name="twitter:description" content="&ldquo;Is there a simple way to remove noise from the clips in an extended table &ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &hellip; so again, …">
+  <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.121.2">
+  <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/highlight.min.css" /><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZVLSR0L9P"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-RZVLSR0L9P', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/marce10.github.io/coded_bioacustics/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/marce10.github.io/coded_bioacustics/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Coded bioacoustics" href="marce10.github.io/coded_bioacustics/">
+            <img class="avatar-img" src="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" alt="Coded bioacoustics" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Editing wave objects from extended selection tables</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;700&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>&ldquo;Is there a simple way to remove noise from the clips in an extended table &ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &hellip; so again, am I missing something simple?&rdquo;</p>
+</blockquote>
+<p>Manipulating clips from <em>extended selection tables</em> can be pretty straightforward. It can be done by using <code>lapply()</code> to go over each clip. Things should be fine as long as you don&rsquo;t mess with any time related feature (i.e. the time position of the signals in the clip remains unchanged). For example filtering out low frequencies on the clips from the example <em>extended selection table</em> &rsquo;lbh.est&rsquo; from the package <a href="https://marce10.github.io/NatureSounds">NatureSounds</a>. This is how the original clips look like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># load packages</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">NatureSounds</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">warbleR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">seewave</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># load data</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;lbh.est&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># extract 2 clips</span>
+</span></span><span class="line"><span class="cl"><span class="n">w1</span> <span class="o">&lt;-</span> <span class="nf">read_wave</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="kc">Inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">w2</span> <span class="o">&lt;-</span> <span class="nf">read_wave</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="kc">Inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># split graphic device</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># plot spectros</span>
+</span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
+</span></span></code></pre></div><img src="./img/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="900px" />
+<p>Clips are stored in an attribute call &lsquo;wave.objects&rsquo;. In this particular example the list of clips can be called like this: <code>attributes(lbh.est)$wave.objects</code>.</p>
+<p>We can apply a bandpass filter from 4 to 10 kHz over each element of this list using <code>lapply()</code> and <code>ffilter()</code> (from <a href="http://rug.mnhn.fr/seewave">seewave</a>):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># filter out freqs below 4 kHz</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attributes</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">)</span><span class="o">$</span><span class="n">wave.objects</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="nf">attributes</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">)</span><span class="o">$</span><span class="n">wave.objects</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">FUN</span> <span class="o">=</span> <span class="n">ffilter</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">4000</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">10000</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="s">&#34;Wave&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>We can double-check that the bandpass actually worked by looking again at the spectrograms:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># extract the same 2 clips again</span>
+</span></span><span class="line"><span class="cl"><span class="n">w1</span> <span class="o">&lt;-</span> <span class="nf">read_wave</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="kc">Inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">w2</span> <span class="o">&lt;-</span> <span class="nf">read_wave</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="kc">Inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># split graphic device</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># plot spectros</span>
+</span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
+</span></span></code></pre></div><img src="./img/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="900px" />
+<p>So any <a href="http://rug.mnhn.fr/seewave">seewave</a> function that works on &lsquo;wave&rsquo; objects and returns &lsquo;wave&rsquo; objects as well, can be used. For instance, applying a linear frequency shift to increase pitch in 2 kHz:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># load data</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;lbh.est&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># filter out freqs below 4 kHz</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attributes</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">)</span><span class="o">$</span><span class="n">wave.objects</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="nf">attributes</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">)</span><span class="o">$</span><span class="n">wave.objects</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">FUN</span> <span class="o">=</span> <span class="n">lfs</span><span class="p">,</span> <span class="n">shift</span> <span class="o">=</span> <span class="m">2000</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="s">&#34;Wave&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># extract the same 2 clips again</span>
+</span></span><span class="line"><span class="cl"><span class="n">w1</span> <span class="o">&lt;-</span> <span class="nf">read_wave</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="kc">Inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">w2</span> <span class="o">&lt;-</span> <span class="nf">read_wave</span><span class="p">(</span><span class="n">lbh.est</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="kc">Inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># split graphic device</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># plot spectros</span>
+</span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
+</span></span></code></pre></div><img src="./img/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="900px" />
+<p>Again, this should be OK as long as you don&rsquo;t modify any time related feature. If temporal features change then the time annotations are no longer useful.</p>
+<hr>
+<p><font size="4">Session information</font></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.6.1 (2019-07-05)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Running under: Ubuntu 18.04.4 LTS</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Matrix products: default</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## locale:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [1] LC_CTYPE=es_ES.UTF-8      </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [2] LC_NUMERIC=C              </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [3] LC_TIME=es_CR.UTF-8       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [4] LC_COLLATE=es_ES.UTF-8    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [5] LC_MONETARY=es_CR.UTF-8   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [6] LC_MESSAGES=es_ES.UTF-8   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [7] LC_PAPER=es_CR.UTF-8      </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [8] LC_NAME=C                 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [9] LC_ADDRESS=C              </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [10] LC_TELEPHONE=C            </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [11] LC_MEASUREMENT=es_CR.UTF-8</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [12] LC_IDENTIFICATION=C       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## attached base packages:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [1] stats     graphics  grDevices utils    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [5] datasets  methods   base     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## other attached packages:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [1] warbleR_1.1.24     seewave_2.1.5     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [3] tuneR_1.3.3        NatureSounds_1.0.3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [5] knitr_1.28        </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## loaded via a namespace (and not attached):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [1] Rcpp_1.0.4.6    dtw_1.21-3     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [3] fftw_1.0-6      digest_0.6.25  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [5] bitops_1.0-6    MASS_7.3-51.4  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [7] magrittr_1.5    signal_0.7-6   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [9] evaluate_0.14   highr_0.8      </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [11] rlang_0.4.6     stringi_1.4.6  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [13] pbapply_1.4-2   rmarkdown_1.17 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [15] rjson_0.2.20    tools_3.6.1    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [17] stringr_1.4.0   RCurl_1.98-1.2 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [19] proxy_0.4-24    xfun_0.13      </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [21] yaml_2.2.1      parallel_3.6.1 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [23] compiler_3.6.1  htmltools_0.4.0</span>
+</span></span></code></pre></div>
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-05-26-editing_wave_objects_from_extended_selection_tables%2f&amp;text=Editing%20wave%20objects%20from%20extended%20selection%20tables&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-05-26-editing_wave_objects_from_extended_selection_tables%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-05-26-editing_wave_objects_from_extended_selection_tables%2f&amp;title=Editing%20wave%20objects%20from%20extended%20selection%20tables" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-05-26-editing_wave_objects_from_extended_selection_tables%2f&amp;title=Editing%20wave%20objects%20from%20extended%20selection%20tables" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-05-26-editing_wave_objects_from_extended_selection_tables%2f&amp;title=Editing%20wave%20objects%20from%20extended%20selection%20tables" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-05-26-editing_wave_objects_from_extended_selection_tables%2f&amp;description=Editing%20wave%20objects%20from%20extended%20selection%20tables" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="marce10.github.io/coded_bioacustics/post/2019-08-13-group_signature_xcorr/" data-toggle="tooltip" data-placement="top" title="Evaluating group acoustic signatures using cross-correlation">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="marce10.github.io/coded_bioacustics/post/2016-12-22-download_a_single_recording_for_each_species_in_a_site_from_xeno-canto/" data-toggle="tooltip" data-placement="top" title="Download a single recording for each species in a country from Xeno-Canto">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2020-05-26-editing_wave_objects_from_extended_selection_tables';
+            };
+
+          </script>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/maRce10" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.121.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="marce10.github.io/coded_bioacustics/js/main.js"></script>
+<script src="marce10.github.io/coded_bioacustics/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="marce10.github.io/coded_bioacustics/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'maRce_10';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
+
+
+
+
+    
+  </body>
+</html>
+

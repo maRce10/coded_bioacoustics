@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spectrograms on Coded bioacoustics</title>
+    <link>marce10.github.io/coded_bioacustics/tags/spectrograms/</link>
+    <description>Recent content in spectrograms on Coded bioacoustics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>marcelo.araya@ucr.ac.cr (Marcelo Araya-Salas)</managingEditor>
+    <webMaster>marcelo.araya@ucr.ac.cr (Marcelo Araya-Salas)</webMaster>
+    <lastBuildDate>Wed, 27 May 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="marce10.github.io/coded_bioacustics/tags/spectrograms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dynaSpec: dynamic spectrograms in R</title>
+      <link>marce10.github.io/coded_bioacustics/post/2018-02-02-dynaspec_dynamic_spectrograms_in_r/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate><author>marcelo.araya@ucr.ac.cr (Marcelo Araya-Salas)</author>
+      <guid>marce10.github.io/coded_bioacustics/post/2018-02-02-dynaspec_dynamic_spectrograms_in_r/</guid>
+      <description>The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.&#xA;To install dynaSpec from github you will need the R package devtools:&#xA;# From github devtools::install_github(&amp;#34;maRce10/dynaSpec&amp;#34;) #load package library(dynaSpec) Examples To run the following examples you will also need to load a few more packages as well as warbleR 1.</description>
+    </item>
+  </channel>
+</rss>

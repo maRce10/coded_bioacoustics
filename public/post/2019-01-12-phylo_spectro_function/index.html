@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Spectrograms on trees - Coded bioacoustics</title>
+
+  <meta name="description" content="This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&lsquo;X argument) onto the tips of a tree (of class &lsquo;phylo&rsquo;). The &rsquo;tip.label&rsquo; column in &lsquo;X&rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR&rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Coded bioacoustics",
+    
+    "url": "marce10.github.io\/coded_bioacustics\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "marce10.github.io\/coded_bioacustics\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/post\/2019-01-12-phylo_spectro_function\/",
+          "name": "Spectrograms on trees"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Spectrograms on trees",
+  "description" : "This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (\u0026lsquo;X argument) onto the tips of a tree (of class \u0026lsquo;phylo\u0026rsquo;). The \u0026rsquo;tip.label\u0026rsquo; column in \u0026lsquo;X\u0026rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR\u0026rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization.",
+  "inLanguage" : "en",
+  "wordCount":  725 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2019-01-12-phylo_spectro_function\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "marce10.github.io\/coded_bioacustics\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Spectrograms on trees" />
+<meta property="og:description" content="This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&lsquo;X argument) onto the tips of a tree (of class &lsquo;phylo&rsquo;). The &rsquo;tip.label&rsquo; column in &lsquo;X&rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR&rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization.">
+<meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+<meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Coded bioacoustics" />
+
+  <meta name="twitter:title" content="Spectrograms on trees" />
+  <meta name="twitter:description" content="This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&lsquo;X argument) onto the tips of a tree (of class …">
+  <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.121.2">
+  <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/highlight.min.css" /><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZVLSR0L9P"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-RZVLSR0L9P', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/marce10.github.io/coded_bioacustics/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/marce10.github.io/coded_bioacustics/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Coded bioacoustics" href="marce10.github.io/coded_bioacustics/">
+            <img class="avatar-img" src="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" alt="Coded bioacoustics" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Spectrograms on trees</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;725&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>This post describes the new <a href="https://cran.r-project.org/package=warbleR">warbleR</a> function <a href="https://marce10.github.io/warbleR/reference/phylo_spectro.html">phylo_spectro</a>. The function adds spectrograms of sounds annotated in a selection table (&lsquo;X argument) onto the tips of a tree (of class &lsquo;phylo&rsquo;). The &rsquo;tip.label&rsquo; column in &lsquo;X&rsquo; is used to match spectrograms and tree tips. The function uses internally the <a href="https://www.rdocumentation.org/packages/ape/versions/5.2/topics/plot.phylo">plot.phylo</a> function from the ape package to plot the tree and <a href="https://cran.r-project.org/package=warbleR">warbleR&rsquo;s</a>  <a href="https://marce10.github.io/warbleR/reference/specreator.html">specreator</a> function to create the spectrograms. Arguments for both of these functions can be provided for further customization.</p>
+<p>We&rsquo;ll first load the example data set from <a href="https://cran.r-project.org/package=warbleR">warbleR</a> as well as the <a href="https://cran.r-project.org/package=ape">ape package</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># load warbleR and ape</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">warbleR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ape</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#load data and save sound files</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Phae.long1&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long2&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long3&#34;</span><span class="p">,</span> <span class="s">&#34;lbh_selec_table&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long1</span><span class="p">,</span><span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long2</span><span class="p">,</span><span class="s">&#34;Phae.long2.wav&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long3</span><span class="p">,</span><span class="s">&#34;Phae.long3.wav&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set warbleR global options</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># this options can also be set within the function call</span>
+</span></span><span class="line"><span class="cl"><span class="nf">warbleR_options</span><span class="p">(</span><span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">pb</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="s">&#34;frange&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                <span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.heat.colors</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</span></span></code></pre></div><p>The tricky part is that the selection table must contain a column named &rsquo;tip.label&rsquo; that matches the tip labels in the tree. The following code calculates pairwise cross-correlations and creates a tree that clusters songs based on cross-correlation dissimilarities (1 - XC scores).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># extract the first 8 rows in the example data</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">&lt;-</span> <span class="n">lbh_selec_table[1</span><span class="o">:</span><span class="m">8</span><span class="p">,</span> <span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add tip.label column</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span><span class="o">$</span><span class="n">tip.label</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="n">X</span><span class="o">$</span><span class="n">sound.files</span><span class="p">,</span> <span class="s">&#34;-&#34;</span><span class="p">,</span> <span class="n">X</span><span class="o">$</span><span class="n">selec</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run cross correlation</span>
+</span></span><span class="line"><span class="cl"><span class="n">xc</span> <span class="o">&lt;-</span> <span class="nf">xcorr</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create a hierarchical cluster</span>
+</span></span><span class="line"><span class="cl"><span class="n">xc.tree</span> <span class="o">&lt;-</span> <span class="nf">hclust</span><span class="p">(</span><span class="n">d</span> <span class="o">=</span> <span class="nf">as.dist</span><span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="n">xc</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># convert h clust to phylogenetic tree</span>
+</span></span><span class="line"><span class="cl"><span class="n">xc.tree</span> <span class="o">&lt;-</span> <span class="nf">as.phylo</span><span class="p">(</span><span class="n">xc.tree</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># plot tree with spectrograms</span>
+</span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">8</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">xl</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
+</span></span></code></pre></div><p>![plot of chunk phylo.spectro 1](./img/phylo.spectro 1-1.png)</p>
+<p>It can also plot fan trees by setting <code>type = &quot;fan&quot;</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># plot fan tree with spectrograms</span>
+</span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.12</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
+</span></span></code></pre></div><img src="./img/phylo.spectro 4-1.png" title="plot of chunk phylo.spectro 4" alt="plot of chunk phylo.spectro 4" width="800px" />
+<p>Additional arguments can be passed to <a href="https://www.rdocumentation.org/packages/ape/versions/5.2/topics/plot.phylo">plot.phylo</a>. Here we modify &rsquo;edge.lty&rsquo; and &rsquo;edge.witdth&rsquo;:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># plot tree with spectrograms</span>
+</span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.12</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">edge.color</span> <span class="o">=</span> <span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="n">edge.lty</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">edge.width</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+</span></span></code></pre></div><img src="./img/phylo.spectro 2-1.png" title="plot of chunk phylo.spectro 2" alt="plot of chunk phylo.spectro 2" width="800px" />
+<p>and to <a href="https://marce10.github.io/warbleR/reference/specreator.html">specreator</a>. Here we modify &lsquo;pal&rsquo; (color palette):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># plot tree with spectrograms</span>
+</span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.12</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
+</span></span></code></pre></div><img src="./img/phylo.spectro 3-1.png" title="plot of chunk phylo.spectro 3" alt="plot of chunk phylo.spectro 3" width="800px" />
+<p>Here is another example using an <a href="https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html">extended selection table</a> and more signals:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;Phae.long.est&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get songs belonging to 4 different song types</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">&lt;-</span> <span class="n">Phae.long.est</span><span class="nf">[c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="m">11</span><span class="o">:</span><span class="m">15</span><span class="p">,</span> <span class="m">21</span><span class="o">:</span><span class="m">25</span><span class="p">,</span> <span class="m">31</span><span class="o">:</span><span class="m">35</span><span class="p">),</span> <span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add tip.label column</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span><span class="o">$</span><span class="n">tip.label</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="n">X</span><span class="o">$</span><span class="n">sound.files</span><span class="p">,</span> <span class="s">&#34;-&#34;</span><span class="p">,</span> <span class="n">X</span><span class="o">$</span><span class="n">selec</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run cross correlation</span>
+</span></span><span class="line"><span class="cl"><span class="n">xc</span> <span class="o">&lt;-</span> <span class="nf">xcorr</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create a hierarchical cluster</span>
+</span></span><span class="line"><span class="cl"><span class="n">xc.tree</span> <span class="o">&lt;-</span> <span class="nf">hclust</span><span class="p">(</span><span class="n">d</span> <span class="o">=</span> <span class="nf">as.dist</span><span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="n">xc</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># convert h clust to phylogenetic tree</span>
+</span></span><span class="line"><span class="cl"><span class="n">xc.tree</span> <span class="o">&lt;-</span> <span class="nf">as.phylo</span><span class="p">(</span><span class="n">xc.tree</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># plot fan tree with spectrograms</span>
+</span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.02</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2.3</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl"><span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">edge.color</span> <span class="o">=</span> <span class="s">&#34;orange&#34;</span><span class="p">,</span>  <span class="n">edge.width</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</span></span></code></pre></div><img src="./img/phylo.spectro 5-1.png" title="plot of chunk phylo.spectro 5" alt="plot of chunk phylo.spectro 5" width="800px" />
+<p>Of course, the function can also plot species songs on phylogenetic trees. Here is an example from an ongoing project:</p>
+<img src="/./img/brilliants_tree.png" title="plot of chunk xcorr templts 2.5" alt="plot of chunk xcorr templts 2.5" width="900px" style="display: block; margin: auto;" />
+<p>That&rsquo;s it! Special thanks to <a href="https://www.researchgate.net/profile/Gerardo_Soto2">Gerardo Soto</a> and <a href="http://russellligon.wixsite.com/russell-ligon">Russel Ligon</a> for suggestions on how to make this function work.</p>
+<p><font size="4">Session information</font></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.5.1 (2018-07-02)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Running under: Ubuntu 18.10</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Matrix products: default</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## BLAS: /usr/lib/x86_64-linux-gnu/openblas/libblas.so.3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## LAPACK: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## locale:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## attached base packages:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## other attached packages:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [1] ape_5.2            warbleR_1.1.16     NatureSounds_1.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [4] seewave_2.1.0      tuneR_1.3.3        maps_3.3.0        </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## loaded via a namespace (and not attached):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [1] Rcpp_1.0.0       knitr_1.20       magrittr_1.5     Sim.DiffProc_4.3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [5] MASS_7.3-50      lattice_0.20-35  Deriv_3.8.5      rjson_0.2.20    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [9] jpeg_0.1-8       pbapply_1.3-4    highr_0.7        stringr_1.3.1   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [13] tools_3.5.1      grid_3.5.1       parallel_3.5.1   nlme_3.1-137    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [17] dtw_1.20-1       iterators_1.0.10 yaml_2.2.0       soundgen_1.3.2  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [21] bitops_1.0-6     RCurl_1.95-4.11  signal_0.7-6     evaluate_0.12   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [25] proxy_0.4-22     stringi_1.2.4    pracma_2.2.2     compiler_3.5.1  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [29] fftw_1.0-4</span>
+</span></span></code></pre></div>
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-12-phylo_spectro_function%2f&amp;text=Spectrograms%20on%20trees&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-12-phylo_spectro_function%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-12-phylo_spectro_function%2f&amp;title=Spectrograms%20on%20trees" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-12-phylo_spectro_function%2f&amp;title=Spectrograms%20on%20trees" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-12-phylo_spectro_function%2f&amp;title=Spectrograms%20on%20trees" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-12-phylo_spectro_function%2f&amp;description=Spectrograms%20on%20trees" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="marce10.github.io/coded_bioacustics/post/2017-07-31-updates_on_catalog_function/" data-toggle="tooltip" data-placement="top" title="Updates on catalog function">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="marce10.github.io/coded_bioacustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/" data-toggle="tooltip" data-placement="top" title="Song similarity using dynamic time warping">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2019-01-12-phylo_spectro_function';
+            };
+
+          </script>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/maRce10" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.121.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="marce10.github.io/coded_bioacustics/js/main.js"></script>
+<script src="marce10.github.io/coded_bioacustics/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="marce10.github.io/coded_bioacustics/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'maRce_10';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
+
+
+
+
+    
+  </body>
+</html>
+

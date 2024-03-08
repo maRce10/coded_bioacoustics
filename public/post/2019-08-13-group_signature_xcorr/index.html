@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Evaluating group acoustic signatures using cross-correlation - Coded bioacoustics</title>
+
+  <meta name="description" content="Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: the behavior is more similar within than between groups (although absence of this pattern doesn&rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Coded bioacoustics",
+    
+    "url": "marce10.github.io\/coded_bioacustics\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "marce10.github.io\/coded_bioacustics\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/post\/2019-08-13-group_signature_xcorr\/",
+          "name": "Evaluating group acoustic signatures using cross correlation"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Evaluating group acoustic signatures using cross-correlation",
+  "description" : "Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: the behavior is more similar within than between groups (although absence of this pattern doesn\u0026rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature.",
+  "inLanguage" : "en",
+  "wordCount":  2245 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2019-08-13-group_signature_xcorr\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "marce10.github.io\/coded_bioacustics\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Evaluating group acoustic signatures using cross-correlation" />
+<meta property="og:description" content="Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: the behavior is more similar within than between groups (although absence of this pattern doesn&rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature.">
+<meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+<meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2019-08-13-group_signature_xcorr/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Coded bioacoustics" />
+
+  <meta name="twitter:title" content="Evaluating group acoustic signatures using cross-correlation" />
+  <meta name="twitter:description" content="Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and …">
+  <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.121.2">
+  <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/highlight.min.css" /><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZVLSR0L9P"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-RZVLSR0L9P', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/marce10.github.io/coded_bioacustics/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/marce10.github.io/coded_bioacustics/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Coded bioacoustics" href="marce10.github.io/coded_bioacustics/">
+            <img class="avatar-img" src="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" alt="Coded bioacoustics" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Evaluating group acoustic signatures using cross-correlation</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;11&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2245&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: <em>the behavior is more similar within than between groups</em> (although absence of this pattern doesn&rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature.</p>
+<p>This post is about how to test this pattern in vocal signals (i.e. testing vocal learning) using pairwise similarities derived from spectrographic cross-correlation. In fact, that&rsquo;s exactly what we did in <a href="https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre_et_al_2019.pdf">our recent paper on the co-ocurrence of social learning in vocal and visual signals in the long billed hermit</a>. So the post reproduces the code I used for the acoustic analysis in that paper.</p>
+<p>Male long-billed hermits have a vocal repertoire consisting of a single song type. Different song types are found at different sites, leks and even within leks:
+<img src="/./img/map.lbh.song.types.png" title="plot of chunk song 1" alt="plot of chunk song 1" width="600px" style="display: block; margin: auto;" />
+<font size="2">Location of three study sites in northeastern Costa Rica. Spectrograms of the 10 observed song types grouped by lek are also shown. Maps of leks at La Selva Biological Station are shown in greater detail in the lower left map. The two song neighbourhoods at lek SUR are shown in lower right map (similar song neighbourhoods were found at the other leks with 2 song types—SJA, TR2, and HC1—but are not shown); polygons represent lekking male territories and the coloured borders delineate the song neighbourhoods corresponding to the coloured borders of the spectrograms at the far right.</font></p>
+<p>All annotations and acoustic data used on that paper were made <a href="https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q">available on Dryad</a>. We just need to download the extended selection table (<a href="https://marce10.github.io/2018/05/15/Extended_selection_tables.html">R object including acoustic data + annotations</a>) from Dryad and unzip the file as follows (it could take a while):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># set temporary working directory</span>
+</span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="nf">tempdir</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">&lt;-</span> <span class="s">&#34;https://datadryad.org/bitstream/handle/10255/dryad.216487/extended%20selection%20table%20LBH%20songs.zip?sequence=2&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">download.file</span><span class="p">(</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="p">,</span> <span class="n">destfile</span> <span class="o">=</span> <span class="s">&#34;lbh_est.zip&#34;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#34;wb&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">unzip</span><span class="p">(</span><span class="s">&#34;lbh_est.zip&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Now we can read the file and take a look at the data:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">warbleR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lbh_est</span> <span class="o">&lt;-</span> <span class="nf">readRDS</span><span class="p">(</span><span class="s">&#34;extended selection table LBH songs.RDS&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lbh_est</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">## object of class &#39;extended_selection_table&#39; 
+</span></span><span class="line"><span class="cl">##  contains a selection table data frame with 7646 rows and 14 columns: 
+</span></span><span class="line"><span class="cl">##                  sound.files selec start     end comm bottom.freq top.freq
+</span></span><span class="line"><span class="cl">## 1 0.HC1.2013.6.9.10.08.WAV_1     1   0.1 0.25607    A      1.9493   10.747
+</span></span><span class="line"><span class="cl">## 2 0.HC1.2013.6.9.10.08.WAV_2     1   0.1 0.25607    A      1.9493   10.747
+</span></span><span class="line"><span class="cl">## 3 0.HC1.2013.6.9.10.08.WAV_3     1   0.1 0.25607    A      1.9493   10.747
+</span></span><span class="line"><span class="cl">## 4 0.HC1.2013.6.9.10.08.WAV_4     1   0.1 0.25607    A      1.9493   10.747
+</span></span><span class="line"><span class="cl">## 5 0.HC1.2013.6.9.10.08.WAV_5     1   0.1 0.25607    A      1.9493   10.747
+</span></span><span class="line"><span class="cl">## 6 0.HC1.2013.6.9.10.08.WAV_6     1   0.1 0.25607    A      1.9493   10.747
+</span></span><span class="line"><span class="cl">##              file.name tailored song.type Lek Bird.ID old.selec
+</span></span><span class="line"><span class="cl">## 1 0.HC1.2013.6.9.10.08        y         A HC1  Male17   1+AC0-1
+</span></span><span class="line"><span class="cl">## 2 0.HC1.2013.6.9.10.08        y         A HC1  Male17   1+AC0-1
+</span></span><span class="line"><span class="cl">## 3 0.HC1.2013.6.9.10.08        y         A HC1  Male17   1+AC0-1
+</span></span><span class="line"><span class="cl">## 4 0.HC1.2013.6.9.10.08        y         A HC1  Male17   1+AC0-1
+</span></span><span class="line"><span class="cl">## 5 0.HC1.2013.6.9.10.08        y         A HC1  Male17   1+AC0-1
+</span></span><span class="line"><span class="cl">## 6 0.HC1.2013.6.9.10.08        y         A HC1  Male17   1+AC0-1
+</span></span><span class="line"><span class="cl">##   lek.song.type
+</span></span><span class="line"><span class="cl">## 1         HC1-A
+</span></span><span class="line"><span class="cl">## 2         HC1-A
+</span></span><span class="line"><span class="cl">## 3         HC1-A
+</span></span><span class="line"><span class="cl">## 4         HC1-A
+</span></span><span class="line"><span class="cl">## 5         HC1-A
+</span></span><span class="line"><span class="cl">## 6         HC1-A
+</span></span><span class="line"><span class="cl">## ... and 7640 more rows 
+</span></span><span class="line"><span class="cl">## 7646 wave objects (as attributes): 
+</span></span><span class="line"><span class="cl">## [1] &#34;0.HC1.2013.6.9.10.08.WAV_1&#34; &#34;0.HC1.2013.6.9.10.08.WAV_2&#34;
+</span></span><span class="line"><span class="cl">## [3] &#34;0.HC1.2013.6.9.10.08.WAV_3&#34; &#34;0.HC1.2013.6.9.10.08.WAV_4&#34;
+</span></span><span class="line"><span class="cl">## [5] &#34;0.HC1.2013.6.9.10.08.WAV_5&#34; &#34;0.HC1.2013.6.9.10.08.WAV_6&#34;
+</span></span><span class="line"><span class="cl">## ... and 7640 more 
+</span></span><span class="line"><span class="cl">## and a data frame (check.results) generated by checkres() (as attribute) 
+</span></span><span class="line"><span class="cl">## the selection table was created by element (see &#39;class_extended_selection_table&#39;)
+</span></span></code></pre></div><p>The data contains several songs per individual, and several individuals per lek. This is a pretty big data set, so it takes a while to run the analysis. To speed it up a bit (and avoid pseudoreplication!), we will keep only the highest signal-to-noise ratio song for each individual:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># set warbleR global options </span>
+</span></span><span class="line"><span class="cl"><span class="nf">warbleR_options</span><span class="p">(</span><span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># measure SNR</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbh_est</span> <span class="o">&lt;-</span> <span class="nf">sig2noise</span><span class="p">(</span><span class="n">lbh_est</span><span class="p">,</span> <span class="n">mar</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># subset ext. sel. tab.</span>
+</span></span><span class="line"><span class="cl"><span class="n">sub_lbh_est</span> <span class="o">&lt;-</span> <span class="n">lbh_est</span><span class="nf">[ave</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">lbh_est</span><span class="o">$</span><span class="n">SNR</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">    <span class="nf">paste0</span><span class="p">(</span><span class="n">lbh_est</span><span class="o">$</span><span class="n">Lek</span><span class="p">,</span> <span class="n">lbh_est</span><span class="o">$</span><span class="n">Bird.ID</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">FUN</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">rank</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ties.method</span> <span class="o">=</span> <span class="s">&#34;first&#34;</span><span class="p">))</span> <span class="o">==</span> <span class="m">1</span><span class="p">,</span> <span class="n">]</span>
+</span></span></code></pre></div><p>Now we can run the cross-correlation analysis as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">xc_mat</span> <span class="o">&lt;-</span> <span class="nf">x_corr</span><span class="p">(</span><span class="n">sub_lbh_est</span><span class="p">)</span>
+</span></span></code></pre></div><p>The output is a similarity matrix with dimensions <em>60 x 60</em> (for simplicity only the first 20 columns/rows are shown):</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:740px;  font-size: 12px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.10.08.WAV_7-1 </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.7.20.WAV_73-1 </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.7.31.WAV_218-1 </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.7.50.WAV_334-1 </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.8.09.WAV_605-1 </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.8.18.WAV_635-1 </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.8.28.WAV_815-1 </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.8.49.WAV_835-1 </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.8.53.WAV_935-1 </th>
+   <th style="text-align:center;"> 0.HC1.2013.6.9.9.58.WAV_1016-1 </th>
+   <th style="text-align:center;"> 0.TR2.2013.4.16.8.53.WAV_1161-1 </th>
+   <th style="text-align:center;"> 0.TR2.2013.4.16.8.59.WAV_1197-1 </th>
+   <th style="text-align:center;"> 0.TR2.2013.4.16.9.25.WAV_1281-1 </th>
+   <th style="text-align:center;"> 0.TR2.2013.4.17.8.49.WAV_1301-1 </th>
+   <th style="text-align:center;"> 0.TR2.2013.4.17.9.00.WAV_1501-1 </th>
+   <th style="text-align:center;"> 0.TR2.2013.4.17.9.02.WAV_1528-1 </th>
+   <th style="text-align:center;"> 0.TR2.2013.4.17.9.05.WAV_1639-1 </th>
+   <th style="text-align:center;"> 0.TR2.2013.4.17.9.09.WAV_1657-1 </th>
+   <th style="text-align:center;"> 0.TR2.2013.4.17.9.18.WAV_1722-1 </th>
+   <th style="text-align:center;"> 108.LOC.2013.3.26.8.15.WAV_1810-1 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.10.08.WAV_7-1 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.63182 </td>
+   <td style="text-align:center;"> 0.63959 </td>
+   <td style="text-align:center;"> 0.55934 </td>
+   <td style="text-align:center;"> 0.68051 </td>
+   <td style="text-align:center;"> 0.66121 </td>
+   <td style="text-align:center;"> 0.64135 </td>
+   <td style="text-align:center;"> 0.69259 </td>
+   <td style="text-align:center;"> 0.66024 </td>
+   <td style="text-align:center;"> 0.71202 </td>
+   <td style="text-align:center;"> 0.69887 </td>
+   <td style="text-align:center;"> 0.51545 </td>
+   <td style="text-align:center;"> 0.38529 </td>
+   <td style="text-align:center;"> 0.38876 </td>
+   <td style="text-align:center;"> 0.39564 </td>
+   <td style="text-align:center;"> 0.39147 </td>
+   <td style="text-align:center;"> 0.48834 </td>
+   <td style="text-align:center;"> 0.51111 </td>
+   <td style="text-align:center;"> 0.52910 </td>
+   <td style="text-align:center;"> 0.37781 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.7.20.WAV_73-1 </td>
+   <td style="text-align:center;"> 0.63182 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.75495 </td>
+   <td style="text-align:center;"> 0.54539 </td>
+   <td style="text-align:center;"> 0.66660 </td>
+   <td style="text-align:center;"> 0.66511 </td>
+   <td style="text-align:center;"> 0.61887 </td>
+   <td style="text-align:center;"> 0.69640 </td>
+   <td style="text-align:center;"> 0.66803 </td>
+   <td style="text-align:center;"> 0.63830 </td>
+   <td style="text-align:center;"> 0.60416 </td>
+   <td style="text-align:center;"> 0.54407 </td>
+   <td style="text-align:center;"> 0.41529 </td>
+   <td style="text-align:center;"> 0.45166 </td>
+   <td style="text-align:center;"> 0.48237 </td>
+   <td style="text-align:center;"> 0.42941 </td>
+   <td style="text-align:center;"> 0.42745 </td>
+   <td style="text-align:center;"> 0.51071 </td>
+   <td style="text-align:center;"> 0.46030 </td>
+   <td style="text-align:center;"> 0.46680 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.7.31.WAV_218-1 </td>
+   <td style="text-align:center;"> 0.63959 </td>
+   <td style="text-align:center;"> 0.75495 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.51396 </td>
+   <td style="text-align:center;"> 0.64127 </td>
+   <td style="text-align:center;"> 0.67599 </td>
+   <td style="text-align:center;"> 0.61162 </td>
+   <td style="text-align:center;"> 0.71097 </td>
+   <td style="text-align:center;"> 0.69376 </td>
+   <td style="text-align:center;"> 0.65245 </td>
+   <td style="text-align:center;"> 0.66341 </td>
+   <td style="text-align:center;"> 0.49186 </td>
+   <td style="text-align:center;"> 0.35839 </td>
+   <td style="text-align:center;"> 0.38409 </td>
+   <td style="text-align:center;"> 0.42478 </td>
+   <td style="text-align:center;"> 0.40135 </td>
+   <td style="text-align:center;"> 0.44090 </td>
+   <td style="text-align:center;"> 0.52388 </td>
+   <td style="text-align:center;"> 0.46107 </td>
+   <td style="text-align:center;"> 0.41861 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.7.50.WAV_334-1 </td>
+   <td style="text-align:center;"> 0.55934 </td>
+   <td style="text-align:center;"> 0.54539 </td>
+   <td style="text-align:center;"> 0.51396 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.67408 </td>
+   <td style="text-align:center;"> 0.62532 </td>
+   <td style="text-align:center;"> 0.64077 </td>
+   <td style="text-align:center;"> 0.65590 </td>
+   <td style="text-align:center;"> 0.58549 </td>
+   <td style="text-align:center;"> 0.52716 </td>
+   <td style="text-align:center;"> 0.54930 </td>
+   <td style="text-align:center;"> 0.44475 </td>
+   <td style="text-align:center;"> 0.30083 </td>
+   <td style="text-align:center;"> 0.28660 </td>
+   <td style="text-align:center;"> 0.41001 </td>
+   <td style="text-align:center;"> 0.37448 </td>
+   <td style="text-align:center;"> 0.49695 </td>
+   <td style="text-align:center;"> 0.57942 </td>
+   <td style="text-align:center;"> 0.50946 </td>
+   <td style="text-align:center;"> 0.19398 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.8.09.WAV_605-1 </td>
+   <td style="text-align:center;"> 0.68051 </td>
+   <td style="text-align:center;"> 0.66660 </td>
+   <td style="text-align:center;"> 0.64127 </td>
+   <td style="text-align:center;"> 0.67408 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.73936 </td>
+   <td style="text-align:center;"> 0.75308 </td>
+   <td style="text-align:center;"> 0.69222 </td>
+   <td style="text-align:center;"> 0.64462 </td>
+   <td style="text-align:center;"> 0.66669 </td>
+   <td style="text-align:center;"> 0.62863 </td>
+   <td style="text-align:center;"> 0.53840 </td>
+   <td style="text-align:center;"> 0.42151 </td>
+   <td style="text-align:center;"> 0.42051 </td>
+   <td style="text-align:center;"> 0.50448 </td>
+   <td style="text-align:center;"> 0.48591 </td>
+   <td style="text-align:center;"> 0.55599 </td>
+   <td style="text-align:center;"> 0.60296 </td>
+   <td style="text-align:center;"> 0.52239 </td>
+   <td style="text-align:center;"> 0.35289 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.8.18.WAV_635-1 </td>
+   <td style="text-align:center;"> 0.66121 </td>
+   <td style="text-align:center;"> 0.66511 </td>
+   <td style="text-align:center;"> 0.67599 </td>
+   <td style="text-align:center;"> 0.62532 </td>
+   <td style="text-align:center;"> 0.73936 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.71308 </td>
+   <td style="text-align:center;"> 0.69201 </td>
+   <td style="text-align:center;"> 0.66034 </td>
+   <td style="text-align:center;"> 0.66862 </td>
+   <td style="text-align:center;"> 0.64829 </td>
+   <td style="text-align:center;"> 0.48065 </td>
+   <td style="text-align:center;"> 0.29665 </td>
+   <td style="text-align:center;"> 0.31890 </td>
+   <td style="text-align:center;"> 0.39544 </td>
+   <td style="text-align:center;"> 0.35343 </td>
+   <td style="text-align:center;"> 0.44982 </td>
+   <td style="text-align:center;"> 0.55360 </td>
+   <td style="text-align:center;"> 0.48631 </td>
+   <td style="text-align:center;"> 0.28779 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.8.28.WAV_815-1 </td>
+   <td style="text-align:center;"> 0.64135 </td>
+   <td style="text-align:center;"> 0.61887 </td>
+   <td style="text-align:center;"> 0.61162 </td>
+   <td style="text-align:center;"> 0.64077 </td>
+   <td style="text-align:center;"> 0.75308 </td>
+   <td style="text-align:center;"> 0.71308 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.66206 </td>
+   <td style="text-align:center;"> 0.59760 </td>
+   <td style="text-align:center;"> 0.61746 </td>
+   <td style="text-align:center;"> 0.55406 </td>
+   <td style="text-align:center;"> 0.46961 </td>
+   <td style="text-align:center;"> 0.39846 </td>
+   <td style="text-align:center;"> 0.39799 </td>
+   <td style="text-align:center;"> 0.47109 </td>
+   <td style="text-align:center;"> 0.43293 </td>
+   <td style="text-align:center;"> 0.51701 </td>
+   <td style="text-align:center;"> 0.55178 </td>
+   <td style="text-align:center;"> 0.44557 </td>
+   <td style="text-align:center;"> 0.37665 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.8.49.WAV_835-1 </td>
+   <td style="text-align:center;"> 0.69259 </td>
+   <td style="text-align:center;"> 0.69640 </td>
+   <td style="text-align:center;"> 0.71097 </td>
+   <td style="text-align:center;"> 0.65590 </td>
+   <td style="text-align:center;"> 0.69222 </td>
+   <td style="text-align:center;"> 0.69201 </td>
+   <td style="text-align:center;"> 0.66206 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.79225 </td>
+   <td style="text-align:center;"> 0.66612 </td>
+   <td style="text-align:center;"> 0.60694 </td>
+   <td style="text-align:center;"> 0.49104 </td>
+   <td style="text-align:center;"> 0.35715 </td>
+   <td style="text-align:center;"> 0.36894 </td>
+   <td style="text-align:center;"> 0.43598 </td>
+   <td style="text-align:center;"> 0.40826 </td>
+   <td style="text-align:center;"> 0.51970 </td>
+   <td style="text-align:center;"> 0.54033 </td>
+   <td style="text-align:center;"> 0.51483 </td>
+   <td style="text-align:center;"> 0.33840 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.8.53.WAV_935-1 </td>
+   <td style="text-align:center;"> 0.66024 </td>
+   <td style="text-align:center;"> 0.66803 </td>
+   <td style="text-align:center;"> 0.69376 </td>
+   <td style="text-align:center;"> 0.58549 </td>
+   <td style="text-align:center;"> 0.64462 </td>
+   <td style="text-align:center;"> 0.66034 </td>
+   <td style="text-align:center;"> 0.59760 </td>
+   <td style="text-align:center;"> 0.79225 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.67312 </td>
+   <td style="text-align:center;"> 0.60852 </td>
+   <td style="text-align:center;"> 0.46700 </td>
+   <td style="text-align:center;"> 0.32351 </td>
+   <td style="text-align:center;"> 0.32463 </td>
+   <td style="text-align:center;"> 0.41088 </td>
+   <td style="text-align:center;"> 0.37981 </td>
+   <td style="text-align:center;"> 0.48276 </td>
+   <td style="text-align:center;"> 0.53686 </td>
+   <td style="text-align:center;"> 0.53730 </td>
+   <td style="text-align:center;"> 0.30993 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.HC1.2013.6.9.9.58.WAV_1016-1 </td>
+   <td style="text-align:center;"> 0.71202 </td>
+   <td style="text-align:center;"> 0.63830 </td>
+   <td style="text-align:center;"> 0.65245 </td>
+   <td style="text-align:center;"> 0.52716 </td>
+   <td style="text-align:center;"> 0.66669 </td>
+   <td style="text-align:center;"> 0.66862 </td>
+   <td style="text-align:center;"> 0.61746 </td>
+   <td style="text-align:center;"> 0.66612 </td>
+   <td style="text-align:center;"> 0.67312 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.63694 </td>
+   <td style="text-align:center;"> 0.48499 </td>
+   <td style="text-align:center;"> 0.34605 </td>
+   <td style="text-align:center;"> 0.35287 </td>
+   <td style="text-align:center;"> 0.40963 </td>
+   <td style="text-align:center;"> 0.36159 </td>
+   <td style="text-align:center;"> 0.47811 </td>
+   <td style="text-align:center;"> 0.52213 </td>
+   <td style="text-align:center;"> 0.52346 </td>
+   <td style="text-align:center;"> 0.36947 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.TR2.2013.4.16.8.53.WAV_1161-1 </td>
+   <td style="text-align:center;"> 0.69887 </td>
+   <td style="text-align:center;"> 0.60416 </td>
+   <td style="text-align:center;"> 0.66341 </td>
+   <td style="text-align:center;"> 0.54930 </td>
+   <td style="text-align:center;"> 0.62863 </td>
+   <td style="text-align:center;"> 0.64829 </td>
+   <td style="text-align:center;"> 0.55406 </td>
+   <td style="text-align:center;"> 0.60694 </td>
+   <td style="text-align:center;"> 0.60852 </td>
+   <td style="text-align:center;"> 0.63694 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.47882 </td>
+   <td style="text-align:center;"> 0.30888 </td>
+   <td style="text-align:center;"> 0.30329 </td>
+   <td style="text-align:center;"> 0.36293 </td>
+   <td style="text-align:center;"> 0.35559 </td>
+   <td style="text-align:center;"> 0.43950 </td>
+   <td style="text-align:center;"> 0.55284 </td>
+   <td style="text-align:center;"> 0.51489 </td>
+   <td style="text-align:center;"> 0.32043 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.TR2.2013.4.16.8.59.WAV_1197-1 </td>
+   <td style="text-align:center;"> 0.51545 </td>
+   <td style="text-align:center;"> 0.54407 </td>
+   <td style="text-align:center;"> 0.49186 </td>
+   <td style="text-align:center;"> 0.44475 </td>
+   <td style="text-align:center;"> 0.53840 </td>
+   <td style="text-align:center;"> 0.48065 </td>
+   <td style="text-align:center;"> 0.46961 </td>
+   <td style="text-align:center;"> 0.49104 </td>
+   <td style="text-align:center;"> 0.46700 </td>
+   <td style="text-align:center;"> 0.48499 </td>
+   <td style="text-align:center;"> 0.47882 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.53392 </td>
+   <td style="text-align:center;"> 0.54120 </td>
+   <td style="text-align:center;"> 0.54787 </td>
+   <td style="text-align:center;"> 0.47744 </td>
+   <td style="text-align:center;"> 0.47772 </td>
+   <td style="text-align:center;"> 0.53889 </td>
+   <td style="text-align:center;"> 0.57507 </td>
+   <td style="text-align:center;"> 0.42549 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.TR2.2013.4.16.9.25.WAV_1281-1 </td>
+   <td style="text-align:center;"> 0.38529 </td>
+   <td style="text-align:center;"> 0.41529 </td>
+   <td style="text-align:center;"> 0.35839 </td>
+   <td style="text-align:center;"> 0.30083 </td>
+   <td style="text-align:center;"> 0.42151 </td>
+   <td style="text-align:center;"> 0.29665 </td>
+   <td style="text-align:center;"> 0.39846 </td>
+   <td style="text-align:center;"> 0.35715 </td>
+   <td style="text-align:center;"> 0.32351 </td>
+   <td style="text-align:center;"> 0.34605 </td>
+   <td style="text-align:center;"> 0.30888 </td>
+   <td style="text-align:center;"> 0.53392 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.75587 </td>
+   <td style="text-align:center;"> 0.63558 </td>
+   <td style="text-align:center;"> 0.56687 </td>
+   <td style="text-align:center;"> 0.51914 </td>
+   <td style="text-align:center;"> 0.43910 </td>
+   <td style="text-align:center;"> 0.48098 </td>
+   <td style="text-align:center;"> 0.50214 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.TR2.2013.4.17.8.49.WAV_1301-1 </td>
+   <td style="text-align:center;"> 0.38876 </td>
+   <td style="text-align:center;"> 0.45166 </td>
+   <td style="text-align:center;"> 0.38409 </td>
+   <td style="text-align:center;"> 0.28660 </td>
+   <td style="text-align:center;"> 0.42051 </td>
+   <td style="text-align:center;"> 0.31890 </td>
+   <td style="text-align:center;"> 0.39799 </td>
+   <td style="text-align:center;"> 0.36894 </td>
+   <td style="text-align:center;"> 0.32463 </td>
+   <td style="text-align:center;"> 0.35287 </td>
+   <td style="text-align:center;"> 0.30329 </td>
+   <td style="text-align:center;"> 0.54120 </td>
+   <td style="text-align:center;"> 0.75587 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.65570 </td>
+   <td style="text-align:center;"> 0.55677 </td>
+   <td style="text-align:center;"> 0.46035 </td>
+   <td style="text-align:center;"> 0.40279 </td>
+   <td style="text-align:center;"> 0.44048 </td>
+   <td style="text-align:center;"> 0.53632 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.TR2.2013.4.17.9.00.WAV_1501-1 </td>
+   <td style="text-align:center;"> 0.39564 </td>
+   <td style="text-align:center;"> 0.48237 </td>
+   <td style="text-align:center;"> 0.42478 </td>
+   <td style="text-align:center;"> 0.41001 </td>
+   <td style="text-align:center;"> 0.50448 </td>
+   <td style="text-align:center;"> 0.39544 </td>
+   <td style="text-align:center;"> 0.47109 </td>
+   <td style="text-align:center;"> 0.43598 </td>
+   <td style="text-align:center;"> 0.41088 </td>
+   <td style="text-align:center;"> 0.40963 </td>
+   <td style="text-align:center;"> 0.36293 </td>
+   <td style="text-align:center;"> 0.54787 </td>
+   <td style="text-align:center;"> 0.63558 </td>
+   <td style="text-align:center;"> 0.65570 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.56429 </td>
+   <td style="text-align:center;"> 0.55023 </td>
+   <td style="text-align:center;"> 0.52848 </td>
+   <td style="text-align:center;"> 0.45378 </td>
+   <td style="text-align:center;"> 0.52557 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.TR2.2013.4.17.9.02.WAV_1528-1 </td>
+   <td style="text-align:center;"> 0.39147 </td>
+   <td style="text-align:center;"> 0.42941 </td>
+   <td style="text-align:center;"> 0.40135 </td>
+   <td style="text-align:center;"> 0.37448 </td>
+   <td style="text-align:center;"> 0.48591 </td>
+   <td style="text-align:center;"> 0.35343 </td>
+   <td style="text-align:center;"> 0.43293 </td>
+   <td style="text-align:center;"> 0.40826 </td>
+   <td style="text-align:center;"> 0.37981 </td>
+   <td style="text-align:center;"> 0.36159 </td>
+   <td style="text-align:center;"> 0.35559 </td>
+   <td style="text-align:center;"> 0.47744 </td>
+   <td style="text-align:center;"> 0.56687 </td>
+   <td style="text-align:center;"> 0.55677 </td>
+   <td style="text-align:center;"> 0.56429 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.50411 </td>
+   <td style="text-align:center;"> 0.44731 </td>
+   <td style="text-align:center;"> 0.40129 </td>
+   <td style="text-align:center;"> 0.41843 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.TR2.2013.4.17.9.05.WAV_1639-1 </td>
+   <td style="text-align:center;"> 0.48834 </td>
+   <td style="text-align:center;"> 0.42745 </td>
+   <td style="text-align:center;"> 0.44090 </td>
+   <td style="text-align:center;"> 0.49695 </td>
+   <td style="text-align:center;"> 0.55599 </td>
+   <td style="text-align:center;"> 0.44982 </td>
+   <td style="text-align:center;"> 0.51701 </td>
+   <td style="text-align:center;"> 0.51970 </td>
+   <td style="text-align:center;"> 0.48276 </td>
+   <td style="text-align:center;"> 0.47811 </td>
+   <td style="text-align:center;"> 0.43950 </td>
+   <td style="text-align:center;"> 0.47772 </td>
+   <td style="text-align:center;"> 0.51914 </td>
+   <td style="text-align:center;"> 0.46035 </td>
+   <td style="text-align:center;"> 0.55023 </td>
+   <td style="text-align:center;"> 0.50411 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.63954 </td>
+   <td style="text-align:center;"> 0.53222 </td>
+   <td style="text-align:center;"> 0.27489 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.TR2.2013.4.17.9.09.WAV_1657-1 </td>
+   <td style="text-align:center;"> 0.51111 </td>
+   <td style="text-align:center;"> 0.51071 </td>
+   <td style="text-align:center;"> 0.52388 </td>
+   <td style="text-align:center;"> 0.57942 </td>
+   <td style="text-align:center;"> 0.60296 </td>
+   <td style="text-align:center;"> 0.55360 </td>
+   <td style="text-align:center;"> 0.55178 </td>
+   <td style="text-align:center;"> 0.54033 </td>
+   <td style="text-align:center;"> 0.53686 </td>
+   <td style="text-align:center;"> 0.52213 </td>
+   <td style="text-align:center;"> 0.55284 </td>
+   <td style="text-align:center;"> 0.53889 </td>
+   <td style="text-align:center;"> 0.43910 </td>
+   <td style="text-align:center;"> 0.40279 </td>
+   <td style="text-align:center;"> 0.52848 </td>
+   <td style="text-align:center;"> 0.44731 </td>
+   <td style="text-align:center;"> 0.63954 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.59617 </td>
+   <td style="text-align:center;"> 0.25242 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.TR2.2013.4.17.9.18.WAV_1722-1 </td>
+   <td style="text-align:center;"> 0.52910 </td>
+   <td style="text-align:center;"> 0.46030 </td>
+   <td style="text-align:center;"> 0.46107 </td>
+   <td style="text-align:center;"> 0.50946 </td>
+   <td style="text-align:center;"> 0.52239 </td>
+   <td style="text-align:center;"> 0.48631 </td>
+   <td style="text-align:center;"> 0.44557 </td>
+   <td style="text-align:center;"> 0.51483 </td>
+   <td style="text-align:center;"> 0.53730 </td>
+   <td style="text-align:center;"> 0.52346 </td>
+   <td style="text-align:center;"> 0.51489 </td>
+   <td style="text-align:center;"> 0.57507 </td>
+   <td style="text-align:center;"> 0.48098 </td>
+   <td style="text-align:center;"> 0.44048 </td>
+   <td style="text-align:center;"> 0.45378 </td>
+   <td style="text-align:center;"> 0.40129 </td>
+   <td style="text-align:center;"> 0.53222 </td>
+   <td style="text-align:center;"> 0.59617 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+   <td style="text-align:center;"> 0.23123 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 108.LOC.2013.3.26.8.15.WAV_1810-1 </td>
+   <td style="text-align:center;"> 0.37781 </td>
+   <td style="text-align:center;"> 0.46680 </td>
+   <td style="text-align:center;"> 0.41861 </td>
+   <td style="text-align:center;"> 0.19398 </td>
+   <td style="text-align:center;"> 0.35289 </td>
+   <td style="text-align:center;"> 0.28779 </td>
+   <td style="text-align:center;"> 0.37665 </td>
+   <td style="text-align:center;"> 0.33840 </td>
+   <td style="text-align:center;"> 0.30993 </td>
+   <td style="text-align:center;"> 0.36947 </td>
+   <td style="text-align:center;"> 0.32043 </td>
+   <td style="text-align:center;"> 0.42549 </td>
+   <td style="text-align:center;"> 0.50214 </td>
+   <td style="text-align:center;"> 0.53632 </td>
+   <td style="text-align:center;"> 0.52557 </td>
+   <td style="text-align:center;"> 0.41843 </td>
+   <td style="text-align:center;"> 0.27489 </td>
+   <td style="text-align:center;"> 0.25242 </td>
+   <td style="text-align:center;"> 0.23123 </td>
+   <td style="text-align:center;"> 1.00000 </td>
+  </tr>
+</tbody>
+</table></div>
+<p>We will need a second matrix representing lek membership. It has to be a pairwise matrix in which 0 denotes pairs of individuals that belong to the same lek and 1 pairs that belong to different leks. The following function creates this type of matrix:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#function to create group membership binary matrix</span>
+</span></span><span class="line"><span class="cl"><span class="n">bi_mats</span> <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1"># create empty matrix to store memebership matrix</span>
+</span></span><span class="line"><span class="cl">  <span class="n">mat</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="n">nrow</span> <span class="o">=</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">  <span class="c1"># add labels to row and col names</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">rownames</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">labels</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1"># add 0 if same lek and 1 if else </span>
+</span></span><span class="line"><span class="cl">  <span class="n">out</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="o">-</span> <span class="m">1</span><span class="p">),</span> <span class="kr">function</span><span class="p">(</span><span class="n">i</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">sapply</span><span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span> <span class="kr">function</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="kr">if</span> <span class="p">(</span><span class="n">labels[i]</span> <span class="o">==</span> <span class="n">labels[j]</span><span class="p">)</span> <span class="m">0</span> <span class="kr">else</span> <span class="m">1</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># add to mat</span>
+</span></span><span class="line"><span class="cl">  <span class="n">mat</span><span class="nf">[lower.tri</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="n">]</span> <span class="o">&lt;-</span> <span class="nf">unlist</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># retunr as distance matrix</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">return</span><span class="p">(</span><span class="nf">as.dist</span><span class="p">(</span><span class="n">mat</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>The function takes as arguments the cross-correlation similarity matrix and a label indicating lek membership:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># create lek membership from column names</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbls</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">strsplit</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">xc_mat</span><span class="p">),</span> <span class="s">&#34;.&#34;</span><span class="p">,</span> <span class="n">fixed</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span> <span class="s">&#34;[[&#34;</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create binary matrix</span>
+</span></span><span class="line"><span class="cl"><span class="n">lek_bi_mat</span> <span class="o">&lt;-</span> <span class="nf">bi_mats</span><span class="p">(</span><span class="n">xc_mat</span><span class="p">,</span> <span class="n">lbls</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># look at the first 15 rows/cols</span>
+</span></span><span class="line"><span class="cl"><span class="nf">as.matrix</span><span class="p">(</span><span class="n">lek_bi_mat</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="m">15</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="n">]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">##     HC1 HC1 HC1 HC1 HC1 HC1 HC1 HC1 HC1 HC1 TR2 TR2 TR2 TR2 TR2
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## HC1   0   0   0   0   0   0   0   0   0   0   1   1   1   1   1
+</span></span><span class="line"><span class="cl">## TR2   1   1   1   1   1   1   1   1   1   1   0   0   0   0   0
+</span></span><span class="line"><span class="cl">## TR2   1   1   1   1   1   1   1   1   1   1   0   0   0   0   0
+</span></span><span class="line"><span class="cl">## TR2   1   1   1   1   1   1   1   1   1   1   0   0   0   0   0
+</span></span><span class="line"><span class="cl">## TR2   1   1   1   1   1   1   1   1   1   1   0   0   0   0   0
+</span></span><span class="line"><span class="cl">## TR2   1   1   1   1   1   1   1   1   1   1   0   0   0   0   0
+</span></span></code></pre></div><p>The 2 matrices are then input into a Mantel test to evaluate if acoustic similarity is higher within than between leks. Note that the cross-correlation matrix is transformed into a distance matrix by subtracting it from 1:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># install vegan if necessary</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">vegan</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># convert xcorr mat to distance</span>
+</span></span><span class="line"><span class="cl"><span class="n">xc_dist</span> <span class="o">&lt;-</span> <span class="nf">as.dist</span><span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="n">xc_mat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run mantel test</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mantel</span><span class="p">(</span><span class="n">xc_dist</span><span class="p">,</span> <span class="n">lek_bi_mat</span><span class="p">,</span> <span class="n">permutations</span> <span class="o">=</span> <span class="m">10000</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zed" data-lang="zed"><span class="line"><span class="cl"><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Pearson</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">product</span><span class="o">-</span><span class="n">moment</span><span class="w"> </span><span class="n">correlation</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Call</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">mantel</span><span class="p">(</span><span class="n">xdis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xc_dist</span><span class="p">,</span><span class="w"> </span><span class="n">ydis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lek_bi_mat</span><span class="p">,</span><span class="w"> </span><span class="n">permutations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">10000</span><span class="p">)</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">r</span><span class="o">:</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">38</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w">       </span><span class="n">Significance</span><span class="o">:</span><span class="w"> </span><span class="err">1</span><span class="n">e</span><span class="o">-</span><span class="err">04</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Upper</span><span class="w"> </span><span class="n">quantiles</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="w"> </span><span class="p">(</span><span class="n">null</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w">    </span><span class="err">90</span><span class="o">%</span><span class="w">    </span><span class="err">95</span><span class="o">%</span><span class="w">  </span><span class="err">97</span><span class="p">.</span><span class="err">5</span><span class="o">%</span><span class="w">    </span><span class="err">99</span><span class="o">%</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0299</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0403</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0507</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0620</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Permutation</span><span class="o">:</span><span class="w"> </span><span class="n">free</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="o">:</span><span class="w"> </span><span class="err">10000</span><span class="w">
+</span></span></span></code></pre></div><p>That&rsquo;s a pretty solid association between lek membership and acoustic similarity, r = 0.37. So there is a lek level acoustic signature.</p>
+<h2 id="using-other-metrics">Using other metrics</h2>
+<p>The same test can be done using other acoustic structure metrics. For instance dynamic time warping returns a distance matrix which can be directly input into the mantel test:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># measure DTW distances</span>
+</span></span><span class="line"><span class="cl"><span class="n">dtw_dist</span> <span class="o">&lt;-</span> <span class="nf">df_DTW</span><span class="p">(</span><span class="n">sub_lbh_est</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run mantel test</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mantel</span><span class="p">(</span><span class="nf">as.dist</span><span class="p">(</span><span class="n">dtw_dist</span><span class="p">),</span> <span class="n">lek_bi_mat</span><span class="p">,</span> <span class="n">permutations</span> <span class="o">=</span> <span class="m">10000</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zed" data-lang="zed"><span class="line"><span class="cl"><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Pearson</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">product</span><span class="o">-</span><span class="n">moment</span><span class="w"> </span><span class="n">correlation</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Call</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">mantel</span><span class="p">(</span><span class="n">xdis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">as</span><span class="p">.</span><span class="n">dist</span><span class="p">(</span><span class="n">dtw_dist</span><span class="p">),</span><span class="w"> </span><span class="n">ydis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lek_bi_mat</span><span class="p">,</span><span class="w"> </span><span class="n">permutations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">10000</span><span class="p">)</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">r</span><span class="o">:</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">278</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w">       </span><span class="n">Significance</span><span class="o">:</span><span class="w"> </span><span class="err">1</span><span class="n">e</span><span class="o">-</span><span class="err">04</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Upper</span><span class="w"> </span><span class="n">quantiles</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="w"> </span><span class="p">(</span><span class="n">null</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w">    </span><span class="err">90</span><span class="o">%</span><span class="w">    </span><span class="err">95</span><span class="o">%</span><span class="w">  </span><span class="err">97</span><span class="p">.</span><span class="err">5</span><span class="o">%</span><span class="w">    </span><span class="err">99</span><span class="o">%</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0307</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0404</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0491</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0593</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Permutation</span><span class="o">:</span><span class="w"> </span><span class="n">free</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="o">:</span><span class="w"> </span><span class="err">10000</span><span class="w">
+</span></span></span></code></pre></div><p>We can also use non-pairwise metrics of acoustic structure like spectrographic parameters or descriptors of cepstral coefficients. However, this would need an extra step for converting those metrics into a distance matrix. We can do that with the base R function <code>dist()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># measure spectrographic parameters</span>
+</span></span><span class="line"><span class="cl"><span class="n">sp</span> <span class="o">&lt;-</span> <span class="nf">specan</span><span class="p">(</span><span class="n">sub_lbh_est</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create distance matrix</span>
+</span></span><span class="line"><span class="cl"><span class="n">dist_sp</span> <span class="o">&lt;-</span> <span class="nf">dist</span><span class="p">(</span><span class="n">sp[</span><span class="p">,</span> <span class="m">-4</span><span class="o">:</span><span class="m">-1</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run mantel test</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mantel</span><span class="p">(</span><span class="n">dist_sp</span><span class="p">,</span> <span class="n">lek_bi_mat</span><span class="p">,</span> <span class="n">permutations</span> <span class="o">=</span> <span class="m">10000</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zed" data-lang="zed"><span class="line"><span class="cl"><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Pearson</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">product</span><span class="o">-</span><span class="n">moment</span><span class="w"> </span><span class="n">correlation</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Call</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">mantel</span><span class="p">(</span><span class="n">xdis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist_sp</span><span class="p">,</span><span class="w"> </span><span class="n">ydis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lek_bi_mat</span><span class="p">,</span><span class="w"> </span><span class="n">permutations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">10000</span><span class="p">)</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">r</span><span class="o">:</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0482</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w">       </span><span class="n">Significance</span><span class="o">:</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0357</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Upper</span><span class="w"> </span><span class="n">quantiles</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="w"> </span><span class="p">(</span><span class="n">null</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w">    </span><span class="err">90</span><span class="o">%</span><span class="w">    </span><span class="err">95</span><span class="o">%</span><span class="w">  </span><span class="err">97</span><span class="p">.</span><span class="err">5</span><span class="o">%</span><span class="w">    </span><span class="err">99</span><span class="o">%</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0311</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0425</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0532</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0649</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Permutation</span><span class="o">:</span><span class="w"> </span><span class="n">free</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="o">:</span><span class="w"> </span><span class="err">10000</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># measure descriptors of mel cepstral coefficients</span>
+</span></span><span class="line"><span class="cl"><span class="n">mfcc</span> <span class="o">&lt;-</span> <span class="nf">mfcc_stats</span><span class="p">(</span><span class="n">sub_lbh_est</span><span class="p">,</span> <span class="n">bp</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">11</span><span class="p">),</span> <span class="n">nbands</span> <span class="o">=</span> <span class="m">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create distance matrix</span>
+</span></span><span class="line"><span class="cl"><span class="n">dist_cc</span> <span class="o">&lt;-</span> <span class="nf">dist</span><span class="p">(</span><span class="n">mfcc[</span><span class="p">,</span> <span class="m">-2</span><span class="o">:</span><span class="m">-1</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run mantel test</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mantel</span><span class="p">(</span><span class="n">dist_cc</span><span class="p">,</span> <span class="n">lek_bi_mat</span><span class="p">,</span> <span class="n">permutations</span> <span class="o">=</span> <span class="m">10000</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zed" data-lang="zed"><span class="line"><span class="cl"><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Pearson</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">product</span><span class="o">-</span><span class="n">moment</span><span class="w"> </span><span class="n">correlation</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Call</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">mantel</span><span class="p">(</span><span class="n">xdis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist_cc</span><span class="p">,</span><span class="w"> </span><span class="n">ydis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lek_bi_mat</span><span class="p">,</span><span class="w"> </span><span class="n">permutations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">10000</span><span class="p">)</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">r</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="err">0</span><span class="p">.</span><span class="err">0297</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w">       </span><span class="n">Significance</span><span class="o">:</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">906</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Upper</span><span class="w"> </span><span class="n">quantiles</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="w"> </span><span class="p">(</span><span class="n">null</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w">    </span><span class="err">90</span><span class="o">%</span><span class="w">    </span><span class="err">95</span><span class="o">%</span><span class="w">  </span><span class="err">97</span><span class="p">.</span><span class="err">5</span><span class="o">%</span><span class="w">    </span><span class="err">99</span><span class="o">%</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0313</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0418</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0513</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">0630</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Permutation</span><span class="o">:</span><span class="w"> </span><span class="n">free</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="o">:</span><span class="w"> </span><span class="err">10000</span><span class="w">
+</span></span></span></code></pre></div><p>Mantel tests using dynamic time warping and spectrographic parameters were also able to detect lek level signatures. That was not the case for cepstral coefficients.</p>
+<p>That&rsquo;s it!</p>
+<hr>
+<p><font size="4"><b>Session information</b></font></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.6.1 (2019-07-05)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Running under: Ubuntu 19.04</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Matrix products: default</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.8.0</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## locale:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=en_US.UTF-8    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=en_US.UTF-8   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## attached base packages:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## other attached packages:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [1] vegan_2.5-5        lattice_0.20-38    permute_0.9-5     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [4] kableExtra_1.1.0   warbleR_1.1.16     NatureSounds_1.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [7] seewave_2.1.3      tuneR_1.3.3        maps_3.3.0        </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## loaded via a namespace (and not attached):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [1] xfun_0.7          pbapply_1.4-0     splines_3.6.1    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [4] colorspace_1.4-1  htmltools_0.3.6   viridisLite_0.3.0</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [7] mgcv_1.8-28       rlang_0.3.4       pracma_2.2.5     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [10] pillar_1.4.0      glue_1.3.1        jpeg_0.1-8       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [13] stringr_1.4.0     munsell_0.5.0     rvest_0.3.3      </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [16] evaluate_0.14     knitr_1.23        fftw_1.0-5       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [19] parallel_3.6.1    highr_0.8         Rcpp_1.0.1       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [22] readr_1.3.1       scales_1.0.0      webshot_0.5.1    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [25] soundgen_1.4.0    Sim.DiffProc_4.3  Deriv_3.8.5      </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [28] rjson_0.2.20      hms_0.4.2         packrat_0.5.0    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [31] digest_0.6.19     stringi_1.4.3     dtw_1.20-1       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [34] grid_3.6.1        tools_3.6.1       bitops_1.0-6     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [37] magrittr_1.5      RCurl_1.95-4.12   proxy_0.4-23     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [40] tibble_2.1.1      cluster_2.1.0     crayon_1.3.4     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [43] pkgconfig_2.0.2   Matrix_1.2-17     MASS_7.3-51.4    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [46] xml2_1.2.0        rmarkdown_1.13    httr_1.4.0       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [49] rstudioapi_0.10   iterators_1.0.10  R6_2.4.0         </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [52] nlme_3.1-140      signal_0.7-6      compiler_3.6.1</span>
+</span></span></code></pre></div>
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-08-13-group_signature_xcorr%2f&amp;text=Evaluating%20group%20acoustic%20signatures%20using%20cross-correlation&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-08-13-group_signature_xcorr%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-08-13-group_signature_xcorr%2f&amp;title=Evaluating%20group%20acoustic%20signatures%20using%20cross-correlation" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-08-13-group_signature_xcorr%2f&amp;title=Evaluating%20group%20acoustic%20signatures%20using%20cross-correlation" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-08-13-group_signature_xcorr%2f&amp;title=Evaluating%20group%20acoustic%20signatures%20using%20cross-correlation" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-08-13-group_signature_xcorr%2f&amp;description=Evaluating%20group%20acoustic%20signatures%20using%20cross-correlation" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/" data-toggle="tooltip" data-placement="top" title="Extended selection tables">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/" data-toggle="tooltip" data-placement="top" title="Editing wave objects from extended selection tables">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2019-08-13-group_signature_xcorr">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2019-08-13-group_signature_xcorr';
+            };
+
+          </script>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/maRce10" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.121.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="marce10.github.io/coded_bioacustics/js/main.js"></script>
+<script src="marce10.github.io/coded_bioacustics/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="marce10.github.io/coded_bioacustics/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'maRce_10';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Using your own frequency contours on DTW - Coded bioacoustics</title>
+
+  <meta name="description" content="I got the following question about dynamic time warping on frequency contours:
+&ldquo;what I am looking for is to use ffDTW on a file in which I have a column for the filename and then 20 pitch measurements for each of 10000 files (e.g. 10000 rows). Do you have suggestions?&rdquo;
+There is a workaround in warbleR to do that:
+The function dfDTW() has the argument ts.df (for time series data frame) that allows to input your own frequency contours (or any other sequences of values taken along the signals)."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Coded bioacoustics",
+    
+    "url": "marce10.github.io\/coded_bioacustics\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "marce10.github.io\/coded_bioacustics\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/post\/2019-01-11-custom_contours_for_dtw\/",
+          "name": "Using your own frequency contours on dtw"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Using your own frequency contours on DTW",
+  "description" : "I got the following question about dynamic time warping on frequency contours:\n\u0026ldquo;what I am looking for is to use ffDTW on a file in which I have a column for the filename and then 20 pitch measurements for each of 10000 files (e.g. 10000 rows). Do you have suggestions?\u0026rdquo;\nThere is a workaround in warbleR to do that:\nThe function dfDTW() has the argument ts.df (for time series data frame) that allows to input your own frequency contours (or any other sequences of values taken along the signals).",
+  "inLanguage" : "en",
+  "wordCount":  672 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2019-01-11-custom_contours_for_dtw\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "marce10.github.io\/coded_bioacustics\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Using your own frequency contours on DTW" />
+<meta property="og:description" content="I got the following question about dynamic time warping on frequency contours:
+&ldquo;what I am looking for is to use ffDTW on a file in which I have a column for the filename and then 20 pitch measurements for each of 10000 files (e.g. 10000 rows). Do you have suggestions?&rdquo;
+There is a workaround in warbleR to do that:
+The function dfDTW() has the argument ts.df (for time series data frame) that allows to input your own frequency contours (or any other sequences of values taken along the signals).">
+<meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+<meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2019-01-11-custom_contours_for_dtw/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Coded bioacoustics" />
+
+  <meta name="twitter:title" content="Using your own frequency contours on DTW" />
+  <meta name="twitter:description" content="I got the following question about dynamic time warping on frequency contours:
+&ldquo;what I am looking for is to use ffDTW on a file in which I have a column for the filename and then 20 pitch …">
+  <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.121.2">
+  <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/highlight.min.css" /><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZVLSR0L9P"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-RZVLSR0L9P', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/marce10.github.io/coded_bioacustics/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/marce10.github.io/coded_bioacustics/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Coded bioacoustics" href="marce10.github.io/coded_bioacustics/">
+            <img class="avatar-img" src="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" alt="Coded bioacoustics" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Using your own frequency contours on DTW</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;672&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I got the following question about dynamic time warping on frequency contours:</p>
+<blockquote>
+<p>&ldquo;what I am looking for is to use ffDTW on a file in which I have a column for the filename and then 20 pitch measurements for each of 10000 files (e.g. 10000 rows). Do you have suggestions?&rdquo;</p>
+</blockquote>
+<p>There is a workaround in <a href="https://cran.r-project.org/package=warbleR">warbleR</a> to do that:</p>
+<p>The function <a href="https://marce10.github.io/warbleR/reference/dfDTW.html">dfDTW()</a> has the argument <code>ts.df</code> (for time series data frame) that allows to input your own frequency contours (or any other sequences of values taken along the signals).</p>
+<p>Let&rsquo;s first set up the example data and global options:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># load warbleR</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">warbleR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#load data and save sound files</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Phae.long1&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long2&#34;</span><span class="p">,</span><span class="s">&#34;lbh_selec_table&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long2</span><span class="p">,</span> <span class="s">&#34;Phae.long2.wav&#34;</span><span class="p">)</span> <span class="c1">#save sound files </span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long1</span><span class="p">,</span> <span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set warbleR global options, including the number of frequency values for contours</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># this options can also be set within the function call</span>
+</span></span><span class="line"><span class="cl"><span class="nf">warbleR_options</span><span class="p">(</span><span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">bp</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">9</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">pb</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                <span class="n">length.out</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">90</span><span class="p">)</span>
+</span></span></code></pre></div><p>This is how it works. We will use <a href="https://marce10.github.io/warbleR/reference/dfts.html">dfts()</a> to extract dominant frequency contours on the <a href="https://cran.r-project.org/package=warbleR">warbleR</a> example data and then input those contours into <a href="https://marce10.github.io/warbleR/reference/dfDTW.html">dfDTW()</a> using the <code>ts.df</code> argument:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># get dom freq contours (will use only the first 5 rows)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cntours</span> <span class="o">&lt;-</span> <span class="nf">dfts</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">lbh_selec_table[1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># calculate DTW pairwise distances</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dfDTW</span><span class="p">(</span><span class="n">ts.df</span> <span class="o">=</span> <span class="n">cntours</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">##                  Phae.long1.wav-1 Phae.long1.wav-2 Phae.long1.wav-3
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-1            0.000            8.796           15.450
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-2            8.796            0.000           11.719
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-3           15.450           11.719            0.000
+</span></span><span class="line"><span class="cl">## Phae.long2.wav-1           18.779           24.377           22.085
+</span></span><span class="line"><span class="cl">## Phae.long2.wav-2           23.523           35.624           21.585
+</span></span><span class="line"><span class="cl">##                  Phae.long2.wav-1 Phae.long2.wav-2
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-1           18.779           23.523
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-2           24.377           35.624
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-3           22.085           21.585
+</span></span><span class="line"><span class="cl">## Phae.long2.wav-1            0.000           13.868
+</span></span><span class="line"><span class="cl">## Phae.long2.wav-2           13.868            0.000
+</span></span></code></pre></div><p>That output matrix contains the pairwise DTW distance based on our own frequency contours. The data frame containing the contours must have columns for &lsquo;sound.files&rsquo; and &lsquo;selec&rsquo;.</p>
+<p>We could even calculate DTW distances based on spectral entropy contours using the <a href="https://marce10.github.io/warbleR/reference/sp.en.ts.html">sp.en.ts()</a> function:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># get dom freq contours (will use only the first 5 rows)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sp.en.cntours</span> <span class="o">&lt;-</span> <span class="nf">sp.en.ts</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">lbh_selec_table[1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># calculate DTW pairwise distances</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dfDTW</span><span class="p">(</span><span class="n">ts.df</span> <span class="o">=</span> <span class="n">sp.en.cntours</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">##                  Phae.long1.wav-1 Phae.long1.wav-2 Phae.long1.wav-3
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-1            0.000            0.808            1.007
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-2            0.808            0.000            1.137
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-3            1.007            1.137            0.000
+</span></span><span class="line"><span class="cl">## Phae.long2.wav-1            2.943            2.299            1.997
+</span></span><span class="line"><span class="cl">## Phae.long2.wav-2            1.412            1.359            1.229
+</span></span><span class="line"><span class="cl">##                  Phae.long2.wav-1 Phae.long2.wav-2
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-1            2.943            1.412
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-2            2.299            1.359
+</span></span><span class="line"><span class="cl">## Phae.long1.wav-3            1.997            1.229
+</span></span><span class="line"><span class="cl">## Phae.long2.wav-1            0.000            1.859
+</span></span><span class="line"><span class="cl">## Phae.long2.wav-2            1.859            0.000
+</span></span></code></pre></div><p>Note that, we are using <a href="https://marce10.github.io/warbleR/reference/dfDTW.html">dfDTW()</a> instead of  <a href="https://marce10.github.io/warbleR/reference/ffDTW.html">ffDTW()</a> as in the original question. This is because the <code>ts.df</code> argument is only found in <a href="https://marce10.github.io/warbleR/reference/dfDTW.html">dfDTW()</a>. These  two functions will be merged at some point in the future anyways.</p>
+<p>This trick could be particularly useful when the contours have been measured somewhere else or when they need to be manually tailored. The tailoring of frequency contours can be done using   <a href="https://marce10.github.io/warbleR/reference/seltailor.html">seltailor()</a> and the <code>ts.df</code> argument as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">tail.cntours</span> <span class="o">&lt;-</span><span class="nf">seltailor</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">lbh_selec_table[1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="n">]</span><span class="p">,</span> <span class="n">ts.df</span> <span class="o">=</span> <span class="n">cntours</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                <span class="n">auto.contour</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  </p>
+<p>These signals are far from ideal to do frequency contour tracking, but they help to make the point. As you can see, this is an interactive function in which the user can adjust the frequency of specific points by clicking on the desired frequency. More details about the function can be found <a href="https://marce10.github.io/2017/08/03/Fixing_selections_manually.html">on this post</a> and in the <a href="https://marce10.github.io/warbleR/reference/seltailor.html">function&rsquo;s documentation</a>.</p>
+<p>Hope that helps!</p>
+<p><font size="4">Session information</font></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.5.1 (2018-07-02)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Running under: Ubuntu 18.10</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Matrix products: default</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## BLAS: /usr/lib/x86_64-linux-gnu/openblas/libblas.so.3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## LAPACK: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## locale:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## attached base packages:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## other attached packages:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [1] warbleR_1.1.16     NatureSounds_1.0.1 seewave_2.1.0     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [4] tuneR_1.3.3        maps_3.3.0        </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## loaded via a namespace (and not attached):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [1] knitr_1.20       magrittr_1.5     Sim.DiffProc_4.3 MASS_7.3-50     </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [5] Deriv_3.8.5      rjson_0.2.20     jpeg_0.1-8       pbapply_1.3-4   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">##  [9] stringr_1.3.1    highr_0.7        tools_3.5.1      parallel_3.5.1  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [13] dtw_1.20-1       iterators_1.0.10 yaml_2.2.0       soundgen_1.3.2  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [17] bitops_1.0-6     RCurl_1.95-4.11  signal_0.7-6     evaluate_0.11   </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [21] proxy_0.4-22     stringi_1.2.4    pracma_2.2.2     compiler_3.5.1  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">## [25] fftw_1.0-4</span>
+</span></span></code></pre></div>
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-11-custom_contours_for_dtw%2f&amp;text=Using%20your%20own%20frequency%20contours%20on%20DTW&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-11-custom_contours_for_dtw%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-11-custom_contours_for_dtw%2f&amp;title=Using%20your%20own%20frequency%20contours%20on%20DTW" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-11-custom_contours_for_dtw%2f&amp;title=Using%20your%20own%20frequency%20contours%20on%20DTW" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-11-custom_contours_for_dtw%2f&amp;title=Using%20your%20own%20frequency%20contours%20on%20DTW" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-11-custom_contours_for_dtw%2f&amp;description=Using%20your%20own%20frequency%20contours%20on%20DTW" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="marce10.github.io/coded_bioacustics/post/2019-02-16-working_with_songs/" data-toggle="tooltip" data-placement="top" title="Working with higher structural levels in vocal signals">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="marce10.github.io/coded_bioacustics/post/2017-07-31-updates_on_catalog_function/" data-toggle="tooltip" data-placement="top" title="Updates on catalog function">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2019-01-11-custom_contours_for_dtw">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2019-01-11-custom_contours_for_dtw';
+            };
+
+          </script>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/maRce10" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.121.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="marce10.github.io/coded_bioacustics/js/main.js"></script>
+<script src="marce10.github.io/coded_bioacustics/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="marce10.github.io/coded_bioacustics/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'maRce_10';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
+
+
+
+
+    
+  </body>
+</html>
+

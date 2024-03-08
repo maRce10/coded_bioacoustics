@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>repositories on Coded bioacoustics</title>
+    <link>marce10.github.io/coded_bioacustics/tags/repositories/</link>
+    <description>Recent content in repositories on Coded bioacoustics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="marce10.github.io/coded_bioacustics/tags/repositories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interactive maps from Xeno-Canto recording localities in xc_maps()</title>
+      <link>marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/</link>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/</guid>
+      <description>The function xc_maps() from the R package warbleR let users visualize the geographic spread of recordings from Xeno-Canto downloaded through the quer_xc() function. However, the graphs are static, which becomes a bit painful when looking at many recordings. Fortunately the R package leaflet allows to create interactive maps in which users can zoom in at specific areas, check observation medatada and link observations to their Xeno-Canto webpage. This capability is now available in xc_maps().</description>
+    </item>
+  </channel>
+</rss>

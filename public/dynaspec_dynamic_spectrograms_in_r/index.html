@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>dynaSpec: dynamic spectrograms in R - Coded bioacoustics</title>
+
+  <meta name="description" content="## Loading required package: tuneR ## Loading required package: seewave ## Loading required package: NatureSounds ## Loading required package: knitr The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.
+To install dynaSpec from github you will need the R package devtools:">
+  <meta name="author" content="Marcelo Araya-Salas"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Coded bioacoustics",
+    
+    "url": "marce10.github.io\/coded_bioacustics\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "marce10.github.io\/coded_bioacustics\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/dynaspec_dynamic_spectrograms_in_r\/",
+          "name": "Dyna spec dynamic spectrograms in r"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Marcelo Araya-Salas"
+  },
+  "headline": "dynaSpec: dynamic spectrograms in R",
+  "description" : "## Loading required package: tuneR ## Loading required package: seewave ## Loading required package: NatureSounds ## Loading required package: knitr The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.\nTo install dynaSpec from github you will need the R package devtools:",
+  "inLanguage" : "en",
+  "wordCount":  1941 ,
+  "datePublished" : "2020-05-27T00:00:00",
+  "dateModified" : "2020-05-27T00:00:00",
+  "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/dynaspec_dynamic_spectrograms_in_r\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "marce10.github.io\/coded_bioacustics\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="dynaSpec: dynamic spectrograms in R" />
+<meta property="og:description" content="## Loading required package: tuneR ## Loading required package: seewave ## Loading required package: NatureSounds ## Loading required package: knitr The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.
+To install dynaSpec from github you will need the R package devtools:">
+<meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+<meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/dynaspec_dynamic_spectrograms_in_r/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Coded bioacoustics" />
+
+  <meta name="twitter:title" content="dynaSpec: dynamic spectrograms in R" />
+  <meta name="twitter:description" content="## Loading required package: tuneR ## Loading required package: seewave ## Loading required package: NatureSounds ## Loading required package: knitr The R package dynaSpec can now be installed from …">
+  <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.121.2">
+  <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/highlight.min.css" /><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZVLSR0L9P"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-RZVLSR0L9P', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/marce10.github.io/coded_bioacustics/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/marce10.github.io/coded_bioacustics/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Coded bioacoustics" href="marce10.github.io/coded_bioacustics/">
+            <img class="avatar-img" src="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" alt="Coded bioacoustics" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>dynaSpec: dynamic spectrograms in R</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+
+<pre><code>## Loading required package: tuneR</code></pre>
+<pre><code>## Loading required package: seewave</code></pre>
+<pre><code>## Loading required package: NatureSounds</code></pre>
+<pre><code>## Loading required package: knitr</code></pre>
+<p>The R package <a href="https://marce10.github.io/dynaSpec">dynaSpec</a> can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. <a href="https://ffmpeg.org/download.html">FFMPEG</a> <strong>must be installed</strong> in order for this package to work.</p>
+<p>To install <a href="https://marce10.github.io/dynaSpec">dynaSpec</a> from <a href="http://github.com/">github</a> you will need the R package <a href="https://cran.r-project.org/package=devtools">devtools</a>:</p>
+<pre class="r"><code>
+# From github
+devtools::install_github(&quot;maRce10/dynaSpec&quot;)
+
+#load package
+library(dynaSpec)
+</code></pre>
+<div id="examples" class="section level2">
+<h2>Examples</h2>
+<p>To run the following examples you will also need to load a few more packages as well as <a href="https://cran.r-project.org/package=warbleR">warbleR</a> 1.1.24 (currently as the developmental version on github). It can be installed as follows:</p>
+<pre class="r"><code>
+# From github
+devtools::install_github(&quot;maRce10/warbleR&quot;)
+
+#load package
+library(warbleR)
+library(viridis)
+library(tuneR)
+library(seewave)</code></pre>
+<p>The function <code>scrolling_spectro()</code> (the only function so far) creates ‘.mp4’ video files of the spectrogram of an input ‘wave’ object that moves from right to left. For instance, this is a dynamic spectrogram of a canyon wren song with a viridis color palette:</p>
+<pre class="r"><code>
+data(&quot;canyon_wren&quot;)
+
+scrolling_spectro(wave = canyon_wren, wl = 300, 
+              t.display = 1.7, pal = viridis, 
+              grid = FALSE, flim = c(1, 9), 
+              width = 1000, height = 500, 
+              res = 120, file.name = &quot;default.mp4&quot;)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="600" height="240" src="https://www.youtube.com/embed/TOiukDxaNbI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>This is the same clip but with a black and white spectrogram:</p>
+<pre class="r"><code>
+scrolling_spectro(wave = canyon_wren, wl = 300, 
+          t.display = 1.7, pal = reverse.gray.colors.1, 
+          grid = FALSE, flim = c(1, 9), 
+          width = 1000, height = 500, 
+          res = 120, file.name = &quot;black_and_white.mp4&quot;,
+          collevels = seq(-100, 0, 5))
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="600" height="240" src="https://www.youtube.com/embed/5gQjgzijHOs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> 
+A spectrogram with black background (colbg = “black”):</p>
+<pre class="r"><code>
+scrolling_spectro(wave = canyon_wren, wl = 300, 
+              t.display = 1.7, pal = viridis, 
+              grid = FALSE, flim = c(1, 9), 
+              width = 1000, height = 500, res = 120, 
+              file.name = &quot;black.mp4&quot;, colbg = &quot;black&quot;)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="600" height="240" src="https://www.youtube.com/embed/n_GNDn2VH-U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>Slow down to 1/2 speed (speed = 0.5) with a oscillogram at the bottom (osc = TRUE):</p>
+<pre class="r"><code>
+scrolling_spectro(wave = canyon_wren, wl = 300, 
+              t.display = 1.7, pal = viridis, 
+              grid = FALSE, flim = c(1, 9), 
+              width = 1000, height = 500, res = 120, 
+              file.name = &quot;slow.mp4&quot;, colbg = &quot;black&quot;,
+              speed = 0.5, osc = TRUE, 
+              colwave = &quot;#31688E99&quot;)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="600" height="240" src="https://www.youtube.com/embed/r25TSKSklLo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p> </p>
+<p>Long-billed hermit song at 1/5 speed (speed = 0.5), removing axes and looping 3 times (loop = 3:</p>
+<pre class="r"><code>
+data(&quot;Phae.long4&quot;)
+
+scrolling_spectro(wave = Phae.long4, wl = 300, 
+    t.display = 1.7, ovlp = 90, pal = magma, 
+    grid = FALSE, flim = c(1, 10), width = 1000, 
+    height = 500, res = 120, collevels = seq(-50, 0, 5), 
+    file.name = &quot;no_axis.mp4&quot;, colbg = &quot;black&quot;, 
+    speed = 0.2, axis.type = &quot;none&quot;, loop = 3)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="600" height="360" src="https://www.youtube.com/embed/7AAoaZUkA3k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>Visualizing a northern nightingale wren recording from <a href="https://www.xeno-canto.org">xeno-canto</a> using a custom color palette:</p>
+<pre class="r"><code>
+ngh_wren &lt;- read_wave(&quot;https://www.xeno-canto.org/518334/download&quot;)
+
+custom_pal &lt;- colorRampPalette( c(&quot;#2d2d86&quot;, &quot;#2d2d86&quot;, reverse.terrain.colors(10)[5:10]))
+
+scrolling_spectro(wave = ngh_wren, wl = 600, 
+    t.display = 3, ovlp = 95, pal = custom_pal, 
+    grid = FALSE, flim = c(2, 8), width = 700, 
+    height = 250, res = 100, collevels = seq(-40, 0, 5),
+    file.name = &quot;../nightingale_wren.mp4&quot;, colbg = &quot;#2d2d86&quot;, lcol = &quot;#FFFFFFE6&quot;)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="700" height="250" src="https://www.youtube.com/embed/OxvKoPyX-4o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>Spix’s disc-winged bat inquiry call slow down (speed = 0.05):</p>
+<pre class="r"><code>
+data(&quot;thyroptera.est&quot;)
+
+# extract one call
+thy_wav &lt;- attributes(thyroptera.est)$wave.objects[[12]]
+
+# add silence at both &quot;sides&quot;&quot;
+thy_wav &lt;- pastew(tuneR::silence(duration = 0.05, 
+            samp.rate = thy_wav@samp.rate, xunit = &quot;time&quot;),
+            thy_wav, output = &quot;Wave&quot;)
+
+thy_wav &lt;- pastew(thy_wav, tuneR::silence(duration = 0.04, 
+            samp.rate = thy_wav@samp.rate, xunit = &quot;time&quot;),
+            output = &quot;Wave&quot;)
+
+scrolling_spectro(wave = thy_wav, wl = 400, 
+    t.display = 0.08, ovlp = 95, pal = inferno, 
+    grid = FALSE, flim = c(12, 37), width = 700, 
+    height = 250, res = 100, collevels = seq(-40, 0, 5),
+    file.name = &quot;thyroptera_osc.mp4&quot;, colbg = &quot;black&quot;, lcol = &quot;#FFFFFFE6&quot;, 
+    speed = 0.05, fps = 200, buffer = 0, loop = 4, lty = 1, 
+    osc = TRUE, colwave = inferno(10, alpha = 0.9)[3])
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="700" height="250" src="https://www.youtube.com/embed/mFiYPzOe9Nw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<div id="further-customization" class="section level3">
+<h3>Further customization</h3>
+<p>The argument ‘spectro.call’ allows to insert customized spectrogram visualizations. For instance, the following code makes use of the <code>color_spectro()</code> function from <a href="https://cran.r-project.org/package=warbleR">warbleR</a> to highlight vocalizations from male and female house wrens with different colors (after downloading the selection table and sound file from figshare):</p>
+<pre class="r"><code>
+# get house wren male female duet recording
+hs_wren &lt;- read_wave(&quot;https://ndownloader.figshare.com/files/22722101&quot;)
+
+# and extended selection table
+st &lt;- read.csv(&quot;https://ndownloader.figshare.com/files/22722404&quot;)
+
+# create color column
+st$colors &lt;- c(&quot;green&quot;, &quot;yellow&quot;)
+
+# highlight selections
+color.spectro(wave = hs_wren, wl = 200, ovlp = 95, flim = c(1, 13), 
+              collevels = seq(-55, 0, 5), dB = &quot;B&quot;, X = st, col.clm = &quot;colors&quot;, 
+              base.col = &quot;black&quot;,  t.mar = 0.07, f.mar = 0.1, strength = 3, 
+              interactive = NULL, bg.col = &quot;black&quot;)
+</code></pre>
+<p><img src="https://github.com/maRce10/dynaSpec/raw/master/inst/colored_spectro_house_wren_duet.png" alt="house wren duet"></p>
+<p>The male part is shown in green and the female part in yellow.</p>
+<p>We can wrap the <code>color_spectro()</code> call using the <code>call()</code> function form base R and input that into <code>scrolling_spectro()</code> using the argument ‘spectro.call’:</p>
+<pre class="r"><code># save call
+sp_cl &lt;- call(&quot;color.spectro&quot;, wave = hs_wren, wl = 200, ovlp = 95, 
+              flim = c(1, 13), collevels = seq(-55, 0, 5), strength = 3,
+              dB = &quot;B&quot;, X = st, col.clm = &quot;colors&quot;, base.col = &quot;black&quot;,  
+              t.mar = 0.07, f.mar = 0.1, interactive = NULL, bg.col = &quot;black&quot;)
+
+# create dynamic spectrogram
+scrolling_spectro(wave = hs_wren, wl = 512,  
+                  t.display = 1.2, pal = reverse.gray.colors.1, 
+                  grid = FALSE, flim = c(1, 13), loop = 3,
+                  width = 1000, height = 500, res = 120,
+                  collevels = seq(-100, 0, 1), spectro.call = sp_cl, fps = 60,
+                  file.name = &quot;yellow_and_green.mp4&quot;)</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="700" height="350" src="https://www.youtube.com/embed/9qMPxYuGUJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>This option can be mixed with any of the other customizations in the function, as adding an oscillogram:</p>
+<pre class="r"><code>
+# create dynamic spectrogram
+scrolling_spectro(wave = hs_wren, wl = 512, osc = TRUE,
+                  t.display = 1.2, pal = reverse.gray.colors.1, 
+                  grid = FALSE, flim = c(1, 13), loop = 3, 
+                  width = 1000, height = 500, res = 120, 
+                  collevels = seq(-100, 0, 1), 
+                  spectro.call = sp_cl, fps = 60,
+                  file.name = &quot;yellow_and_green_oscillo.mp4&quot;)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="700" height="350" src="https://www.youtube.com/embed/k6OumiKsRWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>A viridis color palette:</p>
+<pre class="r"><code>
+st$colors &lt;- viridis(10)[c(3, 8)]
+
+sp_cl &lt;- call(&quot;color.spectro&quot;, wave = hs_wren, wl = 200, 
+              ovlp = 95, flim = c(1, 13), collevels = seq(-55, 0, 5),
+              dB = &quot;B&quot;, X = st, col.clm = &quot;colors&quot;, 
+              base.col = &quot;white&quot;, t.mar = 0.07, f.mar = 0.1,
+              strength = 3, interactive = NULL)
+
+# create dynamic spectrogram
+scrolling_spectro(wave = hs_wren, wl = 200, osc = TRUE,
+                  t.display = 1.2, pal = reverse.gray.colors.1, 
+                  grid = FALSE, flim = c(1, 13), loop = 3, 
+                  width = 1000, height = 500, res = 120, 
+                  collevels = seq(-100, 0, 1), colwave = viridis(10)[c(9)],
+                  spectro.call = sp_cl, fps = 60,
+                  file.name = &quot;viridis.mp4&quot;)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="700" height="350" src="https://www.youtube.com/embed/HvV2NFuJeIU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>Or simply a gray scale:</p>
+<pre class="r"><code>
+st$colors &lt;- c(&quot;gray&quot;, &quot;gray49&quot;)
+
+sp_cl &lt;- call(&quot;color.spectro&quot;, wave = hs_wren, wl = 200, ovlp = 95, flim = c(1, 13), 
+              collevels = seq(-55, 0, 5), dB = &quot;B&quot;, X = st, col.clm = &quot;colors&quot;, 
+              base.col = &quot;white&quot;, t.mar = 0.07, f.mar = 0.1, strength = 3, 
+              interactive = NULL)
+
+# create dynamic spectrogram
+scrolling_spectro(wave = hs_wren, wl = 512, osc = TRUE,
+                  t.display = 1.2, pal = reverse.gray.colors.1, 
+                  grid = FALSE, flim = c(1, 13), loop = 3, 
+                  width = 1000, height = 500, res = 120, 
+                  collevels = seq(-100, 0, 1), 
+                  spectro.call = sp_cl, fps = 60,
+                  file.name = &quot;gray.mp4&quot;)</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="700" height="350" src="https://www.youtube.com/embed/gd096zAG5NE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>The ‘spectro.call’ argument can also be used to add annotations. To do this we need to wrap up both the spectrogram function and the annotation functions (i.e. <code>text()</code>, <code>lines()</code>) in a single function and then save the call to that function:</p>
+<pre class="r"><code>
+# create color column
+st$colors &lt;- viridis(10)[c(3, 8)]
+
+# create label column
+st$labels &lt;- c(&quot;male&quot;, &quot;female&quot;)
+
+# shrink end of second selection (purely aesthetics)
+st$end[2] &lt;- 3.87
+
+  # function to highlight selections
+ann_fun &lt;- function(wave, X){
+  
+  # print spectrogram
+  color.spectro(wave = wave,  wl = 200, 
+              ovlp = 95, flim = c(1, 18.6), collevels = seq(-55, 0, 5),
+              dB = &quot;B&quot;, X = X, col.clm = &quot;colors&quot;, 
+              base.col = &quot;white&quot;, t.mar = 0.07, f.mar = 0.1,
+              strength = 3, interactive = NULL)
+  
+  # annotate each selection in X 
+  for(e in 1:nrow(X)){  
+    # label
+    text(x = X$start[e] + ((X$end[e] - X$start[e]) / 2), 
+         y = 16.5, labels = X$labels[e], cex = 3.3, 
+         col = adjustcolor(X$colors[e], 0.6))
+    
+    # line
+    lines(x = c(X$start[e], X$end[e]), y = c(14.5, 14.5), 
+          lwd = 6, col = adjustcolor(&quot;gray50&quot;, 0.3))
+  }
+  
+}
+
+# save call
+ann_cl &lt;- call(&quot;ann_fun&quot;, wave = hs_wren, X = st)
+
+# create annotated dynamic spectrogram
+scrolling_spectro(wave = hs_wren, wl = 200, t.display = 1.2, 
+                  grid = FALSE, flim = c(1, 18.6), loop = 3, 
+                  width = 1000, height = 500, res = 200, 
+                  collevels = seq(-100, 0, 1), speed = 0.5,
+                  spectro.call = ann_cl, fps = 120,
+                  file.name = &quot;../viridis_annotated.mp4&quot;)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="700" height="350" src="https://www.youtube.com/embed/wbpjKfZUUIw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>Finally, the argument ‘annotation.call’ can be used to add static labels (i.e. non-scrolling). It works similar to ‘spectro.call’, but requires a call from <code>text()</code>. This let users customize things as size, color, position, font, and additional arguments taken by <code>text()</code>. The call should also include the argmuents ‘start’ and ‘end’ to indicate the time at which the labels are displayed (in s). ‘fading’ is optional and allows fade-in and fade-out effects on labels (in s as well). The following code downloads a recording containing several frog species recorded in Costa Rica from figshare, cuts a clip including two species and labels it with a single label:</p>
+<pre class="r"><code>
+# read data from figshare
+frogs &lt;- read_wave(&quot;https://ndownloader.figshare.com/files/22829075&quot;)
+
+# cut a couple of species
+shrt_frgs &lt;- cutw(frogs, from = 35.3, to = 50.5, output = &quot;Wave&quot;)
+
+# make annotation call
+ann_cll &lt;- call(&quot;text&quot;, x = 0.25, y = 0.87, 
+                labels = &quot;Frog calls&quot;, cex = 1, start = 0.2, end = 14, 
+                col = &quot;#FFEA46CC&quot;, font = 3, fading = 0.6)
+
+# create dynamic spectro
+scrolling_spectro(wave = shrt_frgs, wl = 512, ovlp = 95,  
+                  t.display = 1.1, pal = cividis,
+                  grid = FALSE, flim = c(0, 5.5), loop = 3,
+                  width = 1200, height = 550, res = 200,
+                  collevels = seq(-40, 0, 5), lcol =  &quot;#FFFFFFCC&quot;, 
+                  colbg = &quot;black&quot;, fps = 60, file.name = &quot;../frogs.mp4&quot;,
+                  osc = TRUE, height.prop = c(3, 1), colwave = &quot;#31688E&quot;, 
+                  lty = 3, annotation.call = ann_cll)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="763.63" height="350" src="https://www.youtube.com/embed/Ux71aMVa_oU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<p>The argument accepts more than one labels as in a regular <code>text()</code> call. In that case ‘start’ and ‘end’ values should be supplied for each label:</p>
+<pre class="r"><code>
+# make annotation call for 2 annotations
+ann_cll &lt;- call(&quot;text&quot;, x = 0.25, y = 0.87, 
+                labels = c(&quot;Dendropsophus ebraccatus&quot;, &quot;Eleutherodactylus coqui&quot;), 
+                cex = 1, start = c(0.4, 7), 
+                end = c(5.5, 14.8), col = &quot;#FFEA46CC&quot;, font = 3, fading = 0.6)
+
+# create dynamic spectro
+scrolling_spectro(wave = shrt_frgs, wl = 512, ovlp = 95,  
+                  t.display = 1.1, pal = cividis,
+                  grid = FALSE, flim = c(0, 5.5), loop = 3,
+                  width = 1200, height = 550, res = 200,
+                  collevels = seq(-40, 0, 5), lcol =  &quot;#FFFFFFCC&quot;, colbg = &quot;black&quot;, 
+                  fps = 60, file.name = &quot;../frogs_sp_labels.mp4&quot;, osc = TRUE, 
+                  height.prop = c(3, 1),colwave = &quot;#31688E&quot;, lty = 3, 
+                  annotation.call = ann_cll)
+</code></pre>
+<center>
+<iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;" width="763.63" height="350" src="https://www.youtube.com/embed/nFfYr8Tc53Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p> </p>
+<hr />
+<p>Please cite <a href="https://marce10.github.io/dynaSpec">dynaSpec</a> as follows:</p>
+<p>Araya-Salas M. (2020), <em>dynaSpec: dynamic spectrogram visualizations in R</em>. R package version 1.0.0.</p>
+<hr />
+<p><font size="4">Session information</font></p>
+<pre><code>## R version 4.3.2 (2023-10-31)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 22.04.2 LTS
+## 
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## time zone: America/Costa_Rica
+## tzcode source: system (glibc)
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] warbleR_1.1.30     NatureSounds_1.0.4 knitr_1.45         seewave_2.2.3     
+## [5] tuneR_1.4.6       
+## 
+## loaded via a namespace (and not attached):
+##  [1] cli_3.6.2         rlang_1.1.3       xfun_0.41         jsonlite_1.8.8   
+##  [5] rjson_0.2.21      RCurl_1.98-1.14   dtw_1.23-1        fftw_1.0-8       
+##  [9] htmltools_0.5.7   sass_0.4.8        brio_1.1.4        rmarkdown_2.25   
+## [13] evaluate_0.23     jquerylib_0.1.4   bitops_1.0-7      MASS_7.3-55      
+## [17] fastmap_1.1.1     yaml_2.3.8        lifecycle_1.0.4   bookdown_0.37    
+## [21] compiler_4.3.2    testthat_3.2.1    Rcpp_1.0.12       pbapply_1.7-2    
+## [25] rstudioapi_0.15.0 blogdown_1.18     digest_0.6.34     signal_1.8-0     
+## [29] R6_2.5.1          parallel_4.3.2    magrittr_2.0.3    bslib_0.6.1      
+## [33] proxy_0.4-27      tools_4.3.2       cachem_1.0.8</code></pre>
+</div>
+</div>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fdynaspec_dynamic_spectrograms_in_r%2f&amp;text=dynaSpec%3a%20dynamic%20spectrograms%20in%20R&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=marce10.github.io%2fcoded_bioacustics%2fdynaspec_dynamic_spectrograms_in_r%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fdynaspec_dynamic_spectrograms_in_r%2f&amp;title=dynaSpec%3a%20dynamic%20spectrograms%20in%20R" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=marce10.github.io%2fcoded_bioacustics%2fdynaspec_dynamic_spectrograms_in_r%2f&amp;title=dynaSpec%3a%20dynamic%20spectrograms%20in%20R" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fdynaspec_dynamic_spectrograms_in_r%2f&amp;title=dynaSpec%3a%20dynamic%20spectrograms%20in%20R" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=marce10.github.io%2fcoded_bioacustics%2fdynaspec_dynamic_spectrograms_in_r%2f&amp;description=dynaSpec%3a%20dynamic%20spectrograms%20in%20R" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    <div class="page-meta">
+  
+  
+  
+</div>
+
+
+  
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:marcelo.araya@ucr.ac.cr" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/maRce10" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://marce10.github.io">Marcelo Araya-Salas</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.121.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="marce10.github.io/coded_bioacustics/js/main.js"></script>
+<script src="marce10.github.io/coded_bioacustics/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="marce10.github.io/coded_bioacustics/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'maRce_10';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
+
+
+
+
+    
+  </body>
+</html>
+

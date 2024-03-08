@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Acoustic space scatter plot - Coded bioacoustics</title>
+
+  <meta name="description" content="Some people have asked for the code we used to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace Smith-Vidaurre, so thanks to Grace for sharing.
+The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Coded bioacoustics",
+    
+    "url": "marce10.github.io\/coded_bioacustics\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "marce10.github.io\/coded_bioacustics\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/post\/2017-04-23-acoustic_space_scatter_plot\/",
+          "name": "Acoustic space scatter plot"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "[Marcelo Araya-Salas Grace Smith-Vidaurre]"
+  },
+  "headline": "Acoustic space scatter plot",
+  "description" : "Some people have asked for the code we used to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace Smith-Vidaurre, so thanks to Grace for sharing.\nThe figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping.",
+  "inLanguage" : "en",
+  "wordCount":  1309 ,
+  "datePublished" : "2017-04-23T00:00:00",
+  "dateModified" : "2017-04-23T00:00:00",
+  "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+  "keywords" : [ "acoustic space, visualization" ],
+  "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2017-04-23-acoustic_space_scatter_plot\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "marce10.github.io\/coded_bioacustics\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Acoustic space scatter plot" />
+<meta property="og:description" content="Some people have asked for the code we used to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace Smith-Vidaurre, so thanks to Grace for sharing.
+The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping.">
+<meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+<meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Coded bioacoustics" />
+
+  <meta name="twitter:title" content="Acoustic space scatter plot" />
+  <meta name="twitter:description" content="Some people have asked for the code we used to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace …">
+  <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.121.2">
+  <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/highlight.min.css" /><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZVLSR0L9P"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-RZVLSR0L9P', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/marce10.github.io/coded_bioacustics/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/marce10.github.io/coded_bioacustics/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Coded bioacoustics" href="marce10.github.io/coded_bioacustics/">
+            <img class="avatar-img" src="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" alt="Coded bioacoustics" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Acoustic space scatter plot</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 23, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1309&nbsp;words
+  
+  
+    
+      
+        
+          &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+	
+          &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Grace Smith-Vidaurre
+	
+      
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Some people have asked for the code we used to make figure 3 in the <a href="http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full">Methods in Ecology and Evolution paper describing warbleR</a>. So, here it is. The figure was made in part by my collaborator <a href="http://smithvidaurre.weebly.com">Grace Smith-Vidaurre</a>, so thanks to Grace for sharing.</p>
+<p>The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using <a href="https://marce10.github.io/bioacoustics_in_R/2016-09-12-Similarity_of_acoustic_signals_with_dynamic_time_warping_(DTW)">dynamic time warping</a>. The scatterplot is based on the two axes from a classic multidimensional scaling. The figure also shows spectrograms for each of the song types. This figure is created with ggplot graphs and spectrograms which are put together in a multipanel graph using the grid package. Note that you&rsquo;ll need to download recordings from Xeno-Canto (so internet connection required).</p>
+<p>Load/install packages:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;ggplot2&#34;</span><span class="p">,</span> <span class="s">&#34;gtable&#34;</span><span class="p">,</span> <span class="s">&#34;grid&#34;</span><span class="p">,</span> <span class="s">&#34;warbleR&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">out</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">if</span><span class="p">(</span><span class="o">!</span><span class="n">y</span> <span class="o">%in%</span> <span class="nf">installed.packages</span><span class="p">()</span><span class="n">[</span><span class="p">,</span><span class="s">&#34;Package&#34;</span><span class="n">]</span><span class="p">)</span>  <span class="nf">install.packages</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">require</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">character.only</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span></code></pre></div><p>The following is the same code found in the paper. Download recordings and run detection and acoustic analysis:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Query Xeno-Canto for metadata using genus and species as keywords</span>
+</span></span><span class="line"><span class="cl"><span class="n">Phae.lon</span> <span class="o">&lt;-</span> <span class="nf">querxc</span><span class="p">(</span><span class="n">qword</span> <span class="o">=</span> <span class="s">&#34;Phaethornis longirostris&#34;</span><span class="p">,</span> <span class="n">download</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Filter recordings by vocalization type</span>
+</span></span><span class="line"><span class="cl"><span class="n">Phae.lon.song</span> <span class="o">&lt;-</span> <span class="n">Phae.lon</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;song&#34;</span><span class="p">,</span> <span class="n">Phae.lon</span><span class="o">$</span><span class="n">Vocalization_type</span><span class="p">,</span> <span class="n">ignore.case</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Filter recordings by location</span>
+</span></span><span class="line"><span class="cl"><span class="n">Phae.lon.song</span> <span class="o">&lt;-</span> <span class="n">Phae.lon.song</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;Sarapiqui, Heredia&#34;</span><span class="p">,</span> <span class="n">Phae.lon.song</span><span class="o">$</span><span class="n">Locality</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">ignore.case</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">),</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Filter recordings by quality score</span>
+</span></span><span class="line"><span class="cl"><span class="n">Phae.lon.song</span> <span class="o">&lt;-</span> <span class="n">Phae.lon.song[Phae.lon.song</span><span class="o">$</span><span class="n">Quality</span> <span class="o">==</span> <span class="s">&#34;A&#34;</span><span class="p">,</span> <span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Download desired recordings using filtered data frame as a query</span>
+</span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="nf">tempdir</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">querxc</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">Phae.lon.song</span><span class="p">,</span> <span class="n">download</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Convert mp3 to wav format</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Simultaneously lower sampling rate for more speed in following analyses</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">mp32wav</span><span class="p">(</span><span class="n">samp.rate</span> <span class="o">=</span> <span class="m">22.05</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1"># Automatically select signals within recordings using amplitude, duration and</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># frequency thresholds</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Phae.ad</span> <span class="o">&lt;-</span> <span class="nf">autodetec</span><span class="p">(</span><span class="n">bp</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">9</span><span class="p">),</span> <span class="n">threshold</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">mindur</span> <span class="o">=</span> <span class="m">0.09</span><span class="p">,</span> <span class="n">maxdur</span> <span class="o">=</span> <span class="m">0.22</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ssmooth</span> <span class="o">=</span> <span class="m">900</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">100</span><span class="p">,</span> <span class="n">flim</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">set</span> <span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">sxrow</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1"># Filter selections by signal to noise ratio</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Phae.snr</span> <span class="o">&lt;-</span> <span class="nf">sig2noise</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">Phae.ad</span><span class="nf">[seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">Phae.ad</span><span class="p">),</span> <span class="m">2</span><span class="p">),</span> <span class="n">]</span><span class="p">,</span> <span class="n">mar</span> <span class="o">=</span> <span class="m">0.04</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1"># Filter 5 selections from each recording</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Phae.hisnr</span> <span class="o">&lt;-</span> <span class="n">Phae.snr</span><span class="nf">[ave</span><span class="p">(</span><span class="o">-</span><span class="n">Phae.snr</span><span class="o">$</span><span class="n">SNR</span><span class="p">,</span> <span class="n">Phae.snr</span><span class="o">$</span><span class="n">sound.files</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">rank</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">5</span><span class="p">,</span> <span class="n">]</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># warbleR function to extract frequency contours and return acoustic dissimilarity in one step</span>
+</span></span><span class="line"><span class="cl"><span class="n">tsLBH</span> <span class="o">&lt;-</span> <span class="nf">dfDTW</span><span class="p">(</span><span class="n">Phae.hisnr</span><span class="p">,</span> <span class="n">length.out</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span> <span class="n">bp</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">9</span><span class="p">),</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#calulate 2 dimension using multidimensional scaling</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span> <span class="o">&lt;-</span> <span class="nf">cmdscale</span><span class="p">(</span><span class="n">tsLBH</span><span class="p">)</span>
+</span></span></code></pre></div><p>Extract recording IDs and select colors for each song type (note that this step requires visual classification of songs beforehand):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># extract recording IDs from file names</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">lbhMDS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span> <span class="o">&lt;-</span> <span class="nf">gsub</span><span class="p">(</span> <span class="s">&#34;.wav&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">strsplit</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">Phae.hisnr</span><span class="o">$</span><span class="n">sound.files</span><span class="p">),</span> <span class="s">&#34;-&#34;</span><span class="p">,</span><span class="n">fixed</span><span class="o">=</span><span class="bp">T</span><span class="p">),</span> <span class="s">&#34;[&#34;</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># categorize song types</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># create a vector of song type classifications</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">cols</span> <span class="o">&lt;-</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">song.type</span> <span class="o">&lt;-</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">song.type</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;154070|154072&#34;</span><span class="p">,</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span><span class="p">)</span><span class="n">]</span>  <span class="o">&lt;-</span>  <span class="s">&#34;A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">cols</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;154070|154072&#34;</span><span class="p">,</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span><span class="p">)</span><span class="n">]</span>  <span class="o">&lt;-</span>  <span class="nf">topo.colors</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="n">[3]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">song.type</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;154123&#34;</span><span class="p">,</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span><span class="p">)</span><span class="n">]</span>  <span class="o">&lt;-</span>  <span class="s">&#34;B&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">cols</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;154123&#34;</span><span class="p">,</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span><span class="p">)</span><span class="n">]</span>  <span class="o">&lt;-</span>  <span class="nf">heat.colors</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="n">[1]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">song.type</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;154129|154161&#34;</span><span class="p">,</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span><span class="p">)</span><span class="n">]</span>  <span class="o">&lt;-</span>  <span class="s">&#34;C&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">cols</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;154129|154161&#34;</span><span class="p">,</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span><span class="p">)</span><span class="n">]</span>  <span class="o">&lt;-</span> <span class="nf">terrain.colors</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="n">[2]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">song.type</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;154138&#34;</span><span class="p">,</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span><span class="p">)</span><span class="n">]</span>  <span class="o">&lt;-</span>  <span class="s">&#34;D&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">lbhMDS</span><span class="o">$</span><span class="n">cols</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&#34;154138&#34;</span><span class="p">,</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">rid</span><span class="p">)</span><span class="n">]</span>  <span class="o">&lt;-</span>  <span class="nf">heat.colors</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="n">[6]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">shps</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">21</span><span class="o">:</span><span class="m">25</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cols</span> <span class="o">&lt;-</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">cols[</span><span class="o">!</span><span class="nf">duplicated</span><span class="p">(</span><span class="n">lbhMDS</span><span class="o">$</span><span class="n">song.type</span><span class="p">)</span><span class="n">]</span>
+</span></span></code></pre></div><p>Create first scatterplot:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">p.mds</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">lbhMDS</span><span class="p">)</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">V1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">V2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">song.type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                <span class="n">fill</span> <span class="o">=</span> <span class="n">song.type</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                                <span class="n">shape</span> <span class="o">=</span> <span class="n">rid</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">7</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span> <span class="o">+</span> <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="n">shps</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">stat_ellipse</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">V1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">V2</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">song.type</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">               <span class="n">geom</span> <span class="o">=</span> <span class="s">&#34;polygon&#34;</span><span class="p">,</span> <span class="n">level</span> <span class="o">=</span> <span class="m">0.95</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">guides</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">xlab</span><span class="p">(</span><span class="s">&#34;Dimension 1&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ylab</span><span class="p">(</span><span class="s">&#34;Dimension 2&#34;</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">theme</span><span class="p">(</span><span class="n">panel.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="s">&#34;white&#34;</span><span class="p">),</span> <span class="n">plot.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="s">&#34;white&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;grey&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">panel.grid.minor</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">0.75</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;grey&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">axis.line</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;black&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">axis.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">27</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">axis.text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">27</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">p.mds</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/create_CMDS_plot-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk create CMDS plot" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<p>Add color legend:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">col.leg</span> <span class="o">&lt;-</span> <span class="n">p.mds</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="s">&#34;Song Type&#34;</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                          <span class="n">shape</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">theme</span><span class="p">(</span><span class="n">legend.box</span> <span class="o">=</span> <span class="s">&#34;horizontal&#34;</span><span class="p">,</span> <span class="n">legend.position</span> <span class="o">=</span> <span class="s">&#34;top&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">legend.key.size</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">&#34;cm&#34;</span><span class="p">),</span> <span class="n">legend.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">30</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">legend.text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">30</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">legend.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">alpha</span><span class="p">(</span><span class="s">&#34;white&#34;</span><span class="p">,</span> <span class="m">0.4</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">legend.key</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">alpha</span><span class="p">(</span><span class="s">&#34;white&#34;</span><span class="p">,</span> <span class="m">0.4</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">shape.leg</span> <span class="o">&lt;-</span> <span class="n">p.mds</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                            <span class="n">shape</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="s">&#34;Recordings&#34;</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">theme</span><span class="p">(</span><span class="n">legend.box</span> <span class="o">=</span> <span class="s">&#34;horizontal&#34;</span><span class="p">,</span> <span class="n">legend.position</span> <span class="o">=</span> <span class="s">&#34;top&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">legend.key.size</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">&#34;cm&#34;</span><span class="p">),</span> <span class="n">legend.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">27</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">legend.text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">27</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">legend.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">alpha</span><span class="p">(</span><span class="s">&#34;white&#34;</span><span class="p">,</span> <span class="m">0.4</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">legend.key</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">alpha</span><span class="p">(</span><span class="s">&#34;white&#34;</span><span class="p">,</span> <span class="m">0.4</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">col.leg</span>
+</span></span></code></pre></div><p>![plot of chunk extract shape and color legends from CMDS plot](./img/extract shape and color legends from CMDS plot-1.png)</p>
+<p>Create song type spectrograms:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">## [[1]]
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/create_song_type_spectrograms_1-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk create song type spectrograms 1" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">## 
+</span></span><span class="line"><span class="cl">## [[2]]
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/create_song_type_spectrograms_1-2.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk create_song_type_spectrograms_1" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">## 
+</span></span><span class="line"><span class="cl">## [[3]]
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/create_song_type_spectrograms_1-3.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk create_song_type_spectrograms_1" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">## 
+</span></span><span class="line"><span class="cl">## [[4]]
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/create_song_type_spectrograms_1-4.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk create_song_type_spectrograms_1" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">## 
+</span></span><span class="line"><span class="cl">## [[5]]
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/create_song_type_spectrograms_1-5.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk create_song_type_spectrograms_1" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">## 
+</span></span><span class="line"><span class="cl">## [[6]]
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/create_song_type_spectrograms_1-6.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk create_song_type_spectrograms_1" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># choosing first song per recording</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span> <span class="o">&lt;-</span> <span class="n">Phae.hisnr[</span><span class="o">!</span><span class="nf">duplicated</span><span class="p">(</span><span class="n">Phae.hisnr</span><span class="o">$</span><span class="n">sound.files</span><span class="p">),</span> <span class="n">]</span> 
+</span></span><span class="line"><span class="cl"><span class="n">X</span><span class="o">$</span><span class="n">cols</span> <span class="o">&lt;-</span> <span class="n">lbhMDS</span><span class="o">$</span><span class="n">cols[</span><span class="o">!</span><span class="nf">duplicated</span><span class="p">(</span><span class="n">Phae.hisnr</span><span class="o">$</span><span class="n">sound.files</span><span class="p">)</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># creating spectrograms with colored borders by cluster</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot_list</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="kr">function</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"> <span class="n">spc</span> <span class="o">&lt;-</span> <span class="nf">ggspectro</span><span class="p">(</span><span class="n">tuneR</span><span class="o">::</span><span class="nf">readWave</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="nf">tempdir</span><span class="p">(),</span> <span class="nf">as.character</span><span class="p">(</span><span class="n">X</span><span class="o">$</span><span class="n">sound.files[i]</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">from</span> <span class="o">=</span> <span class="n">X</span><span class="o">$</span><span class="n">start[i]</span> <span class="o">-</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">X</span><span class="o">$</span><span class="n">end[i]</span> <span class="o">+</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span> <span class="s">&#34;seconds&#34;</span><span class="p">),</span> <span class="n">f</span> <span class="o">=</span> <span class="m">22050</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                  <span class="n">wl</span> <span class="o">=</span> <span class="m">150</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">90</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.2</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                   <span class="n">collab</span> <span class="o">=</span> <span class="s">&#34;black&#34;</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1.5</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">tlab</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">flab</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">alab</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                   <span class="n">cexlab</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span> <span class="n">trel</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">    <span class="nf">stat_contour</span><span class="p">(</span><span class="n">geom</span> <span class="o">=</span> <span class="s">&#34;polygon&#34;</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">..level..</span><span class="p">),</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">30</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">    <span class="nf">scale_fill_continuous</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Amplitude (dB)&#34;</span><span class="p">,</span> <span class="n">limits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-30</span><span class="p">,</span><span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">na.value</span> <span class="o">=</span> <span class="s">&#34;transparent&#34;</span><span class="p">,</span> <span class="n">low</span> <span class="o">=</span> <span class="s">&#34;white&#34;</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="s">&#34;black&#34;</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">    <span class="nf">guides</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">    <span class="nf">ggtitle</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">X</span><span class="o">$</span><span class="n">rid</span><span class="p">)</span><span class="n">[i]</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">    <span class="nf">theme</span><span class="p">(</span><span class="n">axis.title.x</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> <span class="n">axis.title.y</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+</span></span><span class="line"><span class="cl">          <span class="n">axis.text.x</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">),</span> <span class="n">axis.text.y</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="n">axis.line.x</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">),</span> <span class="n">axis.line.y</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="n">plot.margin</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="s">&#34;lines&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">          <span class="n">plot.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">24</span><span class="p">,</span> <span class="n">vjust</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">face</span> <span class="o">=</span> <span class="s">&#34;bold&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span>  <span class="n">X</span><span class="o">$</span><span class="n">end[i]</span> <span class="o">-</span> <span class="n">X</span><span class="o">$</span><span class="n">start[i]</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">theme</span><span class="p">(</span><span class="n">plot.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">linetype</span> <span class="o">=</span> <span class="s">&#34;solid&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                           <span class="n">color</span> <span class="o">=</span> <span class="n">X</span><span class="o">$</span><span class="n">cols[i]</span><span class="p">))</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">     <span class="nf">annotation_custom</span><span class="p">(</span> 
+</span></span><span class="line"><span class="cl">      <span class="n">grob</span> <span class="o">=</span> <span class="nf">pointsGrob</span><span class="p">(</span><span class="n">pch</span> <span class="o">=</span> <span class="n">shps[i]</span><span class="p">,</span> <span class="n">gp</span> <span class="o">=</span> <span class="nf">gpar</span><span class="p">(</span><span class="n">cex</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">      <span class="n">ymin</span> <span class="o">=</span> <span class="m">11</span><span class="p">,</span>  <span class="n">ymax</span> <span class="o">=</span> <span class="m">11</span><span class="p">,</span>  <span class="n">xmin</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kr">return</span><span class="p">(</span><span class="n">spc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plot_list</span>
+</span></span></code></pre></div><p>Put all the grobs (graphical objects) together:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#create grobs and initialize some viewport settings</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">col.leg</span> <span class="o">&lt;-</span> <span class="nf">gtable_filter</span><span class="p">(</span><span class="nf">ggplot_gtable</span><span class="p">(</span><span class="nf">ggplot_build</span><span class="p">(</span><span class="n">col.leg</span><span class="p">)),</span> <span class="s">&#34;guide-box&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">shape.leg</span> <span class="o">&lt;-</span> <span class="nf">gtable_filter</span><span class="p">(</span><span class="nf">ggplot_gtable</span><span class="p">(</span><span class="nf">ggplot_build</span><span class="p">(</span><span class="n">shape.leg</span><span class="p">)),</span> <span class="s">&#34;guide-box&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># each component of the figure is a grob or graphical object that can be placed in a viewport</span>
+</span></span><span class="line"><span class="cl"><span class="n">grobs</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="nf">ggplotGrob</span><span class="p">(</span><span class="n">p.mds</span><span class="p">),</span> <span class="n">col.leg</span><span class="p">,</span> <span class="n">shape.leg</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">              <span class="nf">ggplotGrob</span><span class="p">(</span><span class="n">plot_list[[2]]</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">              <span class="nf">ggplotGrob</span><span class="p">(</span><span class="n">plot_list[[4]]</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">              <span class="nf">ggplotGrob</span><span class="p">(</span><span class="n">plot_list[[3]]</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">              <span class="nf">ggplotGrob</span><span class="p">(</span><span class="n">plot_list[[1]]</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">              <span class="nf">ggplotGrob</span><span class="p">(</span><span class="n">plot_list[[6]]</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">              <span class="nf">ggplotGrob</span><span class="p">(</span><span class="n">plot_list[[5]]</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sw</span> <span class="o">&lt;-</span> <span class="m">0.46</span>
+</span></span><span class="line"><span class="cl"><span class="n">sh</span> <span class="o">&lt;-</span> <span class="m">0.28</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">buf</span> <span class="o">&lt;-</span> <span class="m">0.05</span>
+</span></span><span class="line"><span class="cl"><span class="n">sx</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.15</span><span class="o">-</span><span class="n">buf</span><span class="p">,</span> <span class="m">0.15</span><span class="o">+</span> <span class="n">sw</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sy</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.32</span><span class="p">,</span> <span class="m">0.62</span><span class="p">,</span> <span class="m">0.92</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sxs</span> <span class="o">&lt;-</span> <span class="nf">unit.c</span><span class="p">(</span><span class="nf">unit</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="s">&#34;npc&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">sys</span> <span class="o">&lt;-</span> <span class="nf">unit.c</span><span class="p">(</span><span class="nf">unit</span><span class="p">(</span><span class="n">sy</span><span class="p">,</span> <span class="s">&#34;npc&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sheight</span> <span class="o">&lt;-</span> <span class="nf">unit.c</span><span class="p">(</span><span class="nf">unit</span><span class="p">(</span><span class="n">sh</span><span class="p">,</span> <span class="s">&#34;npc&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">swidth</span> <span class="o">&lt;-</span> <span class="nf">unit.c</span><span class="p">(</span><span class="nf">unit</span><span class="p">(</span><span class="n">sw</span><span class="p">,</span> <span class="s">&#34;npc&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># the overarching tree has a list of viewports with some stacked on top of each other</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># this layout allows for more complex arrangements when creating figures</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># but tends to work best when if most of grobs are of similar and regular sizes</span>
+</span></span><span class="line"><span class="cl"><span class="n">tree</span> <span class="o">&lt;-</span> <span class="nf">vpTree</span><span class="p">(</span><span class="nf">viewport</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;A&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">               <span class="nf">vpList</span><span class="p">(</span><span class="nf">viewport</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.45</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="m">0.95</span><span class="o">-</span><span class="n">buf</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                               <span class="n">just</span><span class="o">=</span><span class="s">&#34;left&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;B&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                      <span class="nf">viewport</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.92</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="m">0.3</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                               <span class="n">just</span><span class="o">=</span><span class="s">&#34;center&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;C&#34;</span><span class="p">,</span> <span class="n">angle</span> <span class="o">=</span> <span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="nf">viewport</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.97</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="m">0.3</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                               <span class="n">just</span><span class="o">=</span><span class="s">&#34;center&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;D&#34;</span><span class="p">,</span> <span class="n">angle</span> <span class="o">=</span> <span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="nf">vpStack</span><span class="p">(</span><span class="nf">viewport</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.95</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="m">0.45</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">just</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;left&#34;</span><span class="p">,</span> <span class="s">&#34;top&#34;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;E&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                              <span class="nf">vpList</span><span class="p">(</span><span class="nf">viewport</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sxs[1]</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sys[1]</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">swidth</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                              <span class="n">h</span> <span class="o">=</span> <span class="n">sheight</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                  <span class="n">just</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;left&#34;</span><span class="p">,</span> <span class="s">&#34;top&#34;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;F&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                         <span class="nf">viewport</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sxs[1]</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sys[2]</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">swidth</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                                  <span class="n">h</span> <span class="o">=</span> <span class="n">sheight</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                  <span class="n">just</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;left&#34;</span><span class="p">,</span> <span class="s">&#34;top&#34;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;G&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                         <span class="nf">viewport</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sxs[1]</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sys[3]</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">swidth</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                                  <span class="n">h</span> <span class="o">=</span> <span class="n">sheight</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                  <span class="n">just</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;left&#34;</span><span class="p">,</span> <span class="s">&#34;top&#34;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;H&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                         <span class="nf">viewport</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sxs[2]</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sys[1]</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">swidth</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                                  <span class="n">h</span> <span class="o">=</span> <span class="n">sheight</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                  <span class="n">just</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;left&#34;</span><span class="p">,</span> <span class="s">&#34;top&#34;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;I&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                         <span class="nf">viewport</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sxs[2]</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sys[2]</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">swidth</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                                  <span class="n">h</span> <span class="o">=</span> <span class="n">sheight</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                  <span class="n">just</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;left&#34;</span><span class="p">,</span> <span class="s">&#34;top&#34;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;J&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                         <span class="nf">viewport</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sxs[2]</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sys[3]</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">swidth</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                                  <span class="n">h</span> <span class="o">=</span> <span class="n">sheight</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                  <span class="n">just</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;left&#34;</span><span class="p">,</span> <span class="s">&#34;top&#34;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;K&#34;</span><span class="p">)))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">grid.newpage</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">pushViewport</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vps</span> <span class="o">&lt;-</span> <span class="kc">LETTERS</span><span class="nf">[c</span><span class="p">(</span><span class="m">2</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="o">:</span><span class="m">11</span><span class="p">)</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="kr">for</span><span class="p">(</span><span class="n">i</span> <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">vps</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nf">seekViewport</span><span class="p">(</span><span class="n">vps[i]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">grid.draw</span><span class="p">(</span><span class="n">grobs[[i]]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># draw x and y axes for all spectrograms</span>
+</span></span><span class="line"><span class="cl"><span class="nf">seekViewport</span><span class="p">(</span><span class="s">&#34;E&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">grid.draw</span><span class="p">(</span><span class="nf">linesGrob</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">0.05</span><span class="p">,</span> <span class="s">&#34;npc&#34;</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.93</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="n">gp</span><span class="o">=</span><span class="nf">gpar</span><span class="p">(</span><span class="n">lwd</span> <span class="o">=</span> <span class="m">8</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">grid.draw</span><span class="p">(</span><span class="nf">linesGrob</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.05</span><span class="p">,</span> <span class="m">1.05</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="s">&#34;npc&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">gp</span><span class="o">=</span><span class="nf">gpar</span><span class="p">(</span><span class="n">lwd</span> <span class="o">=</span> <span class="m">8</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">grid.text</span><span class="p">(</span><span class="s">&#34;Time (s)&#34;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">-0.025</span><span class="p">,</span> <span class="n">rot</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">gp</span> <span class="o">=</span> <span class="nf">gpar</span><span class="p">(</span><span class="n">cex</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">grid.text</span><span class="p">(</span><span class="s">&#34;Frequency (kHz)&#34;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">rot</span> <span class="o">=</span> <span class="m">90</span><span class="p">,</span> <span class="n">gp</span> <span class="o">=</span> <span class="nf">gpar</span><span class="p">(</span><span class="n">cex</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">))</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/create_grobs_and_initialize_some_viewport_settings-1.png?v=a6728982a762d2f94b8280c1e33fd565" alt="plot of chunk create grobs and initialize some viewport settings" loading="lazy" height="576px" width="1400px" />
+</picture>
+</p>
+<p>That&rsquo;s it!</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/acoustic-space/">acoustic space</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/visualization/">visualization</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-04-23-acoustic_space_scatter_plot%2f&amp;text=Acoustic%20space%20scatter%20plot&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-04-23-acoustic_space_scatter_plot%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-04-23-acoustic_space_scatter_plot%2f&amp;title=Acoustic%20space%20scatter%20plot" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-04-23-acoustic_space_scatter_plot%2f&amp;title=Acoustic%20space%20scatter%20plot" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-04-23-acoustic_space_scatter_plot%2f&amp;title=Acoustic%20space%20scatter%20plot" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-04-23-acoustic_space_scatter_plot%2f&amp;description=Acoustic%20space%20scatter%20plot" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/">dynaSpec: dynamic spectrograms in R</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/">Interactive maps from Xeno-Canto recording localities in xc_maps()</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="marce10.github.io/coded_bioacustics/post/2017-02-17-choosing-the-right-method-for-measuring-acoustic-signal-structure/" data-toggle="tooltip" data-placement="top" title="Choosing the right method for measuring acoustic signal structure">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/" data-toggle="tooltip" data-placement="top" title="Interactive maps from Xeno-Canto recording localities in xc_maps()">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2017-04-23-acoustic_space_scatter_plot';
+            };
+
+          </script>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/maRce10" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.121.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="marce10.github.io/coded_bioacustics/js/main.js"></script>
+<script src="marce10.github.io/coded_bioacustics/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="marce10.github.io/coded_bioacustics/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'maRce_10';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
+
+
+
+
+    
+  </body>
+</html>
+

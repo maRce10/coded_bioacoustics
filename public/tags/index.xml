@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Coded bioacoustics</title>
+    <link>marce10.github.io/coded_bioacustics/tags/</link>
+    <description>Recent content in Tags on Coded bioacoustics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="marce10.github.io/coded_bioacustics/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>spectrogram</title>
+      <link>marce10.github.io/coded_bioacustics/tags/spectrogram/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/spectrogram/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>video</title>
+      <link>marce10.github.io/coded_bioacustics/tags/video/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/video/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>visualization</title>
+      <link>marce10.github.io/coded_bioacustics/tags/visualization/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/visualization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>sound event detection</title>
+      <link>marce10.github.io/coded_bioacustics/tags/sound-event-detection/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/sound-event-detection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>repositories</title>
+      <link>marce10.github.io/coded_bioacustics/tags/repositories/</link>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/repositories/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>acoustic space</title>
+      <link>marce10.github.io/coded_bioacustics/tags/acoustic-space/</link>
+      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/acoustic-space/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>acoustic features</title>
+      <link>marce10.github.io/coded_bioacustics/tags/acoustic-features/</link>
+      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/acoustic-features/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>quantify structure</title>
+      <link>marce10.github.io/coded_bioacustics/tags/quantify-structure/</link>
+      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/quantify-structure/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

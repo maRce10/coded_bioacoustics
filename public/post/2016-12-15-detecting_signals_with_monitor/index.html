@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Signal detection with cross-correlation using monitoR  - Coded bioacoustics</title>
+
+  <meta name="description" content="Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Coded bioacoustics",
+    
+    "url": "marce10.github.io\/coded_bioacustics\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "marce10.github.io\/coded_bioacustics\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/post\/2016-12-15-detecting_signals_with_monitor\/",
+          "name": "Signal detection with cross correlation using monito r"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Marcelo Araya-Salas"
+  },
+  "headline": "Signal detection with cross-correlation using monitoR ",
+  "description" : "Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.",
+  "inLanguage" : "en",
+  "wordCount":  657 ,
+  "datePublished" : "2016-12-15T00:00:00",
+  "dateModified" : "2016-12-15T00:00:00",
+  "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+  "keywords" : [ "sound event detection" ],
+  "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2016-12-15-detecting_signals_with_monitor\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "marce10.github.io\/coded_bioacustics\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Signal detection with cross-correlation using monitoR " />
+<meta property="og:description" content="Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.">
+<meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+<meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Coded bioacoustics" />
+
+  <meta name="twitter:title" content="Signal detection with cross-correlation using monitoR " />
+  <meta name="twitter:description" content="Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post Here I show how to detect signals with …">
+  <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.121.2">
+  <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/highlight.min.css" /><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZVLSR0L9P"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-RZVLSR0L9P', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/marce10.github.io/coded_bioacustics/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/marce10.github.io/coded_bioacustics/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Coded bioacoustics" href="marce10.github.io/coded_bioacustics/">
+            <img class="avatar-img" src="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" alt="Coded bioacoustics" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Signal detection with cross-correlation using monitoR </h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 15, 2016
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;657&nbsp;words
+  
+  
+    
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <div class="alert alert-info">
+<center>Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post  
+</div>
+<p>Here I show how to detect signals with cross-correlation using the very cool package <a href="https://cran.r-project.org/package=monitoR">monitoR</a>. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the <a href="https://cran.r-project.org/web/packages/monitoR/vignettes/monitoR_QuickStart.pdf">quick start</a> vignette of the <a href="https://cran.r-project.org/package=monitoR">monitoR</a> package, so I encourage to look at the vignette if you want to learn more about it.</p>
+<p>The package <a href="https://cran.r-project.org/package=monitoR">monitoR</a> runs cross-correlation across sound files to search for the signals using previously defined templates. Thus, templates should be examples of the signals we want to detect. It can search for several templates in the same run. I show how the package works using the sound files and data examples that come with the package <a href="https://cran.r-project.org/package=warbleR">warbleR</a>. These are recordings from long-billed hermits, each one singing a different song type.</p>
+<p>First load the packages (the code will install the packages if missing)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">x</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;warbleR&#34;</span><span class="p">,</span> <span class="s">&#34;monitoR&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">A</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">if</span><span class="p">(</span><span class="o">!</span><span class="n">y</span> <span class="o">%in%</span> <span class="nf">installed.packages</span><span class="p">()</span><span class="n">[</span><span class="p">,</span><span class="s">&#34;Package&#34;</span><span class="n">]</span><span class="p">)</span>  <span class="nf">install.packages</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">require</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">character.only</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span></code></pre></div><p>We need to create the templates. We just have to select and example from each sound file and provide the start and end as well as the frequency range of the signal. We will load the long-billed hermit sound</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#optional: write files in temporal file</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># setwd(file.path(tempdir()))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># load sound files and data</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Phae.long1&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long2&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long3&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long4&#34;</span><span class="p">,</span> <span class="s">&#34;selec.table&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#write files to disk</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long1</span><span class="p">,</span><span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long2</span><span class="p">,</span><span class="s">&#34;Phae.long2.wav&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long3</span><span class="p">,</span><span class="s">&#34;Phae.long3.wav&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long4</span><span class="p">,</span><span class="s">&#34;Phae.long4.wav&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>and create the templates</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">phae1T1</span><span class="o">&lt;-</span><span class="nf">makeCorTemplate</span><span class="p">(</span><span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">,</span> <span class="n">t.lim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">selec.table</span><span class="o">$</span><span class="n">start[2]</span><span class="p">,</span><span class="n">selec.table</span><span class="o">$</span><span class="n">end[2]</span><span class="p">),</span><span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span><span class="n">ovlp</span><span class="o">=</span><span class="m">90</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">frq.lim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">11</span><span class="p">),</span> <span class="n">dens</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;phae11&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-3-1.png?v=24158a833d6b6dad7a3d3dd16fc3e809" alt="plot of chunk unnamed-chunk-3" loading="lazy" height="621px" width="1700px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Automatic point selection.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">phae2T1</span><span class="o">&lt;-</span><span class="nf">makeCorTemplate</span><span class="p">(</span><span class="s">&#34;Phae.long2.wav&#34;</span><span class="p">,</span> <span class="n">t.lim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">selec.table</span><span class="o">$</span><span class="n">start[5]</span><span class="p">,</span><span class="n">selec.table</span><span class="o">$</span><span class="n">end[5]</span><span class="p">),</span><span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span><span class="n">ovlp</span><span class="o">=</span><span class="m">90</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="n">frq.lim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">11</span><span class="p">),</span> <span class="n">dens</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;phae21&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-3-2.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk unnamed-chunk-3" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Automatic point selection.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">phae3T1</span><span class="o">&lt;-</span><span class="nf">makeCorTemplate</span><span class="p">(</span><span class="s">&#34;Phae.long3.wav&#34;</span><span class="p">,</span> <span class="n">t.lim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">selec.table</span><span class="o">$</span><span class="n">start[7]</span><span class="p">,</span><span class="n">selec.table</span><span class="o">$</span><span class="n">end[7]</span><span class="p">),</span><span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span><span class="n">ovlp</span><span class="o">=</span><span class="m">90</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="n">frq.lim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">11</span><span class="p">),</span> <span class="n">dens</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;phae31&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-3-3.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk unnamed-chunk-3" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Automatic point selection.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">phae4T1</span><span class="o">&lt;-</span><span class="nf">makeCorTemplate</span><span class="p">(</span><span class="s">&#34;Phae.long4.wav&#34;</span><span class="p">,</span> <span class="n">t.lim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">selec.table</span><span class="o">$</span><span class="n">start[9]</span><span class="p">,</span><span class="n">selec.table</span><span class="o">$</span><span class="n">end[9]</span><span class="p">),</span><span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span><span class="n">ovlp</span><span class="o">=</span><span class="m">90</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="n">frq.lim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">11</span><span class="p">),</span> <span class="n">dens</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#34;phae41&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-3-4.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk unnamed-chunk-3" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Automatic point selection.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done.
+</span></span></code></pre></div><p>Now that we have the templates we can search for those &ldquo;acoustic patterns&rdquo; in a sound file. As the function uses cross-correlation to determine the similarity to the templates we need to select a correlation method. In this case we use Pearson correlation. Lets do it first with the template from the Phae.long1.wav file</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cm</span><span class="o">&lt;-</span><span class="s">&#34;pearson&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cscoresPhae1</span><span class="o">&lt;-</span><span class="nf">corMatch</span><span class="p">(</span><span class="n">survey</span> <span class="o">=</span> <span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">,</span><span class="n">templates</span> <span class="o">=</span> <span class="n">phae1T1</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span><span class="n">show.prog</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">time.source</span> <span class="o">=</span> <span class="s">&#34;fileinfo&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">cor.method</span> <span class="o">=</span> <span class="n">cm</span><span class="p">,</span><span class="n">warn</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">write.wav</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Starting  phae11 . . .
+</span></span><span class="line"><span class="cl">	Fourier transform on survey . . .
+</span></span><span class="line"><span class="cl">	Continuing. . .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	Done.
+</span></span></code></pre></div><p>Now we can extract the detection peaks and generate a graphical output</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cdetectsPhae1</span><span class="o">&lt;-</span><span class="nf">findPeaks</span><span class="p">(</span><span class="n">cscoresPhae1</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done with  phae11
+</span></span><span class="line"><span class="cl">Done
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># View results</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">cdetectsPhae1</span><span class="p">,</span> <span class="n">hit.marker</span><span class="o">=</span><span class="s">&#34;points&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-5-1.png?v=f9f5062a976e9ef29e64d9d89b66d2be" alt="plot of chunk unnamed-chunk-5" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<p>We can do the same for each sound file</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cscoresPhae2</span><span class="o">&lt;-</span><span class="nf">corMatch</span><span class="p">(</span><span class="n">survey</span> <span class="o">=</span> <span class="s">&#34;Phae.long2.wav&#34;</span><span class="p">,</span><span class="n">templates</span> <span class="o">=</span> <span class="n">phae2T1</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span><span class="n">show.prog</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">time.source</span> <span class="o">=</span> <span class="s">&#34;fileinfo&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">cor.method</span> <span class="o">=</span> <span class="n">cm</span><span class="p">,</span><span class="n">warn</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">write.wav</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Starting  phae21 . . .
+</span></span><span class="line"><span class="cl">	Fourier transform on survey . . .
+</span></span><span class="line"><span class="cl">	Continuing. . .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	Done.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cdetectsPhae2</span><span class="o">&lt;-</span><span class="nf">findPeaks</span><span class="p">(</span><span class="n">cscoresPhae2</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done with  phae21
+</span></span><span class="line"><span class="cl">Done
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># View results</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">cdetectsPhae2</span><span class="p">,</span> <span class="n">hit.marker</span><span class="o">=</span><span class="s">&#34;points&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-6-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk unnamed-chunk-6" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cscoresPhae3</span><span class="o">&lt;-</span><span class="nf">corMatch</span><span class="p">(</span><span class="n">survey</span> <span class="o">=</span> <span class="s">&#34;Phae.long3.wav&#34;</span><span class="p">,</span><span class="n">templates</span> <span class="o">=</span> <span class="n">phae3T1</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span><span class="n">show.prog</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">time.source</span> <span class="o">=</span> <span class="s">&#34;fileinfo&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">cor.method</span> <span class="o">=</span> <span class="n">cm</span><span class="p">,</span><span class="n">warn</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">write.wav</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Starting  phae31 . . .
+</span></span><span class="line"><span class="cl">	Fourier transform on survey . . .
+</span></span><span class="line"><span class="cl">	Continuing. . .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	Done.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cdetectsPhae3</span><span class="o">&lt;-</span><span class="nf">findPeaks</span><span class="p">(</span><span class="n">cscoresPhae3</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done with  phae31
+</span></span><span class="line"><span class="cl">Done
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># View results</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">cdetectsPhae3</span><span class="p">,</span> <span class="n">hit.marker</span><span class="o">=</span><span class="s">&#34;points&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-7-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk unnamed-chunk-7" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cscoresPhae4</span><span class="o">&lt;-</span><span class="nf">corMatch</span><span class="p">(</span><span class="n">survey</span> <span class="o">=</span> <span class="s">&#34;Phae.long4.wav&#34;</span><span class="p">,</span><span class="n">templates</span> <span class="o">=</span> <span class="n">phae4T1</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span><span class="n">show.prog</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">time.source</span> <span class="o">=</span> <span class="s">&#34;fileinfo&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">cor.method</span> <span class="o">=</span> <span class="n">cm</span><span class="p">,</span><span class="n">warn</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="n">write.wav</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Starting  phae41 . . .
+</span></span><span class="line"><span class="cl">	Fourier transform on survey . . .
+</span></span><span class="line"><span class="cl">	Continuing. . .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	Done.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cdetectsPhae4</span><span class="o">&lt;-</span><span class="nf">findPeaks</span><span class="p">(</span><span class="n">cscoresPhae4</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done with  phae41
+</span></span><span class="line"><span class="cl">Done
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># View results</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">cdetectsPhae4</span><span class="p">,</span> <span class="n">hit.marker</span><span class="o">=</span><span class="s">&#34;points&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-8-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk unnamed-chunk-8" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+<p>We can also run all templates on a single sound file. It requires putting together all templates in a single object</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#put templates together</span>
+</span></span><span class="line"><span class="cl"><span class="n">ctemps</span><span class="o">&lt;-</span><span class="nf">combineCorTemplates</span><span class="p">(</span><span class="n">phae1T1</span><span class="p">,</span> <span class="n">phae2T1</span><span class="p">,</span> <span class="n">phae3T1</span><span class="p">,</span> <span class="n">phae4T1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cscoresPhae4all</span><span class="o">&lt;-</span><span class="nf">corMatch</span><span class="p">(</span><span class="n">survey</span> <span class="o">=</span> <span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">,</span><span class="n">templates</span> <span class="o">=</span> <span class="n">ctemps</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span><span class="n">show.prog</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">time.source</span> <span class="o">=</span> <span class="s">&#34;fileinfo&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">cor.method</span> <span class="o">=</span> <span class="n">cm</span><span class="p">,</span><span class="n">warn</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span> <span class="n">write.wav</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Starting  phae11 . . .
+</span></span><span class="line"><span class="cl">	Fourier transform on survey . . .
+</span></span><span class="line"><span class="cl">	Continuing. . .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	Done.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Starting  phae21 . . .
+</span></span><span class="line"><span class="cl">	Done.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Starting  phae31 . . .
+</span></span><span class="line"><span class="cl">	Done.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Starting  phae41 . . .
+</span></span><span class="line"><span class="cl">	Done.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cdetectsPhae4all</span><span class="o">&lt;-</span><span class="nf">findPeaks</span><span class="p">(</span><span class="n">cscoresPhae4all</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Done
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># View results</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">cdetectsPhae4all</span><span class="p">,</span> <span class="n">hit.marker</span><span class="o">=</span><span class="s">&#34;points&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-9-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk unnamed-chunk-9" loading="lazy" height="367px" width="595px" />
+</picture>
+</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/sound-event-detection/">sound event detection</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2016-12-15-detecting_signals_with_monitor%2f&amp;text=Signal%20detection%20with%20cross-correlation%20using%20monitoR%20&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=marce10.github.io%2fcoded_bioacustics%2fpost%2f2016-12-15-detecting_signals_with_monitor%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2016-12-15-detecting_signals_with_monitor%2f&amp;title=Signal%20detection%20with%20cross-correlation%20using%20monitoR%20" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2016-12-15-detecting_signals_with_monitor%2f&amp;title=Signal%20detection%20with%20cross-correlation%20using%20monitoR%20" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2016-12-15-detecting_signals_with_monitor%2f&amp;title=Signal%20detection%20with%20cross-correlation%20using%20monitoR%20" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2016-12-15-detecting_signals_with_monitor%2f&amp;description=Signal%20detection%20with%20cross-correlation%20using%20monitoR%20" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/">Automatic signal detection: a case study</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="marce10.github.io/coded_bioacustics/post/2020-02-13-barulho/" data-toggle="tooltip" data-placement="top" title="baRulho: an R package to quantify (animal) acoustic signal transmission and degradation">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="marce10.github.io/coded_bioacustics/post/2017-02-17-choosing-the-right-method-for-measuring-acoustic-signal-structure/" data-toggle="tooltip" data-placement="top" title="Choosing the right method for measuring acoustic signal structure">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2016-12-15-detecting_signals_with_monitor';
+            };
+
+          </script>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/maRce10" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.121.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="marce10.github.io/coded_bioacustics/js/main.js"></script>
+<script src="marce10.github.io/coded_bioacustics/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="marce10.github.io/coded_bioacustics/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'maRce_10';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
+
+
+
+
+    
+  </body>
+</html>
+

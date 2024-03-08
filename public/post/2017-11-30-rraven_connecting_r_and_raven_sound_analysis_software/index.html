@@ -1,0 +1,3059 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Rraven: Connecting R and Raven Sound Analysis Software - Coded bioacoustics</title>
+
+  <meta name="description" content="The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as warbleR, seewave and monitoR (among others) provide additional methods of analysis, working as a perfect complement for those found in Raven. Hence, bridging these applications can largely expand the bioacoustician&rsquo;s toolkit."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Coded bioacoustics",
+    
+    "url": "marce10.github.io\/coded_bioacustics\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "marce10.github.io\/coded_bioacustics\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "marce10.github.io\/coded_bioacustics\/post\/2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software\/",
+          "name": "Rraven connecting r and raven sound analysis software"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Rraven: Connecting R and Raven Sound Analysis Software",
+  "description" : "The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as warbleR, seewave and monitoR (among others) provide additional methods of analysis, working as a perfect complement for those found in Raven. Hence, bridging these applications can largely expand the bioacoustician\u0026rsquo;s toolkit.",
+  "inLanguage" : "en",
+  "wordCount":  3687 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "marce10.github.io\/coded_bioacustics\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Rraven: Connecting R and Raven Sound Analysis Software" />
+<meta property="og:description" content="The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as warbleR, seewave and monitoR (among others) provide additional methods of analysis, working as a perfect complement for those found in Raven. Hence, bridging these applications can largely expand the bioacoustician&rsquo;s toolkit.">
+<meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+<meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Coded bioacoustics" />
+
+  <meta name="twitter:title" content="Rraven: Connecting R and Raven Sound Analysis Software" />
+  <meta name="twitter:description" content="The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of …">
+  <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.121.2">
+  <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/highlight.min.css" /><link rel="stylesheet" href="marce10.github.io/coded_bioacustics/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZVLSR0L9P"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-RZVLSR0L9P', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/marce10.github.io/coded_bioacustics/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/marce10.github.io/coded_bioacustics/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Coded bioacoustics" href="marce10.github.io/coded_bioacustics/">
+            <img class="avatar-img" src="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" alt="Coded bioacoustics" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Rraven: Connecting R and Raven Sound Analysis Software</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;18&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;3687&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>The <code>Rraven</code> package is designed to facilitate the exchange of data between R and  <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven sound analysis software</a> (<a href="http://www.birds.cornell.edu">Cornell Lab of Ornithology</a>). <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> provides very  powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as <a href="https://cran.r-project.org/package=warbleR">warbleR</a>, <a href="https://cran.r-project.org/package=seewave">seewave</a> and <a href="https://cran.r-project.org/package=monitoR">monitoR</a> (among others) provide additional methods of analysis, working as a perfect complement for those found in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>. Hence, bridging these applications can largely expand the bioacoustician&rsquo;s toolkit.</p>
+<p>Currently, most analyses in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> cannot be run in the background from a command terminal. Thus, most <code>Rraven</code> functions are design to simplify the exchange of data between the two programs, and in some cases, export files to  <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> for further analysis. This post provides detailed examples for each function in <code>Rraven</code>, including both the R code as well as the additional steps in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> required to fully accomplished the analyses. Raven Pro must be installed to be able to run some of the code.</p>
+<p>Before getting into the functions, the packages must be installed and loaded. I recommend using the latest developmental version, which is found in <a href="http://github.com/">github</a>. To do so, you need the R package <a href="https://cran.r-project.org/package=devtools">devtools</a> (which of course should be installed!). Some <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions and example data sets will be used, so <a href="https://cran.r-project.org/package=warbleR">warbleR</a> should be installed as well:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;maRce10/warbleR&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;maRce10/Rraven&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#from CRAN would be</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#install.packages(&#34;warbleR&#34;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#load packages</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">warbleR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">Rraven</span><span class="p">)</span>
+</span></span></code></pre></div><p> </p>
+<p>Let&rsquo;s also use a temporary folder as the working directory in which to save all sound and data files:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="nf">tempdir</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#load example data</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Phae.long1&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long2&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long3&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long4&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">              <span class="s">&#34;selec.table&#34;</span><span class="p">,</span> <span class="s">&#34;selection_files&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># save sound files  in temporary directory</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long1</span><span class="p">,</span><span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">,</span> <span class="n">extensible</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long2</span><span class="p">,</span><span class="s">&#34;Phae.long2.wav&#34;</span><span class="p">,</span> <span class="n">extensible</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long3</span><span class="p">,</span><span class="s">&#34;Phae.long3.wav&#34;</span><span class="p">,</span> <span class="n">extensible</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">Phae.long4</span><span class="p">,</span><span class="s">&#34;Phae.long4.wav&#34;</span><span class="p">,</span> <span class="n">extensible</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#save Raven selection tables in the temporary directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">out</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeLines</span><span class="p">(</span><span class="n">selection_files[[x]]</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">selection_files</span><span class="p">)</span><span class="n">[x]</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># this is the temporary directory location (of course different each </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># time is run)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">getwd</span><span class="p">()</span> 
+</span></span></code></pre></div><p> </p>
+<hr>
+<h2 id="importing-data-from-raven">Importing data from Raven</h2>
+<h3 id="imp_raven"><em>imp_raven</em></h3>
+<p>This function imports <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selection tables. Multiple files can be imported at once. <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selection tables including data from multiple recordings can also be imported. It returns a single data frame with the information contained in the selection files. We already have 2 <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selection tables in the working directory:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">list.files</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="nf">tempdir</span><span class="p">(),</span> <span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;\\.txt$&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[1] &#34;LBH 1 selection table example.txt&#34; &#34;LBH 2 selection table example.txt&#34; &#34;LBH 3 selection table example.txt&#34; &#34;LBH 4 selection table example.txt&#34;
+</span></span></code></pre></div><p> </p>
+<p>This code shows how to import all the data contained in those files into R:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">rvn.dat</span> <span class="o">&lt;-</span> <span class="nf">imp_raven</span><span class="p">(</span><span class="n">all.data</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rvn.dat</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px; overflow-y: scroll; height:900px; overflow-x: scroll; width:900px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Selection </th>
+   <th style="text-align:center;"> View </th>
+   <th style="text-align:center;"> Channel </th>
+   <th style="text-align:center;"> Begin Time (s) </th>
+   <th style="text-align:center;"> End Time (s) </th>
+   <th style="text-align:center;"> Low Freq (Hz) </th>
+   <th style="text-align:center;"> High Freq (Hz) </th>
+   <th style="text-align:center;"> Begin File </th>
+   <th style="text-align:center;"> channel </th>
+   <th style="text-align:center;"> Begin Path </th>
+   <th style="text-align:center;"> File Offset (s) </th>
+   <th style="text-align:center;"> selec.file </th>
+   <th style="text-align:center;"> File Offset </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.169 </td>
+   <td style="text-align:center;"> 1.342 </td>
+   <td style="text-align:center;"> 2220 </td>
+   <td style="text-align:center;"> 8604 </td>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long1.wav </td>
+   <td style="text-align:center;"> 1.169 </td>
+   <td style="text-align:center;"> LBH 1 selection table example.txt </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.158 </td>
+   <td style="text-align:center;"> 2.321 </td>
+   <td style="text-align:center;"> 2169 </td>
+   <td style="text-align:center;"> 8807 </td>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long1.wav </td>
+   <td style="text-align:center;"> 2.158 </td>
+   <td style="text-align:center;"> LBH 1 selection table example.txt </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.343 </td>
+   <td style="text-align:center;"> 0.518 </td>
+   <td style="text-align:center;"> 2218 </td>
+   <td style="text-align:center;"> 8757 </td>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long1.wav </td>
+   <td style="text-align:center;"> 0.343 </td>
+   <td style="text-align:center;"> LBH 1 selection table example.txt </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.160 </td>
+   <td style="text-align:center;"> 0.292 </td>
+   <td style="text-align:center;"> 2317 </td>
+   <td style="text-align:center;"> 8822 </td>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long2.wav </td>
+   <td style="text-align:center;"> 0.160 </td>
+   <td style="text-align:center;"> LBH 2 selection table example.txt </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.457 </td>
+   <td style="text-align:center;"> 1.583 </td>
+   <td style="text-align:center;"> 2284 </td>
+   <td style="text-align:center;"> 8888 </td>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long2.wav </td>
+   <td style="text-align:center;"> 1.457 </td>
+   <td style="text-align:center;"> LBH 2 selection table example.txt </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.627 </td>
+   <td style="text-align:center;"> 0.758 </td>
+   <td style="text-align:center;"> 3007 </td>
+   <td style="text-align:center;"> 8822 </td>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long3.wav </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> LBH 3 selection table example.txt </td>
+   <td style="text-align:center;"> 0.627 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.974 </td>
+   <td style="text-align:center;"> 2.104 </td>
+   <td style="text-align:center;"> 2777 </td>
+   <td style="text-align:center;"> 8888 </td>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long3.wav </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> LBH 3 selection table example.txt </td>
+   <td style="text-align:center;"> 1.974 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.123 </td>
+   <td style="text-align:center;"> 0.255 </td>
+   <td style="text-align:center;"> 2317 </td>
+   <td style="text-align:center;"> 9315 </td>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long3.wav </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> LBH 3 selection table example.txt </td>
+   <td style="text-align:center;"> 0.123 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.517 </td>
+   <td style="text-align:center;"> 1.662 </td>
+   <td style="text-align:center;"> 2514 </td>
+   <td style="text-align:center;"> 9217 </td>
+   <td style="text-align:center;"> Phae.long4.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long4.wav </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> LBH 4 selection table example.txt </td>
+   <td style="text-align:center;"> 1.517 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.933 </td>
+   <td style="text-align:center;"> 3.077 </td>
+   <td style="text-align:center;"> 2580 </td>
+   <td style="text-align:center;"> 10235 </td>
+   <td style="text-align:center;"> Phae.long4.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long4.wav </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> LBH 4 selection table example.txt </td>
+   <td style="text-align:center;"> 2.933 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 0.290 </td>
+   <td style="text-align:center;"> 2580 </td>
+   <td style="text-align:center;"> 9742 </td>
+   <td style="text-align:center;"> Phae.long4.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long4.wav </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> LBH 4 selection table example.txt </td>
+   <td style="text-align:center;"> 0.145 </td>
+  </tr>
+</tbody>
+</table></div>
+ &nbsp; 
+<p>Note that the &lsquo;waveform&rsquo; view data has been removed. It can also be imported by setting the &lsquo;waveform&rsquo; argument to <code>TRUE</code>.</p>
+<p><a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selections can also be imported in a &lsquo;selection.table&rsquo; format so it can be directly input into <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions. To do this you need to set the <code>all.data = FALSE</code> and indicate which column contains the sound file name (using the &lsquo;sound.file.col&rsquo; argument):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#providing the name of the column with the sound file names</span>
+</span></span><span class="line"><span class="cl"><span class="n">rvn.dat</span> <span class="o">&lt;-</span> <span class="nf">imp_raven</span><span class="p">(</span><span class="n">sound.file.col</span> <span class="o">=</span> <span class="s">&#34;Begin File&#34;</span><span class="p">,</span> <span class="n">all.data</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                     <span class="n">freq.cols</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rvn.dat</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> sound.files </th>
+   <th style="text-align:center;"> channel.Channel </th>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> start </th>
+   <th style="text-align:center;"> end </th>
+   <th style="text-align:center;"> bottom.freq </th>
+   <th style="text-align:center;"> top.freq </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.169 </td>
+   <td style="text-align:center;"> 1.342 </td>
+   <td style="text-align:center;"> 2.22 </td>
+   <td style="text-align:center;"> 8.60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 2.158 </td>
+   <td style="text-align:center;"> 2.321 </td>
+   <td style="text-align:center;"> 2.17 </td>
+   <td style="text-align:center;"> 8.81 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.343 </td>
+   <td style="text-align:center;"> 0.518 </td>
+   <td style="text-align:center;"> 2.22 </td>
+   <td style="text-align:center;"> 8.76 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.160 </td>
+   <td style="text-align:center;"> 0.292 </td>
+   <td style="text-align:center;"> 2.32 </td>
+   <td style="text-align:center;"> 8.82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 1.457 </td>
+   <td style="text-align:center;"> 1.583 </td>
+   <td style="text-align:center;"> 2.28 </td>
+   <td style="text-align:center;"> 8.89 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.627 </td>
+   <td style="text-align:center;"> 0.758 </td>
+   <td style="text-align:center;"> 3.01 </td>
+   <td style="text-align:center;"> 8.82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 1.974 </td>
+   <td style="text-align:center;"> 2.104 </td>
+   <td style="text-align:center;"> 2.78 </td>
+   <td style="text-align:center;"> 8.89 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.123 </td>
+   <td style="text-align:center;"> 0.255 </td>
+   <td style="text-align:center;"> 2.32 </td>
+   <td style="text-align:center;"> 9.31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long4.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.517 </td>
+   <td style="text-align:center;"> 1.662 </td>
+   <td style="text-align:center;"> 2.51 </td>
+   <td style="text-align:center;"> 9.22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long4.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 2.933 </td>
+   <td style="text-align:center;"> 3.077 </td>
+   <td style="text-align:center;"> 2.58 </td>
+   <td style="text-align:center;"> 10.23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long4.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 0.290 </td>
+   <td style="text-align:center;"> 2.58 </td>
+   <td style="text-align:center;"> 9.74 </td>
+  </tr>
+</tbody>
+</table></div>
+ &nbsp; 
+<p>The data frame contains the following columns: sound.files, channel, selec, start, end, and selec.file. You can also import the frequency range parameters in the &lsquo;selection.table&rsquo; by setting &lsquo;freq.cols&rsquo; tp <code>TRUE</code>. The data frame returned by &ldquo;imp_raven&rdquo; (when in the &lsquo;warbleR&rsquo; format) can be input into several <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions for further analysis. For instance, the following code runs additional parameter measurements on the imported selections:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># convert to class selection.table</span>
+</span></span><span class="line"><span class="cl"><span class="n">rvn.dat.st</span> <span class="o">&lt;-</span> <span class="nf">selection_table</span><span class="p">(</span><span class="n">rvn.dat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sp</span> <span class="o">&lt;-</span> <span class="nf">specan</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">rvn.dat.st</span><span class="p">,</span> <span class="n">bp</span> <span class="o">=</span> <span class="s">&#34;frange&#34;</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">150</span><span class="p">,</span> <span class="n">pb</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">             <span class="n">ovlp</span> <span class="o">=</span> <span class="m">90</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sp</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">checking selections:
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px; overflow-x: scroll; width:900px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> sound.files </th>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> duration </th>
+   <th style="text-align:center;"> meanfreq </th>
+   <th style="text-align:center;"> sd </th>
+   <th style="text-align:center;"> freq.median </th>
+   <th style="text-align:center;"> freq.Q25 </th>
+   <th style="text-align:center;"> freq.Q75 </th>
+   <th style="text-align:center;"> freq.IQR </th>
+   <th style="text-align:center;"> time.median </th>
+   <th style="text-align:center;"> time.Q25 </th>
+   <th style="text-align:center;"> time.Q75 </th>
+   <th style="text-align:center;"> time.IQR </th>
+   <th style="text-align:center;"> skew </th>
+   <th style="text-align:center;"> kurt </th>
+   <th style="text-align:center;"> sp.ent </th>
+   <th style="text-align:center;"> time.ent </th>
+   <th style="text-align:center;"> entropy </th>
+   <th style="text-align:center;"> sfm </th>
+   <th style="text-align:center;"> meandom </th>
+   <th style="text-align:center;"> mindom </th>
+   <th style="text-align:center;"> maxdom </th>
+   <th style="text-align:center;"> dfrange </th>
+   <th style="text-align:center;"> modindx </th>
+   <th style="text-align:center;"> startdom </th>
+   <th style="text-align:center;"> enddom </th>
+   <th style="text-align:center;"> dfslope </th>
+   <th style="text-align:center;"> meanpeakf </th>
+   <th style="text-align:center;"> bottom.freq </th>
+   <th style="text-align:center;"> top.freq </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.173 </td>
+   <td style="text-align:center;"> 5.98 </td>
+   <td style="text-align:center;"> 1.40 </td>
+   <td style="text-align:center;"> 6.33 </td>
+   <td style="text-align:center;"> 5.30 </td>
+   <td style="text-align:center;"> 6.87 </td>
+   <td style="text-align:center;"> 1.57 </td>
+   <td style="text-align:center;"> 0.076 </td>
+   <td style="text-align:center;"> 0.047 </td>
+   <td style="text-align:center;"> 0.117 </td>
+   <td style="text-align:center;"> 0.071 </td>
+   <td style="text-align:center;"> 2.00 </td>
+   <td style="text-align:center;"> 7.02 </td>
+   <td style="text-align:center;"> 0.943 </td>
+   <td style="text-align:center;"> 0.887 </td>
+   <td style="text-align:center;"> 0.837 </td>
+   <td style="text-align:center;"> 0.651 </td>
+   <td style="text-align:center;"> 6.40 </td>
+   <td style="text-align:center;"> 3.75 </td>
+   <td style="text-align:center;"> 8.25 </td>
+   <td style="text-align:center;"> 4.50 </td>
+   <td style="text-align:center;"> 8.60 </td>
+   <td style="text-align:center;"> 6.90 </td>
+   <td style="text-align:center;"> 7.50 </td>
+   <td style="text-align:center;"> 3.47 </td>
+   <td style="text-align:center;"> 7.12 </td>
+   <td style="text-align:center;"> 2.22 </td>
+   <td style="text-align:center;"> 8.60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 0.163 </td>
+   <td style="text-align:center;"> 6.00 </td>
+   <td style="text-align:center;"> 1.42 </td>
+   <td style="text-align:center;"> 6.21 </td>
+   <td style="text-align:center;"> 5.33 </td>
+   <td style="text-align:center;"> 6.88 </td>
+   <td style="text-align:center;"> 1.55 </td>
+   <td style="text-align:center;"> 0.077 </td>
+   <td style="text-align:center;"> 0.044 </td>
+   <td style="text-align:center;"> 0.116 </td>
+   <td style="text-align:center;"> 0.072 </td>
+   <td style="text-align:center;"> 1.92 </td>
+   <td style="text-align:center;"> 7.33 </td>
+   <td style="text-align:center;"> 0.947 </td>
+   <td style="text-align:center;"> 0.889 </td>
+   <td style="text-align:center;"> 0.841 </td>
+   <td style="text-align:center;"> 0.668 </td>
+   <td style="text-align:center;"> 6.64 </td>
+   <td style="text-align:center;"> 3.90 </td>
+   <td style="text-align:center;"> 8.40 </td>
+   <td style="text-align:center;"> 4.50 </td>
+   <td style="text-align:center;"> 4.90 </td>
+   <td style="text-align:center;"> 6.75 </td>
+   <td style="text-align:center;"> 7.20 </td>
+   <td style="text-align:center;"> 2.76 </td>
+   <td style="text-align:center;"> 6.97 </td>
+   <td style="text-align:center;"> 2.17 </td>
+   <td style="text-align:center;"> 8.81 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.175 </td>
+   <td style="text-align:center;"> 6.02 </td>
+   <td style="text-align:center;"> 1.52 </td>
+   <td style="text-align:center;"> 6.43 </td>
+   <td style="text-align:center;"> 5.15 </td>
+   <td style="text-align:center;"> 6.98 </td>
+   <td style="text-align:center;"> 1.83 </td>
+   <td style="text-align:center;"> 0.090 </td>
+   <td style="text-align:center;"> 0.053 </td>
+   <td style="text-align:center;"> 0.128 </td>
+   <td style="text-align:center;"> 0.074 </td>
+   <td style="text-align:center;"> 2.50 </td>
+   <td style="text-align:center;"> 11.14 </td>
+   <td style="text-align:center;"> 0.945 </td>
+   <td style="text-align:center;"> 0.887 </td>
+   <td style="text-align:center;"> 0.838 </td>
+   <td style="text-align:center;"> 0.672 </td>
+   <td style="text-align:center;"> 6.50 </td>
+   <td style="text-align:center;"> 2.25 </td>
+   <td style="text-align:center;"> 8.55 </td>
+   <td style="text-align:center;"> 6.30 </td>
+   <td style="text-align:center;"> 11.19 </td>
+   <td style="text-align:center;"> 8.40 </td>
+   <td style="text-align:center;"> 7.20 </td>
+   <td style="text-align:center;"> -6.86 </td>
+   <td style="text-align:center;"> 7.12 </td>
+   <td style="text-align:center;"> 2.22 </td>
+   <td style="text-align:center;"> 8.76 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.133 </td>
+   <td style="text-align:center;"> 6.40 </td>
+   <td style="text-align:center;"> 1.34 </td>
+   <td style="text-align:center;"> 6.60 </td>
+   <td style="text-align:center;"> 5.61 </td>
+   <td style="text-align:center;"> 7.38 </td>
+   <td style="text-align:center;"> 1.77 </td>
+   <td style="text-align:center;"> 0.077 </td>
+   <td style="text-align:center;"> 0.054 </td>
+   <td style="text-align:center;"> 0.104 </td>
+   <td style="text-align:center;"> 0.049 </td>
+   <td style="text-align:center;"> 1.57 </td>
+   <td style="text-align:center;"> 6.02 </td>
+   <td style="text-align:center;"> 0.942 </td>
+   <td style="text-align:center;"> 0.895 </td>
+   <td style="text-align:center;"> 0.844 </td>
+   <td style="text-align:center;"> 0.609 </td>
+   <td style="text-align:center;"> 6.41 </td>
+   <td style="text-align:center;"> 4.80 </td>
+   <td style="text-align:center;"> 7.95 </td>
+   <td style="text-align:center;"> 3.15 </td>
+   <td style="text-align:center;"> 11.14 </td>
+   <td style="text-align:center;"> 5.85 </td>
+   <td style="text-align:center;"> 6.15 </td>
+   <td style="text-align:center;"> 2.26 </td>
+   <td style="text-align:center;"> 7.42 </td>
+   <td style="text-align:center;"> 2.32 </td>
+   <td style="text-align:center;"> 8.82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 0.126 </td>
+   <td style="text-align:center;"> 6.31 </td>
+   <td style="text-align:center;"> 1.37 </td>
+   <td style="text-align:center;"> 6.60 </td>
+   <td style="text-align:center;"> 5.61 </td>
+   <td style="text-align:center;"> 7.21 </td>
+   <td style="text-align:center;"> 1.60 </td>
+   <td style="text-align:center;"> 0.076 </td>
+   <td style="text-align:center;"> 0.053 </td>
+   <td style="text-align:center;"> 0.098 </td>
+   <td style="text-align:center;"> 0.045 </td>
+   <td style="text-align:center;"> 2.47 </td>
+   <td style="text-align:center;"> 10.88 </td>
+   <td style="text-align:center;"> 0.936 </td>
+   <td style="text-align:center;"> 0.898 </td>
+   <td style="text-align:center;"> 0.840 </td>
+   <td style="text-align:center;"> 0.615 </td>
+   <td style="text-align:center;"> 6.10 </td>
+   <td style="text-align:center;"> 3.00 </td>
+   <td style="text-align:center;"> 7.65 </td>
+   <td style="text-align:center;"> 4.65 </td>
+   <td style="text-align:center;"> 9.58 </td>
+   <td style="text-align:center;"> 5.55 </td>
+   <td style="text-align:center;"> 5.70 </td>
+   <td style="text-align:center;"> 1.19 </td>
+   <td style="text-align:center;"> 6.67 </td>
+   <td style="text-align:center;"> 2.28 </td>
+   <td style="text-align:center;"> 8.89 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.131 </td>
+   <td style="text-align:center;"> 6.61 </td>
+   <td style="text-align:center;"> 1.09 </td>
+   <td style="text-align:center;"> 6.67 </td>
+   <td style="text-align:center;"> 6.07 </td>
+   <td style="text-align:center;"> 7.35 </td>
+   <td style="text-align:center;"> 1.28 </td>
+   <td style="text-align:center;"> 0.064 </td>
+   <td style="text-align:center;"> 0.043 </td>
+   <td style="text-align:center;"> 0.090 </td>
+   <td style="text-align:center;"> 0.047 </td>
+   <td style="text-align:center;"> 1.77 </td>
+   <td style="text-align:center;"> 6.63 </td>
+   <td style="text-align:center;"> 0.930 </td>
+   <td style="text-align:center;"> 0.896 </td>
+   <td style="text-align:center;"> 0.833 </td>
+   <td style="text-align:center;"> 0.570 </td>
+   <td style="text-align:center;"> 6.68 </td>
+   <td style="text-align:center;"> 4.80 </td>
+   <td style="text-align:center;"> 8.10 </td>
+   <td style="text-align:center;"> 3.30 </td>
+   <td style="text-align:center;"> 11.04 </td>
+   <td style="text-align:center;"> 5.40 </td>
+   <td style="text-align:center;"> 7.95 </td>
+   <td style="text-align:center;"> 19.43 </td>
+   <td style="text-align:center;"> 6.67 </td>
+   <td style="text-align:center;"> 3.01 </td>
+   <td style="text-align:center;"> 8.82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 0.130 </td>
+   <td style="text-align:center;"> 6.64 </td>
+   <td style="text-align:center;"> 1.12 </td>
+   <td style="text-align:center;"> 6.67 </td>
+   <td style="text-align:center;"> 6.11 </td>
+   <td style="text-align:center;"> 7.43 </td>
+   <td style="text-align:center;"> 1.32 </td>
+   <td style="text-align:center;"> 0.068 </td>
+   <td style="text-align:center;"> 0.046 </td>
+   <td style="text-align:center;"> 0.094 </td>
+   <td style="text-align:center;"> 0.048 </td>
+   <td style="text-align:center;"> 1.55 </td>
+   <td style="text-align:center;"> 4.97 </td>
+   <td style="text-align:center;"> 0.923 </td>
+   <td style="text-align:center;"> 0.896 </td>
+   <td style="text-align:center;"> 0.828 </td>
+   <td style="text-align:center;"> 0.532 </td>
+   <td style="text-align:center;"> 6.58 </td>
+   <td style="text-align:center;"> 4.50 </td>
+   <td style="text-align:center;"> 8.10 </td>
+   <td style="text-align:center;"> 3.60 </td>
+   <td style="text-align:center;"> 9.92 </td>
+   <td style="text-align:center;"> 5.55 </td>
+   <td style="text-align:center;"> 6.45 </td>
+   <td style="text-align:center;"> 6.91 </td>
+   <td style="text-align:center;"> 6.67 </td>
+   <td style="text-align:center;"> 2.78 </td>
+   <td style="text-align:center;"> 8.89 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.131 </td>
+   <td style="text-align:center;"> 6.59 </td>
+   <td style="text-align:center;"> 1.25 </td>
+   <td style="text-align:center;"> 6.66 </td>
+   <td style="text-align:center;"> 6.04 </td>
+   <td style="text-align:center;"> 7.39 </td>
+   <td style="text-align:center;"> 1.36 </td>
+   <td style="text-align:center;"> 0.065 </td>
+   <td style="text-align:center;"> 0.041 </td>
+   <td style="text-align:center;"> 0.092 </td>
+   <td style="text-align:center;"> 0.051 </td>
+   <td style="text-align:center;"> 1.80 </td>
+   <td style="text-align:center;"> 5.89 </td>
+   <td style="text-align:center;"> 0.919 </td>
+   <td style="text-align:center;"> 0.896 </td>
+   <td style="text-align:center;"> 0.824 </td>
+   <td style="text-align:center;"> 0.526 </td>
+   <td style="text-align:center;"> 6.47 </td>
+   <td style="text-align:center;"> 4.65 </td>
+   <td style="text-align:center;"> 8.10 </td>
+   <td style="text-align:center;"> 3.45 </td>
+   <td style="text-align:center;"> 11.17 </td>
+   <td style="text-align:center;"> 4.95 </td>
+   <td style="text-align:center;"> 6.90 </td>
+   <td style="text-align:center;"> 14.86 </td>
+   <td style="text-align:center;"> 6.67 </td>
+   <td style="text-align:center;"> 2.32 </td>
+   <td style="text-align:center;"> 9.31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long4.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 6.22 </td>
+   <td style="text-align:center;"> 1.48 </td>
+   <td style="text-align:center;"> 6.24 </td>
+   <td style="text-align:center;"> 5.46 </td>
+   <td style="text-align:center;"> 7.31 </td>
+   <td style="text-align:center;"> 1.85 </td>
+   <td style="text-align:center;"> 0.080 </td>
+   <td style="text-align:center;"> 0.044 </td>
+   <td style="text-align:center;"> 0.110 </td>
+   <td style="text-align:center;"> 0.066 </td>
+   <td style="text-align:center;"> 1.27 </td>
+   <td style="text-align:center;"> 4.46 </td>
+   <td style="text-align:center;"> 0.964 </td>
+   <td style="text-align:center;"> 0.892 </td>
+   <td style="text-align:center;"> 0.861 </td>
+   <td style="text-align:center;"> 0.760 </td>
+   <td style="text-align:center;"> 6.15 </td>
+   <td style="text-align:center;"> 3.30 </td>
+   <td style="text-align:center;"> 8.70 </td>
+   <td style="text-align:center;"> 5.40 </td>
+   <td style="text-align:center;"> 8.28 </td>
+   <td style="text-align:center;"> 8.40 </td>
+   <td style="text-align:center;"> 3.30 </td>
+   <td style="text-align:center;"> -35.07 </td>
+   <td style="text-align:center;"> 6.22 </td>
+   <td style="text-align:center;"> 2.51 </td>
+   <td style="text-align:center;"> 9.22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long4.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 0.144 </td>
+   <td style="text-align:center;"> 6.47 </td>
+   <td style="text-align:center;"> 1.59 </td>
+   <td style="text-align:center;"> 6.34 </td>
+   <td style="text-align:center;"> 5.63 </td>
+   <td style="text-align:center;"> 7.58 </td>
+   <td style="text-align:center;"> 1.94 </td>
+   <td style="text-align:center;"> 0.082 </td>
+   <td style="text-align:center;"> 0.043 </td>
+   <td style="text-align:center;"> 0.107 </td>
+   <td style="text-align:center;"> 0.064 </td>
+   <td style="text-align:center;"> 1.69 </td>
+   <td style="text-align:center;"> 6.43 </td>
+   <td style="text-align:center;"> 0.959 </td>
+   <td style="text-align:center;"> 0.893 </td>
+   <td style="text-align:center;"> 0.856 </td>
+   <td style="text-align:center;"> 0.719 </td>
+   <td style="text-align:center;"> 6.35 </td>
+   <td style="text-align:center;"> 2.85 </td>
+   <td style="text-align:center;"> 9.00 </td>
+   <td style="text-align:center;"> 6.15 </td>
+   <td style="text-align:center;"> 3.71 </td>
+   <td style="text-align:center;"> 7.95 </td>
+   <td style="text-align:center;"> 2.85 </td>
+   <td style="text-align:center;"> -35.37 </td>
+   <td style="text-align:center;"> 6.22 </td>
+   <td style="text-align:center;"> 2.58 </td>
+   <td style="text-align:center;"> 10.23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long4.wav </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 6.12 </td>
+   <td style="text-align:center;"> 1.54 </td>
+   <td style="text-align:center;"> 6.08 </td>
+   <td style="text-align:center;"> 5.18 </td>
+   <td style="text-align:center;"> 7.24 </td>
+   <td style="text-align:center;"> 2.06 </td>
+   <td style="text-align:center;"> 0.079 </td>
+   <td style="text-align:center;"> 0.044 </td>
+   <td style="text-align:center;"> 0.109 </td>
+   <td style="text-align:center;"> 0.064 </td>
+   <td style="text-align:center;"> 1.08 </td>
+   <td style="text-align:center;"> 4.19 </td>
+   <td style="text-align:center;"> 0.964 </td>
+   <td style="text-align:center;"> 0.893 </td>
+   <td style="text-align:center;"> 0.861 </td>
+   <td style="text-align:center;"> 0.733 </td>
+   <td style="text-align:center;"> 6.21 </td>
+   <td style="text-align:center;"> 3.15 </td>
+   <td style="text-align:center;"> 8.55 </td>
+   <td style="text-align:center;"> 5.40 </td>
+   <td style="text-align:center;"> 5.22 </td>
+   <td style="text-align:center;"> 7.65 </td>
+   <td style="text-align:center;"> 6.45 </td>
+   <td style="text-align:center;"> -8.27 </td>
+   <td style="text-align:center;"> 6.08 </td>
+   <td style="text-align:center;"> 2.58 </td>
+   <td style="text-align:center;"> 9.74 </td>
+  </tr>
+</tbody>
+</table></div>
+ &nbsp; 
+<p>And this code creates song catalogs:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">rvn.dat.st[1</span><span class="o">:</span><span class="m">9</span><span class="p">,</span> <span class="n">]</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">same.time.scale</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">90</span><span class="p">,</span> <span class="n">parallel</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">mar</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl"> <span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.heat.colors</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl"> <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sound.files&#34;</span><span class="p">,</span> <span class="s">&#34;selec&#34;</span><span class="p">),</span> <span class="n">legend</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl"> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">terrain.colors</span><span class="p">),</span> <span class="n">tags</span> <span class="o">=</span> <span class="s">&#34;sound.files&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="catalogimgcatalogpng">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  </h2>
+<p>This is just to cite a few analysis that can be implemented in <a href="https://cran.r-project.org/package=warbleR">warbleR</a>.</p>
+<p><code>Rraven</code> also contains the function <code>imp_syrinx</code> to import selections from <a href="www.syrinxpc.com">Syrinx sound analyis software</a> (although this program is not been maintained any longer).</p>
+<h3 id="extract_ts"><em>extract_ts</em></h3>
+<p>The function extracts parameters encoded as time series in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selection tables. The resulting data frame can be directly input into functions for time series analysis of acoustic signals as in the <a href="https://cran.r-project.org/package=warbleR">warbleR</a> function <code>dfDTW</code>. The function needs an R data frame, so the data should have been previously imported using <code>imp_raven</code>. This example uses the <code>selection_file.ts</code> example data that comes with <code>Rraven</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#remove previous raven data files</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unlink</span><span class="p">(</span><span class="nf">list.files</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;\\.txt$&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#save Raven selection table in the temporary directory</span>
+</span></span><span class="line"><span class="cl"><span class="nf">writeLines</span><span class="p">(</span><span class="n">selection_files[[5]]</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">selection_files</span><span class="p">)</span><span class="n">[5]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rvn.dat</span> <span class="o">&lt;-</span> <span class="nf">imp_raven</span><span class="p">(</span><span class="n">all.data</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Peak freq contour dif length</span>
+</span></span><span class="line"><span class="cl"><span class="n">fcts</span> <span class="o">&lt;-</span> <span class="nf">extract_ts</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">rvn.dat</span><span class="p">,</span> <span class="n">ts.column</span> <span class="o">=</span> <span class="s">&#34;Peak Freq Contour (Hz)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">fcts</span><span class="p">)</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px; overflow-x: scroll; width:900px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> sound.files </th>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> PFC..1 </th>
+   <th style="text-align:center;"> PFC..2 </th>
+   <th style="text-align:center;"> PFC..3 </th>
+   <th style="text-align:center;"> PFC..4 </th>
+   <th style="text-align:center;"> PFC..5 </th>
+   <th style="text-align:center;"> PFC..6 </th>
+   <th style="text-align:center;"> PFC..7 </th>
+   <th style="text-align:center;"> PFC..8 </th>
+   <th style="text-align:center;"> PFC..9 </th>
+   <th style="text-align:center;"> PFC..10 </th>
+   <th style="text-align:center;"> PFC..11 </th>
+   <th style="text-align:center;"> PFC..12 </th>
+   <th style="text-align:center;"> PFC..13 </th>
+   <th style="text-align:center;"> PFC..14 </th>
+   <th style="text-align:center;"> PFC..15 </th>
+   <th style="text-align:center;"> PFC..16 </th>
+   <th style="text-align:center;"> PFC..17 </th>
+   <th style="text-align:center;"> PFC..18 </th>
+   <th style="text-align:center;"> PFC..19 </th>
+   <th style="text-align:center;"> PFC..20 </th>
+   <th style="text-align:center;"> PFC..21 </th>
+   <th style="text-align:center;"> PFC..22 </th>
+   <th style="text-align:center;"> PFC..23 </th>
+   <th style="text-align:center;"> PFC..24 </th>
+   <th style="text-align:center;"> PFC..25 </th>
+   <th style="text-align:center;"> PFC..26 </th>
+   <th style="text-align:center;"> PFC..27 </th>
+   <th style="text-align:center;"> PFC..28 </th>
+   <th style="text-align:center;"> PFC..29 </th>
+   <th style="text-align:center;"> PFC..30 </th>
+   <th style="text-align:center;"> PFC..31 </th>
+   <th style="text-align:center;"> PFC..32 </th>
+   <th style="text-align:center;"> PFC..33 </th>
+   <th style="text-align:center;"> PFC..34 </th>
+   <th style="text-align:center;"> PFC..35 </th>
+   <th style="text-align:center;"> PFC..36 </th>
+   <th style="text-align:center;"> PFC..37 </th>
+   <th style="text-align:center;"> PFC..38 </th>
+   <th style="text-align:center;"> PFC..39 </th>
+   <th style="text-align:center;"> PFC..40 </th>
+   <th style="text-align:center;"> PFC..41 </th>
+   <th style="text-align:center;"> PFC..42 </th>
+   <th style="text-align:center;"> PFC..43 </th>
+   <th style="text-align:center;"> PFC..44 </th>
+   <th style="text-align:center;"> PFC..45 </th>
+   <th style="text-align:center;"> PFC..46 </th>
+   <th style="text-align:center;"> PFC..47 </th>
+   <th style="text-align:center;"> PFC..48 </th>
+   <th style="text-align:center;"> PFC..49 </th>
+   <th style="text-align:center;"> PFC..50 </th>
+   <th style="text-align:center;"> PFC..51 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7295 </td>
+   <td style="text-align:center;"> 7295 </td>
+   <td style="text-align:center;"> 7295 </td>
+   <td style="text-align:center;"> 7383 </td>
+   <td style="text-align:center;"> 7471 </td>
+   <td style="text-align:center;"> 7646 </td>
+   <td style="text-align:center;"> 5186 </td>
+   <td style="text-align:center;"> 5273 </td>
+   <td style="text-align:center;"> 5361 </td>
+   <td style="text-align:center;"> 5449 </td>
+   <td style="text-align:center;"> 5449 </td>
+   <td style="text-align:center;"> 5537 </td>
+   <td style="text-align:center;"> 5537 </td>
+   <td style="text-align:center;"> 5713 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 5977 </td>
+   <td style="text-align:center;"> 6504 </td>
+   <td style="text-align:center;"> 5713 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 6240 </td>
+   <td style="text-align:center;"> 5977 </td>
+   <td style="text-align:center;"> 6328 </td>
+   <td style="text-align:center;"> 5186 </td>
+   <td style="text-align:center;"> 5010 </td>
+   <td style="text-align:center;"> 4658 </td>
+   <td style="text-align:center;"> 4307 </td>
+   <td style="text-align:center;"> 3955 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> 6768 </td>
+   <td style="text-align:center;"> 6768 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7031 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7119 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 6768 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7295 </td>
+   <td style="text-align:center;"> 7383 </td>
+   <td style="text-align:center;"> 7471 </td>
+   <td style="text-align:center;"> 7559 </td>
+   <td style="text-align:center;"> 7559 </td>
+   <td style="text-align:center;"> 7646 </td>
+   <td style="text-align:center;"> 5186 </td>
+   <td style="text-align:center;"> 5361 </td>
+   <td style="text-align:center;"> 5537 </td>
+   <td style="text-align:center;"> 8262 </td>
+   <td style="text-align:center;"> 8262 </td>
+   <td style="text-align:center;"> 8350 </td>
+   <td style="text-align:center;"> 5801 </td>
+   <td style="text-align:center;"> 6152 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 6680 </td>
+   <td style="text-align:center;"> 5889 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 5625 </td>
+   <td style="text-align:center;"> 6152 </td>
+   <td style="text-align:center;"> 5977 </td>
+   <td style="text-align:center;"> 5977 </td>
+   <td style="text-align:center;"> 5977 </td>
+   <td style="text-align:center;"> 5273 </td>
+   <td style="text-align:center;"> 5273 </td>
+   <td style="text-align:center;"> 4570 </td>
+   <td style="text-align:center;"> 4307 </td>
+   <td style="text-align:center;"> 3867 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 4746 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 4834 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 4922 </td>
+   <td style="text-align:center;"> 4922 </td>
+   <td style="text-align:center;"> 7559 </td>
+   <td style="text-align:center;"> 7646 </td>
+   <td style="text-align:center;"> 7734 </td>
+   <td style="text-align:center;"> 7998 </td>
+   <td style="text-align:center;"> 8086 </td>
+   <td style="text-align:center;"> 5449 </td>
+   <td style="text-align:center;"> 8086 </td>
+   <td style="text-align:center;"> 8350 </td>
+   <td style="text-align:center;"> 7998 </td>
+   <td style="text-align:center;"> 8701 </td>
+   <td style="text-align:center;"> 6504 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 5801 </td>
+   <td style="text-align:center;"> 6504 </td>
+   <td style="text-align:center;"> 6504 </td>
+   <td style="text-align:center;"> 6328 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 5449 </td>
+   <td style="text-align:center;"> 6152 </td>
+   <td style="text-align:center;"> 5361 </td>
+   <td style="text-align:center;"> 5273 </td>
+   <td style="text-align:center;"> 4922 </td>
+   <td style="text-align:center;"> 4482 </td>
+   <td style="text-align:center;"> 4131 </td>
+   <td style="text-align:center;"> 3779 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 6768 </td>
+   <td style="text-align:center;"> 6768 </td>
+   <td style="text-align:center;"> 6768 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 7031 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7031 </td>
+   <td style="text-align:center;"> 7295 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7031 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7031 </td>
+   <td style="text-align:center;"> 7031 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7119 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 5889 </td>
+   <td style="text-align:center;"> 6504 </td>
+   <td style="text-align:center;"> 4570 </td>
+   <td style="text-align:center;"> 4834 </td>
+   <td style="text-align:center;"> 5186 </td>
+   <td style="text-align:center;"> 5537 </td>
+   <td style="text-align:center;"> 5537 </td>
+   <td style="text-align:center;"> 5801 </td>
+   <td style="text-align:center;"> 6504 </td>
+   <td style="text-align:center;"> 3779 </td>
+   <td style="text-align:center;"> 6240 </td>
+   <td style="text-align:center;"> 6328 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 5273 </td>
+   <td style="text-align:center;"> 5713 </td>
+   <td style="text-align:center;"> 4922 </td>
+   <td style="text-align:center;"> 7383 </td>
+   <td style="text-align:center;"> 6064 </td>
+   <td style="text-align:center;"> 6768 </td>
+   <td style="text-align:center;"> 7646 </td>
+   <td style="text-align:center;"> 5801 </td>
+   <td style="text-align:center;"> 7471 </td>
+   <td style="text-align:center;"> 7295 </td>
+   <td style="text-align:center;"> 7383 </td>
+   <td style="text-align:center;"> 5537 </td>
+   <td style="text-align:center;"> 6152 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 5889 </td>
+   <td style="text-align:center;"> 7559 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 7295 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 7822 </td>
+   <td style="text-align:center;"> 7822 </td>
+   <td style="text-align:center;"> 5977 </td>
+   <td style="text-align:center;"> 6064 </td>
+   <td style="text-align:center;"> 6152 </td>
+   <td style="text-align:center;"> 6152 </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 4570 </td>
+   <td style="text-align:center;"> 4746 </td>
+   <td style="text-align:center;"> 4922 </td>
+   <td style="text-align:center;"> 5098 </td>
+   <td style="text-align:center;"> 5098 </td>
+   <td style="text-align:center;"> 5186 </td>
+   <td style="text-align:center;"> 5801 </td>
+   <td style="text-align:center;"> 5713 </td>
+   <td style="text-align:center;"> 5889 </td>
+   <td style="text-align:center;"> 5977 </td>
+   <td style="text-align:center;"> 6064 </td>
+   <td style="text-align:center;"> 6064 </td>
+   <td style="text-align:center;"> 4570 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> 5977 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> 6680 </td>
+   <td style="text-align:center;"> 6328 </td>
+   <td style="text-align:center;"> 7646 </td>
+   <td style="text-align:center;"> 5713 </td>
+   <td style="text-align:center;"> 7207 </td>
+   <td style="text-align:center;"> 6680 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 6240 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 6504 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 7559 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 5713 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 5537 </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> 4219 </td>
+   <td style="text-align:center;"> 6240 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 6680 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 5010 </td>
+   <td style="text-align:center;"> 5801 </td>
+   <td style="text-align:center;"> 6240 </td>
+   <td style="text-align:center;"> 6768 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 6328 </td>
+   <td style="text-align:center;"> 6328 </td>
+   <td style="text-align:center;"> 6504 </td>
+   <td style="text-align:center;"> 6680 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 5537 </td>
+   <td style="text-align:center;"> 6680 </td>
+   <td style="text-align:center;"> 6680 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 5977 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 6768 </td>
+   <td style="text-align:center;"> 7471 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 7471 </td>
+   <td style="text-align:center;"> 6592 </td>
+   <td style="text-align:center;"> 7998 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7910 </td>
+   <td style="text-align:center;"> 7031 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 7471 </td>
+   <td style="text-align:center;"> 6943 </td>
+   <td style="text-align:center;"> 7734 </td>
+   <td style="text-align:center;"> 7119 </td>
+   <td style="text-align:center;"> 7822 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 6856 </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+</tbody>
+</table></div>
+&nbsp;
+<p>Note that these sequences are not all of equal length (one has NAs at the end).
+<code>extract_ts</code> can also interpolate values so all time series have the same length:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Peak freq contour equal length</span>
+</span></span><span class="line"><span class="cl"><span class="n">fcts</span> <span class="o">&lt;-</span> <span class="nf">extract_ts</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">rvn.dat</span><span class="p">,</span> <span class="n">ts.column</span> <span class="o">=</span> <span class="s">&#34;Peak Freq Contour (Hz)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">equal.length</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#look at the last rows wit no NAs</span>
+</span></span><span class="line"><span class="cl"><span class="n">fcts[</span> <span class="p">,</span> <span class="m">21</span><span class="o">:</span><span class="m">32</span><span class="n">]</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px; overflow-x: scroll; width:900px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> PFC..19 </th>
+   <th style="text-align:center;"> PFC..20 </th>
+   <th style="text-align:center;"> PFC..21 </th>
+   <th style="text-align:center;"> PFC..22 </th>
+   <th style="text-align:center;"> PFC..23 </th>
+   <th style="text-align:center;"> PFC..24 </th>
+   <th style="text-align:center;"> PFC..25 </th>
+   <th style="text-align:center;"> PFC..26 </th>
+   <th style="text-align:center;"> PFC..27 </th>
+   <th style="text-align:center;"> PFC..28 </th>
+   <th style="text-align:center;"> PFC..29 </th>
+   <th style="text-align:center;"> PFC..30 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 6246 </td>
+   <td style="text-align:center;"> 6374 </td>
+   <td style="text-align:center;"> 6501 </td>
+   <td style="text-align:center;"> 6628 </td>
+   <td style="text-align:center;"> 6755 </td>
+   <td style="text-align:center;"> 6883 </td>
+   <td style="text-align:center;"> 7010 </td>
+   <td style="text-align:center;"> 7137 </td>
+   <td style="text-align:center;"> 7265 </td>
+   <td style="text-align:center;"> 7392 </td>
+   <td style="text-align:center;"> 7519 </td>
+   <td style="text-align:center;"> 7646 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6649 </td>
+   <td style="text-align:center;"> 6804 </td>
+   <td style="text-align:center;"> 6959 </td>
+   <td style="text-align:center;"> 7113 </td>
+   <td style="text-align:center;"> 7268 </td>
+   <td style="text-align:center;"> 7422 </td>
+   <td style="text-align:center;"> 7577 </td>
+   <td style="text-align:center;"> 7731 </td>
+   <td style="text-align:center;"> 7886 </td>
+   <td style="text-align:center;"> 8040 </td>
+   <td style="text-align:center;"> 8195 </td>
+   <td style="text-align:center;"> 8350 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6834 </td>
+   <td style="text-align:center;"> 7004 </td>
+   <td style="text-align:center;"> 7174 </td>
+   <td style="text-align:center;"> 7343 </td>
+   <td style="text-align:center;"> 7513 </td>
+   <td style="text-align:center;"> 7683 </td>
+   <td style="text-align:center;"> 7853 </td>
+   <td style="text-align:center;"> 8022 </td>
+   <td style="text-align:center;"> 8192 </td>
+   <td style="text-align:center;"> 8362 </td>
+   <td style="text-align:center;"> 8531 </td>
+   <td style="text-align:center;"> 8701 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6289 </td>
+   <td style="text-align:center;"> 6428 </td>
+   <td style="text-align:center;"> 6568 </td>
+   <td style="text-align:center;"> 6707 </td>
+   <td style="text-align:center;"> 6846 </td>
+   <td style="text-align:center;"> 6986 </td>
+   <td style="text-align:center;"> 7125 </td>
+   <td style="text-align:center;"> 7265 </td>
+   <td style="text-align:center;"> 7404 </td>
+   <td style="text-align:center;"> 7543 </td>
+   <td style="text-align:center;"> 7683 </td>
+   <td style="text-align:center;"> 7822 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6480 </td>
+   <td style="text-align:center;"> 6586 </td>
+   <td style="text-align:center;"> 6692 </td>
+   <td style="text-align:center;"> 6798 </td>
+   <td style="text-align:center;"> 6904 </td>
+   <td style="text-align:center;"> 7010 </td>
+   <td style="text-align:center;"> 7116 </td>
+   <td style="text-align:center;"> 7222 </td>
+   <td style="text-align:center;"> 7328 </td>
+   <td style="text-align:center;"> 7434 </td>
+   <td style="text-align:center;"> 7540 </td>
+   <td style="text-align:center;"> 7646 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6565 </td>
+   <td style="text-align:center;"> 6695 </td>
+   <td style="text-align:center;"> 6825 </td>
+   <td style="text-align:center;"> 6955 </td>
+   <td style="text-align:center;"> 7086 </td>
+   <td style="text-align:center;"> 7216 </td>
+   <td style="text-align:center;"> 7346 </td>
+   <td style="text-align:center;"> 7477 </td>
+   <td style="text-align:center;"> 7607 </td>
+   <td style="text-align:center;"> 7737 </td>
+   <td style="text-align:center;"> 7868 </td>
+   <td style="text-align:center;"> 7998 </td>
+  </tr>
+</tbody>
+</table></div>
+ &nbsp; 
+<p>And the length of the series can also be specified:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Peak freq contour equal length 10 measurements</span>
+</span></span><span class="line"><span class="cl"><span class="n">fcts</span> <span class="o">&lt;-</span> <span class="nf">extract_ts</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">rvn.dat</span><span class="p">,</span> <span class="n">ts.column</span> <span class="o">=</span> <span class="s">&#34;Peak Freq Contour (Hz)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">equal.length</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">length.out</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fcts</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px; overflow-x: scroll; width:900px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> sound.files </th>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> PFC..1 </th>
+   <th style="text-align:center;"> PFC..2 </th>
+   <th style="text-align:center;"> PFC..3 </th>
+   <th style="text-align:center;"> PFC..4 </th>
+   <th style="text-align:center;"> PFC..5 </th>
+   <th style="text-align:center;"> PFC..6 </th>
+   <th style="text-align:center;"> PFC..7 </th>
+   <th style="text-align:center;"> PFC..8 </th>
+   <th style="text-align:center;"> PFC..9 </th>
+   <th style="text-align:center;"> PFC..10 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3955 </td>
+   <td style="text-align:center;"> 4365 </td>
+   <td style="text-align:center;"> 4775 </td>
+   <td style="text-align:center;"> 5186 </td>
+   <td style="text-align:center;"> 5596 </td>
+   <td style="text-align:center;"> 6006 </td>
+   <td style="text-align:center;"> 6416 </td>
+   <td style="text-align:center;"> 6826 </td>
+   <td style="text-align:center;"> 7236 </td>
+   <td style="text-align:center;"> 7646 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 3867 </td>
+   <td style="text-align:center;"> 4365 </td>
+   <td style="text-align:center;"> 4863 </td>
+   <td style="text-align:center;"> 5361 </td>
+   <td style="text-align:center;"> 5859 </td>
+   <td style="text-align:center;"> 6357 </td>
+   <td style="text-align:center;"> 6855 </td>
+   <td style="text-align:center;"> 7354 </td>
+   <td style="text-align:center;"> 7852 </td>
+   <td style="text-align:center;"> 8350 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 3779 </td>
+   <td style="text-align:center;"> 4326 </td>
+   <td style="text-align:center;"> 4873 </td>
+   <td style="text-align:center;"> 5420 </td>
+   <td style="text-align:center;"> 5967 </td>
+   <td style="text-align:center;"> 6514 </td>
+   <td style="text-align:center;"> 7061 </td>
+   <td style="text-align:center;"> 7607 </td>
+   <td style="text-align:center;"> 8154 </td>
+   <td style="text-align:center;"> 8701 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 3779 </td>
+   <td style="text-align:center;"> 4229 </td>
+   <td style="text-align:center;"> 4678 </td>
+   <td style="text-align:center;"> 5127 </td>
+   <td style="text-align:center;"> 5576 </td>
+   <td style="text-align:center;"> 6025 </td>
+   <td style="text-align:center;"> 6475 </td>
+   <td style="text-align:center;"> 6924 </td>
+   <td style="text-align:center;"> 7373 </td>
+   <td style="text-align:center;"> 7822 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 4570 </td>
+   <td style="text-align:center;"> 4912 </td>
+   <td style="text-align:center;"> 5254 </td>
+   <td style="text-align:center;"> 5596 </td>
+   <td style="text-align:center;"> 5938 </td>
+   <td style="text-align:center;"> 6279 </td>
+   <td style="text-align:center;"> 6621 </td>
+   <td style="text-align:center;"> 6963 </td>
+   <td style="text-align:center;"> 7305 </td>
+   <td style="text-align:center;"> 7646 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> 4219 </td>
+   <td style="text-align:center;"> 4639 </td>
+   <td style="text-align:center;"> 5059 </td>
+   <td style="text-align:center;"> 5479 </td>
+   <td style="text-align:center;"> 5898 </td>
+   <td style="text-align:center;"> 6318 </td>
+   <td style="text-align:center;"> 6738 </td>
+   <td style="text-align:center;"> 7158 </td>
+   <td style="text-align:center;"> 7578 </td>
+   <td style="text-align:center;"> 7998 </td>
+  </tr>
+</tbody>
+</table></div>
+&nbsp; 
+<p>The time series data frame can be directly input into the <code>dfDTW</code> <a href="https://cran.r-project.org/package=warbleR">warbleR</a> function to calculate <a href="https://en.wikipedia.org/wiki/Dynamic_time_warping">Dynamic Time Warping</a> distances:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">dfDTW</span><span class="p">(</span><span class="n">ts.df</span> <span class="o">=</span> <span class="n">fcts</span><span class="p">)</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px; overflow-x: scroll; width:900px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> Phae.long1.wav-1 </th>
+   <th style="text-align:center;"> Phae.long1.wav-2 </th>
+   <th style="text-align:center;"> Phae.long1.wav-3 </th>
+   <th style="text-align:center;"> Phae.long2.wav-4 </th>
+   <th style="text-align:center;"> Phae.long2.wav-5 </th>
+   <th style="text-align:center;"> Phae.long3.wav-6 </th>
+   <th style="text-align:center;"> Phae.long3.wav-7 </th>
+   <th style="text-align:center;"> Phae.long3.wav-8 </th>
+   <th style="text-align:center;"> Phae.long4.wav-9 </th>
+   <th style="text-align:center;"> Phae.long4.wav-10 </th>
+   <th style="text-align:center;"> Phae.long4.wav-11 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Phae.long1.wav-1 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 2666 </td>
+   <td style="text-align:center;"> 3652 </td>
+   <td style="text-align:center;"> 1778 </td>
+   <td style="text-align:center;"> 2256 </td>
+   <td style="text-align:center;"> 2403 </td>
+   <td style="text-align:center;"> 3007 </td>
+   <td style="text-align:center;"> 3252 </td>
+   <td style="text-align:center;"> 4219 </td>
+   <td style="text-align:center;"> 4610 </td>
+   <td style="text-align:center;"> 4170 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long1.wav-2 </td>
+   <td style="text-align:center;"> 2666 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 2734 </td>
+   <td style="text-align:center;"> 2744 </td>
+   <td style="text-align:center;"> 3457 </td>
+   <td style="text-align:center;"> 3027 </td>
+   <td style="text-align:center;"> 3428 </td>
+   <td style="text-align:center;"> 3897 </td>
+   <td style="text-align:center;"> 3486 </td>
+   <td style="text-align:center;"> 3584 </td>
+   <td style="text-align:center;"> 3242 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long1.wav-3 </td>
+   <td style="text-align:center;"> 3652 </td>
+   <td style="text-align:center;"> 2734 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 3516 </td>
+   <td style="text-align:center;"> 4287 </td>
+   <td style="text-align:center;"> 3340 </td>
+   <td style="text-align:center;"> 3731 </td>
+   <td style="text-align:center;"> 4424 </td>
+   <td style="text-align:center;"> 3047 </td>
+   <td style="text-align:center;"> 2774 </td>
+   <td style="text-align:center;"> 3310 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long2.wav-4 </td>
+   <td style="text-align:center;"> 1778 </td>
+   <td style="text-align:center;"> 2744 </td>
+   <td style="text-align:center;"> 3516 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 3047 </td>
+   <td style="text-align:center;"> 2783 </td>
+   <td style="text-align:center;"> 3262 </td>
+   <td style="text-align:center;"> 3819 </td>
+   <td style="text-align:center;"> 3750 </td>
+   <td style="text-align:center;"> 4180 </td>
+   <td style="text-align:center;"> 3486 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long2.wav-5 </td>
+   <td style="text-align:center;"> 2256 </td>
+   <td style="text-align:center;"> 3457 </td>
+   <td style="text-align:center;"> 4287 </td>
+   <td style="text-align:center;"> 3047 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 2539 </td>
+   <td style="text-align:center;"> 2266 </td>
+   <td style="text-align:center;"> 869 </td>
+   <td style="text-align:center;"> 5244 </td>
+   <td style="text-align:center;"> 5420 </td>
+   <td style="text-align:center;"> 5723 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long3.wav-6 </td>
+   <td style="text-align:center;"> 2403 </td>
+   <td style="text-align:center;"> 3027 </td>
+   <td style="text-align:center;"> 3340 </td>
+   <td style="text-align:center;"> 2783 </td>
+   <td style="text-align:center;"> 2539 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 2061 </td>
+   <td style="text-align:center;"> 2637 </td>
+   <td style="text-align:center;"> 3614 </td>
+   <td style="text-align:center;"> 4034 </td>
+   <td style="text-align:center;"> 4619 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long3.wav-7 </td>
+   <td style="text-align:center;"> 3007 </td>
+   <td style="text-align:center;"> 3428 </td>
+   <td style="text-align:center;"> 3731 </td>
+   <td style="text-align:center;"> 3262 </td>
+   <td style="text-align:center;"> 2266 </td>
+   <td style="text-align:center;"> 2061 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 2031 </td>
+   <td style="text-align:center;"> 4610 </td>
+   <td style="text-align:center;"> 5079 </td>
+   <td style="text-align:center;"> 5752 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long3.wav-8 </td>
+   <td style="text-align:center;"> 3252 </td>
+   <td style="text-align:center;"> 3897 </td>
+   <td style="text-align:center;"> 4424 </td>
+   <td style="text-align:center;"> 3819 </td>
+   <td style="text-align:center;"> 869 </td>
+   <td style="text-align:center;"> 2637 </td>
+   <td style="text-align:center;"> 2031 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 5352 </td>
+   <td style="text-align:center;"> 5645 </td>
+   <td style="text-align:center;"> 6504 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long4.wav-9 </td>
+   <td style="text-align:center;"> 4219 </td>
+   <td style="text-align:center;"> 3486 </td>
+   <td style="text-align:center;"> 3047 </td>
+   <td style="text-align:center;"> 3750 </td>
+   <td style="text-align:center;"> 5244 </td>
+   <td style="text-align:center;"> 3614 </td>
+   <td style="text-align:center;"> 4610 </td>
+   <td style="text-align:center;"> 5352 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 1758 </td>
+   <td style="text-align:center;"> 4815 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long4.wav-10 </td>
+   <td style="text-align:center;"> 4610 </td>
+   <td style="text-align:center;"> 3584 </td>
+   <td style="text-align:center;"> 2774 </td>
+   <td style="text-align:center;"> 4180 </td>
+   <td style="text-align:center;"> 5420 </td>
+   <td style="text-align:center;"> 4034 </td>
+   <td style="text-align:center;"> 5079 </td>
+   <td style="text-align:center;"> 5645 </td>
+   <td style="text-align:center;"> 1758 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 3701 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phae.long4.wav-11 </td>
+   <td style="text-align:center;"> 4170 </td>
+   <td style="text-align:center;"> 3242 </td>
+   <td style="text-align:center;"> 3310 </td>
+   <td style="text-align:center;"> 3486 </td>
+   <td style="text-align:center;"> 5723 </td>
+   <td style="text-align:center;"> 4619 </td>
+   <td style="text-align:center;"> 5752 </td>
+   <td style="text-align:center;"> 6504 </td>
+   <td style="text-align:center;"> 4815 </td>
+   <td style="text-align:center;"> 3701 </td>
+   <td style="text-align:center;"> 0 </td>
+  </tr>
+</tbody>
+</table></div>
+<hr>
+<h3 id="relabel_colms"><em>relabel_colms</em></h3>
+<p>This is a very simple function to relabel columns so they match the selection table format used in <a href="https://cran.r-project.org/package=warbleR">warbleR</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#to simplify the example select a subset of the columns </span>
+</span></span><span class="line"><span class="cl"><span class="n">st1</span> <span class="o">&lt;-</span> <span class="n">rvn.dat.st[</span> <span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">7</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#check original column names</span>
+</span></span><span class="line"><span class="cl"><span class="n">st1</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Selection </th>
+   <th style="text-align:center;"> View </th>
+   <th style="text-align:center;"> Channel </th>
+   <th style="text-align:center;"> Begin Time (s) </th>
+   <th style="text-align:center;"> End Time (s) </th>
+   <th style="text-align:center;"> Low Freq (Hz) </th>
+   <th style="text-align:center;"> High Freq (Hz) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.169 </td>
+   <td style="text-align:center;"> 1.342 </td>
+   <td style="text-align:center;"> 2220 </td>
+   <td style="text-align:center;"> 8604 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.158 </td>
+   <td style="text-align:center;"> 2.321 </td>
+   <td style="text-align:center;"> 2169 </td>
+   <td style="text-align:center;"> 8807 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.343 </td>
+   <td style="text-align:center;"> 0.518 </td>
+   <td style="text-align:center;"> 2218 </td>
+   <td style="text-align:center;"> 8757 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.660 </td>
+   <td style="text-align:center;"> 2.792 </td>
+   <td style="text-align:center;"> 2317 </td>
+   <td style="text-align:center;"> 8822 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3.957 </td>
+   <td style="text-align:center;"> 4.083 </td>
+   <td style="text-align:center;"> 2284 </td>
+   <td style="text-align:center;"> 8888 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 4.827 </td>
+   <td style="text-align:center;"> 4.958 </td>
+   <td style="text-align:center;"> 3007 </td>
+   <td style="text-align:center;"> 8822 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 7 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 6.174 </td>
+   <td style="text-align:center;"> 6.304 </td>
+   <td style="text-align:center;"> 2777 </td>
+   <td style="text-align:center;"> 8888 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 4.323 </td>
+   <td style="text-align:center;"> 4.455 </td>
+   <td style="text-align:center;"> 2317 </td>
+   <td style="text-align:center;"> 9315 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 7.917 </td>
+   <td style="text-align:center;"> 8.062 </td>
+   <td style="text-align:center;"> 2514 </td>
+   <td style="text-align:center;"> 9217 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 9.333 </td>
+   <td style="text-align:center;"> 9.477 </td>
+   <td style="text-align:center;"> 2580 </td>
+   <td style="text-align:center;"> 10235 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 6.545 </td>
+   <td style="text-align:center;"> 6.691 </td>
+   <td style="text-align:center;"> 2580 </td>
+   <td style="text-align:center;"> 9742 </td>
+  </tr>
+</tbody>
+</table></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Relabel the basic columns required by warbleR</span>
+</span></span><span class="line"><span class="cl"><span class="nf">relabel_colms</span><span class="p">(</span><span class="n">st1</span><span class="p">)</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> View </th>
+   <th style="text-align:center;"> Channel </th>
+   <th style="text-align:center;"> start </th>
+   <th style="text-align:center;"> end </th>
+   <th style="text-align:center;"> bottom.freq </th>
+   <th style="text-align:center;"> top.freq </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.169355 </td>
+   <td style="text-align:center;"> 1.342388 </td>
+   <td style="text-align:center;"> 2220.1 </td>
+   <td style="text-align:center;"> 8604.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.158408 </td>
+   <td style="text-align:center;"> 2.321457 </td>
+   <td style="text-align:center;"> 2169.4 </td>
+   <td style="text-align:center;"> 8807.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.343337 </td>
+   <td style="text-align:center;"> 0.518255 </td>
+   <td style="text-align:center;"> 2218.3 </td>
+   <td style="text-align:center;"> 8756.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.659643 </td>
+   <td style="text-align:center;"> 2.792214 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3.957103 </td>
+   <td style="text-align:center;"> 4.083253 </td>
+   <td style="text-align:center;"> 2284.0 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 4.826641 </td>
+   <td style="text-align:center;"> 4.957860 </td>
+   <td style="text-align:center;"> 3006.8 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 7 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 6.174302 </td>
+   <td style="text-align:center;"> 6.304481 </td>
+   <td style="text-align:center;"> 2776.8 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 4.323453 </td>
+   <td style="text-align:center;"> 4.454670 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 9315.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 7.916900 </td>
+   <td style="text-align:center;"> 8.062325 </td>
+   <td style="text-align:center;"> 2514.0 </td>
+   <td style="text-align:center;"> 9216.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 9.332781 </td>
+   <td style="text-align:center;"> 9.476967 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 10235.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 6.545487 </td>
+   <td style="text-align:center;"> 6.690585 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 9742.3 </td>
+  </tr>
+</tbody>
+</table></div>
+ &nbsp; 
+<p>Additional columns can also be relabeled:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># 1 additional column </span>
+</span></span><span class="line"><span class="cl"><span class="nf">relabel_colms</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">extra.cols.name</span> <span class="o">=</span> <span class="s">&#34;View&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="n">extra.cols.new.name</span> <span class="o">=</span> <span class="s">&#34;Raven view&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> Raven view </th>
+   <th style="text-align:center;"> Channel </th>
+   <th style="text-align:center;"> start </th>
+   <th style="text-align:center;"> end </th>
+   <th style="text-align:center;"> bottom.freq </th>
+   <th style="text-align:center;"> top.freq </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.169355 </td>
+   <td style="text-align:center;"> 1.342388 </td>
+   <td style="text-align:center;"> 2220.1 </td>
+   <td style="text-align:center;"> 8604.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.158408 </td>
+   <td style="text-align:center;"> 2.321457 </td>
+   <td style="text-align:center;"> 2169.4 </td>
+   <td style="text-align:center;"> 8807.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.343337 </td>
+   <td style="text-align:center;"> 0.518255 </td>
+   <td style="text-align:center;"> 2218.3 </td>
+   <td style="text-align:center;"> 8756.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.659643 </td>
+   <td style="text-align:center;"> 2.792214 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3.957103 </td>
+   <td style="text-align:center;"> 4.083253 </td>
+   <td style="text-align:center;"> 2284.0 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 4.826641 </td>
+   <td style="text-align:center;"> 4.957860 </td>
+   <td style="text-align:center;"> 3006.8 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 7 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 6.174302 </td>
+   <td style="text-align:center;"> 6.304481 </td>
+   <td style="text-align:center;"> 2776.8 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 4.323453 </td>
+   <td style="text-align:center;"> 4.454670 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 9315.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 7.916900 </td>
+   <td style="text-align:center;"> 8.062325 </td>
+   <td style="text-align:center;"> 2514.0 </td>
+   <td style="text-align:center;"> 9216.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 9.332781 </td>
+   <td style="text-align:center;"> 9.476967 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 10235.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 6.545487 </td>
+   <td style="text-align:center;"> 6.690585 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 9742.3 </td>
+  </tr>
+</tbody>
+</table></div>
+ &nbsp; 
+<hr>
+<h3 id="imp_corr_mat"><em>imp_corr_mat</em></h3>
+<p>The function imports the output of a batch correlation routine in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>. Both the correlation and lag matrices contained in the output &lsquo;.txt&rsquo; file are read and both waveform and spectrogram (cross-correlation) correlations can be imported.</p>
+<p>This example shows how to input the sound files into <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> and how to bring the results back to R. First, the selections need to be cut as single sound files for the <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> correlator to be able to read it. We can do this using the <code>cut_sels</code> function from <a href="https://cran.r-project.org/package=warbleR">warbleR</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#create new folder to put cuts</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dir.create</span><span class="p">(</span><span class="s">&#34;cuts&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add a rowname column to be able to match cuts and selections</span>
+</span></span><span class="line"><span class="cl"><span class="n">selec.table</span><span class="o">$</span><span class="n">rownames</span> <span class="o">&lt;-</span> <span class="nf">sprintf</span><span class="p">(</span><span class="s">&#34;%02d&#34;</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">selec.table</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># cut files</span>
+</span></span><span class="line"><span class="cl"><span class="nf">cut_sels</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table</span><span class="p">,</span> <span class="n">mar</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="nf">tempdir</span><span class="p">(),</span> 
+</span></span><span class="line"><span class="cl">         <span class="n">dest.path</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="nf">tempdir</span><span class="p">(),</span> <span class="s">&#34;cuts&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">         <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;rownames&#34;</span><span class="p">,</span> <span class="s">&#34;sound.files&#34;</span><span class="p">,</span> <span class="s">&#34;selec&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">         <span class="n">pb</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#list cuts</span>
+</span></span><span class="line"><span class="cl"><span class="nf">list.files</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="nf">tempdir</span><span class="p">(),</span> <span class="s">&#34;cuts&#34;</span><span class="p">))</span>
+</span></span></code></pre></div><p> </p>
+<p>Every selection is in its own sound file (labeled as <code>paste(sound.files, selec)</code>). Now open <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> and run the batch correlator on the &lsquo;cuts&rsquo; folder as follows:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/raven_correlator.gif" alt="gif1" loading="lazy" />
+</picture>
+
+ </p>
+<p>And then import the output file into R:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Import output (change the name of the file if you used a different one)</span>
+</span></span><span class="line"><span class="cl"><span class="n">xcorr.rav</span> <span class="o">&lt;-</span> <span class="nf">imp_corr_mat</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;BatchCorrOutput.txt&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                          <span class="n">path</span> <span class="o">=</span> <span class="nf">tempdir</span><span class="p">())</span>
+</span></span></code></pre></div><p> </p>
+<p>The function returns a list containing the correlation matrix (here only showing the first 5 rows/columns):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">xcorr.rav</span><span class="o">$</span><span class="n">correlation</span>
+</span></span></code></pre></div><p> </p>
+<div style="border: 1px solid #ddd; padding: 1px; overflow-x: scroll; width:900px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> 01-Phae.long1-1.wav </th>
+   <th style="text-align:center;"> 10-Phae.long4-2.wav </th>
+   <th style="text-align:center;"> 11-Phae.long4-3.wav </th>
+   <th style="text-align:center;"> 07-Phae.long3-2.wav </th>
+   <th style="text-align:center;"> 05-Phae.long2-2.wav </th>
+   <th style="text-align:center;"> 09-Phae.long4-1.wav </th>
+   <th style="text-align:center;"> 04-Phae.long2-1.wav </th>
+   <th style="text-align:center;"> 02-Phae.long1-2.wav </th>
+   <th style="text-align:center;"> 06-Phae.long3-1.wav </th>
+   <th style="text-align:center;"> 03-Phae.long1-3.wav </th>
+   <th style="text-align:center;"> 08-Phae.long3-3.wav </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 01-Phae.long1-1.wav </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.216 </td>
+   <td style="text-align:center;"> 0.184 </td>
+   <td style="text-align:center;"> 0.285 </td>
+   <td style="text-align:center;"> 0.443 </td>
+   <td style="text-align:center;"> 0.195 </td>
+   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 0.613 </td>
+   <td style="text-align:center;"> 0.360 </td>
+   <td style="text-align:center;"> 0.812 </td>
+   <td style="text-align:center;"> 0.236 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 10-Phae.long4-2.wav </td>
+   <td style="text-align:center;"> 0.216 </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.781 </td>
+   <td style="text-align:center;"> 0.290 </td>
+   <td style="text-align:center;"> 0.235 </td>
+   <td style="text-align:center;"> 0.907 </td>
+   <td style="text-align:center;"> 0.289 </td>
+   <td style="text-align:center;"> 0.176 </td>
+   <td style="text-align:center;"> 0.204 </td>
+   <td style="text-align:center;"> 0.209 </td>
+   <td style="text-align:center;"> 0.323 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 11-Phae.long4-3.wav </td>
+   <td style="text-align:center;"> 0.184 </td>
+   <td style="text-align:center;"> 0.781 </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.279 </td>
+   <td style="text-align:center;"> 0.186 </td>
+   <td style="text-align:center;"> 0.804 </td>
+   <td style="text-align:center;"> 0.274 </td>
+   <td style="text-align:center;"> 0.127 </td>
+   <td style="text-align:center;"> 0.189 </td>
+   <td style="text-align:center;"> 0.185 </td>
+   <td style="text-align:center;"> 0.393 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 07-Phae.long3-2.wav </td>
+   <td style="text-align:center;"> 0.285 </td>
+   <td style="text-align:center;"> 0.290 </td>
+   <td style="text-align:center;"> 0.279 </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.433 </td>
+   <td style="text-align:center;"> 0.281 </td>
+   <td style="text-align:center;"> 0.270 </td>
+   <td style="text-align:center;"> 0.251 </td>
+   <td style="text-align:center;"> 0.635 </td>
+   <td style="text-align:center;"> 0.274 </td>
+   <td style="text-align:center;"> 0.496 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 05-Phae.long2-2.wav </td>
+   <td style="text-align:center;"> 0.443 </td>
+   <td style="text-align:center;"> 0.235 </td>
+   <td style="text-align:center;"> 0.186 </td>
+   <td style="text-align:center;"> 0.433 </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.197 </td>
+   <td style="text-align:center;"> 0.243 </td>
+   <td style="text-align:center;"> 0.449 </td>
+   <td style="text-align:center;"> 0.397 </td>
+   <td style="text-align:center;"> 0.363 </td>
+   <td style="text-align:center;"> 0.304 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 09-Phae.long4-1.wav </td>
+   <td style="text-align:center;"> 0.195 </td>
+   <td style="text-align:center;"> 0.907 </td>
+   <td style="text-align:center;"> 0.804 </td>
+   <td style="text-align:center;"> 0.281 </td>
+   <td style="text-align:center;"> 0.197 </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.310 </td>
+   <td style="text-align:center;"> 0.164 </td>
+   <td style="text-align:center;"> 0.199 </td>
+   <td style="text-align:center;"> 0.214 </td>
+   <td style="text-align:center;"> 0.322 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 04-Phae.long2-1.wav </td>
+   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 0.289 </td>
+   <td style="text-align:center;"> 0.274 </td>
+   <td style="text-align:center;"> 0.270 </td>
+   <td style="text-align:center;"> 0.243 </td>
+   <td style="text-align:center;"> 0.310 </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.151 </td>
+   <td style="text-align:center;"> 0.302 </td>
+   <td style="text-align:center;"> 0.182 </td>
+   <td style="text-align:center;"> 0.256 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 02-Phae.long1-2.wav </td>
+   <td style="text-align:center;"> 0.613 </td>
+   <td style="text-align:center;"> 0.176 </td>
+   <td style="text-align:center;"> 0.127 </td>
+   <td style="text-align:center;"> 0.251 </td>
+   <td style="text-align:center;"> 0.449 </td>
+   <td style="text-align:center;"> 0.164 </td>
+   <td style="text-align:center;"> 0.151 </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.264 </td>
+   <td style="text-align:center;"> 0.448 </td>
+   <td style="text-align:center;"> 0.200 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 06-Phae.long3-1.wav </td>
+   <td style="text-align:center;"> 0.360 </td>
+   <td style="text-align:center;"> 0.204 </td>
+   <td style="text-align:center;"> 0.189 </td>
+   <td style="text-align:center;"> 0.635 </td>
+   <td style="text-align:center;"> 0.397 </td>
+   <td style="text-align:center;"> 0.199 </td>
+   <td style="text-align:center;"> 0.302 </td>
+   <td style="text-align:center;"> 0.264 </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.318 </td>
+   <td style="text-align:center;"> 0.377 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 03-Phae.long1-3.wav </td>
+   <td style="text-align:center;"> 0.812 </td>
+   <td style="text-align:center;"> 0.209 </td>
+   <td style="text-align:center;"> 0.185 </td>
+   <td style="text-align:center;"> 0.274 </td>
+   <td style="text-align:center;"> 0.363 </td>
+   <td style="text-align:center;"> 0.214 </td>
+   <td style="text-align:center;"> 0.182 </td>
+   <td style="text-align:center;"> 0.448 </td>
+   <td style="text-align:center;"> 0.318 </td>
+   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 0.227 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 08-Phae.long3-3.wav </td>
+   <td style="text-align:center;"> 0.236 </td>
+   <td style="text-align:center;"> 0.323 </td>
+   <td style="text-align:center;"> 0.393 </td>
+   <td style="text-align:center;"> 0.496 </td>
+   <td style="text-align:center;"> 0.304 </td>
+   <td style="text-align:center;"> 0.322 </td>
+   <td style="text-align:center;"> 0.256 </td>
+   <td style="text-align:center;"> 0.200 </td>
+   <td style="text-align:center;"> 0.377 </td>
+   <td style="text-align:center;"> 0.227 </td>
+   <td style="text-align:center;"> 1.000 </td>
+  </tr>
+</tbody>
+</table></div>
+ &nbsp; 
+<p>and the time lag matrix:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">xcorr.rav</span><span class="o">$</span><span class="nf">`lag </span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="n">`</span>
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 1px; overflow-x: scroll; width:900px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> 01-Phae.long1-1.wav </th>
+   <th style="text-align:center;"> 10-Phae.long4-2.wav </th>
+   <th style="text-align:center;"> 11-Phae.long4-3.wav </th>
+   <th style="text-align:center;"> 07-Phae.long3-2.wav </th>
+   <th style="text-align:center;"> 05-Phae.long2-2.wav </th>
+   <th style="text-align:center;"> 09-Phae.long4-1.wav </th>
+   <th style="text-align:center;"> 04-Phae.long2-1.wav </th>
+   <th style="text-align:center;"> 02-Phae.long1-2.wav </th>
+   <th style="text-align:center;"> 06-Phae.long3-1.wav </th>
+   <th style="text-align:center;"> 03-Phae.long1-3.wav </th>
+   <th style="text-align:center;"> 08-Phae.long3-3.wav </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 01-Phae.long1-1.wav </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0.011 </td>
+   <td style="text-align:center;"> 0.006 </td>
+   <td style="text-align:center;"> 0.028 </td>
+   <td style="text-align:center;"> 0.034 </td>
+   <td style="text-align:center;"> 0.006 </td>
+   <td style="text-align:center;"> 0.023 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0.023 </td>
+   <td style="text-align:center;"> -0.006 </td>
+   <td style="text-align:center;"> 0.023 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 10-Phae.long4-2.wav </td>
+   <td style="text-align:center;"> -0.011 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.006 </td>
+   <td style="text-align:center;"> 0.040 </td>
+   <td style="text-align:center;"> 0.023 </td>
+   <td style="text-align:center;"> -0.006 </td>
+   <td style="text-align:center;"> -0.028 </td>
+   <td style="text-align:center;"> -0.017 </td>
+   <td style="text-align:center;"> 0.040 </td>
+   <td style="text-align:center;"> -0.017 </td>
+   <td style="text-align:center;"> 0.057 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 11-Phae.long4-3.wav </td>
+   <td style="text-align:center;"> -0.006 </td>
+   <td style="text-align:center;"> 0.006 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0.046 </td>
+   <td style="text-align:center;"> 0.028 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> -0.074 </td>
+   <td style="text-align:center;"> 0.046 </td>
+   <td style="text-align:center;"> -0.011 </td>
+   <td style="text-align:center;"> 0.063 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 07-Phae.long3-2.wav </td>
+   <td style="text-align:center;"> -0.028 </td>
+   <td style="text-align:center;"> -0.040 </td>
+   <td style="text-align:center;"> -0.046 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.011 </td>
+   <td style="text-align:center;"> -0.046 </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> -0.034 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.028 </td>
+   <td style="text-align:center;"> 0.017 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 05-Phae.long2-2.wav </td>
+   <td style="text-align:center;"> -0.034 </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> -0.028 </td>
+   <td style="text-align:center;"> 0.011 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.028 </td>
+   <td style="text-align:center;"> 0.017 </td>
+   <td style="text-align:center;"> -0.028 </td>
+   <td style="text-align:center;"> 0.023 </td>
+   <td style="text-align:center;"> -0.040 </td>
+   <td style="text-align:center;"> 0.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 09-Phae.long4-1.wav </td>
+   <td style="text-align:center;"> -0.006 </td>
+   <td style="text-align:center;"> 0.006 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0.046 </td>
+   <td style="text-align:center;"> 0.028 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> 0.034 </td>
+   <td style="text-align:center;"> 0.046 </td>
+   <td style="text-align:center;"> -0.011 </td>
+   <td style="text-align:center;"> 0.063 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 04-Phae.long2-1.wav </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> 0.028 </td>
+   <td style="text-align:center;"> 0.023 </td>
+   <td style="text-align:center;"> 0.023 </td>
+   <td style="text-align:center;"> -0.017 </td>
+   <td style="text-align:center;"> 0.023 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.057 </td>
+   <td style="text-align:center;"> 0.057 </td>
+   <td style="text-align:center;"> -0.051 </td>
+   <td style="text-align:center;"> 0.017 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 02-Phae.long1-2.wav </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0.017 </td>
+   <td style="text-align:center;"> 0.074 </td>
+   <td style="text-align:center;"> 0.034 </td>
+   <td style="text-align:center;"> 0.028 </td>
+   <td style="text-align:center;"> -0.034 </td>
+   <td style="text-align:center;"> 0.057 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0.040 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0.023 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 06-Phae.long3-1.wav </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> -0.040 </td>
+   <td style="text-align:center;"> -0.046 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> -0.046 </td>
+   <td style="text-align:center;"> -0.057 </td>
+   <td style="text-align:center;"> -0.040 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.028 </td>
+   <td style="text-align:center;"> 0.000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 03-Phae.long1-3.wav </td>
+   <td style="text-align:center;"> 0.006 </td>
+   <td style="text-align:center;"> 0.017 </td>
+   <td style="text-align:center;"> 0.011 </td>
+   <td style="text-align:center;"> 0.028 </td>
+   <td style="text-align:center;"> 0.040 </td>
+   <td style="text-align:center;"> 0.011 </td>
+   <td style="text-align:center;"> 0.051 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0.028 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0.023 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 08-Phae.long3-3.wav </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> -0.057 </td>
+   <td style="text-align:center;"> -0.063 </td>
+   <td style="text-align:center;"> -0.017 </td>
+   <td style="text-align:center;"> -0.006 </td>
+   <td style="text-align:center;"> -0.063 </td>
+   <td style="text-align:center;"> -0.017 </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> -0.023 </td>
+   <td style="text-align:center;"> 0.000 </td>
+  </tr>
+</tbody>
+</table></div>
+ &nbsp; 
+<p>This output is ready for stats. For instance, the following code runs a mantel test between cross-correlation (converted to distances) and <a href="https://cran.r-project.org/package=warbleR">warbleR</a> spectral parameter pairwise dissimilarities:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#convert cross-corr to distance</span>
+</span></span><span class="line"><span class="cl"><span class="n">xcorr.rvn</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">-</span> <span class="n">xcorr.rav</span><span class="o">$</span><span class="n">correlation</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#sort matrix to match selection table</span>
+</span></span><span class="line"><span class="cl"><span class="n">xcorr.rvn</span> <span class="o">&lt;-</span> <span class="n">xcorr.rvn</span><span class="nf">[order</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">xcorr.rvn</span><span class="p">)),</span> 
+</span></span><span class="line"><span class="cl">                       <span class="nf">order</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">xcorr.rvn</span><span class="p">))</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#convert it to distance matrix</span>
+</span></span><span class="line"><span class="cl"><span class="n">xcorr.rvn</span> <span class="o">&lt;-</span> <span class="nf">as.dist</span><span class="p">(</span><span class="n">xcorr.rvn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># measure acoustic parameters</span>
+</span></span><span class="line"><span class="cl"><span class="n">sp.wrblR</span> <span class="o">&lt;-</span> <span class="nf">specan</span><span class="p">(</span><span class="n">selec.table</span><span class="p">,</span> <span class="n">bp</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">11</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">150</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                   <span class="n">pb</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#convert them to distance matrix</span>
+</span></span><span class="line"><span class="cl"><span class="n">dist.sp.wrblR</span> <span class="o">&lt;-</span> <span class="nf">dist</span><span class="p">(</span><span class="n">sp.wrblR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vegan</span><span class="o">::</span><span class="nf">mantel</span><span class="p">(</span><span class="n">xcorr.rvn</span><span class="p">,</span> <span class="n">dist.sp.wrblR</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zed" data-lang="zed"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Pearson</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">product</span><span class="o">-</span><span class="n">moment</span><span class="w"> </span><span class="n">correlation</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Call</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">vegan</span><span class="o">::</span><span class="n">mantel</span><span class="p">(</span><span class="n">xdis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xcorr</span><span class="p">.</span><span class="n">rvn</span><span class="p">,</span><span class="w"> </span><span class="n">ydis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">.</span><span class="n">sp</span><span class="p">.</span><span class="n">wrblR</span><span class="p">)</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Mantel</span><span class="w"> </span><span class="n">statistic</span><span class="w"> </span><span class="n">r</span><span class="o">:</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">277</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">Significance</span><span class="o">:</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">014</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Upper</span><span class="w"> </span><span class="n">quantiles</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="w"> </span><span class="p">(</span><span class="n">null</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="o">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="err">90</span><span class="o">%</span><span class="w">   </span><span class="err">95</span><span class="o">%</span><span class="w"> </span><span class="err">97</span><span class="p">.</span><span class="err">5</span><span class="o">%</span><span class="w">   </span><span class="err">99</span><span class="o">%</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">0</span><span class="p">.</span><span class="err">157</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">204</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">245</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">282</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Permutation</span><span class="o">:</span><span class="w"> </span><span class="n">free</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="o">:</span><span class="w"> </span><span class="err">999</span><span class="w">
+</span></span></span></code></pre></div><p> </p>
+<p>There is actually a decent match between the two types of analysis.</p>
+<hr>
+<h2 id="exporting-r-data-to-raven">Exporting R data to Raven</h2>
+<h3 id="exp_raven"><em>exp_raven</em></h3>
+<p><em>exp_raven</em> saves a selection table in &lsquo;.txt&rsquo; format that can be directly opened in Raven. No objects are returned into the R environment. The following code exports a data table from a single sound file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Select data for a single sound file</span>
+</span></span><span class="line"><span class="cl"><span class="n">st1</span> <span class="o">&lt;-</span> <span class="n">selec.table[selec.table</span><span class="o">$</span><span class="n">sound.files</span> <span class="o">==</span> <span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Export data of a single sound file</span>
+</span></span><span class="line"><span class="cl"><span class="nf">exp_raven</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">file.name</span> <span class="o">=</span> <span class="s">&#34;Phaethornis 1&#34;</span><span class="p">,</span> <span class="n">khz.to.hz</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><p> </p>
+<p>If the path to the sound file is provided, the functions exports a &lsquo;sound selection table&rsquo; which can be directly open by <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> (and which will also open the associated sound file):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Select data for a single sound file</span>
+</span></span><span class="line"><span class="cl"><span class="n">st1</span> <span class="o">&lt;-</span> <span class="n">selec.table[selec.table</span><span class="o">$</span><span class="n">sound.files</span> <span class="o">==</span> <span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Export data of a single sound file</span>
+</span></span><span class="line"><span class="cl"><span class="nf">exp_raven</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">file.name</span> <span class="o">=</span> <span class="s">&#34;Phaethornis 1&#34;</span><span class="p">,</span> <span class="n">khz.to.hz</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">          <span class="n">sound.file.path</span> <span class="o">=</span> <span class="nf">tempdir</span><span class="p">())</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven1.gif" alt="gif2" loading="lazy" />
+</picture>
+
+ </p>
+<p>This is useful to add new selections or even new measurements:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven2.gif" alt="gif3" loading="lazy" />
+</picture>
+
+ </p>
+<p>If several sound files are available, users can either export them as a single selection file or as multiple selection files (one for each sound file). This example creates a multiple sound file selection:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">exp_raven</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">          <span class="n">file.name</span> <span class="o">=</span> <span class="s">&#34;Phaethornis multiple sound files&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">          <span class="n">sound.file.path</span> <span class="o">=</span> <span class="nf">tempdir</span><span class="p">(),</span> <span class="n">single.file</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><p> </p>
+<p>These type of tables can be opened as a multiple file display in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven3.gif" alt="gif4" loading="lazy" />
+</picture>
+
+ </p>
+<hr>
+<h2 id="running-raven-from-r">Running Raven from R</h2>
+<h3 id="run_raven"><em>run_raven</em></h3>
+<p>The function opens multiple sound files simultaneously in  <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>. When the analysis is finished (and the  <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> window is closed) the data can be automatically imported back into R using the &lsquo;import&rsquo; argument. Note that <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>, unlike R, can also handle files in &lsquo;mp3&rsquo;, &lsquo;flac&rsquo; and &lsquo;aif&rsquo; format .</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># here replace with the path where Raven is install in your computer</span>
+</span></span><span class="line"><span class="cl"><span class="n">raven.path</span> <span class="o">&lt;-</span> <span class="s">&#34;PATH_TO_RAVEN_DIRECTORY_HERE&#34;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run function </span>
+</span></span><span class="line"><span class="cl"><span class="nf">run_raven</span><span class="p">(</span><span class="n">raven.path</span> <span class="o">=</span> <span class="n">raven.path</span><span class="p">,</span> <span class="n">sound.files</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Phae.long2.wav&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long3.wav&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long4.wav&#34;</span><span class="p">),</span> <span class="n">import</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">at.the.time</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl"> <span class="n">all.data</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>  
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/run_raven1.gif" alt="gif5" loading="lazy" />
+</picture>
+
+ </p>
+<p>See <code>imp_raven</code> above for more details on additional settings when importing selections.</p>
+<hr>
+<h3 id="raven_batch_detec"><em>raven_batch_detec</em></h3>
+<p>As the name suggests, <em>raven_batch_detec</em> runs <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> detector on multiple sound files (sequentially). Batch detection in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> can also take files in &lsquo;mp3&rsquo;, &lsquo;flac&rsquo; and &lsquo;aif&rsquo; format (although this could not be further analyzed in R at the time!).</p>
+<p>This is example runs the detector on one of the example sound files that comes by default with <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">detec.res</span> <span class="o">&lt;-</span> <span class="nf">raven_batch_detec</span><span class="p">(</span><span class="n">raven.path</span> <span class="o">=</span> <span class="n">raven.path</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">  <span class="n">sound.files</span> <span class="o">=</span> <span class="s">&#34;BlackCappedVireo.aif&#34;</span><span class="p">,</span> <span class="n">detector.type</span> <span class="o">=</span> <span class="s">&#34;Amplitude Detector&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">path</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="n">raven.path</span><span class="p">,</span> <span class="s">&#34;Examples&#34;</span><span class="p">))</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/raven_batch_detec.gif" alt="gif6" loading="lazy" />
+</picture>
+
+ </p>
+<hr>
+<p>Please report any bugs <a href="https://github.com/maRce10/Rraven/issues">here</a>. The <code>Rraven</code> package should be cited as follows:</p>
+<p>Araya-Salas. (2017), <em>Rraven: connecting R and Raven bioacoustic software</em>. R package version 1.0.0.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software%2f&amp;text=Rraven%3a%20Connecting%20R%20and%20Raven%20Sound%20Analysis%20Software&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software%2f&amp;title=Rraven%3a%20Connecting%20R%20and%20Raven%20Sound%20Analysis%20Software" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software%2f&amp;title=Rraven%3a%20Connecting%20R%20and%20Raven%20Sound%20Analysis%20Software" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software%2f&amp;title=Rraven%3a%20Connecting%20R%20and%20Raven%20Sound%20Analysis%20Software" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software%2f&amp;description=Rraven%3a%20Connecting%20R%20and%20Raven%20Sound%20Analysis%20Software" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/" data-toggle="tooltip" data-placement="top" title="Signal detection with cross-correlation using warbleR">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="marce10.github.io/coded_bioacustics/post/2018-07-04-issues_spectral_parameters-pca/" data-toggle="tooltip" data-placement="top" title="Potential issues of the &#39;spectral parameters/PCA&#39; approach">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software';
+            };
+
+          </script>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/maRce10" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="marce10.github.io/coded_bioacustics/">Coded bioacoustics</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.121.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="marce10.github.io/coded_bioacustics/js/main.js"></script>
+<script src="marce10.github.io/coded_bioacustics/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="marce10.github.io/coded_bioacustics/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'maRce_10';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
+
+
+
+
+    
+  </body>
+</html>
+

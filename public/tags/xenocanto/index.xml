@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XenoCanto on Coded bioacoustics</title>
+    <link>marce10.github.io/coded_bioacustics/tags/xenocanto/</link>
+    <description>Recent content in XenoCanto on Coded bioacoustics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>marcelo.araya@ucr.ac.cr (Marcelo Araya-Salas)</managingEditor>
+    <webMaster>marcelo.araya@ucr.ac.cr (Marcelo Araya-Salas)</webMaster>
+    <lastBuildDate>Sat, 28 May 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="marce10.github.io/coded_bioacustics/tags/xenocanto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interactive maps from Xeno-Canto recording localities in xc_maps()</title>
+      <link>marce10.github.io/coded_bioacustics/post/2022-05-28-leaflet-xcmaps2/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate><author>marcelo.araya@ucr.ac.cr (Marcelo Araya-Salas)</author>
+      <guid>marce10.github.io/coded_bioacustics/post/2022-05-28-leaflet-xcmaps2/</guid>
+      <description>xc_maps() let users visualize the geographic spread of recordings from Xeno-Canto downloaded through the quer_xc() function. However, the graphs are static, which becomes a bit painful when looking at many recordings. Fortunately the R package leaflet allows to create interactive maps in which users can zoom in at specific areas, check observation medatada and link observations to their Xeno-Canto webpage.&#xA;Here are a couple of examples on how to create this maps using xc_maps().</description>
+    </item>
+    <item>
+      <title>Interactive maps from Xeno-Canto recording localities in xc_maps()</title>
+      <link>marce10.github.io/coded_bioacustics/post/2021-05-28-leaflet-xcmaps/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate><author>marcelo.araya@ucr.ac.cr (Marcelo Araya-Salas)</author>
+      <guid>marce10.github.io/coded_bioacustics/post/2021-05-28-leaflet-xcmaps/</guid>
+      <description>xc_maps() let users visualize the geographic spread of recordings from Xeno-Canto downloaded through the quer_xc() function. However, the graphs are static, which becomes a bit painful when looking at many recordings. Fortunately the R package leaflet allows to create interactive maps in which users can zoom in at specific areas, check observation medatada and link observations to their Xeno-Canto webpage.&#xA;Here are a couple of examples on how to create this maps using xc_maps().</description>
+    </item>
+    <item>
+      <title>Interactive maps from Xeno-Canto recording localities in xc_maps()</title>
+      <link>marce10.github.io/coded_bioacustics/post/2021-05-28-leaflet-xcmaps2/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate><author>marcelo.araya@ucr.ac.cr (Marcelo Araya-Salas)</author>
+      <guid>marce10.github.io/coded_bioacustics/post/2021-05-28-leaflet-xcmaps2/</guid>
+      <description>xc_maps() let users visualize the geographic spread of recordings from Xeno-Canto downloaded through the quer_xc() function. However, the graphs are static, which becomes a bit painful when looking at many recordings. Fortunately the R package leaflet allows to create interactive maps in which users can zoom in at specific areas, check observation medatada and link observations to their Xeno-Canto webpage.&#xA;Here are a couple of examples on how to create this maps using xc_maps().</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sound event detection on Coded bioacoustics</title>
+    <link>marce10.github.io/coded_bioacustics/tags/sound-event-detection/</link>
+    <description>Recent content in sound event detection on Coded bioacoustics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 15 May 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="marce10.github.io/coded_bioacustics/tags/sound-event-detection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automatic signal detection: a case study</title>
+      <link>marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/</guid>
+      <description>Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&amp;rsquo;s disc-winged bats (Thyroptera tricolor).&#xA;Inquiry calls were recorded while the bats were flying in a flight cage.</description>
+    </item>
+    <item>
+      <title>Signal detection with cross-correlation using monitoR </title>
+      <link>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</link>
+      <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</guid>
+      <description>Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.</description>
+    </item>
+  </channel>
+</rss>
