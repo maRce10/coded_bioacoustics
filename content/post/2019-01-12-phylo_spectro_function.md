@@ -1,7 +1,8 @@
 ---
-layout: post
 title: "Spectrograms on trees"
-date: 12-01-2019
+date: 2019-01-12
+tags: ["visualization", "R"]
+author: Marcelo Araya-Salas
 ---
 
 
@@ -28,6 +29,7 @@ warbleR_options(wl = 300, pb = FALSE, ovlp = 95, flim = "frange",
                 pal = reverse.heat.colors, parallel = 3)
 ```
 
+
 The tricky part is that the selection table must contain a column named 'tip.label' that matches the tip labels in the tree. The following code calculates pairwise cross-correlations and creates a tree that clusters songs based on cross-correlation dissimilarities (1 - XC scores).
  
 
@@ -53,7 +55,7 @@ inner.mar = rep(0, 4), size = 1, xl = 0.1, show.tip.label = FALSE,
 res = 300)
 ```
 
-![plot of chunk phylo.spectro 1](./img/phylo.spectro 1-1.png)
+![plot of chunk phylo.spectro 1](./img/phylo.spectro_1-1.png)
 
 It can also plot fan trees by setting `type = "fan"`:
 
@@ -64,8 +66,7 @@ phylo_spectro(X = X, tree = xc.tree, offset = 0.12, par.mar = rep(5, 4),
 inner.mar = rep(0, 4), size = 2, type = "fan", show.tip.label = FALSE, 
 res = 300)
 ```
-
-<img src="./img/phylo.spectro 4-1.png" title="plot of chunk phylo.spectro 4" alt="plot of chunk phylo.spectro 4" width="800px" />
+![plot of chunk phylo.spectro 4](./img/phylo.spectro_4-1.png)
 
 Additional arguments can be passed to [plot.phylo](https://www.rdocumentation.org/packages/ape/versions/5.2/topics/plot.phylo). Here we modify 'edge.lty' and 'edge.witdth':
 
@@ -77,7 +78,7 @@ inner.mar = rep(0, 4), size = 2, type = "fan", show.tip.label = FALSE,
 res = 300, edge.color = "red", edge.lty = 4, edge.width = 4)
 ```
 
-<img src="./img/phylo.spectro 2-1.png" title="plot of chunk phylo.spectro 2" alt="plot of chunk phylo.spectro 2" width="800px" />
+![plot of chunk phylo.spectro 2](./img/phylo.spectro_2-1.png)
 
 and to [specreator](https://marce10.github.io/warbleR/reference/specreator.html). Here we modify 'pal' (color palette):
 
@@ -89,7 +90,7 @@ inner.mar = rep(0, 4), size = 2, type = "fan", show.tip.label = FALSE,
 pal = reverse.topo.colors, res = 300)
 ```
 
-<img src="./img/phylo.spectro 3-1.png" title="plot of chunk phylo.spectro 3" alt="plot of chunk phylo.spectro 3" width="800px" />
+![plot of chunk phylo.spectro 2](./img/phylo.spectro_3-1.png)
 
 
 Here is another example using an [extended selection table](https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html) and more signals:
@@ -120,12 +121,11 @@ show.tip.label = FALSE, pal = reverse.gray.colors.1,
 flim = c(2, 10), edge.color = "orange",  edge.width = 3)
 ```
 
-<img src="./img/phylo.spectro 5-1.png" title="plot of chunk phylo.spectro 5" alt="plot of chunk phylo.spectro 5" width="800px" />
-
+![plot of chunk phylo.spectro 2](./img/phylo.spectro_5-1.png)
 
 Of course, the function can also plot species songs on phylogenetic trees. Here is an example from an ongoing project:
 
-<img src="/./img/brilliants_tree.png" title="plot of chunk xcorr templts 2.5" alt="plot of chunk xcorr templts 2.5" width="900px" style="display: block; margin: auto;" />
+![plot of chunk brilliants_tree](./img/brilliants_tree.png)
 
 That's it! Special thanks to [Gerardo Soto](https://www.researchgate.net/profile/Gerardo_Soto2) and [Russel Ligon](http://russellligon.wixsite.com/russell-ligon) for suggestions on how to make this function work.
 

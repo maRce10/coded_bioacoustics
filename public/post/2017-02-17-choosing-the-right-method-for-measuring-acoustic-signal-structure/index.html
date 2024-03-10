@@ -66,7 +66,7 @@
   "datePublished" : "2017-02-17T00:00:00",
   "dateModified" : "2017-02-17T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
-  "keywords" : [ "quantify structure, acoustic features" ],
+  "keywords" : [ "acoustic features, cross correlation, R" ],
   "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2017-02-17-choosing-the-right-method-for-measuring-acoustic-signal-structure\/",
   "publisher" : {
     "@type": "Organization",
@@ -134,14 +134,12 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -489,9 +487,11 @@ Take a look at the function help document.</p>
         
           <div class="blog-tags">
             
-              <a href="marce10.github.io/coded_bioacustics//tags/quantify-structure/">quantify structure</a>&nbsp;
-            
               <a href="marce10.github.io/coded_bioacustics//tags/acoustic-features/">acoustic features</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/cross-correlation/">cross correlation</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
             
           </div>
         
@@ -563,7 +563,15 @@ Take a look at the function help document.</p>
                   <ul>
                 
                 
-                    <li><a href="marce10.github.io/coded_bioacustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/">Song similarity using dynamic time warping</a></li>
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/">dynaSpec: dynamic spectrograms in R</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/">Editing wave objects from extended selection tables</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/">Automatic signal detection: a case study</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/">Signal detection with cross-correlation using warbleR</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/">Compare signals from selection tables to a set of templates using cross-correlation</a></li>
                 
               </ul>
 
@@ -580,7 +588,7 @@ Take a look at the function help document.</p>
           
           
             <li class="next">
-              <a href="marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/" data-toggle="tooltip" data-placement="top" title="Acoustic space scatter plot">Next Post &rarr;</a>
+              <a href="marce10.github.io/coded_bioacustics/post/2017-03-17-creating_song_catalogs/" data-toggle="tooltip" data-placement="top" title="Creating song catalogs">Next Post &rarr;</a>
             </li>
           
         </ul>
@@ -590,16 +598,27 @@ Take a look at the function help document.</p>
       
         
           
-          <div class="disqus-comments">                  
-            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2017-02-17-choosing-the-right-method-for-measuring-acoustic-signal-structure">comments</span></button>
+          <div class="disqus-comments">
             <div id="disqus_thread"></div>
-
-            <script type="text/javascript">
-              var disqus_config = function () {
-              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2017-02-17-choosing-the-right-method-for-measuring-acoustic-signal-structure';
-            };
-
-          </script>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "maRce_10" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
           </div>
           
         
@@ -640,7 +659,17 @@ Take a look at the function help document.</p>
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -695,28 +724,6 @@ Take a look at the function help document.</p>
 
 
 
-
-
-
-<script type="text/javascript">
-$(function(){
-  $('#show-comments').on('click', function(){
-    var disqus_shortname = 'maRce_10';
-      
-    (function() {
-      var disqus = document.createElement('script'); 
-      disqus.type = 'text/javascript'; 
-      disqus.async = true;
-      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
-    })();
-      
-    $(this).hide(); 
-    });
-  });
-      
-</script>
-<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
 
 
 

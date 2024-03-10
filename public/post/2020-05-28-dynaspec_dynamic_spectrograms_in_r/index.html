@@ -14,7 +14,7 @@
 
   <meta name="description" content="The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.
 To install dynaSpec from github you will need the R package devtools:
-# From github devtools::install_github(&#34;maRce10/dynaSpec&#34;) #load package library(dynaSpec) Examples To run the following examples you will also need to load a few more packages:"><script type="application/ld+json">
+# From github devtools::install_github(&#34;maRce10/dynaSpec&#34;) #load package library(dynaSpec) Installation of external dependencies can be tricky on operating systems other than Linux."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -62,13 +62,13 @@ To install dynaSpec from github you will need the R package devtools:
     "name" : "Marcelo Araya-Salas"
   },
   "headline": "dynaSpec: dynamic spectrograms in R",
-  "description" : "The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.\nTo install dynaSpec from github you will need the R package devtools:\n# From github devtools::install_github(\u0026#34;maRce10\/dynaSpec\u0026#34;) #load package library(dynaSpec) Examples To run the following examples you will also need to load a few more packages:",
+  "description" : "The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.\nTo install dynaSpec from github you will need the R package devtools:\n# From github devtools::install_github(\u0026#34;maRce10\/dynaSpec\u0026#34;) #load package library(dynaSpec) Installation of external dependencies can be tricky on operating systems other than Linux.",
   "inLanguage" : "en",
-  "wordCount":  1888 ,
+  "wordCount":  1921 ,
   "datePublished" : "2020-05-28T00:00:00",
   "dateModified" : "2020-05-28T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
-  "keywords" : [ "video, spectrogram, visualization" ],
+  "keywords" : [ "video, visualization, R" ],
   "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2020-05-28-dynaspec_dynamic_spectrograms_in_r\/",
   "publisher" : {
     "@type": "Organization",
@@ -86,7 +86,7 @@ To install dynaSpec from github you will need the R package devtools:
 <meta property="og:title" content="dynaSpec: dynamic spectrograms in R" />
 <meta property="og:description" content="The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.
 To install dynaSpec from github you will need the R package devtools:
-# From github devtools::install_github(&#34;maRce10/dynaSpec&#34;) #load package library(dynaSpec) Examples To run the following examples you will also need to load a few more packages:">
+# From github devtools::install_github(&#34;maRce10/dynaSpec&#34;) #load package library(dynaSpec) Installation of external dependencies can be tricky on operating systems other than Linux.">
 <meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
 <meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/" />
 <meta property="og:type" content="website" />
@@ -138,14 +138,12 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -265,10 +263,10 @@ if (!doNotTrack) {
   <i class="fas fa-calendar"></i>&nbsp;Posted on May 28, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;10&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1888&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1921&nbsp;words
   
   
     
@@ -311,7 +309,10 @@ order for this package to work.</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#load package</span>
 </span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">dynaSpec</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="examples">Examples</h2>
+</span></span></code></pre></div><div class="alert alert-warning">
+<p>Installation of external dependencies can be tricky on operating systems other than Linux. An alternative option is to run the package through <a href="https://colab.google/">google colab</a>. This <a href="https://colab.research.google.com/drive/1t3Wn9OifcZTvxOMVNmz9dF25vnzU3_Fr?usp=sharing">colab notebook</a> explain how to do that step-by-step.</p>
+</div>
+<h2 id="examples">Examples</h2>
 <p>To run the following examples you will also need to load a few more
 packages:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
@@ -724,9 +725,9 @@ R</em>. R package version 1.0.0.</p>
             
               <a href="marce10.github.io/coded_bioacustics//tags/video/">video</a>&nbsp;
             
-              <a href="marce10.github.io/coded_bioacustics//tags/spectrogram/">spectrogram</a>&nbsp;
-            
               <a href="marce10.github.io/coded_bioacustics//tags/visualization/">visualization</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
             
           </div>
         
@@ -798,9 +799,15 @@ R</em>. R package version 1.0.0.</p>
                   <ul>
                 
                 
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/">Editing wave objects from extended selection tables</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/">Automatic signal detection: a case study</a></li>
+                
                     <li><a href="marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/">Interactive maps from Xeno-Canto recording localities in xc_maps()</a></li>
                 
-                    <li><a href="marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/">Acoustic space scatter plot</a></li>
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/">Signal detection with cross-correlation using warbleR</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/">Compare signals from selection tables to a set of templates using cross-correlation</a></li>
                 
               </ul>
 
@@ -823,16 +830,27 @@ R</em>. R package version 1.0.0.</p>
       
         
           
-          <div class="disqus-comments">                  
-            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r">comments</span></button>
+          <div class="disqus-comments">
             <div id="disqus_thread"></div>
-
-            <script type="text/javascript">
-              var disqus_config = function () {
-              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2020-05-28-dynaspec_dynamic_spectrograms_in_r';
-            };
-
-          </script>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "maRce_10" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
           </div>
           
         
@@ -873,7 +891,17 @@ R</em>. R package version 1.0.0.</p>
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -928,28 +956,6 @@ R</em>. R package version 1.0.0.</p>
 
 
 
-
-
-
-<script type="text/javascript">
-$(function(){
-  $('#show-comments').on('click', function(){
-    var disqus_shortname = 'maRce_10';
-      
-    (function() {
-      var disqus = document.createElement('script'); 
-      disqus.type = 'text/javascript'; 
-      disqus.async = true;
-      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
-    })();
-      
-    $(this).hide(); 
-    });
-  });
-      
-</script>
-<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
 
 
 

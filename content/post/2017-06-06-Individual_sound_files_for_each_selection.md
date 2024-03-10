@@ -1,7 +1,10 @@
 ---
 layout: post
-title: "Individual sound files for each selection (or how to create a <i>warbleR</i> function)"
+title: "Individual sound files for each selection"
 date: 06-06-2017
+tags: ["annotations", "R"]
+author: Marcelo Araya-Salas
+
 ---
 
 A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most [warbleR](https://cran.r-project.org/package=warbleR) functions). 

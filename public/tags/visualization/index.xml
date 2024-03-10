@@ -13,7 +13,7 @@
       <link>marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/</guid>
-      <description>The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.&#xA;To install dynaSpec from github you will need the R package devtools:&#xA;# From github devtools::install_github(&amp;#34;maRce10/dynaSpec&amp;#34;) #load package library(dynaSpec) Examples To run the following examples you will also need to load a few more packages:</description>
+      <description>The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.&#xA;To install dynaSpec from github you will need the R package devtools:&#xA;# From github devtools::install_github(&amp;#34;maRce10/dynaSpec&amp;#34;) #load package library(dynaSpec) Installation of external dependencies can be tricky on operating systems other than Linux.</description>
     </item>
     <item>
       <title>Interactive maps from Xeno-Canto recording localities in xc_maps()</title>
@@ -23,11 +23,25 @@
       <description>The function xc_maps() from the R package warbleR let users visualize the geographic spread of recordings from Xeno-Canto downloaded through the quer_xc() function. However, the graphs are static, which becomes a bit painful when looking at many recordings. Fortunately the R package leaflet allows to create interactive maps in which users can zoom in at specific areas, check observation medatada and link observations to their Xeno-Canto webpage. This capability is now available in xc_maps().</description>
     </item>
     <item>
+      <title>Spectrograms on trees</title>
+      <link>marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/</guid>
+      <description>This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&amp;lsquo;X argument) onto the tips of a tree (of class &amp;lsquo;phylo&amp;rsquo;). The &amp;rsquo;tip.label&amp;rsquo; column in &amp;lsquo;X&amp;rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR&amp;rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization.</description>
+    </item>
+    <item>
       <title>Acoustic space scatter plot</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</link>
       <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</guid>
       <description>Some people have asked for the code we used to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace Smith-Vidaurre, so thanks to Grace for sharing.&#xA;The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping.</description>
+    </item>
+    <item>
+      <title>Pdf files with spectrograms of full recordings</title>
+      <link>marce10.github.io/coded_bioacustics/post/2017-01-07-create_pdf_files_with_spectrograms_of_full_recordings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2017-01-07-create_pdf_files_with_spectrograms_of_full_recordings/</guid>
+      <description>The warbleR function lspec produces image files with spectrograms of whole recordings split into multiple rows. For a long recording several image files will be produced, which could be inconvenient when dealing with many long recordings. I recently added a new function lspec2pdf that combines lspec images in .jpeg format into a single pdf file (available in warbleR 1.1.5 or higher).&#xA;You need warbleR version 1.1.5 or higher to be able to run the code (currently you have to download it from github using the package devtools).</description>
     </item>
   </channel>
 </rss>

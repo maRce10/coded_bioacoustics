@@ -1,8 +1,13 @@
 ---
-layout: post
 title: Extended selection tables
-date: 15-05-2018
+date: 2018-05-15
+tags: ["annotations", "R"]
+author: Marcelo Araya-Salas
 ---
+
+<div class="alert alert-warning">
+⚠️ <b>March-2024:</b> Note that the<a href="https://marce10.github.io/dynaSpec/"> new vignette 'Annotation data format'</a> from the package warbleR provides a updated and more detailed overview of the annotation format used by warbleR, including extended selection tables
+</div>
 
 This post shows how to create and use the new [warbleR](https://cran.r-project.org/package=warbleR) object class *extended_selection_table*.
 
@@ -344,11 +349,11 @@ all.equal(ext_st, ext_st5)
 ```
 
 
-The wave objects can be indvidually read using `read_wave()`, a wrapper on tuneR's `readWave()` function, that can take extended selection tables: 
+The wave objects can be indvidually read using `read_sound_file()`, a wrapper on tuneR's `readWave()` function, that can take extended selection tables: 
 
 
 ```r
-wv1 <- read_wave(X = ext_st, index = 3, from = 0, to = 0.37)
+wv1 <- read_sound_file(X = ext_st, index = 3, from = 0, to = 0.37)
 ```
 
 These are regular wave objects:
@@ -391,10 +396,7 @@ Wave Object
 spectro(wv1, wl = 150, grid = FALSE, scale = FALSE, ovlp = 90)
 ```
 
-<img src="./img/extn_sel_8.22-1.png" title="plot of chunk extn_sel_8.22" alt="plot of chunk extn_sel_8.22" width="750" />
-<font size="3"><i>Spectrogram of the third selection in the  example 'ext_st' extended selection table</i></font>
-
-&nbsp; 
+![plot of chunk unnamed-chunk-3](./img/extn_sel_8.22-1.png)
 
 
 ```r
@@ -402,7 +404,7 @@ par(mfrow = c(3, 2), mar = rep(0, 4))
 
 for(i in 1:6){
   
-  wv <- read_wave(X = ext_st, index = i, from = 0.05, to = 0.32)
+  wv <- read_sound_file(X = ext_st, index = i, from = 0.05, to = 0.32)
 
   spectro(wv, wl = 150, grid = FALSE, scale = FALSE, axisX = FALSE,
           axisY = FALSE, ovlp = 90)
@@ -410,10 +412,9 @@ for(i in 1:6){
 }
 ```
 
-<img src="./img/extn_sel_8.23-1.png" title="plot of chunk extn_sel_8.23" alt="plot of chunk extn_sel_8.23" width="750" />
-<font size="3"><i>Spectrograms of the first 6 selections in the  example 'ext_st' extended selection table</i></font>
+![plot of chunk unnamed-chunk-3](./img/extn_sel_8.23-1.png)
 
-The `read_wave()` function takes the table as well as the index of the selection to be read (e.g. the row number).
+The `read_sound_file()` function takes the table as well as the index of the selection to be read (e.g. the row number).
 
 Keep in mind that is likely that other functions that modify data frames will remove the attributes in which wave objects and metadata are stored. For instances, merging and extended selection table will get rid of its attributes:
 
@@ -1517,7 +1518,7 @@ mbmrk.snr <- microbenchmark(extended = sig2noise(lng_ext_st[1:100, ],
 autoplot(mbmrk.snr) + ggtitle("sig2noise")
 ```
 
-<img src="./img/extn_sel_13-1.png" title="plot of chunk extn_sel_13" alt="plot of chunk extn_sel_13" width="750" />
+![plot of chunk unnamed-chunk-3](./img/extn_sel_13-1.png)
 
 <font size="3"><i>Distribution of <i>`sig2noise()`</i> timing on regular and extended selection tables</i></font>
 
@@ -1705,20 +1706,15 @@ In this case we should only have 8 wave objects instead of 11 as when the object
 length(attr(ext_st, "wave.objects"))
 ```
 
-
-
 ```
 [1] 11
 ```
-
 
 
 ```r
 # by song
 length(attr(bs_ext_st, "wave.objects"))
 ```
-
-
 
 ```
 [1] 8
@@ -2165,7 +2161,7 @@ par(mfrow = c(3, 2), mar = rep(0, 4))
 
 for(i in 1:6){
   
-  wv <- read_wave(X = dat, index = i, from = 0.17, to = 0.4)
+  wv <- read_sound_file(X = dat, index = i, from = 0.17, to = 0.4)
 
   spectro(wv, wl = 250, grid = FALSE, scale = FALSE, axisX = FALSE,
           axisY = FALSE, ovlp = 90, flim = c(0, 12), 
@@ -2173,8 +2169,7 @@ for(i in 1:6){
 }
 ```
 
-<img src="./img/extn.sel_21-1.png" title="plot of chunk extn.sel_21" alt="plot of chunk extn.sel_21" width="750" />
-<font size="3"><i>Spectrograms of the first 6 selections in the 'dat' extended selection table</i></font>
+![plot of chunk unnamed-chunk-6](./img/extn.sel_21-1.png)
 
 The ability to compress large data sets and the easiness of conducting analyses requiring only a single *R* object can potentially simplify data sharing and the reproducibility of bioacoustic analyses.
 

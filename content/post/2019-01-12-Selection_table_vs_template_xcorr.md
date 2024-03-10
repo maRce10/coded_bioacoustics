@@ -1,9 +1,9 @@
 ---
-layout: post
 title: "Compare signals from selection tables to a set of templates using cross-correlation"
-date: 12-01-2019
+tags: ["acoustic features", "cross correlation", "R"]
+author: Marcelo Araya-Salas
+date: 2019-01-12
 ---
-
 
 
 I got the following question about cross-correlation:
@@ -50,9 +50,7 @@ catalog(unk.songs, nrow = 3, ncol = 3, rm.axes = T, width = 11,
         labels = "lek.song.type")
 ```
 
-
-<img src="/./img/calls_catalog.png" title="plot of chunk xcorr templts 2.5" alt="plot of chunk xcorr templts 2.5" width="500px" style="display: block; margin: auto;" />
-
+![gif4](./img/calls_catalog.png)
 
 
 ```r
@@ -61,7 +59,8 @@ catalog(tempts, nrow = 2, ncol = 3, rm.axes = T, width = 11,
         labels = "lek.song.type")
 ```
 
-<img src="/./img/templt_catalog.png" title="plot of chunk xcorr templts 3.5" alt="plot of chunk xcorr templts 3.5" width="500px" style="display: block; margin: auto;" />
+
+![gif4](./img/templt_catalog.png)
 
 As you can see the templates have a single example of each of the 3 song types in the 'unk.songs' selection table.
 

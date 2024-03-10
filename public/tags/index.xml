@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="marce10.github.io/coded_bioacustics/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>spectrogram</title>
-      <link>marce10.github.io/coded_bioacustics/tags/spectrogram/</link>
+      <title>R</title>
+      <link>marce10.github.io/coded_bioacustics/tags/r/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/tags/spectrogram/</guid>
+      <guid>marce10.github.io/coded_bioacustics/tags/r/</guid>
       <description></description>
     </item>
     <item>
@@ -51,6 +51,27 @@
       <description></description>
     </item>
     <item>
+      <title>acoustic features</title>
+      <link>marce10.github.io/coded_bioacustics/tags/acoustic-features/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/acoustic-features/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>cross correlation</title>
+      <link>marce10.github.io/coded_bioacustics/tags/cross-correlation/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/cross-correlation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>simulation</title>
+      <link>marce10.github.io/coded_bioacustics/tags/simulation/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/simulation/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>acoustic space</title>
       <link>marce10.github.io/coded_bioacustics/tags/acoustic-space/</link>
       <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
@@ -58,16 +79,9 @@
       <description></description>
     </item>
     <item>
-      <title>acoustic features</title>
-      <link>marce10.github.io/coded_bioacustics/tags/acoustic-features/</link>
-      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/tags/acoustic-features/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>quantify structure</title>
       <link>marce10.github.io/coded_bioacustics/tags/quantify-structure/</link>
-      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/quantify-structure/</guid>
       <description></description>
     </item>

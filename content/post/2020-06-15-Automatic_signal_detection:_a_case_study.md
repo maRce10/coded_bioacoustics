@@ -1,13 +1,12 @@
 ---
 title: "Automatic signal detection: a case study"
 date: 2020-05-15
-tags: ["sound event detection"]
+tags: ["sound event detection", "R"]
 author: Marcelo Araya-Salas
 ---
 
-<div class="alert alert-info">
-
-<center><b>Mar-2024:</b> Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> for optimizing sound event detection is now available which provides an improved version of the methods shown in this post  
+<div class="alert alert-warning">
+⚠️ <b>March-2024:</b> Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> for optimizing sound event detection is now available which provides an improved version of the methods shown in this post  
 
 </div>
 

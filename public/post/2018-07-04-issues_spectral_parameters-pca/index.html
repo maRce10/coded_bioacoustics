@@ -134,14 +134,12 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -456,7 +454,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-sp-PCA_hubfd22ffbda100ffe6324755684ef6dd7_421940_700x513_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-sp-PCA.92e2abe5cba7017882267b8d5f431b43.png" alt="frange_gif" loading="lazy" height="513" width="700" />
+</picture>
+</p>
 <p>A better way to look at this is by plotting the first 2 PC&rsquo;s:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">pca_sp</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span> <span class="m">1</span><span class="n">]</span><span class="p">,</span> <span class="n">pca_sp</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span> <span class="m">2</span><span class="n">]</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">est</span><span class="o">$</span><span class="n">class.sp</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">     <span class="n">pch</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">est</span><span class="o">$</span><span class="n">class.sp</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;PC1&#34;</span><span class="p">,</span> 
@@ -527,7 +542,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-df_DTW-TSNE_hu499108c8d79c986386432d6434d7ba1b_424008_700x513_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-df_DTW-TSNE.315e1a7e0e7ec99a7f8897010ed6fa66.png" alt="frange_gif" loading="lazy" height="513" width="700" />
+</picture>
+</p>
 <p>We can obtain 2 dimensions using TSNE so it fits better in a bi-dimensional plot (grouping is likely to improve when adding more dimensions, so this plot gives a conservative estimate):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># set seed so we all get the same results</span>
 </span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
@@ -645,16 +677,27 @@ if (!doNotTrack) {
       
         
           
-          <div class="disqus-comments">                  
-            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2018-07-04-issues_spectral_parameters-pca">comments</span></button>
+          <div class="disqus-comments">
             <div id="disqus_thread"></div>
-
-            <script type="text/javascript">
-              var disqus_config = function () {
-              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2018-07-04-issues_spectral_parameters-pca';
-            };
-
-          </script>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "maRce_10" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
           </div>
           
         
@@ -695,7 +738,17 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -750,28 +803,6 @@ if (!doNotTrack) {
 
 
 
-
-
-
-<script type="text/javascript">
-$(function(){
-  $('#show-comments').on('click', function(){
-    var disqus_shortname = 'maRce_10';
-      
-    (function() {
-      var disqus = document.createElement('script'); 
-      disqus.type = 'text/javascript'; 
-      disqus.async = true;
-      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
-    })();
-      
-    $(this).hide(); 
-    });
-  });
-      
-</script>
-<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
 
 
 

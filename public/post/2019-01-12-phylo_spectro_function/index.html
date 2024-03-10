@@ -57,16 +57,16 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : ""
+    "name" : "Marcelo Araya-Salas"
   },
   "headline": "Spectrograms on trees",
   "description" : "This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (\u0026lsquo;X argument) onto the tips of a tree (of class \u0026lsquo;phylo\u0026rsquo;). The \u0026rsquo;tip.label\u0026rsquo; column in \u0026lsquo;X\u0026rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR\u0026rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization.",
   "inLanguage" : "en",
-  "wordCount":  725 ,
-  "datePublished" : "0001-01-01T00:00:00",
-  "dateModified" : "0001-01-01T00:00:00",
+  "wordCount":  719 ,
+  "datePublished" : "2019-01-12T00:00:00",
+  "dateModified" : "2019-01-12T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
-  "keywords" : [ "" ],
+  "keywords" : [ "visualization, R" ],
   "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2019-01-12-phylo_spectro_function\/",
   "publisher" : {
     "@type": "Organization",
@@ -134,14 +134,12 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -258,17 +256,19 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2019
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;725&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;719&nbsp;words
   
   
     
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
     
   
   
@@ -326,25 +326,117 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">8</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">xl</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
-</span></span></code></pre></div><p>![plot of chunk phylo.spectro 1](./img/phylo.spectro 1-1.png)</p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_1-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk phylo.spectro 1" loading="lazy" height="1050px" width="1700px" />
+</picture>
+</p>
 <p>It can also plot fan trees by setting <code>type = &quot;fan&quot;</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># plot fan tree with spectrograms</span>
 </span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.12</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/phylo.spectro 4-1.png" title="plot of chunk phylo.spectro 4" alt="plot of chunk phylo.spectro 4" width="800px" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_4-1.png?v=b1628a89290178284379aa77a6ace22e" alt="plot of chunk phylo.spectro 4" loading="lazy" height="588px" width="1700px" />
+</picture>
+</p>
 <p>Additional arguments can be passed to <a href="https://www.rdocumentation.org/packages/ape/versions/5.2/topics/plot.phylo">plot.phylo</a>. Here we modify &rsquo;edge.lty&rsquo; and &rsquo;edge.witdth&rsquo;:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># plot tree with spectrograms</span>
 </span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.12</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">edge.color</span> <span class="o">=</span> <span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="n">edge.lty</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">edge.width</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/phylo.spectro 2-1.png" title="plot of chunk phylo.spectro 2" alt="plot of chunk phylo.spectro 2" width="800px" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_2-1.png?v=302ee570390a0b525a445d9d01437f22" alt="plot of chunk phylo.spectro 2" loading="lazy" height="594px" width="1700px" />
+</picture>
+</p>
 <p>and to <a href="https://marce10.github.io/warbleR/reference/specreator.html">specreator</a>. Here we modify &lsquo;pal&rsquo; (color palette):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># plot tree with spectrograms</span>
 </span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.12</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/phylo.spectro 3-1.png" title="plot of chunk phylo.spectro 3" alt="plot of chunk phylo.spectro 3" width="800px" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_3-1.png?v=4f2b3bfae33eb8968f77f923a87fa490" alt="plot of chunk phylo.spectro 2" loading="lazy" height="621px" width="1700px" />
+</picture>
+</p>
 <p>Here is another example using an <a href="https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html">extended selection table</a> and more signals:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;Phae.long.est&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -368,9 +460,55 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2.3</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"><span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">edge.color</span> <span class="o">=</span> <span class="s">&#34;orange&#34;</span><span class="p">,</span>  <span class="n">edge.width</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/phylo.spectro 5-1.png" title="plot of chunk phylo.spectro 5" alt="plot of chunk phylo.spectro 5" width="800px" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_5-1.png?v=3898802773d3406fe7a42806aa65e1d6" alt="plot of chunk phylo.spectro 2" loading="lazy" height="587px" width="1700px" />
+</picture>
+</p>
 <p>Of course, the function can also plot species songs on phylogenetic trees. Here is an example from an ongoing project:</p>
-<img src="/./img/brilliants_tree.png" title="plot of chunk xcorr templts 2.5" alt="plot of chunk xcorr templts 2.5" width="900px" style="display: block; margin: auto;" />
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/brilliants_tree.png?v=b3124b088b5f2451a14e865db9245dde" alt="plot of chunk brilliants_tree" loading="lazy" height="1821px" width="2007px" />
+</picture>
+</p>
 <p>That&rsquo;s it! Special thanks to <a href="https://www.researchgate.net/profile/Gerardo_Soto2">Gerardo Soto</a> and <a href="http://russellligon.wixsite.com/russell-ligon">Russel Ligon</a> for suggestions on how to make this function work.</p>
 <p><font size="4">Session information</font></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.5.1 (2018-07-02)</span>
@@ -407,6 +545,14 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="c1">## [29] fftw_1.0-4</span>
 </span></span></code></pre></div>
 
+        
+          <div class="blog-tags">
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/visualization/">visualization</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+            
+          </div>
         
 
         
@@ -468,6 +614,25 @@ if (!doNotTrack) {
 
         
           
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/">dynaSpec: dynamic spectrograms in R</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/">Editing wave objects from extended selection tables</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/">Automatic signal detection: a case study</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/">Interactive maps from Xeno-Canto recording localities in xc_maps()</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/">Signal detection with cross-correlation using warbleR</a></li>
+                
+              </ul>
 
           
         
@@ -477,12 +642,12 @@ if (!doNotTrack) {
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="marce10.github.io/coded_bioacustics/post/2017-07-31-updates_on_catalog_function/" data-toggle="tooltip" data-placement="top" title="Updates on catalog function">&larr; Previous Post</a>
+              <a href="marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/" data-toggle="tooltip" data-placement="top" title="Extended selection tables">&larr; Previous Post</a>
             </li>
           
           
             <li class="next">
-              <a href="marce10.github.io/coded_bioacustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/" data-toggle="tooltip" data-placement="top" title="Song similarity using dynamic time warping">Next Post &rarr;</a>
+              <a href="marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/" data-toggle="tooltip" data-placement="top" title="Compare signals from selection tables to a set of templates using cross-correlation">Next Post &rarr;</a>
             </li>
           
         </ul>
@@ -492,16 +657,27 @@ if (!doNotTrack) {
       
         
           
-          <div class="disqus-comments">                  
-            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function">comments</span></button>
+          <div class="disqus-comments">
             <div id="disqus_thread"></div>
-
-            <script type="text/javascript">
-              var disqus_config = function () {
-              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2019-01-12-phylo_spectro_function';
-            };
-
-          </script>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "maRce_10" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
           </div>
           
         
@@ -542,7 +718,17 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -597,28 +783,6 @@ if (!doNotTrack) {
 
 
 
-
-
-
-<script type="text/javascript">
-$(function(){
-  $('#show-comments').on('click', function(){
-    var disqus_shortname = 'maRce_10';
-      
-    (function() {
-      var disqus = document.createElement('script'); 
-      disqus.type = 'text/javascript'; 
-      disqus.async = true;
-      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
-    })();
-      
-    $(this).hide(); 
-    });
-  });
-      
-</script>
-<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
 
 
 

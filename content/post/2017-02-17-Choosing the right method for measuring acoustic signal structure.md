@@ -2,7 +2,7 @@
 title: "Choosing the right method for measuring acoustic signal structure"
 date: "2017-02-17"
 Author: Marcelo Araya-Salas
-tags: ["quantify structure", "acoustic features"]
+tags: ["acoustic features", "cross correlation","R"]
 ---
 
 Bioacoustic research relies on quantifying the structure of acoustic`

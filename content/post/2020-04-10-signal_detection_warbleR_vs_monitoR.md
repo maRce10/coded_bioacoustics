@@ -1,16 +1,16 @@
 ---
 layout: post
 title: "Signal detection with cross-correlation using warbleR"
-date: 10-04-2020
-editor_options: 
-  chunk_output_type: console
+date: 2020-04-10
+tags: ["sound event detection", "R"]
+author: Marcelo Araya-Salas
 ---
 
-<div class="alert alert-info">
-
-<center>Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post  
+<div class="alert alert-warning">
+⚠️ Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post
 
 </div>
+
 
 [warbleR](https://cran.r-project.org/package=warbleR) (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package [monitoR](https://cran.r-project.org/package=monitoR). There is already a [blog post on cross-correlation detection using monitoR](https://marce10.github.io/2016/12/15/Detecting_signals_with_monitoR.html). In this post I show how to do that with [warbleR](https://cran.r-project.org/package=warbleR) and compare its performance against that from  [monitoR](https://cran.r-project.org/package=monitoR).
 

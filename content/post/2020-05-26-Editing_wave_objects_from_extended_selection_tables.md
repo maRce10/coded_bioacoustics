@@ -1,7 +1,7 @@
 ---
 title: "Editing wave objects from extended selection tables"
 date: 2020-05-25
-tags: ["annotations"]
+tags: ["annotations", "R"]
 author: Marcelo Araya-Salas
 ---
 

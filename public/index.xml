@@ -13,7 +13,7 @@
       <link>marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/</guid>
-      <description>The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.&#xA;To install dynaSpec from github you will need the R package devtools:&#xA;# From github devtools::install_github(&amp;#34;maRce10/dynaSpec&amp;#34;) #load package library(dynaSpec) Examples To run the following examples you will also need to load a few more packages:</description>
+      <description>The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.&#xA;To install dynaSpec from github you will need the R package devtools:&#xA;# From github devtools::install_github(&amp;#34;maRce10/dynaSpec&amp;#34;) #load package library(dynaSpec) Installation of external dependencies can be tricky on operating systems other than Linux.</description>
     </item>
     <item>
       <title>Editing wave objects from extended selection tables</title>
@@ -27,7 +27,7 @@
       <link>marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/</link>
       <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/</guid>
-      <description>Mar-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&amp;rsquo;s disc-winged bats (Thyroptera tricolor).&#xA;Inquiry calls were recorded while the bats were flying in a flight cage.</description>
+      <description>⚠️ March-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&amp;rsquo;s disc-winged bats (Thyroptera tricolor).&#xA;Inquiry calls were recorded while the bats were flying in a flight cage.</description>
     </item>
     <item>
       <title>Interactive maps from Xeno-Canto recording localities in xc_maps()</title>
@@ -37,11 +37,53 @@
       <description>The function xc_maps() from the R package warbleR let users visualize the geographic spread of recordings from Xeno-Canto downloaded through the quer_xc() function. However, the graphs are static, which becomes a bit painful when looking at many recordings. Fortunately the R package leaflet allows to create interactive maps in which users can zoom in at specific areas, check observation medatada and link observations to their Xeno-Canto webpage. This capability is now available in xc_maps().</description>
     </item>
     <item>
+      <title>Signal detection with cross-correlation using warbleR</title>
+      <link>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</guid>
+      <description>⚠️ Note that the R package ohun , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post warbleR (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package monitoR. There is already a blog post on cross-correlation detection using monitoR. In this post I show how to do that with warbleR and compare its performance against that from monitoR.</description>
+    </item>
+    <item>
+      <title>Compare signals from selection tables to a set of templates using cross-correlation</title>
+      <link>marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/</guid>
+      <description>I got the following question about cross-correlation:&#xA;&amp;ldquo;We would like to compare every call within a selection table to a template of each owl, and get peak correlation coefficients on each call separately&amp;rdquo;&#xA;One way to do this would be putting the unidentified and template signals together into a single selection table, and then running cross-correlation. However, this will also compare all unidentified signals against each other, which can be very inefficient.</description>
+    </item>
+    <item>
+      <title>Spectrograms on trees</title>
+      <link>marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/</guid>
+      <description>This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&amp;lsquo;X argument) onto the tips of a tree (of class &amp;lsquo;phylo&amp;rsquo;). The &amp;rsquo;tip.label&amp;rsquo; column in &amp;lsquo;X&amp;rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR&amp;rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization.</description>
+    </item>
+    <item>
+      <title>Extended selection tables</title>
+      <link>marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/</link>
+      <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/</guid>
+      <description>⚠️ March-2024: Note that the new vignette &#39;Annotation data format&#39; from the package warbleR provides a updated and more detailed overview of the annotation format used by warbleR, including extended selection tables This post shows how to create and use the new warbleR object class extended_selection_table.&#xA;These objects are created with the selec_table() function. The function takes data frames containing selection data (sound file name, selection, start, end &amp;hellip;), checks whether the information is consistent (see checksels() function for details) and saves the &amp;lsquo;diagnostic&amp;rsquo; metadata as an attribute.</description>
+    </item>
+    <item>
+      <title>Simulating animal vocalizations</title>
+      <link>marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/</guid>
+      <description>⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.</description>
+    </item>
+    <item>
       <title>Acoustic space scatter plot</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</link>
       <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</guid>
       <description>Some people have asked for the code we used to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace Smith-Vidaurre, so thanks to Grace for sharing.&#xA;The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping.</description>
+    </item>
+    <item>
+      <title>Creating song catalogs</title>
+      <link>marce10.github.io/coded_bioacustics/post/2017-03-17-creating_song_catalogs/</link>
+      <pubDate>Fri, 17 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2017-03-17-creating_song_catalogs/</guid>
+      <description>When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and/or sites. The new warbleR function catalog aims to simplify this task.&#xA;This is how it works:&#xA;The function plots a matrix of spectrograms from signals listed in a selection table (a data frame similar to the example data frame selec.</description>
     </item>
     <item>
       <title>Choosing the right method for measuring acoustic signal structure</title>
@@ -55,7 +97,14 @@
       <link>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</link>
       <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</guid>
-      <description>Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.</description>
+      <description>⚠️ March-2024: Note that the R package ohun , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.</description>
+    </item>
+    <item>
+      <title>Creating dynamic spectrograms (videos)</title>
+      <link>marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/</guid>
+      <description>⚠️ June-2022: Note that the code below is now available in the R package dynaSpec This code creates a video with a spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).</description>
     </item>
     <item>
       <title>About me</title>
@@ -63,34 +112,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/page/about/</guid>
       <description>I am broadly interested in the evolution of behavior from a evolutionary and cultural perspective, as well as the interplay between these two. I worked on hummingbird behavior during my PhD, and also explored the evolution of learned vocal signals in other groups using comparative analyses during my time at the Lab of O. I am currently working on social communication in communal roosting bats as postdoc at Universidad de Costa Rica.</description>
-    </item>
-    <item>
-      <title>baRulho: an R package to quantify (animal) acoustic signal transmission and degradation</title>
-      <link>marce10.github.io/coded_bioacustics/post/2020-02-13-barulho/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2020-02-13-barulho/</guid>
-      <description>The baRulho package is intended to facilitate acoustic analysis of (animal) sound transmission experiments. Such studies typically aim to quantify changes in signal structure when transmitted in a given habitat by broadcasting and re-recording animal sounds at increasing distances. We will refer to these changes in signal structure &amp;lsquo;degradation&amp;rsquo; for the sake of simplicity. The package offers a workflow with functions to prepare the data set for analysis as well as to calculate and visualize several degradation metrics.</description>
-    </item>
-    <item>
-      <title>Compare signals from selection tables to a set of templates using cross-correlation</title>
-      <link>marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/</guid>
-      <description>I got the following question about cross-correlation:&#xA;&amp;ldquo;We would like to compare every call within a selection table to a template of each owl, and get peak correlation coefficients on each call separately&amp;rdquo;&#xA;One way to do this would be putting the unidentified and template signals together into a single selection table, and then running cross-correlation. However, this will also compare all unidentified signals against each other, which can be very inefficient.</description>
-    </item>
-    <item>
-      <title>Creating dynamic spectrograms (videos)</title>
-      <link>marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/</guid>
-      <description>Note that the code below is now available in the new R package dynaSpec This code creates a video with a spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).</description>
-    </item>
-    <item>
-      <title>Creating song catalogs</title>
-      <link>marce10.github.io/coded_bioacustics/post/2017-03-17-creating_song_catalogs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2017-03-17-creating_song_catalogs/</guid>
-      <description>When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and/or sites. The new warbleR function catalog aims to simplify this task.&#xA;This is how it works:&#xA;The function plots a matrix of spectrograms from signals listed in a selection table (a data frame similar to the example data frame selec.</description>
     </item>
     <item>
       <title>Download a single recording for each species in a country from Xeno-Canto</title>
@@ -107,13 +128,6 @@
       <description>Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: the behavior is more similar within than between groups (although absence of this pattern doesn&amp;rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature.</description>
     </item>
     <item>
-      <title>Extended selection tables</title>
-      <link>marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/</guid>
-      <description>This post shows how to create and use the new warbleR object class extended_selection_table.&#xA;These objects are created with the selec_table() function. The function takes data frames containing selection data (sound file name, selection, start, end &amp;hellip;), checks whether the information is consistent (see checksels() function for details) and saves the &amp;lsquo;diagnostic&amp;rsquo; metadata as an attribute. When the argument extended = TRUE the function generates an object of class extended_selection_table which also contains a list of wave objects corresponding to each of the selections in the data frame.</description>
-    </item>
-    <item>
       <title>Fixing selections manually</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-08-03-fixing_selections_manually/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -128,7 +142,7 @@
       <description>We are often interested in getting the frequency range of acoustic signals, either because we have specific predictions about its variation or simply because we want to measure other stuff within that range. Measuring frequency range is typically done by drawing boxes in Raven/Avisoft/Syrinx. An alternative way, and potentially less subjective, is to infer the range from the energy distribution in the frequency domain applying amplitude thresholds on spectrums. I have added two new functions to warbleR that do exactly that:</description>
     </item>
     <item>
-      <title>Individual sound files for each selection (or how to create a &lt;i&gt;warbleR&lt;/i&gt; function)</title>
+      <title>Individual sound files for each selection</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</guid>
@@ -156,32 +170,11 @@
       <description>The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as warbleR, seewave and monitoR (among others) provide additional methods of analysis, working as a perfect complement for those found in Raven. Hence, bridging these applications can largely expand the bioacoustician&amp;rsquo;s toolkit.</description>
     </item>
     <item>
-      <title>Signal detection with cross-correlation using warbleR</title>
-      <link>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</guid>
-      <description>Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post warbleR (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package monitoR. There is already a blog post on cross-correlation detection using monitoR. In this post I show how to do that with warbleR and compare its performance against that from monitoR.</description>
-    </item>
-    <item>
-      <title>Simulating animal vocalizations</title>
-      <link>marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/</guid>
-      <description>This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.&#xA;The function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e.</description>
-    </item>
-    <item>
       <title>Song similarity using dynamic time warping</title>
       <link>marce10.github.io/coded_bioacustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/</guid>
       <description>Here I show how to use the dfDTW function in warbleR to compare acoustics signals using dynamic time warping (DTW).&#xA;First load these packages (if not installed the code will install it):&#xA;x&amp;lt;-c(&amp;#34;vegan&amp;#34;, &amp;#34;warbleR&amp;#34;) A &amp;lt;- lapply(x, function(y) { if(!y %in% installed.packages()[,&amp;#34;Package&amp;#34;]) install.packages(y) require(y, character.only = T) }) and load example data from warbleR&#xA;# optional, save it in a temporal folder # setwd(tempdir()) data(list = c( &amp;#34;Phae.long1&amp;#34;, &amp;#34;Phae.long2&amp;#34;,&amp;#34;Phae.long3&amp;#34;, &amp;#34;Phae.long4&amp;#34;,&amp;#34;selec.table&amp;#34;)) writeWave(Phae.</description>
-    </item>
-    <item>
-      <title>Spectrograms on trees</title>
-      <link>marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/</guid>
-      <description>This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&amp;lsquo;X argument) onto the tips of a tree (of class &amp;lsquo;phylo&amp;rsquo;). The &amp;rsquo;tip.label&amp;rsquo; column in &amp;lsquo;X&amp;rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR&amp;rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization.</description>
     </item>
     <item>
       <title>Updates on catalog function</title>

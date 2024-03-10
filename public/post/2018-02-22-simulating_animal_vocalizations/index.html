@@ -12,8 +12,7 @@
 
       <title>Simulating animal vocalizations - Coded bioacoustics</title>
 
-  <meta name="description" content="This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.
-The function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e."><script type="application/ld+json">
+  <meta name="description" content="⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -58,16 +57,16 @@ The function uses a brownian motion model of stochastic diffusion to simulate th
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : ""
+    "name" : "Marcelo Araya-Salas"
   },
   "headline": "Simulating animal vocalizations",
-  "description" : "This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.\nThe function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e.",
+  "description" : "⚠️ Dec-2023: Be aware that the functions \u0060sim_songs()\u0060 has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.",
   "inLanguage" : "en",
-  "wordCount":  1135 ,
-  "datePublished" : "0001-01-01T00:00:00",
-  "dateModified" : "0001-01-01T00:00:00",
+  "wordCount":  1307 ,
+  "datePublished" : "2018-02-22T00:00:00",
+  "dateModified" : "2018-02-22T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
-  "keywords" : [ "" ],
+  "keywords" : [ "simulation, R" ],
   "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2018-02-22-simulating_animal_vocalizations\/",
   "publisher" : {
     "@type": "Organization",
@@ -83,15 +82,14 @@ The function uses a brownian motion model of stochastic diffusion to simulate th
 </script>
 
 <meta property="og:title" content="Simulating animal vocalizations" />
-<meta property="og:description" content="This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.
-The function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e.">
+<meta property="og:description" content="⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.">
 <meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
 <meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Coded bioacoustics" />
 
   <meta name="twitter:title" content="Simulating animal vocalizations" />
-  <meta name="twitter:description" content="This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave …">
+  <meta name="twitter:description" content="⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
@@ -136,14 +134,12 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -260,17 +256,19 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 22, 2018
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1135&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1307&nbsp;words
   
   
     
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
     
   
   
@@ -292,7 +290,10 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>This post shows how to simulate animal vocalizations using the new <a href="https://cran.r-project.org/package=warbleR">warbleR</a> function <code>sim_songs</code>. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the <code>R</code> environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.</p>
+        <div class="alert alert-warning">
+⚠️ <b>Dec-2023:</b> Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post.
+</div>
+<p>This post shows how to simulate animal vocalizations using the new <a href="https://cran.r-project.org/package=warbleR">warbleR</a> function <code>sim_songs</code>. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the <code>R</code> environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.</p>
 <p>The function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e.g. modulation) across continuous traces of sound (song sub-units or elements). Several parameters of the songs can be customized, which allow users to simulate an wide range of signal structures. Nonetheless, more parameters and diffusion models will be added in future versions.</p>
 <p>First install and/or load <a href="https://cran.r-project.org/package=warbleR">warbleR</a> developmental version (if there is an older <a href="https://cran.r-project.org/package=warbleR">warbleR</a> version installed it has to be removed first):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># remove warbleR</span>
@@ -321,7 +322,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">                    <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_3-1.png" title="plot of chunk sim_song_3" alt="plot of chunk sim_song_3" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_3-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 1" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p><font size="3"><i>* A seed is used so the same song will be generated every time. If <code>seed = NULL</code> (as by default) then a different song will produced each time</i></font></p>
 <p>Longer &ldquo;repertoires&rdquo; can be produced by simply increasing <code>n</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># 10 elements</span>
@@ -332,7 +356,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.heat.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_4-1.png" title="plot of chunk sim_song_4" alt="plot of chunk sim_song_4" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_4-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 2" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># 15 elements</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">37</span><span class="p">,</span> <span class="n">steps</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -340,7 +387,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_4-2.png" title="plot of chunk sim_song_4" alt="plot of chunk sim_song_4" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_4-2.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 3" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>The amount of modulation can be controlled with the argument <code>sig2</code> (just as in the brownian model of evolution). Low values will produce little variation in the frequency slope:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># low sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">sig2</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span>
@@ -349,7 +419,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-25</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_5-1.png" title="plot of chunk sim_song_5" alt="plot of chunk sim_song_5" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_5-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 4" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>While higher <code>sig2</code> values will generate &ldquo;faster&rdquo; frequency changes:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">sig2</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">)</span>
@@ -358,7 +451,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_6-1.png" title="plot of chunk sim_song_6" alt="plot of chunk sim_song_6" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_6-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 5" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>Harmonics can also be added to the songs by modifying the <code>harms</code> argument:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">sig2</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">)</span>
@@ -367,7 +483,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_7-1.png" title="plot of chunk sim_song_7" alt="plot of chunk sim_song_7" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_7-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 6" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>The <code>steps</code> argument allows to define the length of the time series generated by the underlying brownian motion function. This time series is simply the frequency values at each time window (after some spline smoothing) of the song elements. Lower <code>steps</code> values will produce less modulated songs (other things equal):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> 
@@ -377,7 +516,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_8-1.png" title="plot of chunk sim_song_8" alt="plot of chunk sim_song_8" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_8-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 7" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>Higher <code>steps</code> values will increase modulation:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> 
@@ -387,7 +549,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_9-1.png" title="plot of chunk sim_song_9" alt="plot of chunk sim_song_9" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_9-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 8" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>The duration of the sub-units and gaps between elements can also be specified for each of the items:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">durs</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">length.out</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl"><span class="n">gaps</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.15</span><span class="p">,</span> <span class="m">0.1</span><span class="p">,</span> <span class="m">0.08</span><span class="p">,</span> <span class="m">0.05</span><span class="p">,</span> <span class="m">0.2</span><span class="p">)</span>
@@ -400,7 +585,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_10-1.png" title="plot of chunk sim_song_10" alt="plot of chunk sim_song_10" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_10-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 9" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>Users can also adjust the relative amplitude of the harmonics. The following code puts the highest energy on the second harmonic (e.g. the dominant frequency) using the <code>amps</code> argument:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">24</span><span class="p">,</span> 
@@ -410,7 +618,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-23</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_11-1.png" title="plot of chunk sim_song_11" alt="plot of chunk sim_song_11" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_11-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 10" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>The simulated song can be played with the <code>play</code> function from <a href="https://cran.r-project.org/package=tuneR">tuneR</a> or by saving the wave file and opening it in a regular audio player. Here is an example of a 20 element simulated song:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#set variable durations </span>
 </span></span><span class="line"><span class="cl"><span class="n">durs</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="m">0.21</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">)</span>
@@ -430,19 +661,85 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">9</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-23</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><img src="./img/sim_song_12-1.png" title="plot of chunk sim_song_12" alt="plot of chunk sim_song_12" width="750" />
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_12-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 11" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># save it as a wave file</span>
 </span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="s">&#34;simulated_song.wav&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>And this is how it sounds:</p>
 <audio controls style="width: 700px;">
-   <source src="/img/simulated_song.mp3" type="audio/mpeg">
+   <source src="./img/simulated_song.mp3" type="audio/mpeg">
 </audio>
 <p>In the above example the &ldquo;BB&rdquo; diffusion model was used to simulate the sounds (argument <code>diff_fun</code>). This method forces the sub-units to start and end at the same frequency. Note also that combining random variables to set durations and gaps can help create more realistic songs.</p>
 <p>Finally, the background noise level (argument <code>bgn</code>), sampling rate (<code>samp.rate</code>) amd amplitude fade-in (<code>fin</code>) and fade-out (<code>fout</code> &amp; <code>shape</code>) can also be adjusted.</p>
 <p>More options will be added in future versions. Suggestions are welcome. I am particularly interested on diffusion models (or any other algorithm) that can generate different types of signals, ideally even more similar to the ones found in nature.</p>
 <p>Please report any bugs <a href="https://github.com/maRce10/warbleR/issues">here</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">R</span> <span class="n">version</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">4</span> <span class="p">(</span><span class="mi">2018</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Platform</span><span class="p">:</span> <span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span> <span class="p">(</span><span class="mi">64</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Running</span> <span class="n">under</span><span class="p">:</span> <span class="n">Ubuntu</span> <span class="mf">16.04</span><span class="o">.</span><span class="mi">5</span> <span class="n">LTS</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Matrix</span> <span class="n">products</span><span class="p">:</span> <span class="n">default</span>
+</span></span><span class="line"><span class="cl"><span class="n">BLAS</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openblas</span><span class="o">-</span><span class="n">base</span><span class="o">/</span><span class="n">libblas</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">LAPACK</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libopenblasp</span><span class="o">-</span><span class="n">r0</span><span class="o">.</span><span class="mf">2.18</span><span class="o">.</span><span class="n">so</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">locale</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">LC_CTYPE</span><span class="o">=</span><span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>       <span class="n">LC_NUMERIC</span><span class="o">=</span><span class="n">C</span>               <span class="n">LC_TIME</span><span class="o">=</span><span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>        <span class="n">LC_COLLATE</span><span class="o">=</span><span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>    
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">LC_MONETARY</span><span class="o">=</span><span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>    <span class="n">LC_MESSAGES</span><span class="o">=</span><span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>    <span class="n">LC_PAPER</span><span class="o">=</span><span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>       <span class="n">LC_NAME</span><span class="o">=</span><span class="n">C</span>                 
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="n">LC_ADDRESS</span><span class="o">=</span><span class="n">C</span>               <span class="n">LC_TELEPHONE</span><span class="o">=</span><span class="n">C</span>             <span class="n">LC_MEASUREMENT</span><span class="o">=</span><span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="n">LC_IDENTIFICATION</span><span class="o">=</span><span class="n">C</span>       
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">attached</span> <span class="n">base</span> <span class="n">packages</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">stats</span>     <span class="n">graphics</span>  <span class="n">grDevices</span> <span class="n">utils</span>     <span class="n">datasets</span>  <span class="n">methods</span>   <span class="n">base</span>     
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">other</span> <span class="n">attached</span> <span class="n">packages</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">ggplot2_3</span><span class="o">.</span><span class="mf">0.0</span>        <span class="n">microbenchmark_1</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="mi">4</span> <span class="n">kableExtra_0</span><span class="o">.</span><span class="mf">9.0</span>     <span class="n">knitr_1</span><span class="o">.</span><span class="mi">20</span>           <span class="n">warbleR_1</span><span class="o">.</span><span class="mf">1.15</span>      
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="n">NatureSounds_1</span><span class="o">.</span><span class="mf">0.0</span>   <span class="n">seewave_2</span><span class="o">.</span><span class="mf">1.0</span>        <span class="n">tuneR_1</span><span class="o">.</span><span class="mf">3.3</span>          <span class="n">maps_3</span><span class="o">.</span><span class="mf">3.0</span>          
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">loaded</span> <span class="n">via</span> <span class="n">a</span> <span class="n">namespace</span> <span class="p">(</span><span class="ow">and</span> <span class="ow">not</span> <span class="n">attached</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">rgl_0</span><span class="o">.</span><span class="mf">95.1441</span>        <span class="n">Rcpp_0</span><span class="o">.</span><span class="mf">12.18</span>         <span class="n">fftw_1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mi">4</span>           <span class="n">assertthat_0</span><span class="o">.</span><span class="mf">2.0</span>     <span class="n">rprojroot_1</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span>     
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="n">digest_0</span><span class="o">.</span><span class="mf">6.16</span>        <span class="n">R6_2</span><span class="o">.</span><span class="mf">2.2</span>             <span class="n">plyr_1</span><span class="o">.</span><span class="mf">8.4</span>           <span class="n">Sim</span><span class="o">.</span><span class="n">DiffProc_4</span><span class="o">.</span><span class="mi">1</span>     <span class="n">backports_1</span><span class="o">.</span><span class="mf">1.2</span>     
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="n">signal_0</span><span class="o">.</span><span class="mi">7</span><span class="o">-</span><span class="mi">6</span>         <span class="n">evaluate_0</span><span class="o">.</span><span class="mi">11</span>        <span class="n">pracma_2</span><span class="o">.</span><span class="mf">1.5</span>         <span class="n">httr_1</span><span class="o">.</span><span class="mf">3.1</span>           <span class="n">highr_0</span><span class="o">.</span><span class="mi">7</span>           
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="n">pillar_1</span><span class="o">.</span><span class="mf">3.0</span>         <span class="n">rlang_0</span><span class="o">.</span><span class="mf">2.2</span>          <span class="n">lazyeval_0</span><span class="o">.</span><span class="mf">2.1</span>       <span class="n">curl_3</span><span class="o">.</span><span class="mi">2</span>             <span class="n">rstudioapi_0</span><span class="o">.</span><span class="mi">7</span>      
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">21</span><span class="p">]</span> <span class="n">rmarkdown_1</span><span class="o">.</span><span class="mi">10</span>       <span class="n">devtools_1</span><span class="o">.</span><span class="mf">13.6</span>      <span class="n">moments_0</span><span class="o">.</span><span class="mi">14</span>         <span class="n">readr_1</span><span class="o">.</span><span class="mf">1.1</span>          <span class="n">stringr_1</span><span class="o">.</span><span class="mf">3.1</span>       
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">26</span><span class="p">]</span> <span class="n">RCurl_1</span><span class="o">.</span><span class="mi">95</span><span class="o">-</span><span class="mf">4.11</span>      <span class="n">munsell_0</span><span class="o">.</span><span class="mf">5.0</span>        <span class="n">proxy_0</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="mi">22</span>         <span class="n">compiler_3</span><span class="o">.</span><span class="mf">4.4</span>       <span class="n">Deriv_3</span><span class="o">.</span><span class="mf">8.5</span>         
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">31</span><span class="p">]</span> <span class="n">pkgconfig_2</span><span class="o">.</span><span class="mf">0.2</span>      <span class="n">htmltools_0</span><span class="o">.</span><span class="mf">3.6</span>      <span class="n">tidyselect_0</span><span class="o">.</span><span class="mf">2.4</span>     <span class="n">tibble_1</span><span class="o">.</span><span class="mf">4.2</span>         <span class="n">dtw_1</span><span class="o">.</span><span class="mi">20</span><span class="o">-</span><span class="mi">1</span>          
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">36</span><span class="p">]</span> <span class="n">bioacoustics_0</span><span class="o">.</span><span class="mf">1.5</span>   <span class="n">viridisLite_0</span><span class="o">.</span><span class="mf">3.0</span>    <span class="n">crayon_1</span><span class="o">.</span><span class="mf">3.4</span>         <span class="n">dplyr_0</span><span class="o">.</span><span class="mf">7.6</span>          <span class="n">withr_2</span><span class="o">.</span><span class="mf">1.2</span>         
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">41</span><span class="p">]</span> <span class="n">MASS_7</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">50</span>          <span class="n">bitops_1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mi">6</span>         <span class="n">grid_3</span><span class="o">.</span><span class="mf">4.4</span>           <span class="n">gtable_0</span><span class="o">.</span><span class="mf">2.0</span>         <span class="n">git2r_0</span><span class="o">.</span><span class="mf">23.0</span>        
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">46</span><span class="p">]</span> <span class="n">magrittr_1</span><span class="o">.</span><span class="mi">5</span>         <span class="n">scales_1</span><span class="o">.</span><span class="mf">0.0</span>         <span class="n">stringi_1</span><span class="o">.</span><span class="mf">2.4</span>        <span class="n">pbapply_1</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span>        <span class="n">scatterplot3d_0</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">41</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">51</span><span class="p">]</span> <span class="n">bindrcpp_0</span><span class="o">.</span><span class="mf">2.2</span>       <span class="n">xml2_1</span><span class="o">.</span><span class="mf">2.0</span>           <span class="n">rjson_0</span><span class="o">.</span><span class="mf">2.20</span>         <span class="n">iterators_1</span><span class="o">.</span><span class="mf">0.10</span>     <span class="n">tools_3</span><span class="o">.</span><span class="mf">4.4</span>         
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">56</span><span class="p">]</span> <span class="n">glue_1</span><span class="o">.</span><span class="mf">3.0</span>           <span class="n">purrr_0</span><span class="o">.</span><span class="mf">2.5</span>          <span class="n">hms_0</span><span class="o">.</span><span class="mf">4.2</span>            <span class="n">jpeg_0</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="mi">8</span>           <span class="n">parallel_3</span><span class="o">.</span><span class="mf">4.4</span>      
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">61</span><span class="p">]</span> <span class="n">yaml_2</span><span class="o">.</span><span class="mf">2.0</span>           <span class="n">colorspace_1</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span>     <span class="n">soundgen_1</span><span class="o">.</span><span class="mf">3.1</span>       <span class="n">rvest_0</span><span class="o">.</span><span class="mf">3.2</span>          <span class="n">memoise_1</span><span class="o">.</span><span class="mf">1.0</span>       
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">66</span><span class="p">]</span> <span class="n">bindr_0</span><span class="o">.</span><span class="mf">1.1</span>         
+</span></span></code></pre></div>
 
-
+        
+          <div class="blog-tags">
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/simulation/">simulation</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+            
+          </div>
         
 
         
@@ -504,6 +801,25 @@ if (!doNotTrack) {
 
         
           
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/">dynaSpec: dynamic spectrograms in R</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/">Editing wave objects from extended selection tables</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/">Automatic signal detection: a case study</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/">Signal detection with cross-correlation using warbleR</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/">Compare signals from selection tables to a set of templates using cross-correlation</a></li>
+                
+              </ul>
 
           
         
@@ -513,12 +829,12 @@ if (!doNotTrack) {
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="marce10.github.io/coded_bioacustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/" data-toggle="tooltip" data-placement="top" title="Song similarity using dynamic time warping">&larr; Previous Post</a>
+              <a href="marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/" data-toggle="tooltip" data-placement="top" title="Acoustic space scatter plot">&larr; Previous Post</a>
             </li>
           
           
             <li class="next">
-              <a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/" data-toggle="tooltip" data-placement="top" title="Signal detection with cross-correlation using warbleR">Next Post &rarr;</a>
+              <a href="marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/" data-toggle="tooltip" data-placement="top" title="Extended selection tables">Next Post &rarr;</a>
             </li>
           
         </ul>
@@ -528,16 +844,27 @@ if (!doNotTrack) {
       
         
           
-          <div class="disqus-comments">                  
-            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations">comments</span></button>
+          <div class="disqus-comments">
             <div id="disqus_thread"></div>
-
-            <script type="text/javascript">
-              var disqus_config = function () {
-              this.page.url = 'marce10.github.io\/coded_bioacustics\/post\/2018-02-22-simulating_animal_vocalizations';
-            };
-
-          </script>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "maRce_10" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
           </div>
           
         
@@ -578,7 +905,17 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -633,28 +970,6 @@ if (!doNotTrack) {
 
 
 
-
-
-
-<script type="text/javascript">
-$(function(){
-  $('#show-comments').on('click', function(){
-    var disqus_shortname = 'maRce_10';
-      
-    (function() {
-      var disqus = document.createElement('script'); 
-      disqus.type = 'text/javascript'; 
-      disqus.async = true;
-      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
-    })();
-      
-    $(this).hide(); 
-    });
-  });
-      
-</script>
-<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
 
 
 

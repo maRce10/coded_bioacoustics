@@ -2,8 +2,9 @@
 title: "dynaSpec: dynamic spectrograms in R"
 date: 2020-05-28
 Author: Marcelo Araya-Salas
-tags: ["video", "spectrogram", "visualization"]
+tags: ["video", "visualization", "R"]
 ---
+
 
 The R package [dynaSpec](https://marce10.github.io/dynaSpec) can now be
 installed from github. This is a set of tools to generate dynamic
@@ -24,6 +25,13 @@ devtools::install_github("maRce10/dynaSpec")
 #load package
 library(dynaSpec)
 ```
+
+
+<div class="alert alert-warning">
+
+Installation of external dependencies can be tricky on operating systems other than Linux. An alternative option is to run the package through [google colab](https://colab.google/). This [colab notebook](https://colab.research.google.com/drive/1t3Wn9OifcZTvxOMVNmz9dF25vnzU3_Fr?usp=sharing) explain how to do that step-by-step. 
+
+</div>
 
 ## Examples
 

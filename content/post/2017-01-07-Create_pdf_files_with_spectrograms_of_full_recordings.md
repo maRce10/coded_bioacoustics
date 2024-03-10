@@ -1,7 +1,8 @@
 ---
-layout: post
 title: "Pdf files with spectrograms of full recordings"
 date: 07-01-2017
+tags: ["visualization", "R"]
+author: Marcelo Araya-Salas
 ---
 
 The [warbleR](https://cran.r-project.org/package=warbleR) function `lspec`  produces image files with spectrograms of whole recordings split into multiple rows. For a long recording several image files will be produced, which could be inconvenient when dealing with many long recordings. I recently added a new function `lspec2pdf` that combines `lspec` images in .jpeg format into a single pdf file (available in warbleR 1.1.5 or higher).    

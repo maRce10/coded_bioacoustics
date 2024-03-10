@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Creating song catalogs"
-date: 17-03-2017
+date: 2017-03-17
 ---
 
 When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and/or sites. The new [warbleR](https://cran.r-project.org/package=warbleR) function `catalog` aims to simplify this task.
@@ -145,7 +145,7 @@ catalog(X = Ysnr, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
         hatching = 2, breaks = c(3, 2))
 ```
 
- ![catalog7](/img/Catalog_p1-7.png)
+![catalog7](/img/Catalog_p1-7.png)
  
  The legend can be removed for one of both tags. The argument `legend = 2` plots the legend only for the second tag
  
@@ -159,8 +159,8 @@ catalog(X = Ysnr, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
  
  The following plots show a nice example of song geographic variation of [Northern Cardinals (Cardinalis cardinalis)](https://www.allaboutbirds.org/guide/Northern_Cardinal/id) in Mexico (from my collaborator Marco Ortiz).
  
- ![catalog6](/img/Catalog_p1-Cardinalis.png)
- ![catalog7](/img/Catalog_p2-Cardinalis.png)
+![catalog6](./img/Catalog_p1-Cardinalis.png)
+![catalog7](./img/Catalog_p2-Cardinalis.png)
 
 A single pdf containing all catalog images can be generated using the `catalog2pdf` function. 
 

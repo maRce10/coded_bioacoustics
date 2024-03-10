@@ -86,14 +86,12 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -251,10 +249,10 @@ if (!doNotTrack) {
   <i class="fas fa-calendar"></i>&nbsp;Posted on May 28, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;10&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1888&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1921&nbsp;words
   
   
     
@@ -272,7 +270,7 @@ if (!doNotTrack) {
         
         The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.
 To install dynaSpec from github you will need the R package devtools:
-# From github devtools::install_github(&#34;maRce10/dynaSpec&#34;) #load package library(dynaSpec) Examples To run the following examples you will also need to load a few more packages:
+# From github devtools::install_github(&#34;maRce10/dynaSpec&#34;) #load package library(dynaSpec) Installation of external dependencies can be tricky on operating systems other than Linux.
         <a href="marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -282,9 +280,9 @@ To install dynaSpec from github you will need the R package devtools:
         
         <a href="marce10.github.io/coded_bioacustics//tags/video/">video</a>&nbsp;
         
-        <a href="marce10.github.io/coded_bioacustics//tags/spectrogram/">spectrogram</a>&nbsp;
-        
         <a href="marce10.github.io/coded_bioacustics//tags/visualization/">visualization</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
         
     </div>
     
@@ -336,6 +334,8 @@ Manipulating clips from extended selection tables can be pretty straightforward.
         
         <a href="marce10.github.io/coded_bioacustics//tags/annotations/">annotations</a>&nbsp;
         
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+        
     </div>
     
 
@@ -359,7 +359,7 @@ Manipulating clips from extended selection tables can be pretty straightforward.
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;12&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2475&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2476&nbsp;words
   
   
     
@@ -375,7 +375,7 @@ Manipulating clips from extended selection tables can be pretty straightforward.
     </p>
     <div class="post-entry">
         
-        Mar-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&rsquo;s disc-winged bats (Thyroptera tricolor).
+        ⚠️ March-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&rsquo;s disc-winged bats (Thyroptera tricolor).
 Inquiry calls were recorded while the bats were flying in a flight cage.
         <a href="marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/" class="post-read-more">[Read More]</a>
         
@@ -385,6 +385,8 @@ Inquiry calls were recorded while the bats were flying in a flight cage.
     <div class="blog-tags">
         
         <a href="marce10.github.io/coded_bioacustics//tags/sound-event-detection/">sound event detection</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
         
     </div>
     
@@ -445,6 +447,266 @@ Inquiry calls were recorded while the bats were flying in a flight cage.
 </article>
           
             <article class="post-preview">
+    <a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/">
+        <h2 class="post-title">Signal detection with cross-correlation using warbleR</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 10, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;934&nbsp;words
+  
+  
+    
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        ⚠️ Note that the R package ohun , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post warbleR (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package monitoR. There is already a blog post on cross-correlation detection using monitoR. In this post I show how to do that with warbleR and compare its performance against that from monitoR.
+        <a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/sound-event-detection/">sound event detection</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/">
+        <h2 class="post-title">Compare signals from selection tables to a set of templates using cross-correlation</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;797&nbsp;words
+  
+  
+    
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        I got the following question about cross-correlation:
+&ldquo;We would like to compare every call within a selection table to a template of each owl, and get peak correlation coefficients on each call separately&rdquo;
+One way to do this would be putting the unidentified and template signals together into a single selection table, and then running cross-correlation. However, this will also compare all unidentified signals against each other, which can be very inefficient.
+        <a href="marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/acoustic-features/">acoustic features</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/cross-correlation/">cross correlation</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/">
+        <h2 class="post-title">Spectrograms on trees</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;719&nbsp;words
+  
+  
+    
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&lsquo;X argument) onto the tips of a tree (of class &lsquo;phylo&rsquo;). The &rsquo;tip.label&rsquo; column in &lsquo;X&rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR&rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization.
+        <a href="marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/visualization/">visualization</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/">
+        <h2 class="post-title">Extended selection tables</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on May 15, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;18&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;3750&nbsp;words
+  
+  
+    
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        ⚠️ March-2024: Note that the new vignette 'Annotation data format' from the package warbleR provides a updated and more detailed overview of the annotation format used by warbleR, including extended selection tables This post shows how to create and use the new warbleR object class extended_selection_table.
+These objects are created with the selec_table() function. The function takes data frames containing selection data (sound file name, selection, start, end &hellip;), checks whether the information is consistent (see checksels() function for details) and saves the &lsquo;diagnostic&rsquo; metadata as an attribute.
+        <a href="marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/annotations/">annotations</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/">
+        <h2 class="post-title">Simulating animal vocalizations</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 22, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1307&nbsp;words
+  
+  
+    
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        ⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.
+        <a href="marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/simulation/">simulation</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/">
         <h2 class="post-title">Acoustic space scatter plot</h2>
         
@@ -495,232 +757,9 @@ The figure shows the grouping of long-billed hermit songs in the acoustic space 
         
         <a href="marce10.github.io/coded_bioacustics//tags/visualization/">visualization</a>&nbsp;
         
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="marce10.github.io/coded_bioacustics/post/2017-02-17-choosing-the-right-method-for-measuring-acoustic-signal-structure/">
-        <h2 class="post-title">Choosing the right method for measuring acoustic signal structure</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on February 17, 2017
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;824&nbsp;words
-  
-  
-    
-      
-        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
-      
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Bioacoustic research relies on quantifying the structure of acoustic` signals and comparing that structure across behavioral/ecological contexts, groups or species. However, measuring signal structure in a way that fully accounts for the variation in the signals could be a tricky task. Some of the differences that are apparent by visual inspection of spectrograms might not be picked up by some analyses. Hence, choosing the most appropriate analytical approach is a critical step.
-        <a href="marce10.github.io/coded_bioacustics/post/2017-02-17-choosing-the-right-method-for-measuring-acoustic-signal-structure/" class="post-read-more">[Read More]</a>
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
         
     </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="marce10.github.io/coded_bioacustics//tags/quantify-structure/">quantify structure</a>&nbsp;
-        
-        <a href="marce10.github.io/coded_bioacustics//tags/acoustic-features/">acoustic features</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/">
-        <h2 class="post-title">Signal detection with cross-correlation using monitoR </h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 15, 2016
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;657&nbsp;words
-  
-  
-    
-      
-        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
-      
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Note that the R package ohun for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.
-        <a href="marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="marce10.github.io/coded_bioacustics//tags/sound-event-detection/">sound event detection</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="marce10.github.io/coded_bioacustics/post/2020-02-13-barulho/">
-        <h2 class="post-title">baRulho: an R package to quantify (animal) acoustic signal transmission and degradation</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;32&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;6754&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        The baRulho package is intended to facilitate acoustic analysis of (animal) sound transmission experiments. Such studies typically aim to quantify changes in signal structure when transmitted in a given habitat by broadcasting and re-recording animal sounds at increasing distances. We will refer to these changes in signal structure &lsquo;degradation&rsquo; for the sake of simplicity. The package offers a workflow with functions to prepare the data set for analysis as well as to calculate and visualize several degradation metrics.
-        <a href="marce10.github.io/coded_bioacustics/post/2020-02-13-barulho/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/">
-        <h2 class="post-title">Compare signals from selection tables to a set of templates using cross-correlation</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;797&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        I got the following question about cross-correlation:
-&ldquo;We would like to compare every call within a selection table to a template of each owl, and get peak correlation coefficients on each call separately&rdquo;
-One way to do this would be putting the unidentified and template signals together into a single selection table, and then running cross-correlation. However, this will also compare all unidentified signals against each other, which can be very inefficient.
-        <a href="marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/">
-        <h2 class="post-title">Creating dynamic spectrograms (videos)</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;394&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Note that the code below is now available in the new R package dynaSpec This code creates a video with a spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).
-        <a href="marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
     
 
 </article>
@@ -779,7 +818,17 @@ One way to do this would be putting the unidentified and template signals togeth
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -834,28 +883,6 @@ One way to do this would be putting the unidentified and template signals togeth
 
 
 
-
-
-
-<script type="text/javascript">
-$(function(){
-  $('#show-comments').on('click', function(){
-    var disqus_shortname = 'maRce_10';
-      
-    (function() {
-      var disqus = document.createElement('script'); 
-      disqus.type = 'text/javascript'; 
-      disqus.async = true;
-      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
-    })();
-      
-    $(this).hide(); 
-    });
-  });
-      
-</script>
-<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
 
 
 

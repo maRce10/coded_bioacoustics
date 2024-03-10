@@ -83,14 +83,12 @@ if (!doNotTrack) {
         
           
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -267,6 +265,114 @@ Manipulating clips from extended selection tables can be pretty straightforward.
         
         <a href="marce10.github.io/coded_bioacustics//tags/annotations/">annotations</a>&nbsp;
         
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/">
+        <h2 class="post-title">Extended selection tables</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on May 15, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;18&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;3750&nbsp;words
+  
+  
+    
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        ⚠️ March-2024: Note that the new vignette 'Annotation data format' from the package warbleR provides a updated and more detailed overview of the annotation format used by warbleR, including extended selection tables This post shows how to create and use the new warbleR object class extended_selection_table.
+These objects are created with the selec_table() function. The function takes data frames containing selection data (sound file name, selection, start, end &hellip;), checks whether the information is consistent (see checksels() function for details) and saves the &lsquo;diagnostic&rsquo; metadata as an attribute.
+        <a href="marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/annotations/">annotations</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/">
+        <h2 class="post-title">Individual sound files for each selection</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1726&nbsp;words
+  
+  
+    
+      
+        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Marcelo Araya-Salas
+      
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).
+It takes 3 main steps:
+Create a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)
+Add and (X)lapply loop to run the function from step 1 iteratively on each row
+        <a href="marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/annotations/">annotations</a>&nbsp;
+        
+        <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+        
     </div>
     
 
@@ -308,7 +414,17 @@ Manipulating clips from extended selection tables can be pretty straightforward.
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MrBioacoustics" title="Youtube">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -363,28 +479,6 @@ Manipulating clips from extended selection tables can be pretty straightforward.
 
 
 
-
-
-
-<script type="text/javascript">
-$(function(){
-  $('#show-comments').on('click', function(){
-    var disqus_shortname = 'maRce_10';
-      
-    (function() {
-      var disqus = document.createElement('script'); 
-      disqus.type = 'text/javascript'; 
-      disqus.async = true;
-      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
-    })();
-      
-    $(this).hide(); 
-    });
-  });
-      
-</script>
-<script id="dsq-count-scr" src="//maRce_10.disqus.com/count.js" async></script>
 
 
 

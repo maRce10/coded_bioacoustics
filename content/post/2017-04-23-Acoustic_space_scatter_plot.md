@@ -5,7 +5,7 @@ Author:
 - Marcelo Araya-Salas
 - Grace Smith-Vidaurre
 date: "2017-04-23"
-tags: ["acoustic space", "visualization"]
+tags: ["acoustic space", "visualization", "R"]
 ---
 
 Some people have asked for the code we used to make figure 3 in the [Methods in Ecology and Evolution paper describing warbleR](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full). So, here it is. The figure was made in part by my collaborator [Grace Smith-Vidaurre](http://smithvidaurre.weebly.com), so thanks to Grace for sharing.

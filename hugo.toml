@@ -10,7 +10,7 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentOptions = "linenos=inline"
 disqusShortname = "maRce_10"
 googleAnalytics = "G-RZVLSR0L9P"
-
+enableEmoji = true
 ignoreFiles = [ "\\.Rmd$", "\\.qmd$", "\\.ipynb$", "\\.py$" ]
 [markup.goldmark.renderer]
 unsafe= true
@@ -29,7 +29,7 @@ unsafe= true
   wordCount = true
   useHLJS = true
   socialShare = true
-  delayDisqus = true
+  delayDisqus = false
   showRelatedPosts = true
   hideAuthor = false
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
@@ -60,10 +60,10 @@ unsafe= true
 #  reddit = "username"
 #  linkedin = "username"
 #  xing = "username"
-#  stackoverflow = "users/XXXXXXX/username"
+ stackoverflow = "users/4178065/marcelo-araya-salas"
 #  snapchat = "username"
 #  instagram = "username"
-  youtube = "@MrBioacoustics" # or channel/channelname
+  youtube = "@MarRce10" # or channel/channelname
 # soundcloud = "username"
 #  spotify = "username"
 #  bandcamp = "username"
@@ -91,27 +91,21 @@ unsafe= true
     weight = 3
 
 [[menu.main]]
-    identifier = "samples"
-    name = "Samples"
+    identifier = "Useful resources"
+    name = "Useful resources"
     weight = 2
 
  [[menu.main]]
-    parent = "samples"
-    name = "Big Image Sample"
-    url = "post/2017-03-07-bigimg-sample"
+    parent = "Useful resources"
+    name = "Bioacoustics software list"
+    url = "https://github.com/rhine3/bioacoustics-software"
    weight = 1
 
  [[menu.main]]
-    parent = "samples"
-    name = "Math Sample"
-    url = "post/2017-03-05-math-sample"
+    parent = "Useful resources"
+    name = "Bioacoustics StackExcange forum"
+    url = "https://bioacoustics.stackexchange.com/"
     weight = 2
-
- [[menu.main]]
-    parent = "samples"
-    name = "Code Sample"
-    url = "post/2016-03-08-code-sample"
-    weight = 3
 
  [[menu.main]]
     name = "Tags"
@@ -136,5 +130,9 @@ unsafe= true
 
 [markup]
   defaultMarkdownHandler = 'goldmark'
+
+[services]
+  [services.disqus]
+    shortname = 'maRce_10'
 
 

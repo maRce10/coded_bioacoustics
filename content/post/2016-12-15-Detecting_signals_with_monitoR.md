@@ -1,14 +1,13 @@
 ---
 title: "Signal detection with cross-correlation using monitoR "
 date: 2016-12-15
-tags: ["sound event detection"]
+tags: ["sound event detection", "R"]
 author: Marcelo Araya-Salas
 ---
 
 
-<div class="alert alert-info">
-
-<center>Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> for optimizing sound event detection is now available and provides an improved version of the approaches shown in this post  
+<div class="alert alert-warning">
+⚠️ <b>March-2024:</b> Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post
 
 </div>
 

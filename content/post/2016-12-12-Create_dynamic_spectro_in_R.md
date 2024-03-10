@@ -1,16 +1,13 @@
 ---
 layout: post
 title: "Creating dynamic spectrograms (videos)"
-date: 12-12-2016
+date: 2016-12-12
 ---
 
-
-
-<div class="alert alert-info">
-
-<center>Note that the code below is now available in the new R package <a href="https://marce10.github.io/dynaSpec/">dynaSpec</a></center>
-
+<div class="alert alert-warning">
+⚠️ <b>June-2022:</b> Note that the code below is now available in the R package <a href="https://marce10.github.io/dynaSpec/">dynaSpec</a>
 </div>
+
 
 This code creates a video with a spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need  the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).  
 
