@@ -12,10 +12,7 @@
 
       <title>Individual sound files for each selection - Coded bioacoustics</title>
 
-  <meta name="description" content="A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).
-It takes 3 main steps:
-Create a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)
-Add and (X)lapply loop to run the function from step 1 iteratively on each row"><script type="application/ld+json">
+  <meta name="description" content="⚠️Mar-2023: Note that the new function cut_sels() from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions)."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -63,9 +60,9 @@ Add and (X)lapply loop to run the function from step 1 iteratively on each row">
     "name" : "Marcelo Araya-Salas"
   },
   "headline": "Individual sound files for each selection",
-  "description" : "A friend of mine wants to \u0026ldquo;create individual sound files for each selection\u0026rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).\nIt takes 3 main steps:\nCreate a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)\nAdd and (X)lapply loop to run the function from step 1 iteratively on each row",
+  "description" : "⚠️Mar-2023: Note that the new function cut_sels() from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post A friend of mine wants to \u0026ldquo;create individual sound files for each selection\u0026rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).",
   "inLanguage" : "en",
-  "wordCount":  1726 ,
+  "wordCount":  1755 ,
   "datePublished" : "2017-06-06T00:00:00",
   "dateModified" : "2017-06-06T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
@@ -85,17 +82,14 @@ Add and (X)lapply loop to run the function from step 1 iteratively on each row">
 </script>
 
 <meta property="og:title" content="Individual sound files for each selection" />
-<meta property="og:description" content="A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).
-It takes 3 main steps:
-Create a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)
-Add and (X)lapply loop to run the function from step 1 iteratively on each row">
+<meta property="og:description" content="⚠️Mar-2023: Note that the new function cut_sels() from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).">
 <meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
 <meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Coded bioacoustics" />
 
   <meta name="twitter:title" content="Individual sound files for each selection" />
-  <meta name="twitter:description" content="A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on …">
+  <meta name="twitter:description" content="⚠️Mar-2023: Note that the new function cut_sels() from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post A friend of mine wants …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
@@ -268,7 +262,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1726&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1755&nbsp;words
   
   
     
@@ -296,7 +290,10 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions).</p>
+        <div class="alert alert-warning">
+<center>⚠️<b>Mar-2023:</b> Note that the new function <i>cut_sels()</i> from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post  
+</div>
+<p>A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions).</p>
 <p>It takes 3 main steps:</p>
 <ol>
 <li>

@@ -6,7 +6,7 @@ author: Marcelo Araya-Salas
 ---
 
 <div class="alert alert-warning">
-⚠️ <b>Dec-2023:</b> Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post.
+<center>⚠️ <b>Dec-2023:</b> Be aware that the functions <i>sim_songs()</i> has undergone substantial changes beginning with warbleR 1.1.30 so simulations using package versions may not look like those shown in this post.
 </div>
 
 

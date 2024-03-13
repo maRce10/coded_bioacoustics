@@ -20,14 +20,14 @@
       <link>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</link>
       <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</guid>
-      <description>⚠️ Note that the R package ohun , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post warbleR (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package monitoR. There is already a blog post on cross-correlation detection using monitoR. In this post I show how to do that with warbleR and compare its performance against that from monitoR.</description>
+      <description>⚠️ Note that the R package ohun , which optimizes sound event detection, is now available. It offers an enhanced version of the methods demonstrated in this post warbleR (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package monitoR. There is already a blog post on cross-correlation detection using monitoR. In this post I show how to do that with warbleR and compare its performance against that from monitoR.</description>
     </item>
     <item>
       <title>Signal detection with cross-correlation using monitoR </title>
       <link>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</link>
       <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</guid>
-      <description>⚠️ March-2024: Note that the R package ohun , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.</description>
+      <description>⚠️ March-2024: Note that the R package ohun , which optimizes sound event detection, is now available. It offers an enhanced version of the methods demonstrated in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.</description>
     </item>
   </channel>
 </rss>

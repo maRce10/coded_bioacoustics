@@ -7,7 +7,7 @@ author: Marcelo Araya-Salas
 
 
 <div class="alert alert-warning">
-⚠️ <b>March-2024:</b> Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post
+⚠️ <b>March-2024:</b> Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> , which optimizes sound event detection, is now available. It offers an enhanced version of the methods demonstrated in this post
 
 </div>
 

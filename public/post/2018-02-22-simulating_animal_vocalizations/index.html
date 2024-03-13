@@ -12,7 +12,7 @@
 
       <title>Simulating animal vocalizations - Coded bioacoustics</title>
 
-  <meta name="description" content="⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types."><script type="application/ld+json">
+  <meta name="description" content="⚠️ Dec-2023: Be aware that the functions sim_songs() has undergone substantial changes beginning with warbleR 1.1.30 so simulations using package versions may not look like those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -60,9 +60,9 @@
     "name" : "Marcelo Araya-Salas"
   },
   "headline": "Simulating animal vocalizations",
-  "description" : "⚠️ Dec-2023: Be aware that the functions \u0060sim_songs()\u0060 has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.",
+  "description" : "⚠️ Dec-2023: Be aware that the functions sim_songs() has undergone substantial changes beginning with warbleR 1.1.30 so simulations using package versions may not look like those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.",
   "inLanguage" : "en",
-  "wordCount":  1307 ,
+  "wordCount":  1312 ,
   "datePublished" : "2018-02-22T00:00:00",
   "dateModified" : "2018-02-22T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
@@ -82,14 +82,14 @@
 </script>
 
 <meta property="og:title" content="Simulating animal vocalizations" />
-<meta property="og:description" content="⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.">
+<meta property="og:description" content="⚠️ Dec-2023: Be aware that the functions sim_songs() has undergone substantial changes beginning with warbleR 1.1.30 so simulations using package versions may not look like those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.">
 <meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
 <meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Coded bioacoustics" />
 
   <meta name="twitter:title" content="Simulating animal vocalizations" />
-  <meta name="twitter:description" content="⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to …">
+  <meta name="twitter:description" content="⚠️ Dec-2023: Be aware that the functions sim_songs() has undergone substantial changes beginning with warbleR 1.1.30 so simulations using package versions may not look like those shown in this post. …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
@@ -262,7 +262,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1307&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1312&nbsp;words
   
   
     
@@ -291,7 +291,7 @@ if (!doNotTrack) {
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <div class="alert alert-warning">
-⚠️ <b>Dec-2023:</b> Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post.
+<center>⚠️ <b>Dec-2023:</b> Be aware that the functions <i>sim_songs()</i> has undergone substantial changes beginning with warbleR 1.1.30 so simulations using package versions may not look like those shown in this post.
 </div>
 <p>This post shows how to simulate animal vocalizations using the new <a href="https://cran.r-project.org/package=warbleR">warbleR</a> function <code>sim_songs</code>. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the <code>R</code> environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.</p>
 <p>The function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e.g. modulation) across continuous traces of sound (song sub-units or elements). Several parameters of the songs can be customized, which allow users to simulate an wide range of signal structures. Nonetheless, more parameters and diffusion models will be added in future versions.</p>

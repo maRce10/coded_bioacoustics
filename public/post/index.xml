@@ -41,7 +41,7 @@
       <link>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</link>
       <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</guid>
-      <description>⚠️ Note that the R package ohun , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post warbleR (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package monitoR. There is already a blog post on cross-correlation detection using monitoR. In this post I show how to do that with warbleR and compare its performance against that from monitoR.</description>
+      <description>⚠️ Note that the R package ohun , which optimizes sound event detection, is now available. It offers an enhanced version of the methods demonstrated in this post warbleR (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package monitoR. There is already a blog post on cross-correlation detection using monitoR. In this post I show how to do that with warbleR and compare its performance against that from monitoR.</description>
     </item>
     <item>
       <title>Compare signals from selection tables to a set of templates using cross-correlation</title>
@@ -69,14 +69,14 @@
       <link>marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/</link>
       <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/</guid>
-      <description>⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.</description>
+      <description>⚠️ Dec-2023: Be aware that the functions sim_songs() has undergone substantial changes beginning with warbleR 1.1.30 so simulations using package versions may not look like those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.</description>
     </item>
     <item>
       <title>Individual sound files for each selection</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</link>
       <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</guid>
-      <description>A friend of mine wants to &amp;ldquo;create individual sound files for each selection&amp;rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).&#xA;It takes 3 main steps:&#xA;Create a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)&#xA;Add and (X)lapply loop to run the function from step 1 iteratively on each row</description>
+      <description>⚠️Mar-2023: Note that the new function cut_sels() from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post A friend of mine wants to &amp;ldquo;create individual sound files for each selection&amp;rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).</description>
     </item>
     <item>
       <title>Acoustic space scatter plot</title>
@@ -104,7 +104,7 @@
       <link>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</link>
       <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</guid>
-      <description>⚠️ March-2024: Note that the R package ohun , which optimizes sound event detection, is now accessible. It offers an enhanced version of the methods demonstrated in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.</description>
+      <description>⚠️ March-2024: Note that the R package ohun , which optimizes sound event detection, is now available. It offers an enhanced version of the methods demonstrated in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.</description>
     </item>
     <item>
       <title>Creating dynamic spectrograms (videos)</title>

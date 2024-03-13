@@ -8,7 +8,7 @@ coments: true
 
 <div class="alert alert-warning">
 
-<center><b>Mar-2023:</b> Note that the new function <i>cut_sels()</i> from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post  
+<center>⚠️<b>Mar-2023:</b> Note that the new function <i>cut_sels()</i> from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post  
 
 </div>
 
