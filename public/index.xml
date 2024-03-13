@@ -72,11 +72,18 @@
       <description>⚠️ Dec-2023: Be aware that the functions `sim_songs()` has undergone substantial changes beginning with warbleR 1.1.30 which simulations may not those shown in this post. This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.</description>
     </item>
     <item>
+      <title>Individual sound files for each selection</title>
+      <link>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</link>
+      <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</guid>
+      <description>A friend of mine wants to &amp;ldquo;create individual sound files for each selection&amp;rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).&#xA;It takes 3 main steps:&#xA;Create a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)&#xA;Add and (X)lapply loop to run the function from step 1 iteratively on each row</description>
+    </item>
+    <item>
       <title>Acoustic space scatter plot</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</link>
       <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</guid>
-      <description>Some people have asked for the code we used to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace Smith-Vidaurre, so thanks to Grace for sharing.&#xA;The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping.</description>
+      <description>Someone asked me for the code to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace Smith-Vidaurre, so thanks to Grace for sharing.&#xA;The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping. The scatterplot is based on the two axes from a classic multidimensional scaling.</description>
     </item>
     <item>
       <title>Creating song catalogs</title>
@@ -140,13 +147,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2018-06-29-frequency_range_detection_from_spectrum/</guid>
       <description>We are often interested in getting the frequency range of acoustic signals, either because we have specific predictions about its variation or simply because we want to measure other stuff within that range. Measuring frequency range is typically done by drawing boxes in Raven/Avisoft/Syrinx. An alternative way, and potentially less subjective, is to infer the range from the energy distribution in the frequency domain applying amplitude thresholds on spectrums. I have added two new functions to warbleR that do exactly that:</description>
-    </item>
-    <item>
-      <title>Individual sound files for each selection</title>
-      <link>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</guid>
-      <description>A friend of mine wants to &amp;ldquo;create individual sound files for each selection&amp;rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).&#xA;It takes 3 main steps:&#xA;Create a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)&#xA;Add and (X)lapply loop to run the function from step 1 iteratively on each row</description>
     </item>
     <item>
       <title>Pdf files with spectrograms of full recordings</title>

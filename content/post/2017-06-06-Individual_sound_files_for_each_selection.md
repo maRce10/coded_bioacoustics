@@ -1,11 +1,16 @@
 ---
-layout: post
 title: "Individual sound files for each selection"
-date: 06-06-2017
+date: 2017-06-06
 tags: ["annotations", "R"]
 author: Marcelo Araya-Salas
-
+coments: true
 ---
+
+<div class="alert alert-warning">
+
+<center><b>Mar-2023:</b> Note that the new function <i>cut_sels()</i> from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post  
+
+</div>
 
 A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most [warbleR](https://cran.r-project.org/package=warbleR) functions). 
 

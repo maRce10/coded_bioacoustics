@@ -6,9 +6,10 @@ Author:
 - Grace Smith-Vidaurre
 date: "2017-04-23"
 tags: ["acoustic space", "visualization", "R"]
+comments: true
 ---
 
-Some people have asked for the code we used to make figure 3 in the [Methods in Ecology and Evolution paper describing warbleR](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full). So, here it is. The figure was made in part by my collaborator [Grace Smith-Vidaurre](http://smithvidaurre.weebly.com), so thanks to Grace for sharing.
+Someone asked me for the code to make figure 3 in the [Methods in Ecology and Evolution paper describing warbleR](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full). So, here it is. The figure was made in part by my collaborator [Grace Smith-Vidaurre](http://smithvidaurre.weebly.com), so thanks to Grace for sharing.
 
 The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using [dynamic time warping](https://marce10.github.io/bioacoustics_in_R/2016-09-12-Similarity_of_acoustic_signals_with_dynamic_time_warping_(DTW)). The scatterplot is based on the two axes from a classic multidimensional scaling. The figure also shows spectrograms for each of the song types. This figure is created with ggplot graphs and spectrograms which are put together in a multipanel graph using the grid package. Note that you'll need to download recordings from Xeno-Canto (so internet connection required).
 
@@ -68,10 +69,6 @@ tsLBH <- dfDTW(Phae.hisnr, length.out = 30, bp = c(2, 9), img = FALSE)
 #calulate 2 dimension using multidimensional scaling
 lbhMDS <- cmdscale(tsLBH)
 ```
-
-
-
-
 
 Extract recording IDs and select colors for each song type (note that this step requires visual classification of songs beforehand): 
 
@@ -149,7 +146,7 @@ shape.leg <- p.mds + guides(color = FALSE,
 col.leg
 ```
 
-![plot of chunk extract shape and color legends from CMDS plot](./img/extract shape and color legends from CMDS plot-1.png)
+![plot of chunk extract shape and color legends from CMDS plot](./img/extract_shape_and_color_legends_from_CMDS_plot-1.png)
 
 Create song type spectrograms:
 
