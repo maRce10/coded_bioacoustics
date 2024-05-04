@@ -12,7 +12,8 @@
 
       <title>Evaluating group acoustic signatures using cross-correlation - Coded bioacoustics</title>
 
-  <meta name="description" content="Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: the behavior is more similar within than between groups (although absence of this pattern doesn&rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature."><script type="application/ld+json">
+  <meta name="description" content="Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: the behavior is more similar within than between groups (although absence of this pattern doesn&rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature.">
+  <meta name="author" content="Some Person"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -57,12 +58,12 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : ""
+    "name" : "Some Person"
   },
   "headline": "Evaluating group acoustic signatures using cross-correlation",
   "description" : "Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: the behavior is more similar within than between groups (although absence of this pattern doesn\u0026rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature.",
   "inLanguage" : "en",
-  "wordCount":  2245 ,
+  "wordCount":  1805 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
@@ -92,8 +93,8 @@
   <meta name="twitter:description" content="Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
-  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -133,13 +134,21 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Useful resources</a>
+              <a class="navlinks-parent">Samples</a>
               <div class="navlinks-children">
                 
-                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
                 
-                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
                 
               </div>
             </li>
@@ -259,14 +268,14 @@ if (!doNotTrack) {
   <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;11&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2245&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1805&nbsp;words
   
   
     
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Some Person
     
   
   
@@ -291,8 +300,8 @@ if (!doNotTrack) {
         <p>Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: <em>the behavior is more similar within than between groups</em> (although absence of this pattern doesn&rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature.</p>
 <p>This post is about how to test this pattern in vocal signals (i.e. testing vocal learning) using pairwise similarities derived from spectrographic cross-correlation. In fact, that&rsquo;s exactly what we did in <a href="https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre_et_al_2019.pdf">our recent paper on the co-ocurrence of social learning in vocal and visual signals in the long billed hermit</a>. So the post reproduces the code I used for the acoustic analysis in that paper.</p>
 <p>Male long-billed hermits have a vocal repertoire consisting of a single song type. Different song types are found at different sites, leks and even within leks:
-<img src="/./img/map.lbh.song.types.png" title="plot of chunk song 1" alt="plot of chunk song 1" width="600px" style="display: block; margin: auto;" />
-<font size="2">Location of three study sites in northeastern Costa Rica. Spectrograms of the 10 observed song types grouped by lek are also shown. Maps of leks at La Selva Biological Station are shown in greater detail in the lower left map. The two song neighbourhoods at lek SUR are shown in lower right map (similar song neighbourhoods were found at the other leks with 2 song types—SJA, TR2, and HC1—but are not shown); polygons represent lekking male territories and the coloured borders delineate the song neighbourhoods corresponding to the coloured borders of the spectrograms at the far right.</font></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->Location of three study sites in northeastern Costa Rica. Spectrograms of the 10 observed song types grouped by lek are also shown. Maps of leks at La Selva Biological Station are shown in greater detail in the lower left map. The two song neighbourhoods at lek SUR are shown in lower right map (similar song neighbourhoods were found at the other leks with 2 song types—SJA, TR2, and HC1—but are not shown); polygons represent lekking male territories and the coloured borders delineate the song neighbourhoods corresponding to the coloured borders of the spectrograms at the far right.<!-- raw HTML omitted --></p>
 <p>All annotations and acoustic data used on that paper were made <a href="https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q">available on Dryad</a>. We just need to download the extended selection table (<a href="https://marce10.github.io/2018/05/15/Extended_selection_tables.html">R object including acoustic data + annotations</a>) from Dryad and unzip the file as follows (it could take a while):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># set temporary working directory</span>
 </span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="nf">tempdir</span><span class="p">())</span>
@@ -353,495 +362,7 @@ if (!doNotTrack) {
 </span></span></code></pre></div><p>Now we can run the cross-correlation analysis as follows:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">xc_mat</span> <span class="o">&lt;-</span> <span class="nf">x_corr</span><span class="p">(</span><span class="n">sub_lbh_est</span><span class="p">)</span>
 </span></span></code></pre></div><p>The output is a similarity matrix with dimensions <em>60 x 60</em> (for simplicity only the first 20 columns/rows are shown):</p>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:740px;  font-size: 12px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
- <thead>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.10.08.WAV_7-1 </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.7.20.WAV_73-1 </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.7.31.WAV_218-1 </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.7.50.WAV_334-1 </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.8.09.WAV_605-1 </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.8.18.WAV_635-1 </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.8.28.WAV_815-1 </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.8.49.WAV_835-1 </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.8.53.WAV_935-1 </th>
-   <th style="text-align:center;"> 0.HC1.2013.6.9.9.58.WAV_1016-1 </th>
-   <th style="text-align:center;"> 0.TR2.2013.4.16.8.53.WAV_1161-1 </th>
-   <th style="text-align:center;"> 0.TR2.2013.4.16.8.59.WAV_1197-1 </th>
-   <th style="text-align:center;"> 0.TR2.2013.4.16.9.25.WAV_1281-1 </th>
-   <th style="text-align:center;"> 0.TR2.2013.4.17.8.49.WAV_1301-1 </th>
-   <th style="text-align:center;"> 0.TR2.2013.4.17.9.00.WAV_1501-1 </th>
-   <th style="text-align:center;"> 0.TR2.2013.4.17.9.02.WAV_1528-1 </th>
-   <th style="text-align:center;"> 0.TR2.2013.4.17.9.05.WAV_1639-1 </th>
-   <th style="text-align:center;"> 0.TR2.2013.4.17.9.09.WAV_1657-1 </th>
-   <th style="text-align:center;"> 0.TR2.2013.4.17.9.18.WAV_1722-1 </th>
-   <th style="text-align:center;"> 108.LOC.2013.3.26.8.15.WAV_1810-1 </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.10.08.WAV_7-1 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.63182 </td>
-   <td style="text-align:center;"> 0.63959 </td>
-   <td style="text-align:center;"> 0.55934 </td>
-   <td style="text-align:center;"> 0.68051 </td>
-   <td style="text-align:center;"> 0.66121 </td>
-   <td style="text-align:center;"> 0.64135 </td>
-   <td style="text-align:center;"> 0.69259 </td>
-   <td style="text-align:center;"> 0.66024 </td>
-   <td style="text-align:center;"> 0.71202 </td>
-   <td style="text-align:center;"> 0.69887 </td>
-   <td style="text-align:center;"> 0.51545 </td>
-   <td style="text-align:center;"> 0.38529 </td>
-   <td style="text-align:center;"> 0.38876 </td>
-   <td style="text-align:center;"> 0.39564 </td>
-   <td style="text-align:center;"> 0.39147 </td>
-   <td style="text-align:center;"> 0.48834 </td>
-   <td style="text-align:center;"> 0.51111 </td>
-   <td style="text-align:center;"> 0.52910 </td>
-   <td style="text-align:center;"> 0.37781 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.7.20.WAV_73-1 </td>
-   <td style="text-align:center;"> 0.63182 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.75495 </td>
-   <td style="text-align:center;"> 0.54539 </td>
-   <td style="text-align:center;"> 0.66660 </td>
-   <td style="text-align:center;"> 0.66511 </td>
-   <td style="text-align:center;"> 0.61887 </td>
-   <td style="text-align:center;"> 0.69640 </td>
-   <td style="text-align:center;"> 0.66803 </td>
-   <td style="text-align:center;"> 0.63830 </td>
-   <td style="text-align:center;"> 0.60416 </td>
-   <td style="text-align:center;"> 0.54407 </td>
-   <td style="text-align:center;"> 0.41529 </td>
-   <td style="text-align:center;"> 0.45166 </td>
-   <td style="text-align:center;"> 0.48237 </td>
-   <td style="text-align:center;"> 0.42941 </td>
-   <td style="text-align:center;"> 0.42745 </td>
-   <td style="text-align:center;"> 0.51071 </td>
-   <td style="text-align:center;"> 0.46030 </td>
-   <td style="text-align:center;"> 0.46680 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.7.31.WAV_218-1 </td>
-   <td style="text-align:center;"> 0.63959 </td>
-   <td style="text-align:center;"> 0.75495 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.51396 </td>
-   <td style="text-align:center;"> 0.64127 </td>
-   <td style="text-align:center;"> 0.67599 </td>
-   <td style="text-align:center;"> 0.61162 </td>
-   <td style="text-align:center;"> 0.71097 </td>
-   <td style="text-align:center;"> 0.69376 </td>
-   <td style="text-align:center;"> 0.65245 </td>
-   <td style="text-align:center;"> 0.66341 </td>
-   <td style="text-align:center;"> 0.49186 </td>
-   <td style="text-align:center;"> 0.35839 </td>
-   <td style="text-align:center;"> 0.38409 </td>
-   <td style="text-align:center;"> 0.42478 </td>
-   <td style="text-align:center;"> 0.40135 </td>
-   <td style="text-align:center;"> 0.44090 </td>
-   <td style="text-align:center;"> 0.52388 </td>
-   <td style="text-align:center;"> 0.46107 </td>
-   <td style="text-align:center;"> 0.41861 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.7.50.WAV_334-1 </td>
-   <td style="text-align:center;"> 0.55934 </td>
-   <td style="text-align:center;"> 0.54539 </td>
-   <td style="text-align:center;"> 0.51396 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.67408 </td>
-   <td style="text-align:center;"> 0.62532 </td>
-   <td style="text-align:center;"> 0.64077 </td>
-   <td style="text-align:center;"> 0.65590 </td>
-   <td style="text-align:center;"> 0.58549 </td>
-   <td style="text-align:center;"> 0.52716 </td>
-   <td style="text-align:center;"> 0.54930 </td>
-   <td style="text-align:center;"> 0.44475 </td>
-   <td style="text-align:center;"> 0.30083 </td>
-   <td style="text-align:center;"> 0.28660 </td>
-   <td style="text-align:center;"> 0.41001 </td>
-   <td style="text-align:center;"> 0.37448 </td>
-   <td style="text-align:center;"> 0.49695 </td>
-   <td style="text-align:center;"> 0.57942 </td>
-   <td style="text-align:center;"> 0.50946 </td>
-   <td style="text-align:center;"> 0.19398 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.8.09.WAV_605-1 </td>
-   <td style="text-align:center;"> 0.68051 </td>
-   <td style="text-align:center;"> 0.66660 </td>
-   <td style="text-align:center;"> 0.64127 </td>
-   <td style="text-align:center;"> 0.67408 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.73936 </td>
-   <td style="text-align:center;"> 0.75308 </td>
-   <td style="text-align:center;"> 0.69222 </td>
-   <td style="text-align:center;"> 0.64462 </td>
-   <td style="text-align:center;"> 0.66669 </td>
-   <td style="text-align:center;"> 0.62863 </td>
-   <td style="text-align:center;"> 0.53840 </td>
-   <td style="text-align:center;"> 0.42151 </td>
-   <td style="text-align:center;"> 0.42051 </td>
-   <td style="text-align:center;"> 0.50448 </td>
-   <td style="text-align:center;"> 0.48591 </td>
-   <td style="text-align:center;"> 0.55599 </td>
-   <td style="text-align:center;"> 0.60296 </td>
-   <td style="text-align:center;"> 0.52239 </td>
-   <td style="text-align:center;"> 0.35289 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.8.18.WAV_635-1 </td>
-   <td style="text-align:center;"> 0.66121 </td>
-   <td style="text-align:center;"> 0.66511 </td>
-   <td style="text-align:center;"> 0.67599 </td>
-   <td style="text-align:center;"> 0.62532 </td>
-   <td style="text-align:center;"> 0.73936 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.71308 </td>
-   <td style="text-align:center;"> 0.69201 </td>
-   <td style="text-align:center;"> 0.66034 </td>
-   <td style="text-align:center;"> 0.66862 </td>
-   <td style="text-align:center;"> 0.64829 </td>
-   <td style="text-align:center;"> 0.48065 </td>
-   <td style="text-align:center;"> 0.29665 </td>
-   <td style="text-align:center;"> 0.31890 </td>
-   <td style="text-align:center;"> 0.39544 </td>
-   <td style="text-align:center;"> 0.35343 </td>
-   <td style="text-align:center;"> 0.44982 </td>
-   <td style="text-align:center;"> 0.55360 </td>
-   <td style="text-align:center;"> 0.48631 </td>
-   <td style="text-align:center;"> 0.28779 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.8.28.WAV_815-1 </td>
-   <td style="text-align:center;"> 0.64135 </td>
-   <td style="text-align:center;"> 0.61887 </td>
-   <td style="text-align:center;"> 0.61162 </td>
-   <td style="text-align:center;"> 0.64077 </td>
-   <td style="text-align:center;"> 0.75308 </td>
-   <td style="text-align:center;"> 0.71308 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.66206 </td>
-   <td style="text-align:center;"> 0.59760 </td>
-   <td style="text-align:center;"> 0.61746 </td>
-   <td style="text-align:center;"> 0.55406 </td>
-   <td style="text-align:center;"> 0.46961 </td>
-   <td style="text-align:center;"> 0.39846 </td>
-   <td style="text-align:center;"> 0.39799 </td>
-   <td style="text-align:center;"> 0.47109 </td>
-   <td style="text-align:center;"> 0.43293 </td>
-   <td style="text-align:center;"> 0.51701 </td>
-   <td style="text-align:center;"> 0.55178 </td>
-   <td style="text-align:center;"> 0.44557 </td>
-   <td style="text-align:center;"> 0.37665 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.8.49.WAV_835-1 </td>
-   <td style="text-align:center;"> 0.69259 </td>
-   <td style="text-align:center;"> 0.69640 </td>
-   <td style="text-align:center;"> 0.71097 </td>
-   <td style="text-align:center;"> 0.65590 </td>
-   <td style="text-align:center;"> 0.69222 </td>
-   <td style="text-align:center;"> 0.69201 </td>
-   <td style="text-align:center;"> 0.66206 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.79225 </td>
-   <td style="text-align:center;"> 0.66612 </td>
-   <td style="text-align:center;"> 0.60694 </td>
-   <td style="text-align:center;"> 0.49104 </td>
-   <td style="text-align:center;"> 0.35715 </td>
-   <td style="text-align:center;"> 0.36894 </td>
-   <td style="text-align:center;"> 0.43598 </td>
-   <td style="text-align:center;"> 0.40826 </td>
-   <td style="text-align:center;"> 0.51970 </td>
-   <td style="text-align:center;"> 0.54033 </td>
-   <td style="text-align:center;"> 0.51483 </td>
-   <td style="text-align:center;"> 0.33840 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.8.53.WAV_935-1 </td>
-   <td style="text-align:center;"> 0.66024 </td>
-   <td style="text-align:center;"> 0.66803 </td>
-   <td style="text-align:center;"> 0.69376 </td>
-   <td style="text-align:center;"> 0.58549 </td>
-   <td style="text-align:center;"> 0.64462 </td>
-   <td style="text-align:center;"> 0.66034 </td>
-   <td style="text-align:center;"> 0.59760 </td>
-   <td style="text-align:center;"> 0.79225 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.67312 </td>
-   <td style="text-align:center;"> 0.60852 </td>
-   <td style="text-align:center;"> 0.46700 </td>
-   <td style="text-align:center;"> 0.32351 </td>
-   <td style="text-align:center;"> 0.32463 </td>
-   <td style="text-align:center;"> 0.41088 </td>
-   <td style="text-align:center;"> 0.37981 </td>
-   <td style="text-align:center;"> 0.48276 </td>
-   <td style="text-align:center;"> 0.53686 </td>
-   <td style="text-align:center;"> 0.53730 </td>
-   <td style="text-align:center;"> 0.30993 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.HC1.2013.6.9.9.58.WAV_1016-1 </td>
-   <td style="text-align:center;"> 0.71202 </td>
-   <td style="text-align:center;"> 0.63830 </td>
-   <td style="text-align:center;"> 0.65245 </td>
-   <td style="text-align:center;"> 0.52716 </td>
-   <td style="text-align:center;"> 0.66669 </td>
-   <td style="text-align:center;"> 0.66862 </td>
-   <td style="text-align:center;"> 0.61746 </td>
-   <td style="text-align:center;"> 0.66612 </td>
-   <td style="text-align:center;"> 0.67312 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.63694 </td>
-   <td style="text-align:center;"> 0.48499 </td>
-   <td style="text-align:center;"> 0.34605 </td>
-   <td style="text-align:center;"> 0.35287 </td>
-   <td style="text-align:center;"> 0.40963 </td>
-   <td style="text-align:center;"> 0.36159 </td>
-   <td style="text-align:center;"> 0.47811 </td>
-   <td style="text-align:center;"> 0.52213 </td>
-   <td style="text-align:center;"> 0.52346 </td>
-   <td style="text-align:center;"> 0.36947 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.TR2.2013.4.16.8.53.WAV_1161-1 </td>
-   <td style="text-align:center;"> 0.69887 </td>
-   <td style="text-align:center;"> 0.60416 </td>
-   <td style="text-align:center;"> 0.66341 </td>
-   <td style="text-align:center;"> 0.54930 </td>
-   <td style="text-align:center;"> 0.62863 </td>
-   <td style="text-align:center;"> 0.64829 </td>
-   <td style="text-align:center;"> 0.55406 </td>
-   <td style="text-align:center;"> 0.60694 </td>
-   <td style="text-align:center;"> 0.60852 </td>
-   <td style="text-align:center;"> 0.63694 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.47882 </td>
-   <td style="text-align:center;"> 0.30888 </td>
-   <td style="text-align:center;"> 0.30329 </td>
-   <td style="text-align:center;"> 0.36293 </td>
-   <td style="text-align:center;"> 0.35559 </td>
-   <td style="text-align:center;"> 0.43950 </td>
-   <td style="text-align:center;"> 0.55284 </td>
-   <td style="text-align:center;"> 0.51489 </td>
-   <td style="text-align:center;"> 0.32043 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.TR2.2013.4.16.8.59.WAV_1197-1 </td>
-   <td style="text-align:center;"> 0.51545 </td>
-   <td style="text-align:center;"> 0.54407 </td>
-   <td style="text-align:center;"> 0.49186 </td>
-   <td style="text-align:center;"> 0.44475 </td>
-   <td style="text-align:center;"> 0.53840 </td>
-   <td style="text-align:center;"> 0.48065 </td>
-   <td style="text-align:center;"> 0.46961 </td>
-   <td style="text-align:center;"> 0.49104 </td>
-   <td style="text-align:center;"> 0.46700 </td>
-   <td style="text-align:center;"> 0.48499 </td>
-   <td style="text-align:center;"> 0.47882 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.53392 </td>
-   <td style="text-align:center;"> 0.54120 </td>
-   <td style="text-align:center;"> 0.54787 </td>
-   <td style="text-align:center;"> 0.47744 </td>
-   <td style="text-align:center;"> 0.47772 </td>
-   <td style="text-align:center;"> 0.53889 </td>
-   <td style="text-align:center;"> 0.57507 </td>
-   <td style="text-align:center;"> 0.42549 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.TR2.2013.4.16.9.25.WAV_1281-1 </td>
-   <td style="text-align:center;"> 0.38529 </td>
-   <td style="text-align:center;"> 0.41529 </td>
-   <td style="text-align:center;"> 0.35839 </td>
-   <td style="text-align:center;"> 0.30083 </td>
-   <td style="text-align:center;"> 0.42151 </td>
-   <td style="text-align:center;"> 0.29665 </td>
-   <td style="text-align:center;"> 0.39846 </td>
-   <td style="text-align:center;"> 0.35715 </td>
-   <td style="text-align:center;"> 0.32351 </td>
-   <td style="text-align:center;"> 0.34605 </td>
-   <td style="text-align:center;"> 0.30888 </td>
-   <td style="text-align:center;"> 0.53392 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.75587 </td>
-   <td style="text-align:center;"> 0.63558 </td>
-   <td style="text-align:center;"> 0.56687 </td>
-   <td style="text-align:center;"> 0.51914 </td>
-   <td style="text-align:center;"> 0.43910 </td>
-   <td style="text-align:center;"> 0.48098 </td>
-   <td style="text-align:center;"> 0.50214 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.TR2.2013.4.17.8.49.WAV_1301-1 </td>
-   <td style="text-align:center;"> 0.38876 </td>
-   <td style="text-align:center;"> 0.45166 </td>
-   <td style="text-align:center;"> 0.38409 </td>
-   <td style="text-align:center;"> 0.28660 </td>
-   <td style="text-align:center;"> 0.42051 </td>
-   <td style="text-align:center;"> 0.31890 </td>
-   <td style="text-align:center;"> 0.39799 </td>
-   <td style="text-align:center;"> 0.36894 </td>
-   <td style="text-align:center;"> 0.32463 </td>
-   <td style="text-align:center;"> 0.35287 </td>
-   <td style="text-align:center;"> 0.30329 </td>
-   <td style="text-align:center;"> 0.54120 </td>
-   <td style="text-align:center;"> 0.75587 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.65570 </td>
-   <td style="text-align:center;"> 0.55677 </td>
-   <td style="text-align:center;"> 0.46035 </td>
-   <td style="text-align:center;"> 0.40279 </td>
-   <td style="text-align:center;"> 0.44048 </td>
-   <td style="text-align:center;"> 0.53632 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.TR2.2013.4.17.9.00.WAV_1501-1 </td>
-   <td style="text-align:center;"> 0.39564 </td>
-   <td style="text-align:center;"> 0.48237 </td>
-   <td style="text-align:center;"> 0.42478 </td>
-   <td style="text-align:center;"> 0.41001 </td>
-   <td style="text-align:center;"> 0.50448 </td>
-   <td style="text-align:center;"> 0.39544 </td>
-   <td style="text-align:center;"> 0.47109 </td>
-   <td style="text-align:center;"> 0.43598 </td>
-   <td style="text-align:center;"> 0.41088 </td>
-   <td style="text-align:center;"> 0.40963 </td>
-   <td style="text-align:center;"> 0.36293 </td>
-   <td style="text-align:center;"> 0.54787 </td>
-   <td style="text-align:center;"> 0.63558 </td>
-   <td style="text-align:center;"> 0.65570 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.56429 </td>
-   <td style="text-align:center;"> 0.55023 </td>
-   <td style="text-align:center;"> 0.52848 </td>
-   <td style="text-align:center;"> 0.45378 </td>
-   <td style="text-align:center;"> 0.52557 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.TR2.2013.4.17.9.02.WAV_1528-1 </td>
-   <td style="text-align:center;"> 0.39147 </td>
-   <td style="text-align:center;"> 0.42941 </td>
-   <td style="text-align:center;"> 0.40135 </td>
-   <td style="text-align:center;"> 0.37448 </td>
-   <td style="text-align:center;"> 0.48591 </td>
-   <td style="text-align:center;"> 0.35343 </td>
-   <td style="text-align:center;"> 0.43293 </td>
-   <td style="text-align:center;"> 0.40826 </td>
-   <td style="text-align:center;"> 0.37981 </td>
-   <td style="text-align:center;"> 0.36159 </td>
-   <td style="text-align:center;"> 0.35559 </td>
-   <td style="text-align:center;"> 0.47744 </td>
-   <td style="text-align:center;"> 0.56687 </td>
-   <td style="text-align:center;"> 0.55677 </td>
-   <td style="text-align:center;"> 0.56429 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.50411 </td>
-   <td style="text-align:center;"> 0.44731 </td>
-   <td style="text-align:center;"> 0.40129 </td>
-   <td style="text-align:center;"> 0.41843 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.TR2.2013.4.17.9.05.WAV_1639-1 </td>
-   <td style="text-align:center;"> 0.48834 </td>
-   <td style="text-align:center;"> 0.42745 </td>
-   <td style="text-align:center;"> 0.44090 </td>
-   <td style="text-align:center;"> 0.49695 </td>
-   <td style="text-align:center;"> 0.55599 </td>
-   <td style="text-align:center;"> 0.44982 </td>
-   <td style="text-align:center;"> 0.51701 </td>
-   <td style="text-align:center;"> 0.51970 </td>
-   <td style="text-align:center;"> 0.48276 </td>
-   <td style="text-align:center;"> 0.47811 </td>
-   <td style="text-align:center;"> 0.43950 </td>
-   <td style="text-align:center;"> 0.47772 </td>
-   <td style="text-align:center;"> 0.51914 </td>
-   <td style="text-align:center;"> 0.46035 </td>
-   <td style="text-align:center;"> 0.55023 </td>
-   <td style="text-align:center;"> 0.50411 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.63954 </td>
-   <td style="text-align:center;"> 0.53222 </td>
-   <td style="text-align:center;"> 0.27489 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.TR2.2013.4.17.9.09.WAV_1657-1 </td>
-   <td style="text-align:center;"> 0.51111 </td>
-   <td style="text-align:center;"> 0.51071 </td>
-   <td style="text-align:center;"> 0.52388 </td>
-   <td style="text-align:center;"> 0.57942 </td>
-   <td style="text-align:center;"> 0.60296 </td>
-   <td style="text-align:center;"> 0.55360 </td>
-   <td style="text-align:center;"> 0.55178 </td>
-   <td style="text-align:center;"> 0.54033 </td>
-   <td style="text-align:center;"> 0.53686 </td>
-   <td style="text-align:center;"> 0.52213 </td>
-   <td style="text-align:center;"> 0.55284 </td>
-   <td style="text-align:center;"> 0.53889 </td>
-   <td style="text-align:center;"> 0.43910 </td>
-   <td style="text-align:center;"> 0.40279 </td>
-   <td style="text-align:center;"> 0.52848 </td>
-   <td style="text-align:center;"> 0.44731 </td>
-   <td style="text-align:center;"> 0.63954 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.59617 </td>
-   <td style="text-align:center;"> 0.25242 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0.TR2.2013.4.17.9.18.WAV_1722-1 </td>
-   <td style="text-align:center;"> 0.52910 </td>
-   <td style="text-align:center;"> 0.46030 </td>
-   <td style="text-align:center;"> 0.46107 </td>
-   <td style="text-align:center;"> 0.50946 </td>
-   <td style="text-align:center;"> 0.52239 </td>
-   <td style="text-align:center;"> 0.48631 </td>
-   <td style="text-align:center;"> 0.44557 </td>
-   <td style="text-align:center;"> 0.51483 </td>
-   <td style="text-align:center;"> 0.53730 </td>
-   <td style="text-align:center;"> 0.52346 </td>
-   <td style="text-align:center;"> 0.51489 </td>
-   <td style="text-align:center;"> 0.57507 </td>
-   <td style="text-align:center;"> 0.48098 </td>
-   <td style="text-align:center;"> 0.44048 </td>
-   <td style="text-align:center;"> 0.45378 </td>
-   <td style="text-align:center;"> 0.40129 </td>
-   <td style="text-align:center;"> 0.53222 </td>
-   <td style="text-align:center;"> 0.59617 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.23123 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 108.LOC.2013.3.26.8.15.WAV_1810-1 </td>
-   <td style="text-align:center;"> 0.37781 </td>
-   <td style="text-align:center;"> 0.46680 </td>
-   <td style="text-align:center;"> 0.41861 </td>
-   <td style="text-align:center;"> 0.19398 </td>
-   <td style="text-align:center;"> 0.35289 </td>
-   <td style="text-align:center;"> 0.28779 </td>
-   <td style="text-align:center;"> 0.37665 </td>
-   <td style="text-align:center;"> 0.33840 </td>
-   <td style="text-align:center;"> 0.30993 </td>
-   <td style="text-align:center;"> 0.36947 </td>
-   <td style="text-align:center;"> 0.32043 </td>
-   <td style="text-align:center;"> 0.42549 </td>
-   <td style="text-align:center;"> 0.50214 </td>
-   <td style="text-align:center;"> 0.53632 </td>
-   <td style="text-align:center;"> 0.52557 </td>
-   <td style="text-align:center;"> 0.41843 </td>
-   <td style="text-align:center;"> 0.27489 </td>
-   <td style="text-align:center;"> 0.25242 </td>
-   <td style="text-align:center;"> 0.23123 </td>
-   <td style="text-align:center;"> 1.00000 </td>
-  </tr>
-</tbody>
-</table></div>
+<!-- raw HTML omitted -->
 <p>We will need a second matrix representing lek membership. It has to be a pairwise matrix in which 0 denotes pairs of individuals that belong to the same lek and 1 pairs that belong to different leks. The following function creates this type of matrix:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#function to create group membership binary matrix</span>
 </span></span><span class="line"><span class="cl"><span class="n">bi_mats</span> <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span> <span class="p">{</span>
@@ -982,7 +503,7 @@ if (!doNotTrack) {
 </span></span></span></code></pre></div><p>Mantel tests using dynamic time warping and spectrographic parameters were also able to detect lek level signatures. That was not the case for cepstral coefficients.</p>
 <p>That&rsquo;s it!</p>
 <hr>
-<p><font size="4"><b>Session information</b></font></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Session information<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.6.1 (2019-07-05)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Running under: Ubuntu 19.04</span>
@@ -1040,7 +561,7 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-08-13-group_signature_xcorr%2f&amp;text=Evaluating%20group%20acoustic%20signatures%20using%20cross-correlation&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-08-13-group_signature_xcorr%2f&amp;text=Evaluating%20group%20acoustic%20signatures%20using%20cross-correlation&amp;via=username" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1154,7 +675,27 @@ if (!doNotTrack) {
           
               <li>
 		
-		  <a href="https://github.com/maRce10" title="GitHub">
+		  <a href="mailto:youremail@domain.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.facebook.com/username" title="Facebook">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/username" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -1164,7 +705,27 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		  <a href="https://gitlab.com/username" title="GitLab">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://bitbucket.org/username" title="Bitbucket">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/username" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -1174,7 +735,47 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		  <a href="https://username.slack.com/" title="Slack">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://reddit.com/u/username" title="Reddit">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://linkedin.com/in/username" title="LinkedIn">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.xing.com/profile/username" title="Xing">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -1184,11 +785,181 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
+		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.instagram.com/username" title="Instagram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/user/username" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://soundcloud.com/username" title="SoundCloud">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://open.spotify.com/user/username" title="Spotify">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://username.bandcamp.com/" title="Bandcamp">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://itch.io/profile/username" title="Itch.io">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://vk.com/username" title="VK">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://paypal.me/username" title="PayPal">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://telegram.me/username" title="Telegram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://500px.com/username" title="500px">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://codepen.io/username" title="CodePen">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.kaggle.com/username" title="kaggle">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a rel="me"href="https://url" title="Mastodon">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://weibo.com/username" title="Weibo">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://medium.com/@username" title="Medium">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.strava.com/athletes/userid" title="Strava">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -1204,6 +975,10 @@ if (!doNotTrack) {
           
         </ul>
         <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Some Person</a>
+            
           
 
           &nbsp;&bull;&nbsp;&copy;

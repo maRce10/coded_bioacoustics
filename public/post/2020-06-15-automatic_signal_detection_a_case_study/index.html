@@ -12,8 +12,9 @@
 
       <title>Automatic signal detection: a case study - Coded bioacoustics</title>
 
-  <meta name="description" content="⚠️ March-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&rsquo;s disc-winged bats (Thyroptera tricolor).
-Inquiry calls were recorded while the bats were flying in a flight cage."><script type="application/ld+json">
+  <meta name="description" content="Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&rsquo;s disc-winged bats (Thyroptera tricolor).
+Inquiry calls were recorded while the bats were flying in a flight cage. Recordings were made on four channels, each one from a different mic. Mics were about 1m apart from each other. So the four channels from a recording event represent slightly different registers of the same calls.">
+  <meta name="author" content="Some Person"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -61,9 +62,9 @@ Inquiry calls were recorded while the bats were flying in a flight cage."><scrip
     "name" : "Marcelo Araya-Salas"
   },
   "headline": "Automatic signal detection: a case study",
-  "description" : "⚠️ March-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix\u0026rsquo;s disc-winged bats (Thyroptera tricolor).\nInquiry calls were recorded while the bats were flying in a flight cage.",
+  "description" : "Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix\u0026rsquo;s disc-winged bats (Thyroptera tricolor).\nInquiry calls were recorded while the bats were flying in a flight cage. Recordings were made on four channels, each one from a different mic. Mics were about 1m apart from each other. So the four channels from a recording event represent slightly different registers of the same calls.",
   "inLanguage" : "en",
-  "wordCount":  2476 ,
+  "wordCount":  1799 ,
   "datePublished" : "2020-05-15T00:00:00",
   "dateModified" : "2020-05-15T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
@@ -83,19 +84,19 @@ Inquiry calls were recorded while the bats were flying in a flight cage."><scrip
 </script>
 
 <meta property="og:title" content="Automatic signal detection: a case study" />
-<meta property="og:description" content="⚠️ March-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&rsquo;s disc-winged bats (Thyroptera tricolor).
-Inquiry calls were recorded while the bats were flying in a flight cage.">
+<meta property="og:description" content="Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&rsquo;s disc-winged bats (Thyroptera tricolor).
+Inquiry calls were recorded while the bats were flying in a flight cage. Recordings were made on four channels, each one from a different mic. Mics were about 1m apart from each other. So the four channels from a recording event represent slightly different registers of the same calls.">
 <meta property="og:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
 <meta property="og:url" content="marce10.github.io/coded_bioacustics/marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Coded bioacoustics" />
 
   <meta name="twitter:title" content="Automatic signal detection: a case study" />
-  <meta name="twitter:description" content="⚠️ March-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR …">
+  <meta name="twitter:description" content="Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&rsquo;s disc-winged bats …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
-  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -135,13 +136,21 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Useful resources</a>
+              <a class="navlinks-parent">Samples</a>
               <div class="navlinks-children">
                 
-                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
                 
-                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
                 
               </div>
             </li>
@@ -261,10 +270,10 @@ if (!doNotTrack) {
   <i class="fas fa-calendar"></i>&nbsp;Posted on May 15, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;12&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2476&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1799&nbsp;words
   
   
     
@@ -292,9 +301,8 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <div class="alert alert-warning">
-⚠️ <b>March-2024:</b> Note that the <a href="https://docs.ropensci.org/ohun/">R package ohun</a> for optimizing sound event detection is now available which provides an improved version of the methods shown in this post  
-</div>
+        <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Some recent additions to <a href="https://cran.r-project.org/package=warbleR">warbleR</a> aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&rsquo;s disc-winged bats (<em>Thyroptera tricolor</em>).</p>
 <p>Inquiry calls were recorded while the bats were flying in a flight cage. Recordings were made on four channels, each one from a different mic. Mics were about 1m apart from each other. So the four channels from a recording event represent slightly different registers of the same calls. This is an important characteristic of the data that will be taken into account in the analysis. Recordings were made as part of an ongoing study on indvidual variation in vocal activity at the <a href="https://www.batcr.com">Chaverri Lab</a>.</p>
 <p>To run this post you will need  <a href="https://cran.r-project.org/package=warbleR">warbleR</a> 1.1.24 (currently as the developmental version on github). It can be installed like this:</p>
@@ -333,30 +341,7 @@ creating a template, which can be easily done by making a selection table with t
 </span></span><span class="line"><span class="cl"><span class="c1"># plot</span>
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">wv</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">80</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">osc</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">35</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">noisereduction</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/template-1.png?v=9a5e11cbb2a185d5bb06f1c77680857f" alt="template_1" loading="lazy" height="367px" width="595px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/template-1.png" alt="template_1"></p>
 <p>The second step requires making a selection table containing both the sound files in which to look for the template and the template itself:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># whole recordings selection table</span>
@@ -405,30 +390,7 @@ creating a template, which can be easily done by making a selection table with t
 </span></span><span class="line"><span class="cl"><span class="c1"># plot</span>
 </span></span><span class="line"><span class="cl"><span class="nf">lspec</span><span class="p">(</span><span class="n">xc_output</span><span class="p">,</span> <span class="n">sxrow</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">50</span><span class="p">),</span> <span class="n">fast.spec</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">      <span class="n">res</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="n">horizontal</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/xcorr_lspec.gif?v=b02f9c5a7230ac0a6f851d24e1dd6586" alt="gif1" loading="lazy" height="595px" width="770px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/xcorr_lspec.gif" alt="gif1"></p>
 <p>In this case a good detection routine should produce peaks in the score countour in the places where the inquiry calls are found. So it looks like it worked.</p>
 <p>The output from <code>xcorr()</code> can also be taken by the function <code>find_peaks()</code> to detect signals. This function finds all instances in which the correlation scores goes above a certain threshold (&lsquo;cutoff&rsquo; argument, within 0-1 range). In this case a threshold of 0.4 seems to work well:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
@@ -438,30 +400,7 @@ creating a template, which can be easily done by making a selection table with t
 </span></span><span class="line"><span class="cl"><span class="c1"># plot</span>
 </span></span><span class="line"><span class="cl"><span class="nf">lspec</span><span class="p">(</span><span class="n">pks</span><span class="p">,</span> <span class="n">sxrow</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">50</span><span class="p">),</span> <span class="n">fast.spec</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">      <span class="n">res</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="n">horizontal</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/findpeaks_lspec.gif?v=33d6586b60cc46245d68bb6d60fad3c6" alt="gif2" loading="lazy" height="595px" width="770px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/findpeaks_lspec.gif" alt="gif2"></p>
 <p>Detections look fine. However, we ran the analysis on all four channels for each sound file. So it&rsquo;s very likely that some signals were detected more than once. We need to remove those duplicates. We can use the function <code>ovlp_sels()</code>to find them:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># extract selection table from find_peaks output</span>
@@ -480,779 +419,7 @@ creating a template, which can be easily done by making a selection table with t
 </span></span></code></pre></div><p>The function tags all overlapping selections with a unique label found in the column &lsquo;ovlp.sels&rsquo; (last column):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">dup_peaks</span>
-</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:900px;  font-size: 14px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
- <thead>
-  <tr>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> sound.files </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> selec </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> start </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> end </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> template </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> time </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> score </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> bottom.freq </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> top.freq </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> org.sound.files </th>
-   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> ovlp.sels </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 24.98930 </td>
-   <td style="text-align:center;"> 25.02530 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 25.00730 </td>
-   <td style="text-align:center;"> 0.6983542 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 9 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 26.59241 </td>
-   <td style="text-align:center;"> 26.62841 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 26.61041 </td>
-   <td style="text-align:center;"> 0.7479324 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 30.00148 </td>
-   <td style="text-align:center;"> 30.03748 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 30.01948 </td>
-   <td style="text-align:center;"> 0.5576180 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 11 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 33.71686 </td>
-   <td style="text-align:center;"> 33.75286 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 33.73486 </td>
-   <td style="text-align:center;"> 0.8860906 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 37.74650 </td>
-   <td style="text-align:center;"> 37.78250 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 37.76450 </td>
-   <td style="text-align:center;"> 0.6860341 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 13 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 39.30186 </td>
-   <td style="text-align:center;"> 39.33786 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 39.31986 </td>
-   <td style="text-align:center;"> 0.8321235 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 14 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 7 </td>
-   <td style="text-align:center;"> 24.99328 </td>
-   <td style="text-align:center;"> 25.02928 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 25.01128 </td>
-   <td style="text-align:center;"> 0.7910162 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 9 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 8 </td>
-   <td style="text-align:center;"> 26.59638 </td>
-   <td style="text-align:center;"> 26.63238 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 26.61438 </td>
-   <td style="text-align:center;"> 0.8205698 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 9 </td>
-   <td style="text-align:center;"> 30.00546 </td>
-   <td style="text-align:center;"> 30.04146 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 30.02346 </td>
-   <td style="text-align:center;"> 0.7546002 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 11 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 33.72084 </td>
-   <td style="text-align:center;"> 33.75684 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 33.73884 </td>
-   <td style="text-align:center;"> 0.9920144 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 11 </td>
-   <td style="text-align:center;"> 37.74650 </td>
-   <td style="text-align:center;"> 37.78250 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 37.76450 </td>
-   <td style="text-align:center;"> 0.6860341 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 13 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 12 </td>
-   <td style="text-align:center;"> 39.30584 </td>
-   <td style="text-align:center;"> 39.34184 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 39.32384 </td>
-   <td style="text-align:center;"> 0.8643382 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 14 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 18.55341 </td>
-   <td style="text-align:center;"> 18.58941 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 18.57141 </td>
-   <td style="text-align:center;"> 0.5914480 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch2.wav </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 23.91575 </td>
-   <td style="text-align:center;"> 23.95175 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 23.93375 </td>
-   <td style="text-align:center;"> 0.8918387 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch2.wav </td>
-   <td style="text-align:center;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 27.89376 </td>
-   <td style="text-align:center;"> 27.92976 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 27.91176 </td>
-   <td style="text-align:center;"> 0.4598352 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 28.22791 </td>
-   <td style="text-align:center;"> 28.26391 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 28.24591 </td>
-   <td style="text-align:center;"> 0.4859460 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 32.17807 </td>
-   <td style="text-align:center;"> 32.21407 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 32.19607 </td>
-   <td style="text-align:center;"> 0.6110752 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 33.54650 </td>
-   <td style="text-align:center;"> 33.58250 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 33.56450 </td>
-   <td style="text-align:center;"> 0.4629314 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 6 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 7 </td>
-   <td style="text-align:center;"> 40.54381 </td>
-   <td style="text-align:center;"> 40.57981 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 40.56181 </td>
-   <td style="text-align:center;"> 0.6068854 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 7 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 18.55341 </td>
-   <td style="text-align:center;"> 18.58941 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 18.57141 </td>
-   <td style="text-align:center;"> 0.5914480 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch2.wav </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 23.91575 </td>
-   <td style="text-align:center;"> 23.95175 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 23.93375 </td>
-   <td style="text-align:center;"> 0.8918387 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch2.wav </td>
-   <td style="text-align:center;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 27.89376 </td>
-   <td style="text-align:center;"> 27.92976 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 27.91176 </td>
-   <td style="text-align:center;"> 0.4598352 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 28.22791 </td>
-   <td style="text-align:center;"> 28.26391 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 28.24591 </td>
-   <td style="text-align:center;"> 0.4859460 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 32.17807 </td>
-   <td style="text-align:center;"> 32.21407 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 32.19607 </td>
-   <td style="text-align:center;"> 0.6110752 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 18.55341 </td>
-   <td style="text-align:center;"> 18.58941 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 18.57141 </td>
-   <td style="text-align:center;"> 0.5914480 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch2.wav </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 23.91575 </td>
-   <td style="text-align:center;"> 23.95175 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 23.93375 </td>
-   <td style="text-align:center;"> 0.8918387 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch2.wav </td>
-   <td style="text-align:center;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 27.89376 </td>
-   <td style="text-align:center;"> 27.92976 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 27.91176 </td>
-   <td style="text-align:center;"> 0.4598352 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 28.22791 </td>
-   <td style="text-align:center;"> 28.26391 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 28.24591 </td>
-   <td style="text-align:center;"> 0.4859460 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 32.17807 </td>
-   <td style="text-align:center;"> 32.21407 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 32.19607 </td>
-   <td style="text-align:center;"> 0.6110752 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 33.54650 </td>
-   <td style="text-align:center;"> 33.58250 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 33.56450 </td>
-   <td style="text-align:center;"> 0.4629314 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 6 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 7 </td>
-   <td style="text-align:center;"> 40.54381 </td>
-   <td style="text-align:center;"> 40.57981 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 40.56181 </td>
-   <td style="text-align:center;"> 0.6068854 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 7 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 8 </td>
-   <td style="text-align:center;"> 42.25833 </td>
-   <td style="text-align:center;"> 42.29433 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 42.27633 </td>
-   <td style="text-align:center;"> 0.7280403 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 18.55341 </td>
-   <td style="text-align:center;"> 18.58941 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 18.57141 </td>
-   <td style="text-align:center;"> 0.5914480 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch2.wav </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 23.91575 </td>
-   <td style="text-align:center;"> 23.95175 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 23.93375 </td>
-   <td style="text-align:center;"> 0.8918387 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch2.wav </td>
-   <td style="text-align:center;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 27.89376 </td>
-   <td style="text-align:center;"> 27.92976 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 27.91176 </td>
-   <td style="text-align:center;"> 0.4598352 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 28.22791 </td>
-   <td style="text-align:center;"> 28.26391 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 28.24591 </td>
-   <td style="text-align:center;"> 0.4859460 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 32.17807 </td>
-   <td style="text-align:center;"> 32.21407 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 32.19607 </td>
-   <td style="text-align:center;"> 0.6110752 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 33.54650 </td>
-   <td style="text-align:center;"> 33.58250 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 33.56450 </td>
-   <td style="text-align:center;"> 0.4629314 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 6 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 7 </td>
-   <td style="text-align:center;"> 40.54381 </td>
-   <td style="text-align:center;"> 40.57981 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 40.56181 </td>
-   <td style="text-align:center;"> 0.6068854 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch4.wav </td>
-   <td style="text-align:center;"> 7 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 8 </td>
-   <td style="text-align:center;"> 42.25833 </td>
-   <td style="text-align:center;"> 42.29433 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 42.27633 </td>
-   <td style="text-align:center;"> 0.7280403 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 1_ch3.wav </td>
-   <td style="text-align:center;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 24.98930 </td>
-   <td style="text-align:center;"> 25.02530 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 25.00730 </td>
-   <td style="text-align:center;"> 0.6983542 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 9 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 26.59241 </td>
-   <td style="text-align:center;"> 26.62841 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 26.61041 </td>
-   <td style="text-align:center;"> 0.7479324 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 30.00148 </td>
-   <td style="text-align:center;"> 30.03748 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 30.01948 </td>
-   <td style="text-align:center;"> 0.5576180 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 11 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 33.71686 </td>
-   <td style="text-align:center;"> 33.75286 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 33.73486 </td>
-   <td style="text-align:center;"> 0.8860906 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 37.74650 </td>
-   <td style="text-align:center;"> 37.78250 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 37.76450 </td>
-   <td style="text-align:center;"> 0.6860341 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 13 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 39.30186 </td>
-   <td style="text-align:center;"> 39.33786 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 39.31986 </td>
-   <td style="text-align:center;"> 0.8321235 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 14 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 24.98930 </td>
-   <td style="text-align:center;"> 25.02530 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 25.00730 </td>
-   <td style="text-align:center;"> 0.6983542 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 9 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 26.59241 </td>
-   <td style="text-align:center;"> 26.62841 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 26.61041 </td>
-   <td style="text-align:center;"> 0.7479324 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 30.00148 </td>
-   <td style="text-align:center;"> 30.03748 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 30.01948 </td>
-   <td style="text-align:center;"> 0.5576180 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 11 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 33.71686 </td>
-   <td style="text-align:center;"> 33.75286 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 33.73486 </td>
-   <td style="text-align:center;"> 0.8860906 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 37.74650 </td>
-   <td style="text-align:center;"> 37.78250 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 37.76450 </td>
-   <td style="text-align:center;"> 0.6860341 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 13 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 39.30186 </td>
-   <td style="text-align:center;"> 39.33786 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 39.31986 </td>
-   <td style="text-align:center;"> 0.8321235 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 14 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 24.98930 </td>
-   <td style="text-align:center;"> 25.02530 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 25.00730 </td>
-   <td style="text-align:center;"> 0.6983542 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 9 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 26.59241 </td>
-   <td style="text-align:center;"> 26.62841 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 26.61041 </td>
-   <td style="text-align:center;"> 0.7479324 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 30.00148 </td>
-   <td style="text-align:center;"> 30.03748 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 30.01948 </td>
-   <td style="text-align:center;"> 0.5576180 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 11 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 33.71686 </td>
-   <td style="text-align:center;"> 33.75286 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 33.73486 </td>
-   <td style="text-align:center;"> 0.8860906 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 37.74650 </td>
-   <td style="text-align:center;"> 37.78250 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 37.76450 </td>
-   <td style="text-align:center;"> 0.6860341 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch2.wav </td>
-   <td style="text-align:center;"> 13 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 39.30186 </td>
-   <td style="text-align:center;"> 39.33786 </td>
-   <td style="text-align:center;"> 2_ch2.wav-2 </td>
-   <td style="text-align:center;"> 39.31986 </td>
-   <td style="text-align:center;"> 0.8321235 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 40 </td>
-   <td style="text-align:center;"> 2_ch1.wav </td>
-   <td style="text-align:center;"> 14 </td>
-  </tr>
-</tbody>
-</table></div>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>Now we just need to choose the selection with the highest cross-correlation score (&lsquo;dup_peaks$score&rsquo;) for each group of overlapping selections:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># find highest score selection</span>
@@ -1266,30 +433,7 @@ creating a template, which can be easily done by making a selection table with t
 </span></span><span class="line"><span class="cl"><span class="c1"># plot</span>
 </span></span><span class="line"><span class="cl"><span class="nf">lspec</span><span class="p">(</span><span class="n">detections</span><span class="p">,</span> <span class="n">sxrow</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">50</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">      <span class="n">fast.spec</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="n">horizontal</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/detections_lspec.gif?v=a7c2ff2f1a2bfd9f0fa31959dda222f6" alt="gif3" loading="lazy" height="595px" width="770px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/detections_lspec.gif" alt="gif3"></p>
 <p>Overall it looks OK, but some signals were not detected. This could be fixed by decreasing the correlation threshold. Alternatively, we could use several templates that better represent the variation in call structure. If taking the second approach, the same trick can be used for excluding duplicated detections (removing overlapping detections using <code>ovlp_sels()</code>).</p>
 <h2 id="amplitude-threshold-based-detection">Amplitude threshold based detection</h2>
 <p>Amplitude detectors can be an useful alternative to cross-correlation. These detectors don&rsquo;t require highly stereotyped signals, although they work better on high quality recordings in which the amplitude of target signals is higher than background noise (i.e. high signal-to-noise ratio). The function <code>auto_detec()</code> performs this type of detection. In this case we use the initial selection table to detect inquiry calls. The first 1.5 s of the recordings are excluded to get rid of a very loud clap at the beginning of sound files:</p>
@@ -1305,30 +449,7 @@ creating a template, which can be easily done by making a selection table with t
 </span></span><span class="line"><span class="cl"><span class="c1"># plot</span>
 </span></span><span class="line"><span class="cl"><span class="nf">lspec</span><span class="p">(</span><span class="n">ad</span><span class="p">,</span> <span class="n">sxrow</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">50</span><span class="p">),</span> <span class="n">rows</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">      <span class="n">fast.spec</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="n">horizontal</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/autodetec_lspec.gif?v=e72016ca9a588179c71d2e3442eabe59" alt="gif4" loading="lazy" height="649px" width="840px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/autodetec_lspec.gif" alt="gif4"></p>
 <p>Again, we need to remove duplicated detection. In this case there are no correlation scores so we just simply find the overlapping detections and remove the duplicated ones:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># extract selection table from find_peaks output</span>
@@ -1355,43 +476,10 @@ creating a template, which can be easily done by making a selection table with t
 </span></span><span class="line"><span class="cl"><span class="c1"># plot</span>
 </span></span><span class="line"><span class="cl"><span class="nf">lspec</span><span class="p">(</span><span class="n">ad_detections</span><span class="p">,</span> <span class="n">sxrow</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">50</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">      <span class="n">fast.spec</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="n">horizontal</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  <picture>
-  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/autodetec2_lspec.86a8c9a2a3b0f5cb936647c24a995cab.gif" alt="gif5" loading="lazy" height="595" width="770" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="/img/autodetec2_lspec.gif" alt="gif5"></p>
 <p>Most calls were detected but not all of them. This detection could improve by adjusting the detection parameters (i.e. &rsquo;threshold&rsquo;, &lsquo;ssmooth&rsquo;, etc). Nonetheless, the example is good enough to show how to do these analyses in R.</p>
 <hr>
-<p><font size="4">Session information</font></p>
+<p><!-- raw HTML omitted -->Session information<!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.6.1 (2019-07-05)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Running under: Ubuntu 18.04.4 LTS</span>
@@ -1454,7 +542,7 @@ creating a template, which can be easily done by making a selection table with t
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-06-15-automatic_signal_detection_a_case_study%2f&amp;text=Automatic%20signal%20detection%3a%20a%20case%20study&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-06-15-automatic_signal_detection_a_case_study%2f&amp;text=Automatic%20signal%20detection%3a%20a%20case%20study&amp;via=username" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1587,7 +675,27 @@ creating a template, which can be easily done by making a selection table with t
           
               <li>
 		
-		  <a href="https://github.com/maRce10" title="GitHub">
+		  <a href="mailto:youremail@domain.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.facebook.com/username" title="Facebook">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/username" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -1597,7 +705,27 @@ creating a template, which can be easily done by making a selection table with t
               </li>
               <li>
 		
-		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		  <a href="https://gitlab.com/username" title="GitLab">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://bitbucket.org/username" title="Bitbucket">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/username" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -1607,7 +735,47 @@ creating a template, which can be easily done by making a selection table with t
               </li>
               <li>
 		
-		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		  <a href="https://username.slack.com/" title="Slack">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://reddit.com/u/username" title="Reddit">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://linkedin.com/in/username" title="LinkedIn">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.xing.com/profile/username" title="Xing">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -1617,11 +785,181 @@ creating a template, which can be easily done by making a selection table with t
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
+		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.instagram.com/username" title="Instagram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/user/username" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://soundcloud.com/username" title="SoundCloud">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://open.spotify.com/user/username" title="Spotify">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://username.bandcamp.com/" title="Bandcamp">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://itch.io/profile/username" title="Itch.io">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://vk.com/username" title="VK">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://paypal.me/username" title="PayPal">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://telegram.me/username" title="Telegram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://500px.com/username" title="500px">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://codepen.io/username" title="CodePen">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.kaggle.com/username" title="kaggle">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a rel="me"href="https://url" title="Mastodon">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://weibo.com/username" title="Weibo">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://medium.com/@username" title="Medium">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.strava.com/athletes/userid" title="Strava">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -1637,6 +975,10 @@ creating a template, which can be easily done by making a selection table with t
           
         </ul>
         <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Some Person</a>
+            
           
 
           &nbsp;&bull;&nbsp;&copy;

@@ -6,11 +6,13 @@
     <description>Recent content in Pages on Coded bioacoustics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
+    <webMaster>youremail@domain.com (Some Person)</webMaster>
     <atom:link href="marce10.github.io/coded_bioacustics/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About me</title>
       <link>marce10.github.io/coded_bioacustics/page/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
       <guid>marce10.github.io/coded_bioacustics/page/about/</guid>
       <description>I am broadly interested in the evolution of behavior from a evolutionary and cultural perspective, as well as the interplay between these two. I worked on hummingbird behavior during my PhD, and also explored the evolution of learned vocal signals in other groups using comparative analyses during my time at the Lab of O. I am currently working on social communication in communal roosting bats as postdoc at Universidad de Costa Rica.</description>
     </item>

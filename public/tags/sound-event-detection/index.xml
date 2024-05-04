@@ -6,28 +6,30 @@
     <description>Recent content in sound event detection on Coded bioacoustics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
+    <webMaster>youremail@domain.com (Some Person)</webMaster>
     <lastBuildDate>Fri, 15 May 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="marce10.github.io/coded_bioacustics/tags/sound-event-detection/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automatic signal detection: a case study</title>
       <link>marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
       <guid>marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/</guid>
-      <description>⚠️ March-2024: Note that the R package ohun for optimizing sound event detection is now available which provides an improved version of the methods shown in this post Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&amp;rsquo;s disc-winged bats (Thyroptera tricolor).&#xA;Inquiry calls were recorded while the bats were flying in a flight cage.</description>
+      <description>Some recent additions to warbleR aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix&amp;rsquo;s disc-winged bats (Thyroptera tricolor).&#xA;Inquiry calls were recorded while the bats were flying in a flight cage. Recordings were made on four channels, each one from a different mic. Mics were about 1m apart from each other. So the four channels from a recording event represent slightly different registers of the same calls.</description>
     </item>
     <item>
       <title>Signal detection with cross-correlation using warbleR</title>
       <link>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</link>
-      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
       <guid>marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/</guid>
-      <description>⚠️ Note that the R package ohun , which optimizes sound event detection, is now available. It offers an enhanced version of the methods demonstrated in this post warbleR (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package monitoR. There is already a blog post on cross-correlation detection using monitoR. In this post I show how to do that with warbleR and compare its performance against that from monitoR.</description>
+      <description>warbleR (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package monitoR. There is already a blog post on cross-correlation detection using monitoR. In this post I show how to do that with warbleR and compare its performance against that from monitoR.&#xA;First install the latest developmental version of warbleR and load other packages (the code will install the packages if missing):&#xA;devtools::install_github(&amp;#34;maRce10/warbleR&amp;#34;) x &amp;lt;- c(&amp;#34;warbleR&amp;#34;, &amp;#34;monitoR&amp;#34;, &amp;#34;microbenchmark&amp;#34;, &amp;#34;ggplot2&amp;#34;) out &amp;lt;- lapply(x, function(y) { if(!</description>
     </item>
     <item>
       <title>Signal detection with cross-correlation using monitoR </title>
       <link>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</link>
-      <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
       <guid>marce10.github.io/coded_bioacustics/post/2016-12-15-detecting_signals_with_monitor/</guid>
-      <description>⚠️ March-2024: Note that the R package ohun , which optimizes sound event detection, is now available. It offers an enhanced version of the methods demonstrated in this post Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.</description>
+      <description>Here I show how to detect signals with cross-correlation using the very cool package monitoR. This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the quick start vignette of the monitoR package, so I encourage to look at the vignette if you want to learn more about it.&#xA;The package monitoR runs cross-correlation across sound files to search for the signals using previously defined templates.</description>
     </item>
   </channel>
 </rss>

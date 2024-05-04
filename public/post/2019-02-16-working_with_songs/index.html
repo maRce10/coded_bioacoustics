@@ -12,7 +12,8 @@
 
       <title>Working with higher structural levels in vocal signals - Coded bioacoustics</title>
 
-  <meta name="description" content="Animal vocalizations can be hierarchically structured: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher structural levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in warbleR to explore and measure features above the element level. For simplicity, any level above &rsquo;elements&rsquo; will be refered to as &lsquo;songs&rsquo; in this post as well as in the warbleR functions described here."><script type="application/ld+json">
+  <meta name="description" content="Animal vocalizations can be hierarchically structured: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher structural levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in warbleR to explore and measure features above the element level. For simplicity, any level above &rsquo;elements&rsquo; will be refered to as &lsquo;songs&rsquo; in this post as well as in the warbleR functions described here.">
+  <meta name="author" content="Some Person"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -57,12 +58,12 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : ""
+    "name" : "Some Person"
   },
   "headline": "Working with higher structural levels in vocal signals",
   "description" : "Animal vocalizations can be hierarchically structured: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher structural levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in warbleR to explore and measure features above the element level. For simplicity, any level above \u0026rsquo;elements\u0026rsquo; will be refered to as \u0026lsquo;songs\u0026rsquo; in this post as well as in the warbleR functions described here.",
   "inLanguage" : "en",
-  "wordCount":  1755 ,
+  "wordCount":  1290 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
@@ -92,8 +93,8 @@
   <meta name="twitter:description" content="Animal vocalizations can be hierarchically structured: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
-  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -133,13 +134,21 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Useful resources</a>
+              <a class="navlinks-parent">Samples</a>
               <div class="navlinks-children">
                 
-                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
                 
-                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
                 
               </div>
             </li>
@@ -259,14 +268,14 @@ if (!doNotTrack) {
   <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1755&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1290&nbsp;words
   
   
     
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Some Person
     
   
   
@@ -290,8 +299,8 @@ if (!doNotTrack) {
       <article role="main" class="blog-post">
         <p>Animal vocalizations can be hierarchically structured: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher structural levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in <a href="https://cran.r-project.org/package=warbleR">warbleR</a> to explore and measure features above the element level. For simplicity, any level above &rsquo;elements&rsquo; will be refered to as &lsquo;songs&rsquo; in this post as well as in the <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions described here.</p>
 <p>We will work on a recording from a <a href="https://www.xeno-canto.org/species/Phaethornis-eurynome">Scale-throated Hermit (hummingbird) (<em>Phaethornis eurynome</em>)</a>:</p>
-<img src="/./img/Phaethornis-eurynome-15607-p1.jpeg" title="plot of chunk song 1" alt="plot of chunk song 1" width="900px" style="display: block; margin: auto;" />
-<iframe src='https://www.xeno-canto.org/15607/embed?simple=1' scrolling='no' frameborder='0' width='900' height='150'></iframe>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>It has a very simple song with a couple of elements. The code for selecting elements and adding labels (creating the &lsquo;pe_st&rsquo; selection table) is found at the end of the post. For now it&rsquo;s enough to say that the only extra feature in &lsquo;pe_st&rsquo; is a couple of columns containing the element and song labels.</p>
 <p>We can make spectrograms of the full recording with boxes on the elements and orange lines above the elements highlighting those that belong to the same song. This can be done using the &lsquo;song&rsquo; argument in <a href="https://marce10.github.io/warbleR/reference/lspec.html">lspec</a>. The argument simply takes the name of the column with the song labels:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># load warbleR </span>
@@ -303,210 +312,25 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="c1"># create spetrogram of the whole recording</span>
 </span></span><span class="line"><span class="cl"><span class="nf">lspec</span><span class="p">(</span><span class="n">pe_st</span><span class="p">,</span> <span class="n">sxrow</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="m">7</span><span class="p">,</span> <span class="n">fast.spec</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">      <span class="n">horizontal</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">song</span> <span class="o">=</span> <span class="s">&#34;song&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><img src="/./img/Phaethornis-eurynome-15607-labeled.jpeg" title="plot of chunk songs 2.3" alt="plot of chunk songs 2.3" width="900px" style="display: block; margin: auto;" />
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>We can plot single spectrograms of each song using the &lsquo;song&rsquo; argument in <a href="https://marce10.github.io/warbleR/reference/specreator.html">specreator</a>. The function will label each element using the &lsquo;selec&rsquo; column label:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">specreator</span><span class="p">(</span><span class="n">pe_st</span><span class="p">,</span> <span class="n">by.song</span> <span class="o">=</span> <span class="s">&#34;song&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><img src="/./img/Phaethornis-eurynome-15607.wav-3.jpeg" title="plot of chunk songs 3" alt="plot of chunk songs 3" style="display: block; margin: auto;" />
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>The function then makes a single spectrogram per song instead of one per element as is the case when no song column is declared.</p>
 <p>We can also use our own labels on the elements. In this case the column &rsquo;elm&rsquo; has the labels I used to classified the 2 elements in the song:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">specreator</span><span class="p">(</span><span class="n">pe_st</span><span class="p">,</span> <span class="n">by.song</span> <span class="o">=</span> <span class="s">&#34;song&#34;</span><span class="p">,</span> <span class="n">sel.labels</span> <span class="o">=</span> <span class="s">&#34;elm&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><img src="/./img/Phaethornis-eurynome-15607.wav-3-labeled.jpeg" title="plot of chunk songs 5" alt="plot of chunk songs 5" style="display: block; margin: auto;" />
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>Song features can be measured using <a href="https://marce10.github.io/warbleR/reference/song_param.html">song_param</a>. The function calculates several descriptive features of songs, including start and end time, top and bottom frequency (the lowest bottom and highest top frequency of all elements), mean element duration, song duration, number of elements, frequency range, song rate (elements per second) and gap duration:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">song_feat</span> <span class="o">&lt;-</span> <span class="nf">song_param</span><span class="p">(</span><span class="n">pe_st</span><span class="p">,</span> <span class="n">song_colm</span> <span class="o">=</span> <span class="s">&#34;song&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">song_feat</span><span class="p">)</span>
-</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:740px;  font-size: 12px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
- <thead>
-  <tr>
-   <th style="text-align:center;"> sound.files </th>
-   <th style="text-align:center;"> selec </th>
-   <th style="text-align:center;"> start </th>
-   <th style="text-align:center;"> end </th>
-   <th style="text-align:center;"> top.freq </th>
-   <th style="text-align:center;"> bottom.freq </th>
-   <th style="text-align:center;"> song </th>
-   <th style="text-align:center;"> num.elms </th>
-   <th style="text-align:center;"> elm.duration </th>
-   <th style="text-align:center;"> freq.range </th>
-   <th style="text-align:center;"> song.duration </th>
-   <th style="text-align:center;"> song.rate </th>
-   <th style="text-align:center;"> gap.duration </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.773606 </td>
-   <td style="text-align:center;"> 1.151724 </td>
-   <td style="text-align:center;"> 9.15075 </td>
-   <td style="text-align:center;"> 2.97675 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1766441 </td>
-   <td style="text-align:center;"> 6.17400 </td>
-   <td style="text-align:center;"> 0.3781182 </td>
-   <td style="text-align:center;"> 5.289352 </td>
-   <td style="text-align:center;"> 0.0248299 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2.807666 </td>
-   <td style="text-align:center;"> 3.184560 </td>
-   <td style="text-align:center;"> 10.00000 </td>
-   <td style="text-align:center;"> 2.97675 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1760545 </td>
-   <td style="text-align:center;"> 7.02325 </td>
-   <td style="text-align:center;"> 0.3768937 </td>
-   <td style="text-align:center;"> 5.306536 </td>
-   <td style="text-align:center;"> 0.0247846 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 4.200887 </td>
-   <td style="text-align:center;"> 4.571976 </td>
-   <td style="text-align:center;"> 10.00000 </td>
-   <td style="text-align:center;"> 3.19725 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1761566 </td>
-   <td style="text-align:center;"> 6.80275 </td>
-   <td style="text-align:center;"> 0.3710887 </td>
-   <td style="text-align:center;"> 5.389547 </td>
-   <td style="text-align:center;"> 0.0187755 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 4.966239 </td>
-   <td style="text-align:center;"> 5.344562 </td>
-   <td style="text-align:center;"> 9.81225 </td>
-   <td style="text-align:center;"> 3.19725 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1829026 </td>
-   <td style="text-align:center;"> 6.61500 </td>
-   <td style="text-align:center;"> 0.3783223 </td>
-   <td style="text-align:center;"> 5.286498 </td>
-   <td style="text-align:center;"> 0.0125170 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 5.956716 </td>
-   <td style="text-align:center;"> 6.323474 </td>
-   <td style="text-align:center;"> 10.00000 </td>
-   <td style="text-align:center;"> 2.97675 </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1615874 </td>
-   <td style="text-align:center;"> 7.02325 </td>
-   <td style="text-align:center;"> 0.3667576 </td>
-   <td style="text-align:center;"> 5.453193 </td>
-   <td style="text-align:center;"> 0.0435828 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 7.424245 </td>
-   <td style="text-align:center;"> 7.796151 </td>
-   <td style="text-align:center;"> 8.93025 </td>
-   <td style="text-align:center;"> 3.41775 </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1591724 </td>
-   <td style="text-align:center;"> 5.51250 </td>
-   <td style="text-align:center;"> 0.3719050 </td>
-   <td style="text-align:center;"> 5.377717 </td>
-   <td style="text-align:center;"> 0.0535601 </td>
-  </tr>
-</tbody>
-</table></div>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>If the element label column is supplied the function will also return the number of unique element types (&rsquo;elm.types&rsquo; column) and the mean number of times element types are found in a song (&lsquo;mean.elm.count&rsquo;):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">song_feat</span> <span class="o">&lt;-</span> <span class="nf">song_param</span><span class="p">(</span><span class="n">pe_st</span><span class="p">,</span> <span class="n">song_colm</span> <span class="o">=</span> <span class="s">&#34;song&#34;</span><span class="p">,</span> <span class="n">elm_colm</span> <span class="o">=</span> <span class="s">&#34;elm&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># look at data, exclude some columns just for visualization</span>
 </span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">song_feat[</span><span class="p">,</span> <span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="o">:</span><span class="m">6</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
-</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:740px;  font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
- <thead>
-  <tr>
-   <th style="text-align:center;"> sound.files </th>
-   <th style="text-align:center;"> elm.duration </th>
-   <th style="text-align:center;"> freq.range </th>
-   <th style="text-align:center;"> song.duration </th>
-   <th style="text-align:center;"> song.rate </th>
-   <th style="text-align:center;"> gap.duration </th>
-   <th style="text-align:center;"> elm.types </th>
-   <th style="text-align:center;"> mean.elm.count </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 0.1766441 </td>
-   <td style="text-align:center;"> 6.17400 </td>
-   <td style="text-align:center;"> 0.3781182 </td>
-   <td style="text-align:center;"> 5.289352 </td>
-   <td style="text-align:center;"> 0.0248299 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 2 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 0.1760545 </td>
-   <td style="text-align:center;"> 7.02325 </td>
-   <td style="text-align:center;"> 0.3768937 </td>
-   <td style="text-align:center;"> 5.306536 </td>
-   <td style="text-align:center;"> 0.0247846 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 2 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 0.1761566 </td>
-   <td style="text-align:center;"> 6.80275 </td>
-   <td style="text-align:center;"> 0.3710887 </td>
-   <td style="text-align:center;"> 5.389547 </td>
-   <td style="text-align:center;"> 0.0187755 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 2 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 0.1829026 </td>
-   <td style="text-align:center;"> 6.61500 </td>
-   <td style="text-align:center;"> 0.3783223 </td>
-   <td style="text-align:center;"> 5.286498 </td>
-   <td style="text-align:center;"> 0.0125170 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 2 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 0.1615874 </td>
-   <td style="text-align:center;"> 7.02325 </td>
-   <td style="text-align:center;"> 0.3667576 </td>
-   <td style="text-align:center;"> 5.453193 </td>
-   <td style="text-align:center;"> 0.0435828 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 2 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 0.1591724 </td>
-   <td style="text-align:center;"> 5.51250 </td>
-   <td style="text-align:center;"> 0.3719050 </td>
-   <td style="text-align:center;"> 5.377717 </td>
-   <td style="text-align:center;"> 0.0535601 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 2 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 1 </td>
-  </tr>
-</tbody>
-</table></div>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>And if spectral parameters have been measured on the elements they can also be averaged by song as follows:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># measure acoustic parameters</span>
 </span></span><span class="line"><span class="cl"><span class="n">elm_sp</span> <span class="o">&lt;-</span> <span class="nf">specan</span><span class="p">(</span><span class="n">pe_st</span><span class="p">)</span>
@@ -520,131 +344,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># look at data</span>
 </span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">song_feat</span><span class="p">)</span>
-</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:740px;  font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
- <thead>
-  <tr>
-   <th style="text-align:center;"> sound.files </th>
-   <th style="text-align:center;"> selec </th>
-   <th style="text-align:center;"> start </th>
-   <th style="text-align:center;"> end </th>
-   <th style="text-align:center;"> top.freq </th>
-   <th style="text-align:center;"> bottom.freq </th>
-   <th style="text-align:center;"> song </th>
-   <th style="text-align:center;"> kurt </th>
-   <th style="text-align:center;"> sp.ent </th>
-   <th style="text-align:center;"> num.elms </th>
-   <th style="text-align:center;"> elm.duration </th>
-   <th style="text-align:center;"> freq.range </th>
-   <th style="text-align:center;"> song.duration </th>
-   <th style="text-align:center;"> song.rate </th>
-   <th style="text-align:center;"> gap.duration </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.773606 </td>
-   <td style="text-align:center;"> 1.151724 </td>
-   <td style="text-align:center;"> 9.15075 </td>
-   <td style="text-align:center;"> 2.97675 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 9.431925 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 0.9259725 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1766441 </td>
-   <td style="text-align:center;"> 6.17400 </td>
-   <td style="text-align:center;"> 0.3781182 </td>
-   <td style="text-align:center;"> 5.289352 </td>
-   <td style="text-align:center;"> 0.0248299 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 5.956716 </td>
-   <td style="text-align:center;"> 6.323474 </td>
-   <td style="text-align:center;"> 10.00000 </td>
-   <td style="text-align:center;"> 2.97675 </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 5.903726 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 0.9283246 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1615874 </td>
-   <td style="text-align:center;"> 7.02325 </td>
-   <td style="text-align:center;"> 0.3667576 </td>
-   <td style="text-align:center;"> 5.453193 </td>
-   <td style="text-align:center;"> -0.3667576 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 7.424245 </td>
-   <td style="text-align:center;"> 7.796151 </td>
-   <td style="text-align:center;"> 8.93025 </td>
-   <td style="text-align:center;"> 3.41775 </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 10.269098 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 0.9192882 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1591724 </td>
-   <td style="text-align:center;"> 5.51250 </td>
-   <td style="text-align:center;"> 0.3719050 </td>
-   <td style="text-align:center;"> 5.377717 </td>
-   <td style="text-align:center;"> 0.0535601 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 8.851344 </td>
-   <td style="text-align:center;"> 9.218011 </td>
-   <td style="text-align:center;"> 9.37125 </td>
-   <td style="text-align:center;"> 3.41775 </td>
-   <td style="text-align:center;"> 7 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 5.396240 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 0.9283730 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1539684 </td>
-   <td style="text-align:center;"> 5.95350 </td>
-   <td style="text-align:center;"> 0.3666669 </td>
-   <td style="text-align:center;"> 5.454542 </td>
-   <td style="text-align:center;"> 0.0587302 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 10.932547 </td>
-   <td style="text-align:center;"> 11.307672 </td>
-   <td style="text-align:center;"> 8.70975 </td>
-   <td style="text-align:center;"> 3.41775 </td>
-   <td style="text-align:center;"> 8 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 8.002969 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 0.9225578 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1724491 </td>
-   <td style="text-align:center;"> 5.29200 </td>
-   <td style="text-align:center;"> 0.3751250 </td>
-   <td style="text-align:center;"> 5.331556 </td>
-   <td style="text-align:center;"> 0.0302268 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 12.159691 </td>
-   <td style="text-align:center;"> 12.539737 </td>
-   <td style="text-align:center;"> 8.93025 </td>
-   <td style="text-align:center;"> 3.41775 </td>
-   <td style="text-align:center;"> 9 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 7.194692 </td>
-   <td style="text-align:center;background-color: #ccebff;"> 0.9294223 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1790704 </td>
-   <td style="text-align:center;"> 5.51250 </td>
-   <td style="text-align:center;"> 0.3800456 </td>
-   <td style="text-align:center;"> 5.262526 </td>
-   <td style="text-align:center;"> 0.0219048 </td>
-  </tr>
-</tbody>
-</table></div>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>The minimum, maximum and standard error can also be returned using the &lsquo;min_colm&rsquo;, &lsquo;max_colm&rsquo; and &lsquo;sd&rsquo; arguments respectively.</p>
 <p>Given that the start, end bottom and top frequency are returned by <a href="https://marce10.github.io/warbleR/reference/song_param.html">song_param</a>, then the output can be used as a selection table to measure or compare the songs themselves, rather than the elements. For instance, we can run cross-correlation between songs, perhaps as a metric of song consistency, as follows:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># calculate mean kurtosis and entropy</span>
@@ -654,155 +354,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="n">xc</span> <span class="o">&lt;-</span> <span class="nf">xcorr</span><span class="p">(</span><span class="n">song_feat[1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> <span class="n">]</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">xc</span><span class="p">)</span>
-</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:740px;  font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
- <thead>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-   <td style="text-align:center;"> 0.8480690 </td>
-   <td style="text-align:center;"> 0.7393546 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 0.8249025 </td>
-   <td style="text-align:center;"> 0.8445801 </td>
-   <td style="text-align:center;"> 0.7438566 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-   <td style="text-align:center;"> 0.8164737 </td>
-   <td style="text-align:center;"> 0.7995524 </td>
-   <td style="text-align:center;"> 0.8157989 </td>
-   <td style="text-align:center;"> 0.8028429 </td>
-   <td style="text-align:center;"> 1.0000000 </td>
-  </tr>
-</tbody>
-</table></div>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>Finally, extended selection tables, which are objects containing both annotations and acoustic data (<a href="https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html">see this post</a>), can be created at the song level. This means that all elements in a song will be contained in a single wave object within the selection table. This enables users to take song level metrics as those described above using this type of objects (this is not possible when creating them based on elements, which is the default behavior).</p>
 <p>The song level extended selection table can be created using the argument &lsquo;by.song&rsquo;, which takes the song label column, as follows:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># create extended selection table</span>
@@ -845,119 +397,8 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># measure song features</span>
 </span></span><span class="line"><span class="cl"><span class="n">song_feat</span> <span class="o">&lt;-</span> <span class="nf">song_param</span><span class="p">(</span><span class="n">pe_est</span><span class="p">,</span> <span class="n">song_colm</span> <span class="o">=</span> <span class="s">&#34;song&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:740px;  font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
- <thead>
-  <tr>
-   <th style="text-align:center;"> sound.files </th>
-   <th style="text-align:center;"> selec </th>
-   <th style="text-align:center;"> start </th>
-   <th style="text-align:center;"> end </th>
-   <th style="text-align:center;"> top.freq </th>
-   <th style="text-align:center;"> bottom.freq </th>
-   <th style="text-align:center;"> song </th>
-   <th style="text-align:center;"> num.elms </th>
-   <th style="text-align:center;"> elm.duration </th>
-   <th style="text-align:center;"> freq.range </th>
-   <th style="text-align:center;"> song.duration </th>
-   <th style="text-align:center;"> song.rate </th>
-   <th style="text-align:center;"> gap.duration </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.773606 </td>
-   <td style="text-align:center;"> 1.151724 </td>
-   <td style="text-align:center;"> 9.15075 </td>
-   <td style="text-align:center;"> 2.97675 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1766441 </td>
-   <td style="text-align:center;"> 6.17400 </td>
-   <td style="text-align:center;"> 0.3781182 </td>
-   <td style="text-align:center;"> 5.289352 </td>
-   <td style="text-align:center;"> 0.0248299 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2.807666 </td>
-   <td style="text-align:center;"> 3.184560 </td>
-   <td style="text-align:center;"> 10.00000 </td>
-   <td style="text-align:center;"> 2.97675 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1760545 </td>
-   <td style="text-align:center;"> 7.02325 </td>
-   <td style="text-align:center;"> 0.3768937 </td>
-   <td style="text-align:center;"> 5.306536 </td>
-   <td style="text-align:center;"> 0.0247846 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 4.200887 </td>
-   <td style="text-align:center;"> 4.571976 </td>
-   <td style="text-align:center;"> 10.00000 </td>
-   <td style="text-align:center;"> 3.19725 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1761566 </td>
-   <td style="text-align:center;"> 6.80275 </td>
-   <td style="text-align:center;"> 0.3710887 </td>
-   <td style="text-align:center;"> 5.389547 </td>
-   <td style="text-align:center;"> 0.0187755 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 4.966239 </td>
-   <td style="text-align:center;"> 5.344562 </td>
-   <td style="text-align:center;"> 9.81225 </td>
-   <td style="text-align:center;"> 3.19725 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1829026 </td>
-   <td style="text-align:center;"> 6.61500 </td>
-   <td style="text-align:center;"> 0.3783223 </td>
-   <td style="text-align:center;"> 5.286498 </td>
-   <td style="text-align:center;"> 0.0125170 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 5.956716 </td>
-   <td style="text-align:center;"> 6.323474 </td>
-   <td style="text-align:center;"> 10.00000 </td>
-   <td style="text-align:center;"> 2.97675 </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1615874 </td>
-   <td style="text-align:center;"> 7.02325 </td>
-   <td style="text-align:center;"> 0.3667576 </td>
-   <td style="text-align:center;"> 5.453193 </td>
-   <td style="text-align:center;"> 0.0435828 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Phaethornis-eurynome-15607.wav </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 7.424245 </td>
-   <td style="text-align:center;"> 7.796151 </td>
-   <td style="text-align:center;"> 8.93025 </td>
-   <td style="text-align:center;"> 3.41775 </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.1591724 </td>
-   <td style="text-align:center;"> 5.51250 </td>
-   <td style="text-align:center;"> 0.3719050 </td>
-   <td style="text-align:center;"> 5.377717 </td>
-   <td style="text-align:center;"> 0.0535601 </td>
-  </tr>
-</tbody>
-</table></div>
-That's it! 
-<p><font size="4">Creating example data</font></p>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->Creating example data<!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># load warbleR </span>
 </span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">warbleR</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -997,7 +438,7 @@ That's it!
 </span></span><span class="line"><span class="cl"><span class="nf">lspec</span><span class="p">(</span><span class="n">pe_st</span><span class="p">,</span> <span class="n">sxrow</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="m">7</span><span class="p">,</span> <span class="n">fast.spec</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">      <span class="n">horizontal</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">song</span> <span class="o">=</span> <span class="s">&#34;song&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><hr>
-<p><font size="4"><b>Session information</b></font></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Session information<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.5.1 (2018-07-02)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Running under: Ubuntu 18.10</span>
@@ -1052,7 +493,7 @@ That's it!
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-02-16-working_with_songs%2f&amp;text=Working%20with%20higher%20structural%20levels%20in%20vocal%20signals&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-02-16-working_with_songs%2f&amp;text=Working%20with%20higher%20structural%20levels%20in%20vocal%20signals&amp;via=username" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1162,7 +603,27 @@ That's it!
           
               <li>
 		
-		  <a href="https://github.com/maRce10" title="GitHub">
+		  <a href="mailto:youremail@domain.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.facebook.com/username" title="Facebook">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/username" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -1172,7 +633,27 @@ That's it!
               </li>
               <li>
 		
-		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		  <a href="https://gitlab.com/username" title="GitLab">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://bitbucket.org/username" title="Bitbucket">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/username" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -1182,7 +663,47 @@ That's it!
               </li>
               <li>
 		
-		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		  <a href="https://username.slack.com/" title="Slack">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://reddit.com/u/username" title="Reddit">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://linkedin.com/in/username" title="LinkedIn">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.xing.com/profile/username" title="Xing">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -1192,11 +713,181 @@ That's it!
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
+		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.instagram.com/username" title="Instagram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/user/username" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://soundcloud.com/username" title="SoundCloud">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://open.spotify.com/user/username" title="Spotify">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://username.bandcamp.com/" title="Bandcamp">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://itch.io/profile/username" title="Itch.io">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://vk.com/username" title="VK">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://paypal.me/username" title="PayPal">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://telegram.me/username" title="Telegram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://500px.com/username" title="500px">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://codepen.io/username" title="CodePen">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.kaggle.com/username" title="kaggle">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a rel="me"href="https://url" title="Mastodon">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://weibo.com/username" title="Weibo">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://medium.com/@username" title="Medium">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.strava.com/athletes/userid" title="Strava">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -1212,6 +903,10 @@ That's it!
           
         </ul>
         <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Some Person</a>
+            
           
 
           &nbsp;&bull;&nbsp;&copy;

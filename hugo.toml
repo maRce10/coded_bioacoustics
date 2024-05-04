@@ -2,6 +2,8 @@ baseurl = "marce10.github.io/coded_bioacustics/"
 DefaultContentLanguage = "en"
 title = "Coded bioacoustics"
 theme = "beautifulhugo"
+# Or when using theme as hugo module
+# theme = "github.com/halogenica/beautifulhugo"
 pygmentsStyle = "trac"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
@@ -10,10 +12,6 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentOptions = "linenos=inline"
 disqusShortname = "maRce_10"
 googleAnalytics = "G-RZVLSR0L9P"
-enableEmoji = true
-ignoreFiles = [ "\\.Rmd$", "\\.qmd$", "\\.ipynb$", "\\.py$" ]
-[markup.goldmark.renderer]
-unsafe= true
 
 [Params]
   homeTitle = "Coded bioacoustics" # Set a different text for the header on the home page
@@ -33,10 +31,10 @@ unsafe= true
   showRelatedPosts = true
   hideAuthor = false
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+#  disclaimerText = "The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way."
 
 #[[Params.bigimg]]
-#  src = "img/cod_bio.jpg"
-#  position: 25% 75%;
+#  src = "img/triangle.jpg"
 #  desc = "Triangle"
 #[[Params.bigimg]]
 #  src = "img/sphere.jpg"
@@ -79,11 +77,6 @@ unsafe= true
 #  slack = "username"
 #  discord = "invite code (https://discord.gg/XXXXXXX)"
 #  strava = "userid"
-
-#[[menu.main]]
-#    name = "Blog"
-#    url = ""
-#    weight = 1
 
 [[menu.main]]
     name = "About"
@@ -134,5 +127,3 @@ unsafe= true
 [services]
   [services.disqus]
     shortname = 'maRce_10'
-
-

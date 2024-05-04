@@ -13,7 +13,8 @@
       <title>Editing wave objects from extended selection tables - Coded bioacoustics</title>
 
   <meta name="description" content="&ldquo;Is there a simple way to remove noise from the clips in an extended table &ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &hellip; so again, am I missing something simple?&rdquo;
-Manipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don&rsquo;t mess with any time related feature (i."><script type="application/ld+json">
+Manipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don&rsquo;t mess with any time related feature (i.">
+  <meta name="author" content="Some Person"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -94,8 +95,8 @@ Manipulating clips from extended selection tables can be pretty straightforward.
   <meta name="twitter:description" content="&ldquo;Is there a simple way to remove noise from the clips in an extended table &ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &hellip; so again, …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
-  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -135,13 +136,21 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Useful resources</a>
+              <a class="navlinks-parent">Samples</a>
               <div class="navlinks-children">
                 
-                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
                 
-                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
                 
               </div>
             </li>
@@ -319,30 +328,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-2-1.png?v=8263bae2b3ce02d2441abee9b8a24450" alt="" loading="lazy" height="367px" width="595px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/unnamed-chunk-2-1.png" alt=""></p>
 <p>Clips are stored in an attribute call &lsquo;wave.objects&rsquo;. In this particular example the list of clips can be called like this: <code>attributes(lbh.est)$wave.objects</code>.</p>
 <p>We can apply a bandpass filter from 4 to 10 kHz over each element of this list using <code>lapply()</code> and <code>ffilter()</code> (from <a href="http://rug.mnhn.fr/seewave">seewave</a>):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># filter out freqs below 4 kHz</span>
@@ -364,30 +350,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-4-1.png?v=4595b9b1c788b5c66e046f96651f5ebd" alt="" loading="lazy" height="367px" width="595px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/unnamed-chunk-4-1.png" alt=""></p>
 <p>So any <a href="http://rug.mnhn.fr/seewave">seewave</a> function that works on &lsquo;wave&rsquo; objects and returns &lsquo;wave&rsquo; objects as well, can be used. For instance, applying a linear frequency shift to increase pitch in 2 kHz:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># load data</span>
 </span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;lbh.est&#34;</span><span class="p">)</span>
@@ -411,33 +374,10 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-70</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/unnamed-chunk-5-1.png?v=f9f5062a976e9ef29e64d9d89b66d2be" alt="" loading="lazy" height="367px" width="595px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/unnamed-chunk-5-1.png" alt=""></p>
 <p>Again, this should be OK as long as you don&rsquo;t modify any time related feature. If temporal features change then the time annotations are no longer useful.</p>
 <hr>
-<p><font size="4">Session information</font></p>
+<p><!-- raw HTML omitted -->Session information<!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.6.1 (2019-07-05)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Running under: Ubuntu 18.04.4 LTS</span>
@@ -504,7 +444,7 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-05-26-editing_wave_objects_from_extended_selection_tables%2f&amp;text=Editing%20wave%20objects%20from%20extended%20selection%20tables&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2020-05-26-editing_wave_objects_from_extended_selection_tables%2f&amp;text=Editing%20wave%20objects%20from%20extended%20selection%20tables&amp;via=username" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -637,7 +577,27 @@ if (!doNotTrack) {
           
               <li>
 		
-		  <a href="https://github.com/maRce10" title="GitHub">
+		  <a href="mailto:youremail@domain.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.facebook.com/username" title="Facebook">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/username" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -647,7 +607,27 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		  <a href="https://gitlab.com/username" title="GitLab">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://bitbucket.org/username" title="Bitbucket">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/username" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -657,7 +637,47 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		  <a href="https://username.slack.com/" title="Slack">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://reddit.com/u/username" title="Reddit">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://linkedin.com/in/username" title="LinkedIn">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.xing.com/profile/username" title="Xing">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -667,11 +687,181 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
+		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.instagram.com/username" title="Instagram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/user/username" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://soundcloud.com/username" title="SoundCloud">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://open.spotify.com/user/username" title="Spotify">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://username.bandcamp.com/" title="Bandcamp">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://itch.io/profile/username" title="Itch.io">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://vk.com/username" title="VK">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://paypal.me/username" title="PayPal">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://telegram.me/username" title="Telegram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://500px.com/username" title="500px">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://codepen.io/username" title="CodePen">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.kaggle.com/username" title="kaggle">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a rel="me"href="https://url" title="Mastodon">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://weibo.com/username" title="Weibo">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://medium.com/@username" title="Medium">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.strava.com/athletes/userid" title="Strava">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -687,6 +877,10 @@ if (!doNotTrack) {
           
         </ul>
         <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Some Person</a>
+            
           
 
           &nbsp;&bull;&nbsp;&copy;

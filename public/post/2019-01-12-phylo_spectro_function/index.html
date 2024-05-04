@@ -12,7 +12,8 @@
 
       <title>Spectrograms on trees - Coded bioacoustics</title>
 
-  <meta name="description" content="This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&lsquo;X argument) onto the tips of a tree (of class &lsquo;phylo&rsquo;). The &rsquo;tip.label&rsquo; column in &lsquo;X&rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR&rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization."><script type="application/ld+json">
+  <meta name="description" content="This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&lsquo;X argument) onto the tips of a tree (of class &lsquo;phylo&rsquo;). The &rsquo;tip.label&rsquo; column in &lsquo;X&rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR&rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization.">
+  <meta name="author" content="Some Person"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -92,8 +93,8 @@
   <meta name="twitter:description" content="This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&lsquo;X argument) onto the tips of a tree (of class …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
-  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -133,13 +134,21 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
+            <li>
+              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
+            </li>
+          
+        
+          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Useful resources</a>
+              <a class="navlinks-parent">Samples</a>
               <div class="navlinks-children">
                 
-                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
                 
-                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
+                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
                 
               </div>
             </li>
@@ -326,117 +335,25 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">8</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">xl</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_1-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot of chunk phylo.spectro 1" loading="lazy" height="1050px" width="1700px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/phylo.spectro_1-1.png" alt="plot of chunk phylo.spectro 1"></p>
 <p>It can also plot fan trees by setting <code>type = &quot;fan&quot;</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># plot fan tree with spectrograms</span>
 </span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.12</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_4-1.png?v=b1628a89290178284379aa77a6ace22e" alt="plot of chunk phylo.spectro 4" loading="lazy" height="588px" width="1700px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/phylo.spectro_4-1.png" alt="plot of chunk phylo.spectro 4"></p>
 <p>Additional arguments can be passed to <a href="https://www.rdocumentation.org/packages/ape/versions/5.2/topics/plot.phylo">plot.phylo</a>. Here we modify &rsquo;edge.lty&rsquo; and &rsquo;edge.witdth&rsquo;:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># plot tree with spectrograms</span>
 </span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.12</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">edge.color</span> <span class="o">=</span> <span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="n">edge.lty</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">edge.width</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_2-1.png?v=302ee570390a0b525a445d9d01437f22" alt="plot of chunk phylo.spectro 2" loading="lazy" height="594px" width="1700px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/phylo.spectro_2-1.png" alt="plot of chunk phylo.spectro 2"></p>
 <p>and to <a href="https://marce10.github.io/warbleR/reference/specreator.html">specreator</a>. Here we modify &lsquo;pal&rsquo; (color palette):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># plot tree with spectrograms</span>
 </span></span><span class="line"><span class="cl"><span class="nf">phylo_spectro</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">xc.tree</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="m">0.12</span><span class="p">,</span> <span class="n">par.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_3-1.png?v=4f2b3bfae33eb8968f77f923a87fa490" alt="plot of chunk phylo.spectro 2" loading="lazy" height="621px" width="1700px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/phylo.spectro_3-1.png" alt="plot of chunk phylo.spectro 2"></p>
 <p>Here is another example using an <a href="https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html">extended selection table</a> and more signals:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;Phae.long.est&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -460,57 +377,11 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="n">inner.mar</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2.3</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="n">show.tip.label</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.gray.colors.1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"><span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">edge.color</span> <span class="o">=</span> <span class="s">&#34;orange&#34;</span><span class="p">,</span>  <span class="n">edge.width</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/phylo.spectro_5-1.png?v=3898802773d3406fe7a42806aa65e1d6" alt="plot of chunk phylo.spectro 2" loading="lazy" height="587px" width="1700px" />
-</picture>
-</p>
+</span></span></code></pre></div><p><img src="./img/phylo.spectro_5-1.png" alt="plot of chunk phylo.spectro 2"></p>
 <p>Of course, the function can also plot species songs on phylogenetic trees. Here is an example from an ongoing project:</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/brilliants_tree.png?v=b3124b088b5f2451a14e865db9245dde" alt="plot of chunk brilliants_tree" loading="lazy" height="1821px" width="2007px" />
-</picture>
-</p>
+<p><img src="./img/brilliants_tree.png" alt="plot of chunk brilliants_tree"></p>
 <p>That&rsquo;s it! Special thanks to <a href="https://www.researchgate.net/profile/Gerardo_Soto2">Gerardo Soto</a> and <a href="http://russellligon.wixsite.com/russell-ligon">Russel Ligon</a> for suggestions on how to make this function work.</p>
-<p><font size="4">Session information</font></p>
+<p><!-- raw HTML omitted -->Session information<!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1">## R version 3.5.1 (2018-07-02)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Running under: Ubuntu 18.10</span>
@@ -565,7 +436,7 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-12-phylo_spectro_function%2f&amp;text=Spectrograms%20on%20trees&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2019-01-12-phylo_spectro_function%2f&amp;text=Spectrograms%20on%20trees&amp;via=username" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -698,7 +569,27 @@ if (!doNotTrack) {
           
               <li>
 		
-		  <a href="https://github.com/maRce10" title="GitHub">
+		  <a href="mailto:youremail@domain.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.facebook.com/username" title="Facebook">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/username" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -708,7 +599,27 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
+		  <a href="https://gitlab.com/username" title="GitLab">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://bitbucket.org/username" title="Bitbucket">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/username" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -718,7 +629,47 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
+		  <a href="https://username.slack.com/" title="Slack">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://reddit.com/u/username" title="Reddit">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://linkedin.com/in/username" title="LinkedIn">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.xing.com/profile/username" title="Xing">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -728,11 +679,181 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
+		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.instagram.com/username" title="Instagram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.youtube.com/user/username" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://soundcloud.com/username" title="SoundCloud">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://open.spotify.com/user/username" title="Spotify">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://username.bandcamp.com/" title="Bandcamp">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://itch.io/profile/username" title="Itch.io">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://vk.com/username" title="VK">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://paypal.me/username" title="PayPal">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://telegram.me/username" title="Telegram">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://500px.com/username" title="500px">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://codepen.io/username" title="CodePen">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.kaggle.com/username" title="kaggle">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a rel="me"href="https://url" title="Mastodon">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://weibo.com/username" title="Weibo">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://medium.com/@username" title="Medium">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://www.strava.com/athletes/userid" title="Strava">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -748,6 +869,10 @@ if (!doNotTrack) {
           
         </ul>
         <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Some Person</a>
+            
           
 
           &nbsp;&bull;&nbsp;&copy;

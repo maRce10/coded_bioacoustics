@@ -1,16 +1,17 @@
 ---
 title: "Render posts"
 format: html
-editor: visual
+editor: 
+  mode: source
 ---
 
 # Set global options
+
 ```{r}
 # set working directory 
 # knitr::opts_knit$set(root.dir =  "..")
 
 ```
-
 
 # Render posts
 
