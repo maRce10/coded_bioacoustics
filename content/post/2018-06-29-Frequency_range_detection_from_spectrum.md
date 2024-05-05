@@ -2,6 +2,7 @@
 layout: post
 title: "Frequency range detection from spectrum"
 date: 29-06-2018
+tags: ["acoustic-features", "spectrum", "R"]
 ---
 
 We are often interested in getting the frequency range of acoustic signals, either because we have specific predictions about its variation or simply because we want to measure other stuff within that range. Measuring frequency range is typically done by drawing boxes in *Raven/Avisoft/Syrinx*. An alternative way, and potentially less subjective, is to infer the range from the energy distribution in the frequency domain applying amplitude thresholds on spectrums. I have added two new functions to [warbleR](https://cran.r-project.org/package=warbleR) that do exactly that:
@@ -25,7 +26,7 @@ library("warbleR")
 
 
 
-We will run the functions on signals detected on a recording from a male [Striped-throated Hermit (*Phaethornis striigularis*)](https://neotropical.birds.cornell.edu/Species-Account/nb/species/stther2/overview) from [Xeno-Canto](http://xeno-canto.org). We can download the sound file and convert it into wave format as follows:
+We will run the functions on signals detected on a recording from a male [Striped-throated Hermit (*Phaethornis striigularis*)](https://birdsoftheworld.org/bow/species/stther2/cur/introduction) from [Xeno-Canto](https://xeno-canto.org). We can download the sound file and convert it into wave format as follows:
 
 
 ```r

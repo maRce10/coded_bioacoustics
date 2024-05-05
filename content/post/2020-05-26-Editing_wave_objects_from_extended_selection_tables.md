@@ -41,7 +41,7 @@ spectro(w2, wl = 300, ovlp = 95, flim = c(1, 10), scale = FALSE,
 
 Clips are stored in an attribute call 'wave.objects'. In this particular example the list of clips can be called like this: `attributes(lbh.est)$wave.objects`.
 
-We can apply a bandpass filter from 4 to 10 kHz over each element of this list using `lapply()` and `ffilter()` (from [seewave](http://rug.mnhn.fr/seewave)):
+We can apply a bandpass filter from 4 to 10 kHz over each element of this list using `lapply()` and `ffilter()` (from [seewave](https://rug.mnhn.fr/seewave)):
 
 ```r
 # filter out freqs below 4 kHz
@@ -73,7 +73,7 @@ spectro(w2, wl = 300, ovlp = 95, flim = c(1, 10), scale = FALSE,
 
 ![](./img/unnamed-chunk-4-1.png)
 
-So any [seewave](http://rug.mnhn.fr/seewave) function that works on 'wave' objects and returns 'wave' objects as well, can be used. For instance, applying a linear frequency shift to increase pitch in 2 kHz: 
+So any [seewave](https://rug.mnhn.fr/seewave) function that works on 'wave' objects and returns 'wave' objects as well, can be used. For instance, applying a linear frequency shift to increase pitch in 2 kHz: 
 
 
 ```r

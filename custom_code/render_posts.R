@@ -12,6 +12,16 @@ source("~/Dropbox/Websites/beautifulhugo/custom_code/render_posts_fun.R")
 
 blogdown::stop_server(); blogdown::build_site(); blogdown::serve_site()
 
+source("~/Dropbox/R_package_testing/sketchy/R/internal_functions.R")
+source("~/Dropbox/R_package_testing/sketchy/R/check_urls.R")
+
+cu <- check_urls(path = "./content/post/")
+
+cu$URL
+table(cu$Status)
+
+cu$URL[cu$Status == "Error"]
+
 # images should be in ./static/img/
 
 # create spectro front page

@@ -6,14 +6,12 @@
     <description>Recent content in simulation on Coded bioacoustics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
-    <webMaster>youremail@domain.com (Some Person)</webMaster>
     <lastBuildDate>Thu, 22 Feb 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="marce10.github.io/coded_bioacustics/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Simulating animal vocalizations</title>
       <link>marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/</link>
-      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2018-02-22-simulating_animal_vocalizations/</guid>
       <description>This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.&#xA;The function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e.</description>
     </item>

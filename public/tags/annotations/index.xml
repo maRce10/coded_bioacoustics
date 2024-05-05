@@ -6,28 +6,26 @@
     <description>Recent content in annotations on Coded bioacoustics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
-    <webMaster>youremail@domain.com (Some Person)</webMaster>
     <lastBuildDate>Mon, 25 May 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="marce10.github.io/coded_bioacustics/tags/annotations/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Editing wave objects from extended selection tables</title>
       <link>marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/</link>
-      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/</guid>
       <description>&amp;ldquo;Is there a simple way to remove noise from the clips in an extended table &amp;ndash; I can do this by directly manipulating the attributes of the table but it seems a bit kludgy &amp;hellip; so again, am I missing something simple?&amp;rdquo;&#xA;Manipulating clips from extended selection tables can be pretty straightforward. It can be done by using lapply() to go over each clip. Things should be fine as long as you don&amp;rsquo;t mess with any time related feature (i.</description>
     </item>
     <item>
       <title>Extended selection tables</title>
       <link>marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/</link>
-      <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2018-05-15-extended_selection_tables/</guid>
       <description>This post shows how to create and use the new warbleR object class extended_selection_table.&#xA;These objects are created with the selec_table() function. The function takes data frames containing selection data (sound file name, selection, start, end &amp;hellip;), checks whether the information is consistent (see checksels() function for details) and saves the &amp;lsquo;diagnostic&amp;rsquo; metadata as an attribute. When the argument extended = TRUE the function generates an object of class extended_selection_table which also contains a list of wave objects corresponding to each of the selections in the data frame.</description>
     </item>
     <item>
       <title>Individual sound files for each selection</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</link>
-      <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</guid>
       <description>A friend of mine wants to &amp;ldquo;create individual sound files for each selection&amp;rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).&#xA;It takes 3 main steps:&#xA;Create a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)&#xA;Add and (X)lapply loop to run the function from step 1 iteratively on each row</description>
     </item>

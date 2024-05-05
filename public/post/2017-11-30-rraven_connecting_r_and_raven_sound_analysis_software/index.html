@@ -12,8 +12,7 @@
 
       <title>Rraven: Connecting R and Raven Sound Analysis Software - Coded bioacoustics</title>
 
-  <meta name="description" content="The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as warbleR, seewave and monitoR (among others) provide additional methods of analysis, working as a perfect complement for those found in Raven. Hence, bridging these applications can largely expand the bioacoustician&rsquo;s toolkit.">
-  <meta name="author" content="Some Person"/><script type="application/ld+json">
+  <meta name="description" content="The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as warbleR, seewave and monitoR (among others) provide additional methods of analysis, working as a perfect complement for those found in Raven. Hence, bridging these applications can largely expand the bioacoustician&rsquo;s toolkit."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -58,7 +57,7 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "Some Person"
+    "name" : ""
   },
   "headline": "Rraven: Connecting R and Raven Sound Analysis Software",
   "description" : "The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as warbleR, seewave and monitoR (among others) provide additional methods of analysis, working as a perfect complement for those found in Raven. Hence, bridging these applications can largely expand the bioacoustician\u0026rsquo;s toolkit.",
@@ -93,8 +92,8 @@
   <meta name="twitter:description" content="The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@username" />
-  <meta name="twitter:creator" content="@username" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -134,21 +133,13 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
-            <li>
-              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
-            </li>
-          
-        
-          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -275,7 +266,7 @@ if (!doNotTrack) {
   
   
     
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Some Person
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
     
   
   
@@ -297,9 +288,9 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The <code>Rraven</code> package is designed to facilitate the exchange of data between R and  <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven sound analysis software</a> (<a href="http://www.birds.cornell.edu">Cornell Lab of Ornithology</a>). <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> provides very  powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as <a href="https://cran.r-project.org/package=warbleR">warbleR</a>, <a href="https://cran.r-project.org/package=seewave">seewave</a> and <a href="https://cran.r-project.org/package=monitoR">monitoR</a> (among others) provide additional methods of analysis, working as a perfect complement for those found in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>. Hence, bridging these applications can largely expand the bioacoustician&rsquo;s toolkit.</p>
-<p>Currently, most analyses in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> cannot be run in the background from a command terminal. Thus, most <code>Rraven</code> functions are design to simplify the exchange of data between the two programs, and in some cases, export files to  <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> for further analysis. This post provides detailed examples for each function in <code>Rraven</code>, including both the R code as well as the additional steps in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> required to fully accomplished the analyses. Raven Pro must be installed to be able to run some of the code.</p>
-<p>Before getting into the functions, the packages must be installed and loaded. I recommend using the latest developmental version, which is found in <a href="http://github.com/">github</a>. To do so, you need the R package <a href="https://cran.r-project.org/package=devtools">devtools</a> (which of course should be installed!). Some <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions and example data sets will be used, so <a href="https://cran.r-project.org/package=warbleR">warbleR</a> should be installed as well:</p>
+        <p>The <code>Rraven</code> package is designed to facilitate the exchange of data between R and  <a href="https://www.ravensoundsoftware.com/">Raven sound analysis software</a> (<a href="https://www.birds.cornell.edu">Cornell Lab of Ornithology</a>). <a href="https://www.ravensoundsoftware.com/">Raven</a> provides very  powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as <a href="https://cran.r-project.org/package=warbleR">warbleR</a>, <a href="https://cran.r-project.org/package=seewave">seewave</a> and <a href="https://cran.r-project.org/package=monitoR">monitoR</a> (among others) provide additional methods of analysis, working as a perfect complement for those found in <a href="https://www.ravensoundsoftware.com/">Raven</a>. Hence, bridging these applications can largely expand the bioacoustician&rsquo;s toolkit.</p>
+<p>Currently, most analyses in <a href="https://www.ravensoundsoftware.com/">Raven</a> cannot be run in the background from a command terminal. Thus, most <code>Rraven</code> functions are design to simplify the exchange of data between the two programs, and in some cases, export files to  <a href="https://www.ravensoundsoftware.com/">Raven</a> for further analysis. This post provides detailed examples for each function in <code>Rraven</code>, including both the R code as well as the additional steps in <a href="https://www.ravensoundsoftware.com/">Raven</a> required to fully accomplished the analyses. Raven Pro must be installed to be able to run some of the code.</p>
+<p>Before getting into the functions, the packages must be installed and loaded. I recommend using the latest developmental version, which is found in <a href="https://github.com/">github</a>. To do so, you need the R package <a href="https://cran.r-project.org/package=devtools">devtools</a> (which of course should be installed!). Some <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions and example data sets will be used, so <a href="https://cran.r-project.org/package=warbleR">warbleR</a> should be installed as well:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;maRce10/warbleR&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;maRce10/Rraven&#34;</span><span class="p">)</span>
@@ -335,7 +326,7 @@ if (!doNotTrack) {
 <hr>
 <h2 id="importing-data-from-raven">Importing data from Raven</h2>
 <h3 id="imp_raven"><em>imp_raven</em></h3>
-<p>This function imports <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selection tables. Multiple files can be imported at once. <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selection tables including data from multiple recordings can also be imported. It returns a single data frame with the information contained in the selection files. We already have 2 <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selection tables in the working directory:</p>
+<p>This function imports <a href="https://www.ravensoundsoftware.com/">Raven</a> selection tables. Multiple files can be imported at once. <a href="https://www.ravensoundsoftware.com/">Raven</a> selection tables including data from multiple recordings can also be imported. It returns a single data frame with the information contained in the selection files. We already have 2 <a href="https://www.ravensoundsoftware.com/">Raven</a> selection tables in the working directory:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">list.files</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="nf">tempdir</span><span class="p">(),</span> <span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;\\.txt$&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[1] &#34;LBH 1 selection table example.txt&#34; &#34;LBH 2 selection table example.txt&#34; &#34;LBH 3 selection table example.txt&#34; &#34;LBH 4 selection table example.txt&#34;
 </span></span></code></pre></div><p> </p>
@@ -345,7 +336,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="n">rvn.dat</span>
 </span></span></code></pre></div><!-- raw HTML omitted -->
 <p>Note that the &lsquo;waveform&rsquo; view data has been removed. It can also be imported by setting the &lsquo;waveform&rsquo; argument to <code>TRUE</code>.</p>
-<p><a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selections can also be imported in a &lsquo;selection.table&rsquo; format so it can be directly input into <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions. To do this you need to set the <code>all.data = FALSE</code> and indicate which column contains the sound file name (using the &lsquo;sound.file.col&rsquo; argument):</p>
+<p><a href="https://www.ravensoundsoftware.com/">Raven</a> selections can also be imported in a &lsquo;selection.table&rsquo; format so it can be directly input into <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions. To do this you need to set the <code>all.data = FALSE</code> and indicate which column contains the sound file name (using the &lsquo;sound.file.col&rsquo; argument):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#providing the name of the column with the sound file names</span>
 </span></span><span class="line"><span class="cl"><span class="n">rvn.dat</span> <span class="o">&lt;-</span> <span class="nf">imp_raven</span><span class="p">(</span><span class="n">sound.file.col</span> <span class="o">=</span> <span class="s">&#34;Begin File&#34;</span><span class="p">,</span> <span class="n">all.data</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">                     <span class="n">freq.cols</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
@@ -369,11 +360,28 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"> <span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.heat.colors</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl"> <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sound.files&#34;</span><span class="p">,</span> <span class="s">&#34;selec&#34;</span><span class="p">),</span> <span class="n">legend</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">terrain.colors</span><span class="p">),</span> <span class="n">tags</span> <span class="o">=</span> <span class="s">&#34;sound.files&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="catalogimgcatalogpng"><img src="/img/catalog.png" alt="catalog"></h2>
+</span></span></code></pre></div><h2 id="catalogimgcatalogpng">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  </h2>
 <p>This is just to cite a few analysis that can be implemented in <a href="https://cran.r-project.org/package=warbleR">warbleR</a>.</p>
 <p><code>Rraven</code> also contains the function <code>imp_syrinx</code> to import selections from <a href="www.syrinxpc.com">Syrinx sound analyis software</a> (although this program is not been maintained any longer).</p>
 <h3 id="extract_ts"><em>extract_ts</em></h3>
-<p>The function extracts parameters encoded as time series in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> selection tables. The resulting data frame can be directly input into functions for time series analysis of acoustic signals as in the <a href="https://cran.r-project.org/package=warbleR">warbleR</a> function <code>dfDTW</code>. The function needs an R data frame, so the data should have been previously imported using <code>imp_raven</code>. This example uses the <code>selection_file.ts</code> example data that comes with <code>Rraven</code>:</p>
+<p>The function extracts parameters encoded as time series in <a href="https://www.ravensoundsoftware.com/">Raven</a> selection tables. The resulting data frame can be directly input into functions for time series analysis of acoustic signals as in the <a href="https://cran.r-project.org/package=warbleR">warbleR</a> function <code>dfDTW</code>. The function needs an R data frame, so the data should have been previously imported using <code>imp_raven</code>. This example uses the <code>selection_file.ts</code> example data that comes with <code>Rraven</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#remove previous raven data files</span>
 </span></span><span class="line"><span class="cl"><span class="nf">unlink</span><span class="p">(</span><span class="nf">list.files</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;\\.txt$&#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">
@@ -425,8 +433,8 @@ if (!doNotTrack) {
 </span></span></code></pre></div><!-- raw HTML omitted -->
 <hr>
 <h3 id="imp_corr_mat"><em>imp_corr_mat</em></h3>
-<p>The function imports the output of a batch correlation routine in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>. Both the correlation and lag matrices contained in the output &lsquo;.txt&rsquo; file are read and both waveform and spectrogram (cross-correlation) correlations can be imported.</p>
-<p>This example shows how to input the sound files into <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> and how to bring the results back to R. First, the selections need to be cut as single sound files for the <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> correlator to be able to read it. We can do this using the <code>cut_sels</code> function from <a href="https://cran.r-project.org/package=warbleR">warbleR</a>:</p>
+<p>The function imports the output of a batch correlation routine in <a href="https://www.ravensoundsoftware.com/">Raven</a>. Both the correlation and lag matrices contained in the output &lsquo;.txt&rsquo; file are read and both waveform and spectrogram (cross-correlation) correlations can be imported.</p>
+<p>This example shows how to input the sound files into <a href="https://www.ravensoundsoftware.com/">Raven</a> and how to bring the results back to R. First, the selections need to be cut as single sound files for the <a href="https://www.ravensoundsoftware.com/">Raven</a> correlator to be able to read it. We can do this using the <code>cut_sels</code> function from <a href="https://cran.r-project.org/package=warbleR">warbleR</a>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#create new folder to put cuts</span>
 </span></span><span class="line"><span class="cl"><span class="nf">dir.create</span><span class="p">(</span><span class="s">&#34;cuts&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -442,8 +450,28 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="c1">#list cuts</span>
 </span></span><span class="line"><span class="cl"><span class="nf">list.files</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="nf">tempdir</span><span class="p">(),</span> <span class="s">&#34;cuts&#34;</span><span class="p">))</span>
 </span></span></code></pre></div><p> </p>
-<p>Every selection is in its own sound file (labeled as <code>paste(sound.files, selec)</code>). Now open <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> and run the batch correlator on the &lsquo;cuts&rsquo; folder as follows:</p>
-<p><img src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/raven_correlator.gif" alt="gif1">
+<p>Every selection is in its own sound file (labeled as <code>paste(sound.files, selec)</code>). Now open <a href="https://www.ravensoundsoftware.com/">Raven</a> and run the batch correlator on the &lsquo;cuts&rsquo; folder as follows:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/raven_correlator.gif" alt="gif1" loading="lazy" />
+</picture>
+
  </p>
 <p>And then import the output file into R:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Import output (change the name of the file if you used a different one)</span>
@@ -502,30 +530,90 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="c1"># Export data of a single sound file</span>
 </span></span><span class="line"><span class="cl"><span class="nf">exp_raven</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">file.name</span> <span class="o">=</span> <span class="s">&#34;Phaethornis 1&#34;</span><span class="p">,</span> <span class="n">khz.to.hz</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </span></span></code></pre></div><p> </p>
-<p>If the path to the sound file is provided, the functions exports a &lsquo;sound selection table&rsquo; which can be directly open by <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> (and which will also open the associated sound file):</p>
+<p>If the path to the sound file is provided, the functions exports a &lsquo;sound selection table&rsquo; which can be directly open by <a href="https://www.ravensoundsoftware.com/">Raven</a> (and which will also open the associated sound file):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Select data for a single sound file</span>
 </span></span><span class="line"><span class="cl"><span class="n">st1</span> <span class="o">&lt;-</span> <span class="n">selec.table[selec.table</span><span class="o">$</span><span class="n">sound.files</span> <span class="o">==</span> <span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">,</span><span class="n">]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Export data of a single sound file</span>
 </span></span><span class="line"><span class="cl"><span class="nf">exp_raven</span><span class="p">(</span><span class="n">st1</span><span class="p">,</span> <span class="n">file.name</span> <span class="o">=</span> <span class="s">&#34;Phaethornis 1&#34;</span><span class="p">,</span> <span class="n">khz.to.hz</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">          <span class="n">sound.file.path</span> <span class="o">=</span> <span class="nf">tempdir</span><span class="p">())</span>
-</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven1.gif" alt="gif2">
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven1.gif" alt="gif2" loading="lazy" />
+</picture>
+
  </p>
 <p>This is useful to add new selections or even new measurements:</p>
-<p><img src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven2.gif" alt="gif3">
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven2.gif" alt="gif3" loading="lazy" />
+</picture>
+
  </p>
 <p>If several sound files are available, users can either export them as a single selection file or as multiple selection files (one for each sound file). This example creates a multiple sound file selection:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">exp_raven</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">          <span class="n">file.name</span> <span class="o">=</span> <span class="s">&#34;Phaethornis multiple sound files&#34;</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">          <span class="n">sound.file.path</span> <span class="o">=</span> <span class="nf">tempdir</span><span class="p">(),</span> <span class="n">single.file</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </span></span></code></pre></div><p> </p>
-<p>These type of tables can be opened as a multiple file display in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>:</p>
-<p><img src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven3.gif" alt="gif4">
+<p>These type of tables can be opened as a multiple file display in <a href="https://www.ravensoundsoftware.com/">Raven</a>:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven3.gif" alt="gif4" loading="lazy" />
+</picture>
+
  </p>
 <hr>
 <h2 id="running-raven-from-r">Running Raven from R</h2>
 <h3 id="run_raven"><em>run_raven</em></h3>
-<p>The function opens multiple sound files simultaneously in  <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>. When the analysis is finished (and the  <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> window is closed) the data can be automatically imported back into R using the &lsquo;import&rsquo; argument. Note that <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>, unlike R, can also handle files in &lsquo;mp3&rsquo;, &lsquo;flac&rsquo; and &lsquo;aif&rsquo; format .</p>
+<p>The function opens multiple sound files simultaneously in  <a href="https://www.ravensoundsoftware.com/">Raven</a>. When the analysis is finished (and the  <a href="https://www.ravensoundsoftware.com/">Raven</a> window is closed) the data can be automatically imported back into R using the &lsquo;import&rsquo; argument. Note that <a href="https://www.ravensoundsoftware.com/">Raven</a>, unlike R, can also handle files in &lsquo;mp3&rsquo;, &lsquo;flac&rsquo; and &lsquo;aif&rsquo; format .</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># here replace with the path where Raven is install in your computer</span>
 </span></span><span class="line"><span class="cl"><span class="n">raven.path</span> <span class="o">&lt;-</span> <span class="s">&#34;PATH_TO_RAVEN_DIRECTORY_HERE&#34;</span> 
 </span></span><span class="line"><span class="cl">
@@ -533,17 +621,57 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">run_raven</span><span class="p">(</span><span class="n">raven.path</span> <span class="o">=</span> <span class="n">raven.path</span><span class="p">,</span> <span class="n">sound.files</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Phae.long1.wav&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="s">&#34;Phae.long2.wav&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long3.wav&#34;</span><span class="p">,</span> <span class="s">&#34;Phae.long4.wav&#34;</span><span class="p">),</span> <span class="n">import</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">at.the.time</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"> <span class="n">all.data</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>  
-</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/run_raven1.gif" alt="gif5">
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/run_raven1.gif" alt="gif5" loading="lazy" />
+</picture>
+
  </p>
 <p>See <code>imp_raven</code> above for more details on additional settings when importing selections.</p>
 <hr>
 <h3 id="raven_batch_detec"><em>raven_batch_detec</em></h3>
-<p>As the name suggests, <em>raven_batch_detec</em> runs <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> detector on multiple sound files (sequentially). Batch detection in <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a> can also take files in &lsquo;mp3&rsquo;, &lsquo;flac&rsquo; and &lsquo;aif&rsquo; format (although this could not be further analyzed in R at the time!).</p>
-<p>This is example runs the detector on one of the example sound files that comes by default with <a href="http://www.birds.cornell.edu/brp/raven/RavenOverview.html">Raven</a>:</p>
+<p>As the name suggests, <em>raven_batch_detec</em> runs <a href="https://www.ravensoundsoftware.com/">Raven</a> detector on multiple sound files (sequentially). Batch detection in <a href="https://www.ravensoundsoftware.com/">Raven</a> can also take files in &lsquo;mp3&rsquo;, &lsquo;flac&rsquo; and &lsquo;aif&rsquo; format (although this could not be further analyzed in R at the time!).</p>
+<p>This is example runs the detector on one of the example sound files that comes by default with <a href="https://www.ravensoundsoftware.com/">Raven</a>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">detec.res</span> <span class="o">&lt;-</span> <span class="nf">raven_batch_detec</span><span class="p">(</span><span class="n">raven.path</span> <span class="o">=</span> <span class="n">raven.path</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">  <span class="n">sound.files</span> <span class="o">=</span> <span class="s">&#34;BlackCappedVireo.aif&#34;</span><span class="p">,</span> <span class="n">detector.type</span> <span class="o">=</span> <span class="s">&#34;Amplitude Detector&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="n">path</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="n">raven.path</span><span class="p">,</span> <span class="s">&#34;Examples&#34;</span><span class="p">))</span>
-</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/raven_batch_detec.gif" alt="gif6">
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/raven_batch_detec.gif" alt="gif6" loading="lazy" />
+</picture>
+
  </p>
 <hr>
 <p>Please report any bugs <a href="https://github.com/maRce10/Rraven/issues">here</a>. The <code>Rraven</code> package should be cited as follows:</p>
@@ -562,7 +690,7 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software%2f&amp;text=Rraven%3a%20Connecting%20R%20and%20Raven%20Sound%20Analysis%20Software&amp;via=username" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software%2f&amp;text=Rraven%3a%20Connecting%20R%20and%20Raven%20Sound%20Analysis%20Software&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -676,27 +804,7 @@ if (!doNotTrack) {
           
               <li>
 		
-		  <a href="mailto:youremail@domain.com" title="Email me">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.facebook.com/username" title="Facebook">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://github.com/username" title="GitHub">
+		  <a href="https://github.com/maRce10" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -706,27 +814,7 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://gitlab.com/username" title="GitLab">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://bitbucket.org/username" title="Bitbucket">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://twitter.com/username" title="Twitter">
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -736,47 +824,7 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://username.slack.com/" title="Slack">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://reddit.com/u/username" title="Reddit">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://linkedin.com/in/username" title="LinkedIn">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.xing.com/profile/username" title="Xing">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -786,181 +834,11 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.instagram.com/username" title="Instagram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.youtube.com/user/username" title="Youtube">
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://soundcloud.com/username" title="SoundCloud">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://open.spotify.com/user/username" title="Spotify">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://username.bandcamp.com/" title="Bandcamp">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://itch.io/profile/username" title="Itch.io">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://vk.com/username" title="VK">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://paypal.me/username" title="PayPal">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://telegram.me/username" title="Telegram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://500px.com/username" title="500px">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://codepen.io/username" title="CodePen">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.kaggle.com/username" title="kaggle">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a rel="me"href="https://url" title="Mastodon">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://weibo.com/username" title="Weibo">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://medium.com/@username" title="Medium">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.strava.com/athletes/userid" title="Strava">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -976,10 +854,6 @@ if (!doNotTrack) {
           
         </ul>
         <p class="credits copyright text-muted">
-          
-            
-              <a href="yourwebsite.com">Some Person</a>
-            
           
 
           &nbsp;&bull;&nbsp;&copy;

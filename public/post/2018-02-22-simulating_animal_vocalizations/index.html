@@ -13,8 +13,7 @@
       <title>Simulating animal vocalizations - Coded bioacoustics</title>
 
   <meta name="description" content="This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave object in the R environment. This can have several applications, from simulating song evolution to testing the efficacy of methods to measure acoustic structure for different signal types.
-The function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e.">
-  <meta name="author" content="Some Person"/><script type="application/ld+json">
+The function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -95,8 +94,8 @@ The function uses a brownian motion model of stochastic diffusion to simulate th
   <meta name="twitter:description" content="This post shows how to simulate animal vocalizations using the new warbleR function sim_songs. The function allows users to create song with several sub-units and harmonics, which are return as a wave …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@username" />
-  <meta name="twitter:creator" content="@username" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -136,21 +135,13 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
-            <li>
-              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
-            </li>
-          
-        
-          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -331,7 +322,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">                    <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_3-1.png" alt="plot sim song 1"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_3-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 1" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted -->* A seed is used so the same song will be generated every time. If <code>seed = NULL</code> (as by default) then a different song will produced each time<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Longer &ldquo;repertoires&rdquo; can be produced by simply increasing <code>n</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># 10 elements</span>
@@ -342,7 +356,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.heat.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_4-1.png" alt="plot sim song 2"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_4-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 2" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># 15 elements</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">37</span><span class="p">,</span> <span class="n">steps</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -350,7 +387,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_4-2.png" alt="plot sim song 3"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_4-2.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 3" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>The amount of modulation can be controlled with the argument <code>sig2</code> (just as in the brownian model of evolution). Low values will produce little variation in the frequency slope:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># low sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">sig2</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span>
@@ -359,7 +419,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-25</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_5-1.png" alt="plot sim song 4"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_5-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 4" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>While higher <code>sig2</code> values will generate &ldquo;faster&rdquo; frequency changes:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">sig2</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">)</span>
@@ -368,7 +451,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_6-1.png" alt="plot sim song 5"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_6-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 5" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>Harmonics can also be added to the songs by modifying the <code>harms</code> argument:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">sig2</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">)</span>
@@ -377,7 +483,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_7-1.png" alt="plot sim song 6"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_7-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 6" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>The <code>steps</code> argument allows to define the length of the time series generated by the underlying brownian motion function. This time series is simply the frequency values at each time window (after some spline smoothing) of the song elements. Lower <code>steps</code> values will produce less modulated songs (other things equal):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> 
@@ -387,7 +516,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_8-1.png" alt="plot sim song 7"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_8-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 7" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>Higher <code>steps</code> values will increase modulation:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> 
@@ -397,7 +549,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_9-1.png" alt="plot sim song 8"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_9-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 8" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>The duration of the sub-units and gaps between elements can also be specified for each of the items:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">durs</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">length.out</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl"><span class="n">gaps</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.15</span><span class="p">,</span> <span class="m">0.1</span><span class="p">,</span> <span class="m">0.08</span><span class="p">,</span> <span class="m">0.05</span><span class="p">,</span> <span class="m">0.2</span><span class="p">)</span>
@@ -410,7 +585,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-27</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.terrain.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_10-1.png" alt="plot sim song 9"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_10-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 9" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>Users can also adjust the relative amplitude of the harmonics. The following code puts the highest energy on the second harmonic (e.g. the dominant frequency) using the <code>amps</code> argument:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># high sigma</span>
 </span></span><span class="line"><span class="cl"><span class="n">sm_sng</span> <span class="o">&lt;-</span> <span class="nf">sim_songs</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">harms</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">freqs</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="m">24</span><span class="p">,</span> 
@@ -420,7 +618,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-23</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_11-1.png" alt="plot sim song 10"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_11-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 10" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <p>The simulated song can be played with the <code>play</code> function from <a href="https://cran.r-project.org/package=tuneR">tuneR</a> or by saving the wave file and opening it in a regular audio player. Here is an example of a 20 element simulated song:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#set variable durations </span>
 </span></span><span class="line"><span class="cl"><span class="n">durs</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="m">0.21</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">)</span>
@@ -440,7 +661,30 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">spectro</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">9</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">collevels</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-23</span><span class="p">,</span> <span class="m">0</span> <span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">palette</span> <span class="o">=</span> <span class="n">reverse.topo.colors</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="./img/sim_song_12-1.png" alt="plot sim song 11"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/sim_song_12-1.png?v=e364e4437a9c1356da03f99b5b438b32" alt="plot sim song 11" loading="lazy" height="525px" width="850px" />
+</picture>
+</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># save it as a wave file</span>
 </span></span><span class="line"><span class="cl"><span class="nf">writeWave</span><span class="p">(</span><span class="n">sm_sng</span><span class="p">,</span> <span class="s">&#34;simulated_song.wav&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>And this is how it sounds:</p>
@@ -506,7 +750,7 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2018-02-22-simulating_animal_vocalizations%2f&amp;text=Simulating%20animal%20vocalizations&amp;via=username" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2018-02-22-simulating_animal_vocalizations%2f&amp;text=Simulating%20animal%20vocalizations&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -639,27 +883,7 @@ if (!doNotTrack) {
           
               <li>
 		
-		  <a href="mailto:youremail@domain.com" title="Email me">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.facebook.com/username" title="Facebook">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://github.com/username" title="GitHub">
+		  <a href="https://github.com/maRce10" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -669,27 +893,7 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://gitlab.com/username" title="GitLab">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://bitbucket.org/username" title="Bitbucket">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://twitter.com/username" title="Twitter">
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -699,47 +903,7 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://username.slack.com/" title="Slack">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://reddit.com/u/username" title="Reddit">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://linkedin.com/in/username" title="LinkedIn">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.xing.com/profile/username" title="Xing">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -749,181 +913,11 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.instagram.com/username" title="Instagram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.youtube.com/user/username" title="Youtube">
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://soundcloud.com/username" title="SoundCloud">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://open.spotify.com/user/username" title="Spotify">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://username.bandcamp.com/" title="Bandcamp">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://itch.io/profile/username" title="Itch.io">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://vk.com/username" title="VK">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://paypal.me/username" title="PayPal">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://telegram.me/username" title="Telegram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://500px.com/username" title="500px">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://codepen.io/username" title="CodePen">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.kaggle.com/username" title="kaggle">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a rel="me"href="https://url" title="Mastodon">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://weibo.com/username" title="Weibo">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://medium.com/@username" title="Medium">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.strava.com/athletes/userid" title="Strava">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -939,10 +933,6 @@ if (!doNotTrack) {
           
         </ul>
         <p class="credits copyright text-muted">
-          
-            
-              <a href="yourwebsite.com">Some Person</a>
-            
           
 
           &nbsp;&bull;&nbsp;&copy;

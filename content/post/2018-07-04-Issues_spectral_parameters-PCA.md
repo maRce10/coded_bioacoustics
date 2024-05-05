@@ -2,6 +2,7 @@
 layout: post
 title: "Potential issues of the 'spectral parameters/PCA' approach"
 date: 04-07-2018
+tags: ["quantify-structure", "acoustic-features", "dimensionality-reduction","R"]
 ---
 
 Somehow measuring a bunch of spectral/temporal parameters and then reducing its dimensionality using principal component analysis has become the standard procedure when looking at variation in signal structure (i.e. measuring acoustic space), particularly in behavioral ecology and comparative bioacoustics. In most cases the approach is used without any kind of ground-truthing that can help validate the analysis. Given the complexity of animal acoustic signals, the approach could miss key signal features. Here I share a quick-and-dirty comparison of this 'standard approach' to a potentially better suited alternative.
@@ -35,7 +36,7 @@ cmc <- function(n) rep(adjustcolor(brewer.pal(5, "Spectral"),
 
 
 
-As in the [previous post](https://marce10.github.io/bioacoustics_in_R/2018/06/29/Frequency_range_detection_from_spectrum.html), we will run the comparison on signals detected on a recording from a male [Striped-throated Hermit (*Phaethornis striigularis*)](https://neotropical.birds.cornell.edu/Species-Account/nb/species/stther2/overview) from [Xeno-Canto](http://xeno-canto.org). We can download the sound file and convert it into wave format as follows:
+As in the [previous post](https://marce10.github.io/coded_bioacoustics/post/2018-06-29-frequency_range_detection_from_spectrum/), we will run the comparison on signals detected on a recording from a male [Striped-throated Hermit (*Phaethornis striigularis*)](https://birdsoftheworld.org/bow/species/stther2/cur/introduction) from [Xeno-Canto](https://xeno-canto.org). We can download the sound file and convert it into wave format as follows:
 
 
 ```r
@@ -60,11 +61,7 @@ lspec(ovlp = 50, sxrow = 3, rows = 12)
 
 ![frange_gif](/img/lspec-spec.pca.png)
 
-We can also listen to it from [Xeno-Canto](http://xeno-canto.org):
-
-<iframe src='https://www.xeno-canto.org/154074/embed?simple=1' scrolling='no' frameborder='0' width='900' height='150'></iframe>
-
-The elements of this song are pure tone, highly modulated sounds that are recycled along the sequence. Overall, the structure of the element types seems to be consistent across renditions and the background noise level of the recording looks fine.
+We can also listen to it from [Xeno-Canto](https://xeno-canto.org/154074). The elements of this song are pure tone, highly modulated sounds that are recycled along the sequence. Overall, the structure of the element types seems to be consistent across renditions and the background noise level of the recording looks fine.
 
 To run any analysis we need to detect the time 'coordinates' of the signals in the sound file using `auto_detec`:
 
@@ -87,7 +84,7 @@ snr <- sig2noise(ad, mar = 0.05, type = 3)
 ad <- snr[rank(-snr$SNR) <= 100, ]
 ```
 
-... and measure the frequency range (as in the [previous post](https://marce10.github.io/bioacoustics_in_R/2018/06/29/Frequency_range_detection_from_spectrum.html)):
+... and measure the frequency range (as in the [previous post](https://marce10.github.io/coded_bioacoustics/post/2018-06-29-frequency_range_detection_from_spectrum/)):
 
 
 ```r
@@ -96,7 +93,7 @@ fr_ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001,
                     img = FALSE, impute = TRUE)
 ```
 
-Finally, let's pack the acoustic data and metadata together as a 'extended_selection_table' ([check this post to learn more about these objects](https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html)):
+Finally, let's pack the acoustic data and metadata together as a 'extended_selection_table' ([check this vignette section to learn more about these objects](https://marce10.github.io/warbleR/articles/annotation_data_format.html#extended-selection-tables)):
 
 
 
@@ -191,7 +188,7 @@ Most clusters include several different element types and the same element type 
 
 ## An alternative
 
-When working with pure tone modulated whistles, the best approach is likely measuring [dynamic time warping](https://marce10.github.io/bioacoustics_in_R/2016/09/12/Similarity_of_acoustic_signals_with_dynamic_time_warping_(DTW).html) distances on dominant frequency contours. We can do all that at once using `df_DTW`: 
+When working with pure tone modulated whistles, the best approach is likely measuring [dynamic time warping](https://marce10.github.io/coded_bioacoustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/) distances on dominant frequency contours. We can do all that at once using `df_DTW`: 
 
 
 ```r
@@ -199,7 +196,7 @@ df <- df_DTW(X = est, wl = 200, threshold = 15, img = FALSE,
              clip.edges = TRUE, bp =  c(2, 10))
 ```
 
-To convert this distance matrix to a rectangular data frame we can use TSNE ([check out this awesome post about it](https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html)). The name stands for *T-distributed Stochastic Neighbor Embedding* and is regarded as a more powerful way to find data structure than PCA (and yes, it can also be applied to non-distance matrices). The method can be easily run in **R** using the `Rtsne` function from the package of the same name. The following code does the clustering and cataloging as we did above:
+To convert this distance matrix to a rectangular data frame we can use TSNE. The name stands for *T-distributed Stochastic Neighbor Embedding* and is regarded as a more powerful way to find data structure than PCA (and yes, it can also be applied to non-distance matrices). The method can be easily run in **R** using the `Rtsne` function from the package of the same name. The following code does the clustering and cataloging as we did above:
 
 
 ```r

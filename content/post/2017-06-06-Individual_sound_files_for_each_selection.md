@@ -8,7 +8,7 @@ coments: true
 
 <div class="alert alert-warning">
 
-<center>⚠️<b>Mar-2023:</b> Note that the new function <i>cut_sels()</i> from warbleR can be now be used for splitting sound files based on annotations from selection tables as described in this post  
+<center>⚠️<b>Mar-2023:</b> Note that the new function <i>cut_sels()</i> from [warbleR](https://cran.r-project.org/package=warbleR) can be now be used for splitting sound files based on annotations from selection tables as described in this post  
 
 </div>
 
@@ -171,7 +171,7 @@ out <- pbapply::pblapply(1:nrow(selec.table), function(y)
   cutFUN(X = selec.table, i = y, mar = 0.05))
 ```
 
-We could also used `lapply` (no progress bar) or `mclapply` ([parallel](https://cran.r-project.org/package=parallel) package, parallel computing), or even `pbmclapply` ([pbmcapply](https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most [warbleR](https://cran.r-project.org/package=pbmcapply) functions.
+We could also used `lapply` (no progress bar) or `mclapply` ([parallel] package, parallel computing), or even `pbmclapply` ([pbmcapply](https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most [warbleR](https://cran.r-project.org/package=warbleR) functions.
 
 
 ### Step 3: Put all the code inside a new function

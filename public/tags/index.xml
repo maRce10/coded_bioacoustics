@@ -6,85 +6,97 @@
     <description>Recent content in Tags on Coded bioacoustics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
-    <webMaster>youremail@domain.com (Some Person)</webMaster>
     <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="marce10.github.io/coded_bioacustics/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R</title>
       <link>marce10.github.io/coded_bioacustics/tags/r/</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/r/</guid>
       <description></description>
     </item>
     <item>
       <title>video</title>
       <link>marce10.github.io/coded_bioacustics/tags/video/</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/video/</guid>
       <description></description>
     </item>
     <item>
       <title>visualization</title>
       <link>marce10.github.io/coded_bioacustics/tags/visualization/</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/visualization/</guid>
       <description></description>
     </item>
     <item>
       <title>annotations</title>
       <link>marce10.github.io/coded_bioacustics/tags/annotations/</link>
-      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/annotations/</guid>
       <description></description>
     </item>
     <item>
       <title>sound event detection</title>
       <link>marce10.github.io/coded_bioacustics/tags/sound-event-detection/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/sound-event-detection/</guid>
       <description></description>
     </item>
     <item>
       <title>repositories</title>
       <link>marce10.github.io/coded_bioacustics/tags/repositories/</link>
-      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/repositories/</guid>
       <description></description>
     </item>
     <item>
       <title>acoustic features</title>
       <link>marce10.github.io/coded_bioacustics/tags/acoustic-features/</link>
-      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/acoustic-features/</guid>
       <description></description>
     </item>
     <item>
       <title>cross correlation</title>
       <link>marce10.github.io/coded_bioacustics/tags/cross-correlation/</link>
-      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/cross-correlation/</guid>
       <description></description>
     </item>
     <item>
       <title>simulation</title>
       <link>marce10.github.io/coded_bioacustics/tags/simulation/</link>
-      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/simulation/</guid>
       <description></description>
     </item>
     <item>
       <title>acoustic space</title>
       <link>marce10.github.io/coded_bioacustics/tags/acoustic-space/</link>
-      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/acoustic-space/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>dimensionality-reduction</title>
+      <link>marce10.github.io/coded_bioacustics/tags/dimensionality-reduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/dimensionality-reduction/</guid>
       <description></description>
     </item>
     <item>
       <title>quantify structure</title>
       <link>marce10.github.io/coded_bioacustics/tags/quantify-structure/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/tags/quantify-structure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>spectrum</title>
+      <link>marce10.github.io/coded_bioacustics/tags/spectrum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/tags/spectrum/</guid>
       <description></description>
     </item>
   </channel>

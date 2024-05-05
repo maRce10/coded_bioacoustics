@@ -6,44 +6,56 @@
     <description>Recent content in visualization on Coded bioacoustics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
-    <webMaster>youremail@domain.com (Some Person)</webMaster>
     <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="marce10.github.io/coded_bioacustics/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>dynaSpec: dynamic spectrograms in R</title>
       <link>marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/</guid>
       <description>The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.&#xA;To install dynaSpec from github you will need the R package devtools:&#xA;# From github devtools::install_github(&amp;#34;maRce10/dynaSpec&amp;#34;) #load package library(dynaSpec) Installation of external dependencies can be tricky on operating systems other than Linux.</description>
     </item>
     <item>
       <title>Interactive maps from Xeno-Canto recording localities in xc_maps()</title>
       <link>marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/</link>
-      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/</guid>
       <description>#load package library(warbleR)&#xA;#install leaflet install.packages(&amp;quot;leaflet&amp;quot;)&#xA;#create leaflet map xcmaps(X, leaflet.map = TRUE)&#xA;#create leaflet map xcmaps(X, leaflet.map = TRUE)&#xA;xcmaps(recs.2020, leaflet.map = TRUE)&#xA;xcmaps(bra.2020, leaflet.map = TRUE, leaflet.cluster = TRUE)</description>
     </item>
     <item>
       <title>Spectrograms on trees</title>
       <link>marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/</link>
-      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2019-01-12-phylo_spectro_function/</guid>
       <description>This post describes the new warbleR function phylo_spectro. The function adds spectrograms of sounds annotated in a selection table (&amp;lsquo;X argument) onto the tips of a tree (of class &amp;lsquo;phylo&amp;rsquo;). The &amp;rsquo;tip.label&amp;rsquo; column in &amp;lsquo;X&amp;rsquo; is used to match spectrograms and tree tips. The function uses internally the plot.phylo function from the ape package to plot the tree and warbleR&amp;rsquo;s specreator function to create the spectrograms. Arguments for both of these functions can be provided for further customization.</description>
     </item>
     <item>
       <title>Acoustic space scatter plot</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</link>
-      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2017-04-23-acoustic_space_scatter_plot/</guid>
       <description>Someone asked me for the code to make figure 3 in the Methods in Ecology and Evolution paper describing warbleR. So, here it is. The figure was made in part by my collaborator Grace Smith-Vidaurre, so thanks to Grace for sharing.&#xA;The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping. The scatterplot is based on the two axes from a classic multidimensional scaling.</description>
     </item>
     <item>
+      <title>Creating song catalogs</title>
+      <link>marce10.github.io/coded_bioacustics/post/2017-03-17-creating_song_catalogs/</link>
+      <pubDate>Fri, 17 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2017-03-17-creating_song_catalogs/</guid>
+      <description>When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and/or sites. The new warbleR function catalog aims to simplify this task.&#xA;This is how it works:&#xA;The function plots a matrix of spectrograms from signals listed in a selection table (a data frame similar to the example data frame selec.</description>
+    </item>
+    <item>
       <title>Pdf files with spectrograms of full recordings</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-01-07-create_pdf_files_with_spectrograms_of_full_recordings/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2017-01-07-create_pdf_files_with_spectrograms_of_full_recordings/</guid>
       <description>The warbleR function lspec produces image files with spectrograms of whole recordings split into multiple rows. For a long recording several image files will be produced, which could be inconvenient when dealing with many long recordings. I recently added a new function lspec2pdf that combines lspec images in .jpeg format into a single pdf file (available in warbleR 1.1.5 or higher).&#xA;You need warbleR version 1.1.5 or higher to be able to run the code (currently you have to download it from github using the package devtools).</description>
+    </item>
+    <item>
+      <title>Updates on catalog function</title>
+      <link>marce10.github.io/coded_bioacustics/post/2017-07-31-updates_on_catalog_function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2017-07-31-updates_on_catalog_function/</guid>
+      <description>A [previous post]https://marce10.github.io/coded_bioacoustics/post/2017-03-17-creating_song_catalogs/) described the new function catalog. Here are a few updates on catalog based on suggestions from warbleR users.&#xA;To be able to run the code you need warbleR 1.1.9 or higher, which hasn&amp;rsquo;t been released on CRAN and it&amp;rsquo;s only available in the most recent development version on github. It can be installed using the devtools package as follows&#xA;# install devtools if is not yet installed if(!</description>
     </item>
   </channel>
 </rss>

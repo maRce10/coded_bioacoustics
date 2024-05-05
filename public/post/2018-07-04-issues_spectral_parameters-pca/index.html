@@ -12,8 +12,7 @@
 
       <title>Potential issues of the &#39;spectral parameters/PCA&#39; approach - Coded bioacoustics</title>
 
-  <meta name="description" content="Somehow measuring a bunch of spectral/temporal parameters and then reducing its dimensionality using principal component analysis has become the standard procedure when looking at variation in signal structure (i.e. measuring acoustic space), particularly in behavioral ecology and comparative bioacoustics. In most cases the approach is used without any kind of ground-truthing that can help validate the analysis. Given the complexity of animal acoustic signals, the approach could miss key signal features.">
-  <meta name="author" content="Some Person"/><script type="application/ld+json">
+  <meta name="description" content="Somehow measuring a bunch of spectral/temporal parameters and then reducing its dimensionality using principal component analysis has become the standard procedure when looking at variation in signal structure (i.e. measuring acoustic space), particularly in behavioral ecology and comparative bioacoustics. In most cases the approach is used without any kind of ground-truthing that can help validate the analysis. Given the complexity of animal acoustic signals, the approach could miss key signal features."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -58,16 +57,16 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "Some Person"
+    "name" : ""
   },
   "headline": "Potential issues of the \u0027spectral parameters\/PCA\u0027 approach",
   "description" : "Somehow measuring a bunch of spectral\/temporal parameters and then reducing its dimensionality using principal component analysis has become the standard procedure when looking at variation in signal structure (i.e. measuring acoustic space), particularly in behavioral ecology and comparative bioacoustics. In most cases the approach is used without any kind of ground-truthing that can help validate the analysis. Given the complexity of animal acoustic signals, the approach could miss key signal features.",
   "inLanguage" : "en",
-  "wordCount":  1377 ,
+  "wordCount":  1371 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
-  "keywords" : [ "" ],
+  "keywords" : [ "quantify-structure, acoustic-features, dimensionality-reduction, R" ],
   "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2018-07-04-issues_spectral_parameters-pca\/",
   "publisher" : {
     "@type": "Organization",
@@ -93,8 +92,8 @@
   <meta name="twitter:description" content="Somehow measuring a bunch of spectral/temporal parameters and then reducing its dimensionality using principal component analysis has become the standard procedure when looking at variation in signal …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@username" />
-  <meta name="twitter:creator" content="@username" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -134,21 +133,13 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
-            <li>
-              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
-            </li>
-          
-        
-          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -271,11 +262,11 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1377&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1371&nbsp;words
   
   
     
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Some Person
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
     
   
   
@@ -319,7 +310,7 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="n">cmc</span> <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">adjustcolor</span><span class="p">(</span><span class="nf">brewer.pal</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="s">&#34;Spectral&#34;</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">                                   <span class="n">alpha.f</span> <span class="o">=</span> <span class="m">0.6</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">                       <span class="nf">ceiling</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="m">4</span><span class="p">))</span><span class="n">[1</span><span class="o">:</span><span class="n">n]</span>
-</span></span></code></pre></div><p>As in the <a href="https://marce10.github.io/bioacoustics_in_R/2018/06/29/Frequency_range_detection_from_spectrum.html">previous post</a>, we will run the comparison on signals detected on a recording from a male <a href="https://neotropical.birds.cornell.edu/Species-Account/nb/species/stther2/overview">Striped-throated Hermit (<em>Phaethornis striigularis</em>)</a> from <a href="http://xeno-canto.org">Xeno-Canto</a>. We can download the sound file and convert it into wave format as follows:</p>
+</span></span></code></pre></div><p>As in the <a href="https://marce10.github.io/coded_bioacoustics/post/2018-06-29-frequency_range_detection_from_spectrum/">previous post</a>, we will run the comparison on signals detected on a recording from a male <a href="https://birdsoftheworld.org/bow/species/stther2/cur/introduction">Striped-throated Hermit (<em>Phaethornis striigularis</em>)</a> from <a href="https://xeno-canto.org">Xeno-Canto</a>. We can download the sound file and convert it into wave format as follows:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># set temporary working directory</span>
 </span></span><span class="line"><span class="cl"> <span class="nf">setwd</span><span class="p">(</span><span class="nf">tempdir</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">
@@ -332,10 +323,42 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">mp32wav</span><span class="p">(</span><span class="n">samp.rate</span> <span class="o">=</span> <span class="m">22.05</span><span class="p">)</span>
 </span></span></code></pre></div><p>A long spectrogram would help to get a sense of the song structure in this species:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">lspec</span><span class="p">(</span><span class="n">ovlp</span> <span class="o">=</span> <span class="m">50</span><span class="p">,</span> <span class="n">sxrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/lspec-spec.pca.png" alt="frange_gif"></p>
-<p>We can also listen to it from <a href="http://xeno-canto.org">Xeno-Canto</a>:</p>
-<!-- raw HTML omitted -->
-<p>The elements of this song are pure tone, highly modulated sounds that are recycled along the sequence. Overall, the structure of the element types seems to be consistent across renditions and the background noise level of the recording looks fine.</p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/lspec-spec.pca_hu7dd647dd9761945a9a5397bb31ad6d90_619143_700x906_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/lspec-spec.pca.e9548e0930d51078f738dade6a18b1b0.png" alt="frange_gif" loading="lazy" height="906" width="700" />
+</picture>
+</p>
+<p>We can also listen to it from <a href="https://xeno-canto.org/154074">Xeno-Canto</a>. The elements of this song are pure tone, highly modulated sounds that are recycled along the sequence. Overall, the structure of the element types seems to be consistent across renditions and the background noise level of the recording looks fine.</p>
 <p>To run any analysis we need to detect the time &lsquo;coordinates&rsquo; of the signals in the sound file using <code>auto_detec</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">ad</span> <span class="o">&lt;-</span> <span class="nf">auto_detec</span><span class="p">(</span><span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">threshold</span> <span class="o">=</span> <span class="m">3.5</span><span class="p">,</span> <span class="n">ssmooth</span> <span class="o">=</span> <span class="m">1200</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">                 <span class="n">bp</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">9.6</span><span class="p">),</span> <span class="n">mindur</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> 
@@ -346,11 +369,11 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># selec the 100 highest SNR</span>
 </span></span><span class="line"><span class="cl"><span class="n">ad</span> <span class="o">&lt;-</span> <span class="n">snr</span><span class="nf">[rank</span><span class="p">(</span><span class="o">-</span><span class="n">snr</span><span class="o">$</span><span class="n">SNR</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">100</span><span class="p">,</span> <span class="n">]</span>
-</span></span></code></pre></div><p>&hellip; and measure the frequency range (as in the <a href="https://marce10.github.io/bioacoustics_in_R/2018/06/29/Frequency_range_detection_from_spectrum.html">previous post</a>):</p>
+</span></span></code></pre></div><p>&hellip; and measure the frequency range (as in the <a href="https://marce10.github.io/coded_bioacoustics/post/2018-06-29-frequency_range_detection_from_spectrum/">previous post</a>):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">fr_ad</span> <span class="o">&lt;-</span> <span class="nf">freq_range</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">ad</span><span class="p">,</span> <span class="n">bp</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="n">fsmooth</span> <span class="o">=</span> <span class="m">0.001</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">                    <span class="n">ovlp</span> <span class="o">=</span> <span class="m">95</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">threshold</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">                    <span class="n">img</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">impute</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</span></span></code></pre></div><p>Finally, let&rsquo;s pack the acoustic data and metadata together as a &rsquo;extended_selection_table&rsquo; (<a href="https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html">check this post to learn more about these objects</a>):</p>
+</span></span></code></pre></div><p>Finally, let&rsquo;s pack the acoustic data and metadata together as a &rsquo;extended_selection_table&rsquo; (<a href="https://marce10.github.io/warbleR/articles/annotation_data_format.html#extended-selection-tables">check this vignette section to learn more about these objects</a>):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">est</span> <span class="o">&lt;-</span> <span class="nf">selection_table</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">fr_ad</span><span class="p">,</span> <span class="n">extended</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">                       <span class="n">confirm.extended</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 </span></span></code></pre></div><p>We can take a look at the selected signals (or elements, subunits or whatever you want to call them) by creating a catalog:</p>
@@ -358,7 +381,24 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">        <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3.5</span><span class="p">,</span> <span class="m">10.5</span><span class="p">),</span> <span class="n">ovlp</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span> <span class="n">pal</span> <span class="o">=</span> <span class="n">reverse.heat.colors</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">width</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">box</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">spec.mar</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">max.group.cols</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cmc</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">rm.axes</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/catalog-spec.pca.png" alt="frange_gif"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  </p>
 <p>Some are too noisy, but still good enough for the example.</p>
 <hr>
 <h2 id="element-classification-using-the-standard-approach">Element classification using the &lsquo;standard&rsquo; approach</h2>
@@ -374,7 +414,24 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">        <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">abline</span><span class="p">(</span><span class="n">h</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/hist.pca.png" alt="frange_gif"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  </p>
 <p>The first 5 components explain almost %80 of the variance.</p>
 <p>Now let&rsquo;s look and how good is the classification of elements based on the first 5 PCs. To do this we can use the <code>Mclust</code> function from the <a href="https://cran.r-project.org/package=mclust">mclust</a> package to choose the most likely number of clusters and assign each element to one of those clusters:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># run mclust</span>
@@ -395,18 +452,69 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">        <span class="n">width</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">box</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">spec.mar</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">title</span> <span class="o">=</span> <span class="s">&#34;sp/PCA&#34;</span><span class="p">,</span> <span class="n">img.suffix</span> <span class="o">=</span> <span class="s">&#34;sp-PCA&#34;</span><span class="p">,</span> <span class="n">max.group.cols</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cmc</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">rm.axes</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/Catalog_p1-sp-PCA.png" alt="frange_gif"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-sp-PCA_hubfd22ffbda100ffe6324755684ef6dd7_421940_700x513_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-sp-PCA.92e2abe5cba7017882267b8d5f431b43.png" alt="frange_gif" loading="lazy" height="513" width="700" />
+</picture>
+</p>
 <p>A better way to look at this is by plotting the first 2 PC&rsquo;s:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">pca_sp</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span> <span class="m">1</span><span class="n">]</span><span class="p">,</span> <span class="n">pca_sp</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span> <span class="m">2</span><span class="n">]</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">est</span><span class="o">$</span><span class="n">class.sp</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">     <span class="n">pch</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">est</span><span class="o">$</span><span class="n">class.sp</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;PC1&#34;</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;PC2&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/pca.plot.png" alt="tsne_plot"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  </p>
 <p>Most clusters include several different element types and the same element type can be found on several categories. In this example the performance of the &lsquo;standard approach&rsquo; is not ideal.</p>
 <h2 id="an-alternative">An alternative</h2>
-<p>When working with pure tone modulated whistles, the best approach is likely measuring <a href="https://marce10.github.io/bioacoustics_in_R/2016/09/12/Similarity_of_acoustic_signals_with_dynamic_time_warping_(DTW).html">dynamic time warping</a> distances on dominant frequency contours. We can do all that at once using <code>df_DTW</code>:</p>
+<p>When working with pure tone modulated whistles, the best approach is likely measuring <a href="https://marce10.github.io/coded_bioacoustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/">dynamic time warping</a> distances on dominant frequency contours. We can do all that at once using <code>df_DTW</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">df_DTW</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">est</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">threshold</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">             <span class="n">clip.edges</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">bp</span> <span class="o">=</span>  <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="p">))</span>
-</span></span></code></pre></div><p>To convert this distance matrix to a rectangular data frame we can use TSNE (<a href="https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html">check out this awesome post about it</a>). The name stands for <em>T-distributed Stochastic Neighbor Embedding</em> and is regarded as a more powerful way to find data structure than PCA (and yes, it can also be applied to non-distance matrices). The method can be easily run in <strong>R</strong> using the <code>Rtsne</code> function from the package of the same name. The following code does the clustering and cataloging as we did above:</p>
+</span></span></code></pre></div><p>To convert this distance matrix to a rectangular data frame we can use TSNE. The name stands for <em>T-distributed Stochastic Neighbor Embedding</em> and is regarded as a more powerful way to find data structure than PCA (and yes, it can also be applied to non-distance matrices). The method can be easily run in <strong>R</strong> using the <code>Rtsne</code> function from the package of the same name. The following code does the clustering and cataloging as we did above:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># set seed so we all get the same results</span>
 </span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -432,7 +540,41 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl">        <span class="n">title</span> <span class="o">=</span> <span class="s">&#34;df_DTW/TSNE&#34;</span><span class="p">,</span> <span class="n">img.suffix</span> <span class="o">=</span> <span class="s">&#34;df_DTW-TSNE&#34;</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">max.group.cols</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cmc</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">rm.axes</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/Catalog_p1-df_DTW-TSNE.png" alt="frange_gif"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-df_DTW-TSNE_hu499108c8d79c986386432d6434d7ba1b_424008_700x513_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-df_DTW-TSNE.315e1a7e0e7ec99a7f8897010ed6fa66.png" alt="frange_gif" loading="lazy" height="513" width="700" />
+</picture>
+</p>
 <p>We can obtain 2 dimensions using TSNE so it fits better in a bi-dimensional plot (grouping is likely to improve when adding more dimensions, so this plot gives a conservative estimate):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># set seed so we all get the same results</span>
 </span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
@@ -443,11 +585,40 @@ if (!doNotTrack) {
 </span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">tsne.df</span><span class="o">$</span><span class="n">Y[</span><span class="p">,</span> <span class="m">1</span><span class="n">]</span><span class="p">,</span> <span class="n">tsne.df</span><span class="o">$</span><span class="n">Y[</span><span class="p">,</span> <span class="m">2</span><span class="n">]</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">est</span><span class="o">$</span><span class="n">class.df</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">     <span class="n">pch</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">est</span><span class="o">$</span><span class="n">class.df</span><span class="p">)</span> <span class="o">+</span> <span class="m">5</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Dim 1&#34;</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Dim 2&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/tsne.plot.png" alt="tsne_plot"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  </p>
 <p>The classification seems OK. Most clusters contain a single element type, and most types are found in a single cluster. Nonetheless, the classification was not perfect. For instance, clusters 5 and 6 share some element types. However, it&rsquo;s much better compared to the &lsquo;standard approach&rsquo;. In a more formal analysis I will make sure the frequency contours are tracking the signals (using <code>sel_tailor()</code>). This will likely improve the analysis.</p>
 <p>This quick-and-dirty comparison suggests that we (behavioral ecologists) might actually be missing important signal features when using  the <em>spectral/temporal parameters + PCA</em> recipe as the silver bullet in bioacoustic analysis. It also stresses the importance of validating our analyses in some way. Otherwise, there is no way to tell whether the results are simply an artifact of our measuring tools, particularly when no differences are found.</p>
 
 
+        
+          <div class="blog-tags">
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/quantify-structure/">quantify-structure</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/acoustic-features/">acoustic-features</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/dimensionality-reduction/">dimensionality-reduction</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+            
+          </div>
         
 
         
@@ -460,7 +631,7 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2018-07-04-issues_spectral_parameters-pca%2f&amp;text=Potential%20issues%20of%20the%20%27spectral%20parameters%2fPCA%27%20approach&amp;via=username" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2018-07-04-issues_spectral_parameters-pca%2f&amp;text=Potential%20issues%20of%20the%20%27spectral%20parameters%2fPCA%27%20approach&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -509,6 +680,25 @@ if (!doNotTrack) {
 
         
           
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/">dynaSpec: dynamic spectrograms in R</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/">Editing wave objects from extended selection tables</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/">Automatic signal detection: a case study</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/">Signal detection with cross-correlation using warbleR</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/">Compare signals from selection tables to a set of templates using cross-correlation</a></li>
+                
+              </ul>
 
           
         
@@ -574,27 +764,7 @@ if (!doNotTrack) {
           
               <li>
 		
-		  <a href="mailto:youremail@domain.com" title="Email me">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.facebook.com/username" title="Facebook">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://github.com/username" title="GitHub">
+		  <a href="https://github.com/maRce10" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -604,27 +774,7 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://gitlab.com/username" title="GitLab">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://bitbucket.org/username" title="Bitbucket">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://twitter.com/username" title="Twitter">
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -634,47 +784,7 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://username.slack.com/" title="Slack">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://reddit.com/u/username" title="Reddit">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://linkedin.com/in/username" title="LinkedIn">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.xing.com/profile/username" title="Xing">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -684,181 +794,11 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.instagram.com/username" title="Instagram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.youtube.com/user/username" title="Youtube">
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://soundcloud.com/username" title="SoundCloud">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://open.spotify.com/user/username" title="Spotify">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://username.bandcamp.com/" title="Bandcamp">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://itch.io/profile/username" title="Itch.io">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://vk.com/username" title="VK">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://paypal.me/username" title="PayPal">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://telegram.me/username" title="Telegram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://500px.com/username" title="500px">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://codepen.io/username" title="CodePen">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.kaggle.com/username" title="kaggle">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a rel="me"href="https://url" title="Mastodon">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://weibo.com/username" title="Weibo">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://medium.com/@username" title="Medium">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.strava.com/athletes/userid" title="Strava">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -874,10 +814,6 @@ if (!doNotTrack) {
           
         </ul>
         <p class="credits copyright text-muted">
-          
-            
-              <a href="yourwebsite.com">Some Person</a>
-            
           
 
           &nbsp;&bull;&nbsp;&copy;

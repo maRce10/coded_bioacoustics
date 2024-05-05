@@ -6,21 +6,19 @@
     <description>Recent content in repositories on Coded bioacoustics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
-    <webMaster>youremail@domain.com (Some Person)</webMaster>
     <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="marce10.github.io/coded_bioacustics/tags/repositories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interactive maps from Xeno-Canto recording localities in xc_maps()</title>
       <link>marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/</link>
-      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/</guid>
       <description>#load package library(warbleR)&#xA;#install leaflet install.packages(&amp;quot;leaflet&amp;quot;)&#xA;#create leaflet map xcmaps(X, leaflet.map = TRUE)&#xA;#create leaflet map xcmaps(X, leaflet.map = TRUE)&#xA;xcmaps(recs.2020, leaflet.map = TRUE)&#xA;xcmaps(bra.2020, leaflet.map = TRUE, leaflet.cluster = TRUE)</description>
     </item>
     <item>
       <title>Download a single recording for each species in a country from Xeno-Canto</title>
       <link>marce10.github.io/coded_bioacustics/post/2016-12-22-download_a_single_recording_for_each_species_in_a_site_from_xeno-canto/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2016-12-22-download_a_single_recording_for_each_species_in_a_site_from_xeno-canto/</guid>
       <description>A warbleR user asks if &amp;ldquo;there is any method for downloading from xeno canto a SINGLE individual of each species in Costa Rica&amp;rdquo;.&#xA;This can be done by 1) downloading the metadata of all recordings in a given site (in this case Costa Rica) using the querxc function from the package warbleR (which searches and downloads recordings from Xeno-Canto), 2) filtering the metadata to have only one recording per species, and 3) input the filtered metadata back into querxcto download the selected recordings.</description>
     </item>

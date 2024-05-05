@@ -93,7 +93,7 @@ pal = reverse.topo.colors, res = 300)
 ![plot of chunk phylo.spectro 2](./img/phylo.spectro_3-1.png)
 
 
-Here is another example using an [extended selection table](https://marce10.github.io/bioacoustics_in_R/2018/05/15/Extended_selection_tables.html) and more signals:
+Here is another example using an [extended selection table](https://marce10.github.io/coded_bioacoustics/post/2018-05-15-extended_selection_tables/) and more signals:
 
 
 ```r
@@ -127,7 +127,7 @@ Of course, the function can also plot species songs on phylogenetic trees. Here 
 
 ![plot of chunk brilliants_tree](./img/brilliants_tree.png)
 
-That's it! Special thanks to [Gerardo Soto](https://www.researchgate.net/profile/Gerardo_Soto2) and [Russel Ligon](http://russellligon.wixsite.com/russell-ligon) for suggestions on how to make this function work.
+That's it! Special thanks to [Gerardo Soto](https://www.researchgate.net/profile/Gerardo-Soto-11) and [Russel Ligon](https://russellligon.wixsite.com/russell-ligon) for suggestions on how to make this function work.
 
 <font size="4">Session information</font>
 

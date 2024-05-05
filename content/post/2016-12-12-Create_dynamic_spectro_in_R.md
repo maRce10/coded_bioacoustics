@@ -18,11 +18,11 @@ First load the [warbleR](https://cran.r-project.org/package=warbleR) package
 require("warbleR")
 ```
 
-Download and read the example sound file ([long-billed hermit](http://neotropical.birds.cornell.edu/portal/species/overview?p_p_spp=231771) song)
+Download and read the example sound file ([long-billed hermit](https://birdsoftheworld.org/bow/species/lobher/cur/introduction) song)
 
 
 ```r
-download.file(url = "http://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/0.sur.2014.7.3.8.31.wav", 
+download.file(url = "https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/0.sur.2014.7.3.8.31.wav", 
     destfile = "example.wav")
 
 wav1 <- readWave("example.wav", from = 0, to = 19, units = "seconds")

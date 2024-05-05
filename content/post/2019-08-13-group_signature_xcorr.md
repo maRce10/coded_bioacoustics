@@ -16,7 +16,7 @@ Male long-billed hermits have a vocal repertoire consisting of a single song typ
 <img src="/./img/map.lbh.song.types.png" title="plot of chunk song 1" alt="plot of chunk song 1" width="600px" style="display: block; margin: auto;" />
 <font size="2">Location of three study sites in northeastern Costa Rica. Spectrograms of the 10 observed song types grouped by lek are also shown. Maps of leks at La Selva Biological Station are shown in greater detail in the lower left map. The two song neighbourhoods at lek SUR are shown in lower right map (similar song neighbourhoods were found at the other leks with 2 song types—SJA, TR2, and HC1—but are not shown); polygons represent lekking male territories and the coloured borders delineate the song neighbourhoods corresponding to the coloured borders of the spectrograms at the far right.</font>
 
-All annotations and acoustic data used on that paper were made [available on Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
+All annotations and acoustic data used on that paper were made [available on Dryad](https://datadryad.org/stash/dataset/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/warbleR/articles/annotation_data_format.html#extended-selection-tables)) from Dryad and unzip the file as follows (it could take a while): 
 
 ```r
 # set temporary working directory

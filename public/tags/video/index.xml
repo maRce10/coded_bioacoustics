@@ -6,14 +6,12 @@
     <description>Recent content in video on Coded bioacoustics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
-    <webMaster>youremail@domain.com (Some Person)</webMaster>
     <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="marce10.github.io/coded_bioacustics/tags/video/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>dynaSpec: dynamic spectrograms in R</title>
       <link>marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/</guid>
       <description>The R package dynaSpec can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. FFMPEG must be installed in order for this package to work.&#xA;To install dynaSpec from github you will need the R package devtools:&#xA;# From github devtools::install_github(&amp;#34;maRce10/dynaSpec&amp;#34;) #load package library(dynaSpec) Installation of external dependencies can be tricky on operating systems other than Linux.</description>
     </item>

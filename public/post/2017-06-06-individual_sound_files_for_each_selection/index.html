@@ -15,8 +15,7 @@
   <meta name="description" content="A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).
 It takes 3 main steps:
 Create a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)
-Add and (X)lapply loop to run the function from step 1 iteratively on each row">
-  <meta name="author" content="Some Person"/><script type="application/ld+json">
+Add and (X)lapply loop to run the function from step 1 iteratively on each row"><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -99,8 +98,8 @@ Add and (X)lapply loop to run the function from step 1 iteratively on each row">
   <meta name="twitter:description" content="A friend of mine wants to &ldquo;create individual sound files for each selection&rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@username" />
-  <meta name="twitter:creator" content="@username" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -140,21 +139,13 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
-            <li>
-              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
-            </li>
-          
-        
-          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -401,7 +392,7 @@ if (!doNotTrack) {
 <p>Several versions of the <code>lapply</code> function can be used. The function <code>pblapply</code> from the package <a href="https://cran.r-project.org/package=pbapply">pbapply</a> provides a nice progress bar. The following code should produce cuts for each selection in <code>selec.table</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">out</span> <span class="o">&lt;-</span> <span class="n">pbapply</span><span class="o">::</span><span class="nf">pblapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">selec.table</span><span class="p">),</span> <span class="kr">function</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl">  <span class="nf">cutFUN</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">mar</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">))</span>
-</span></span></code></pre></div><p>We could also used <code>lapply</code> (no progress bar) or <code>mclapply</code> (<a href="https://cran.r-project.org/package=parallel">parallel</a> package, parallel computing), or even <code>pbmclapply</code> (<a href="https://cran.r-project.org/package=pbmcapply">pbmcapply</a> package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most <a href="https://cran.r-project.org/package=pbmcapply">warbleR</a> functions.</p>
+</span></span></code></pre></div><p>We could also used <code>lapply</code> (no progress bar) or <code>mclapply</code> ([parallel] package, parallel computing), or even <code>pbmclapply</code> (<a href="https://cran.r-project.org/package=pbmcapply">pbmcapply</a> package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most <a href="https://cran.r-project.org/package=warbleR">warbleR</a> functions.</p>
 <h3 id="step-3-put-all-the-code-inside-a-new-function">Step 3: Put all the code inside a new function</h3>
 <p>Just copy/paste the <code>cutFUN</code> function and the <code>(X)lapply</code> function inside a new function:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cut.selections</span> <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">mar</span><span class="p">){</span>
@@ -619,7 +610,7 @@ if (!doNotTrack) {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-06-06-individual_sound_files_for_each_selection%2f&amp;text=Individual%20sound%20files%20for%20each%20selection&amp;via=username" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-06-06-individual_sound_files_for_each_selection%2f&amp;text=Individual%20sound%20files%20for%20each%20selection&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -752,27 +743,7 @@ if (!doNotTrack) {
           
               <li>
 		
-		  <a href="mailto:youremail@domain.com" title="Email me">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.facebook.com/username" title="Facebook">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://github.com/username" title="GitHub">
+		  <a href="https://github.com/maRce10" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -782,27 +753,7 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://gitlab.com/username" title="GitLab">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://bitbucket.org/username" title="Bitbucket">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://twitter.com/username" title="Twitter">
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -812,47 +763,7 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://username.slack.com/" title="Slack">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://reddit.com/u/username" title="Reddit">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://linkedin.com/in/username" title="LinkedIn">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.xing.com/profile/username" title="Xing">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -862,181 +773,11 @@ if (!doNotTrack) {
               </li>
               <li>
 		
-		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.instagram.com/username" title="Instagram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.youtube.com/user/username" title="Youtube">
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://soundcloud.com/username" title="SoundCloud">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://open.spotify.com/user/username" title="Spotify">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://username.bandcamp.com/" title="Bandcamp">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://itch.io/profile/username" title="Itch.io">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://vk.com/username" title="VK">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://paypal.me/username" title="PayPal">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://telegram.me/username" title="Telegram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://500px.com/username" title="500px">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://codepen.io/username" title="CodePen">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.kaggle.com/username" title="kaggle">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a rel="me"href="https://url" title="Mastodon">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://weibo.com/username" title="Weibo">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://medium.com/@username" title="Medium">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.strava.com/athletes/userid" title="Strava">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -1052,10 +793,6 @@ if (!doNotTrack) {
           
         </ul>
         <p class="credits copyright text-muted">
-          
-            
-              <a href="yourwebsite.com">Some Person</a>
-            
           
 
           &nbsp;&bull;&nbsp;&copy;

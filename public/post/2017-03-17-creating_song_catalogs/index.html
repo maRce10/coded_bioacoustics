@@ -14,8 +14,7 @@
 
   <meta name="description" content="When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and/or sites. The new warbleR function catalog aims to simplify this task.
 This is how it works:
-The function plots a matrix of spectrograms from signals listed in a selection table (a data frame similar to the example data frame selec.">
-  <meta name="author" content="Some Person"/><script type="application/ld+json">
+The function plots a matrix of spectrograms from signals listed in a selection table (a data frame similar to the example data frame selec."><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -60,7 +59,7 @@ The function plots a matrix of spectrograms from signals listed in a selection t
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "Some Person"
+    "name" : ""
   },
   "headline": "Creating song catalogs",
   "description" : "When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and\/or sites. The new warbleR function catalog aims to simplify this task.\nThis is how it works:\nThe function plots a matrix of spectrograms from signals listed in a selection table (a data frame similar to the example data frame selec.",
@@ -69,7 +68,7 @@ The function plots a matrix of spectrograms from signals listed in a selection t
   "datePublished" : "2017-03-17T00:00:00",
   "dateModified" : "2017-03-17T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
-  "keywords" : [ "" ],
+  "keywords" : [ "visualization, R" ],
   "mainEntityOfPage" : "marce10.github.io\/coded_bioacustics\/post\/2017-03-17-creating_song_catalogs\/",
   "publisher" : {
     "@type": "Organization",
@@ -97,8 +96,8 @@ The function plots a matrix of spectrograms from signals listed in a selection t
   <meta name="twitter:description" content="When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, …">
   <meta name="twitter:image" content="marce10.github.io/coded_bioacustics/img/blog_sticker_v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@username" />
-  <meta name="twitter:creator" content="@username" />
+  <meta name="twitter:site" content="@Marcelo_Araya_Salas" />
+  <meta name="twitter:creator" content="@Marcelo_Araya_Salas" />
   <link href='marce10.github.io/coded_bioacustics/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.121.2">
   <link rel="alternate" href="marce10.github.io/coded_bioacustics/index.xml" type="application/rss+xml" title="Coded bioacoustics"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -138,21 +137,13 @@ if (!doNotTrack) {
       <ul class="nav navbar-nav navbar-right">
         
           
-            <li>
-              <a title="Blog" href="/marce10.github.io/coded_bioacustics/">Blog</a>
-            </li>
-          
-        
-          
             <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
+              <a class="navlinks-parent">Useful resources</a>
               <div class="navlinks-children">
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="https://github.com/rhine3/bioacoustics-software">Bioacoustics software list</a>
                 
-                  <a href="/marce10.github.io/coded_bioacustics/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/marce10.github.io/coded_bioacustics/post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="https://bioacoustics.stackexchange.com/">Bioacoustics StackExcange forum</a>
                 
               </div>
             </li>
@@ -279,7 +270,7 @@ if (!doNotTrack) {
   
   
     
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Some Person
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
     
   
   
@@ -329,17 +320,119 @@ A legend can be added to help match colors with tag levels and different color p
 </span></span></code></pre></div><p>The basic catalog plots the spectrograms of the signals listed in &lsquo;X&rsquo;. &lsquo;X&rsquo; is simply a data frame with the name of sound files and the temporal position of the signals in those sound files (as in the <code>selec.table</code> example data). The following code creates a catalog with 2 columns and 5 rows labeled with the sound file name and selection number (default <code>labels</code> argument)</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table[1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">same.time.scale</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">mar</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">gr</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/Catalog_p1-.png" alt="catalog1"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-_hub22fae8e9aaae702a1431cd6b1141f09_439450_800x1035_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-.952a42bbe038d31ab718e5268979a89b.png" alt="catalog1" loading="lazy" height="1035" width="800" />
+</picture>
+</p>
 <p>Spectrograms can be color-tagged using the <code>tags</code> argument. A legend is added when <code>legend &gt; 0</code> (check documentation). The duration can also be allowed to vary between spectrograms setting <code>same.time.scale = TRUE</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table[1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">same.time.scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">mar</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">tags</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sound.files&#34;</span><span class="p">),</span> <span class="n">leg.wd</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/Catalog_p1-2.png" alt="catalog2"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-2_hu10b3611dbbb020ef868214977814be13_352188_800x1035_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-2.e04f19fa506e028e1d20ed5dcf4cd18f.png" alt="catalog2" loading="lazy" height="1035" width="800" />
+</picture>
+</p>
 <p>Two color tags can be used at the same times (<code>tags</code> argument) using different color palettes for each tag (<code>tag.pal</code> argument). The code below also uses a different color palette for the spectrogram (<code>pal</code> argument) and set <code>orientation</code> of the output image file to horizontal</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table[1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">       <span class="n">mar</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">orientation</span> <span class="o">=</span> <span class="s">&#34;h&#34;</span><span class="p">,</span>  <span class="n">tags</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sound.files&#34;</span><span class="p">,</span> <span class="s">&#34;selec&#34;</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">       <span class="n">leg.wd</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/Catalog_p1-3.png" alt="catalog3"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-3_huc6dd4f932773eba9979d279fb0447439_237026_800x618_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-3.ef7175bcc686b85db958a465462ec77d.png" alt="catalog3" loading="lazy" height="618" width="800" />
+</picture>
+</p>
 <p>Many more columns and rows can be displayed. In this example a bigger selection data frame is created by combining binding several times the data used in the previous examples. The code also creates some new (hypothetical) data for song type and site&gt; Note that the data is sorted by sites so songs from the same site are closer in the catalog</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#create bigger data</span>
 </span></span><span class="line"><span class="cl"><span class="n">Y</span> <span class="o">&lt;-</span> <span class="n">selec.table</span>
@@ -359,13 +452,81 @@ A legend can be added to help match colors with tag levels and different color p
 </span></span><span class="line"><span class="cl">       <span class="n">legend</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">23</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">       <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">gray.colors</span><span class="p">,</span> <span class="n">temp.colors</span><span class="p">),</span> <span class="n">tags</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;songtype&#34;</span><span class="p">,</span> <span class="s">&#34;site&#34;</span><span class="p">))</span>
 </span></span></code></pre></div><p>The first image would look like this (several image are produced in the signals don&rsquo;t fit in a single one)</p>
-<p><img src="/img/Catalog_p1-4.png" alt="catalog4"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-4_hu177acb5d2582a39d797123cc8e11f682_676446_1000x1305_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-4.f908c7425771c4a2859002b015cadfd3.png" alt="catalog4" loading="lazy" height="1305" width="1000" />
+</picture>
+</p>
 <p>When several levels are displayed in a tag colors could become very similar, as in the example above. In that case cross-hatched labels can be used using the <code>hatching</code> argument. Either one or both color tags can be cross-hatched. The following applies cross-hatching on the second tag</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">Y</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">12</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">leg.wd</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">mar</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">23</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">topo.colors</span><span class="p">,</span> <span class="n">temp.colors</span><span class="p">),</span><span class="n">tags</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;songtype&#34;</span><span class="p">,</span> <span class="s">&#34;site&#34;</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">hatching</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/Catalog_p1-5.png" alt="catalog5"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-5_huc96c115f47bcf913763fda54920f7530_895963_1000x1304_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-5.c5ba121078bb9c12a524a8f075a2dda1.png" alt="catalog5" loading="lazy" height="1304" width="1000" />
+</picture>
+</p>
 <p>Continuous variables can be used for color tagging as well. The following code calculates the signal-to-noise ratio for each selection and then use it to tag them in the catalog. The breaks argument specifies that the signal-to-noise ratio range should be split in 3 intervals.
 It also sets the first color tag twice the size of the second one</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#get signal-to-noise ratio </span>
@@ -379,7 +540,41 @@ It also sets the first color tag twice the size of the second one</p>
 </span></span><span class="line"><span class="cl">       <span class="n">mar</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">tag.widths</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span><span class="n">legend</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl"> <span class="n">width</span> <span class="o">=</span> <span class="m">23</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">temp.colors</span><span class="p">,</span> <span class="n">heat.colors</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">  <span class="n">tags</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;songtype&#34;</span><span class="p">,</span> <span class="s">&#34;SNR&#34;</span><span class="p">),</span> <span class="n">hatching</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/Catalog_p1-6.png" alt="catalog6"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-6_hu9da6b84ab6dc63dafd0a271afa046490_966557_1000x1304_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-6.459bcde340c73895d2c301153b5954e4.png" alt="catalog6" loading="lazy" height="1304" width="1000" />
+</picture>
+</p>
 <p>Both tags could be numeric. The following code calculates the spectral entropy with <code>specan</code> and the use it as a tag along with the signal-to-noise ratio</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#get signal-to-noise ratio </span>
 </span></span><span class="line"><span class="cl"><span class="n">Ysnr</span><span class="o">$</span><span class="n">sp.ent</span> <span class="o">&lt;-</span> <span class="nf">specan</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">Ysnr</span><span class="p">)</span><span class="n">[</span><span class="p">,</span><span class="s">&#34;sp.ent&#34;</span><span class="n">]</span>
@@ -387,18 +582,140 @@ It also sets the first color tag twice the size of the second one</p>
 </span></span><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">Ysnr</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">12</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">leg.wd</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">mar</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span>  <span class="n">width</span> <span class="o">=</span> <span class="m">23</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">temp.colors</span><span class="p">,</span> <span class="n">gray.colors</span><span class="p">),</span> <span class="n">tags</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sp.ent&#34;</span><span class="p">,</span> <span class="s">&#34;SNR&#34;</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">hatching</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
-</span></span></code></pre></div><p><img src="/img/Catalog_p1-7.png" alt="catalog7"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-7_hu11681217a4ad6af3f4b1d83fd03561cf_786233_1000x1304_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-7.e0a2b5b534ba11a473e366e80cac6a9d.png" alt="catalog7" loading="lazy" height="1304" width="1000" />
+</picture>
+</p>
 <p>The legend can be removed for one of both tags. The argument <code>legend = 2</code> plots the legend only for the second tag</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">Ysnr</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">12</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">leg.wd</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">mar</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">wl</span> <span class="o">=</span> <span class="m">200</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span>  <span class="n">width</span> <span class="o">=</span> <span class="m">23</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">temp.colors</span><span class="p">,</span> <span class="n">gray.colors</span><span class="p">),</span> <span class="n">tags</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sp.ent&#34;</span><span class="p">,</span> <span class="s">&#34;SNR&#34;</span><span class="p">),</span> <span class="n">hatching</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
-</span></span></code></pre></div><p><img src="/img/Catalog_p1-8.png" alt="catalog7"></p>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Catalog_p1-8_hucd31aabfcdd71aa657ff431c065d32e2_690285_1000x1304_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Catalog_p1-8.37ded3bdfcd559d2259df2d86b18cb5e.png" alt="catalog7" loading="lazy" height="1304" width="1000" />
+</picture>
+</p>
 <p>The following plots show a nice example of song geographic variation of <a href="https://www.allaboutbirds.org/guide/Northern_Cardinal/id">Northern Cardinals (Cardinalis cardinalis)</a> in Mexico (from my collaborator Marco Ortiz).</p>
-<p><img src="./img/Catalog_p1-Cardinalis.png" alt="catalog6">
-<img src="./img/Catalog_p2-Cardinalis.png" alt="catalog7"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/Catalog_p1-Cardinalis.png?v=03272bddf29489020e7caee260c41517" alt="catalog6" loading="lazy" height="498px" width="2000px" />
+</picture>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="marce10.github.io/coded_bioacustics/img/Catalog_p2-Cardinalis.png?v=c3a266a14a767567f23d05d67badba28" alt="catalog7" loading="lazy" height="658px" width="2000px" />
+</picture>
+</p>
 <p>A single pdf containing all catalog images can be generated using the <code>catalog2pdf</code> function.</p>
 <p>The <code>catalog</code> function has other arguments to specify spectrogram settings (e.g. margin, grid, frequency limits) and image parameters (e.g. image type, resolution). Check out the function help document.</p>
 
 
+        
+          <div class="blog-tags">
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/visualization/">visualization</a>&nbsp;
+            
+              <a href="marce10.github.io/coded_bioacustics//tags/r/">R</a>&nbsp;
+            
+          </div>
         
 
         
@@ -411,7 +728,7 @@ It also sets the first color tag twice the size of the second one</p>
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-03-17-creating_song_catalogs%2f&amp;text=Creating%20song%20catalogs&amp;via=username" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=marce10.github.io%2fcoded_bioacustics%2fpost%2f2017-03-17-creating_song_catalogs%2f&amp;text=Creating%20song%20catalogs&amp;via=Marcelo_Araya_Salas" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -460,6 +777,25 @@ It also sets the first color tag twice the size of the second one</p>
 
         
           
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-28-dynaspec_dynamic_spectrograms_in_r/">dynaSpec: dynamic spectrograms in R</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-05-26-editing_wave_objects_from_extended_selection_tables/">Editing wave objects from extended selection tables</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-06-15-automatic_signal_detection_a_case_study/">Automatic signal detection: a case study</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-03-15-leaflet_xcmaps/">Interactive maps from Xeno-Canto recording localities in xc_maps()</a></li>
+                
+                    <li><a href="marce10.github.io/coded_bioacustics/post/2020-04-10-signal_detection_warbler_vs_monitor/">Signal detection with cross-correlation using warbleR</a></li>
+                
+              </ul>
 
           
         
@@ -525,27 +861,7 @@ It also sets the first color tag twice the size of the second one</p>
           
               <li>
 		
-		  <a href="mailto:youremail@domain.com" title="Email me">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.facebook.com/username" title="Facebook">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://github.com/username" title="GitHub">
+		  <a href="https://github.com/maRce10" title="GitHub">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -555,27 +871,7 @@ It also sets the first color tag twice the size of the second one</p>
               </li>
               <li>
 		
-		  <a href="https://gitlab.com/username" title="GitLab">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://bitbucket.org/username" title="Bitbucket">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bitbucket fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://twitter.com/username" title="Twitter">
+		  <a href="https://twitter.com/Marcelo_Araya_Salas" title="Twitter">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -585,47 +881,7 @@ It also sets the first color tag twice the size of the second one</p>
               </li>
               <li>
 		
-		  <a href="https://username.slack.com/" title="Slack">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://reddit.com/u/username" title="Reddit">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-reddit-alien fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://linkedin.com/in/username" title="LinkedIn">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.xing.com/profile/username" title="Xing">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+		  <a href="https://stackoverflow.com/users/4178065/marcelo-araya-salas" title="StackOverflow">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
@@ -635,181 +891,11 @@ It also sets the first color tag twice the size of the second one</p>
               </li>
               <li>
 		
-		  <a href="https://www.snapchat.com/add/username" title="Snapchat">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.instagram.com/username" title="Instagram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.youtube.com/user/username" title="Youtube">
+		  <a href="https://www.youtube.com/@MarRce10" title="Youtube">
 		
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://soundcloud.com/username" title="SoundCloud">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://open.spotify.com/user/username" title="Spotify">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://username.bandcamp.com/" title="Bandcamp">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-bandcamp fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://itch.io/profile/username" title="Itch.io">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://vk.com/username" title="VK">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-vk fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://paypal.me/username" title="PayPal">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-paypal fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://telegram.me/username" title="Telegram">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://500px.com/username" title="500px">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-500px fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://codepen.io/username" title="CodePen">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-codepen fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.kaggle.com/username" title="kaggle">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a rel="me"href="https://url" title="Mastodon">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://weibo.com/username" title="Weibo">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-weibo fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://medium.com/@username" title="Medium">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://discord.gg/invite%20code%20%28https://discord.gg/XXXXXXX%29" title="Discord">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://www.strava.com/athletes/userid" title="Strava">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-strava fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -825,10 +911,6 @@ It also sets the first color tag twice the size of the second one</p>
           
         </ul>
         <p class="credits copyright text-muted">
-          
-            
-              <a href="yourwebsite.com">Some Person</a>
-            
           
 
           &nbsp;&bull;&nbsp;&copy;

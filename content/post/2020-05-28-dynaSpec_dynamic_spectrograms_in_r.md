@@ -14,7 +14,7 @@ and new visualizations will be available soon.
 order for this package to work.
 
 To install [dynaSpec](https://marce10.github.io/dynaSpec) from
-[github](http://github.com/) you will need the R package
+[github](https://github.com/) you will need the R package
 [devtools](https://cran.r-project.org/package=devtools):
 
 ``` r

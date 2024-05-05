@@ -6,21 +6,19 @@
     <description>Recent content in cross correlation on Coded bioacoustics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
-    <webMaster>youremail@domain.com (Some Person)</webMaster>
     <lastBuildDate>Sat, 12 Jan 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="marce10.github.io/coded_bioacustics/tags/cross-correlation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compare signals from selection tables to a set of templates using cross-correlation</title>
       <link>marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/</link>
-      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2019-01-12-selection_table_vs_template_xcorr/</guid>
       <description>I got the following question about cross-correlation:&#xA;&amp;ldquo;We would like to compare every call within a selection table to a template of each owl, and get peak correlation coefficients on each call separately&amp;rdquo;&#xA;One way to do this would be putting the unidentified and template signals together into a single selection table, and then running cross-correlation. However, this will also compare all unidentified signals against each other, which can be very inefficient.</description>
     </item>
     <item>
       <title>Choosing the right method for measuring acoustic signal structure</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-02-17-choosing-the-right-method-for-measuring-acoustic-signal-structure/</link>
-      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate><author>youremail@domain.com (Some Person)</author>
+      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2017-02-17-choosing-the-right-method-for-measuring-acoustic-signal-structure/</guid>
       <description>Bioacoustic research relies on quantifying the structure of acoustic` signals and comparing that structure across behavioral/ecological contexts, groups or species. However, measuring signal structure in a way that fully accounts for the variation in the signals could be a tricky task. Some of the differences that are apparent by visual inspection of spectrograms might not be picked up by some analyses. Hence, choosing the most appropriate analytical approach is a critical step.</description>
     </item>

@@ -109,6 +109,6 @@ lspec2pdf(keep.jpeg = FALSE)
    |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 03s
 ```
 
-You should get 2 pdf files that look like [this one](http://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/crypturellus-boucardi-153989.pdf)
+You should get 2 pdf files that look like [this one](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/crypturellus-boucardi-153989.pdf)
 
 

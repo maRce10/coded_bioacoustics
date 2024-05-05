@@ -2,6 +2,7 @@
 layout: post
 title: "Creating song catalogs"
 date: 2017-03-17
+tags: ["visualization", "R"]
 ---
 
 When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and/or sites. The new [warbleR](https://cran.r-project.org/package=warbleR) function `catalog` aims to simplify this task.
