@@ -2,7 +2,7 @@
 layout: post
 title: "Signal detection with cross-correlation using warbleR"
 date: 2020-04-10
-tags: ["sound event detection", "R"]
+tags: ["sound event detection", "cross-correlation", "R"]
 author: Marcelo Araya-Salas
 ---
 

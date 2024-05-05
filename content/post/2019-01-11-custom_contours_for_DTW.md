@@ -2,6 +2,7 @@
 layout: post
 title: "Using your own frequency contours on DTW"
 date: 11-01-2019
+tags: ["acoustic features", "R"]
 ---
 
 

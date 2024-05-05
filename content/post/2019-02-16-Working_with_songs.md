@@ -2,6 +2,7 @@
 layout: post
 title: "Working with higher structural levels in vocal signals"
 date: 16-02-2019
+tags: ["acoustic features", "songs", "R"]
 ---
 
 

@@ -3,7 +3,6 @@ title: "Download a single recording for each species in a country from Xeno-Cant
 date: 2016-22-22
 tags: ["repositories", "R"]
 author: Marcelo Araya-Salas
-
 ---
 
 A [warbleR](https://cran.r-project.org/package=warbleR) user asks if "there is any method for downloading from xeno canto a SINGLE individual of each species in Costa Rica".

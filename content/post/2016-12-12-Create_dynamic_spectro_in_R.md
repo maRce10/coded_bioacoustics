@@ -2,6 +2,7 @@
 layout: post
 title: "Creating dynamic spectrograms (videos)"
 date: 2016-12-12
+tags: ["visualization", "acoustic features", "R"]
 ---
 
 <div class="alert alert-warning">

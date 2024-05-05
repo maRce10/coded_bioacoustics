@@ -2,7 +2,7 @@
 layout: post
 title: "Frequency range detection from spectrum"
 date: 29-06-2018
-tags: ["acoustic-features", "spectrum", "R"]
+tags: ["acoustic features", "spectrum", "annotations", "R"]
 ---
 
 We are often interested in getting the frequency range of acoustic signals, either because we have specific predictions about its variation or simply because we want to measure other stuff within that range. Measuring frequency range is typically done by drawing boxes in *Raven/Avisoft/Syrinx*. An alternative way, and potentially less subjective, is to infer the range from the energy distribution in the frequency domain applying amplitude thresholds on spectrums. I have added two new functions to [warbleR](https://cran.r-project.org/package=warbleR) that do exactly that:

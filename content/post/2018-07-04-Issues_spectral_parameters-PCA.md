@@ -2,7 +2,7 @@
 layout: post
 title: "Potential issues of the 'spectral parameters/PCA' approach"
 date: 04-07-2018
-tags: ["quantify-structure", "acoustic-features", "dimensionality-reduction","R"]
+tags: ["quantify structure", "dimensionality reduction","R"]
 ---
 
 Somehow measuring a bunch of spectral/temporal parameters and then reducing its dimensionality using principal component analysis has become the standard procedure when looking at variation in signal structure (i.e. measuring acoustic space), particularly in behavioral ecology and comparative bioacoustics. In most cases the approach is used without any kind of ground-truthing that can help validate the analysis. Given the complexity of animal acoustic signals, the approach could miss key signal features. Here I share a quick-and-dirty comparison of this 'standard approach' to a potentially better suited alternative.

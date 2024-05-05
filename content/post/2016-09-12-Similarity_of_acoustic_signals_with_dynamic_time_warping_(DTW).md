@@ -1,7 +1,7 @@
 ---
 title: "Song similarity using dynamic time warping"
 date: 12-09-2016
-tags: ["quantify structure", "acoustic features"]
+tags: ["quantify structure", "acoustic features", "R"]
 ---
 
 Here I show how to use the `dfDTW` function in [warbleR](https://cran.r-project.org/package=warbleR) to compare acoustics signals using dynamic time warping (DTW).

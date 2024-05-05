@@ -4,6 +4,8 @@ title: "Evaluating group acoustic signatures using cross-correlation"
 date: 13-08-2019
 editor_options: 
   chunk_output_type: console
+tags: ["acoustic features", "R"]
+  
 ---
 
 

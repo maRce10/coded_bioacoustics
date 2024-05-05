@@ -2,6 +2,7 @@
 layout: post
 title: "Fixing selections manually"
 date: 03-08-2017
+tags: ["annotations", "R"]
 ---
 
 This short post shows how to use the `seltailor` function to adjust selection frequency and time 'coordinates' in an interactive and iterative manner.
