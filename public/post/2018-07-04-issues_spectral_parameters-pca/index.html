@@ -398,7 +398,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/catalog-spec.pca_hu46975f2e6010a3b621bbf2a662972af4_1215940_1500x1100_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/catalog-spec.pca.93f769c2c9ba52ddabef577975185531.png" alt="frange_gif" loading="lazy" height="1100" width="1500" />
+</picture>
+</p>
 <p>Some are too noisy, but still good enough for the example.</p>
 <hr>
 <h2 id="element-classification-using-the-standard-approach">Element classification using the &lsquo;standard&rsquo; approach</h2>
@@ -431,7 +448,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/hist.pca_hu7de990f73f709297dde3409614799370_15207_739x437_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/hist.pca.0bd2458080a7143a9021914817d0b3fb.png" alt="frange_gif" loading="lazy" height="437" width="739" />
+</picture>
+</p>
 <p>The first 5 components explain almost %80 of the variance.</p>
 <p>Now let&rsquo;s look and how good is the classification of elements based on the first 5 PCs. To do this we can use the <code>Mclust</code> function from the <a href="https://cran.r-project.org/package=mclust">mclust</a> package to choose the most likely number of clusters and assign each element to one of those clusters:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># run mclust</span>
@@ -508,7 +542,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/pca.plot_hu61fda8f8780c43fbead0c5bc4fae06ad_26932_568x470_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/pca.plot.8b5199e41a2812bc74a9350b4c2e4835.png" alt="tsne_plot" loading="lazy" height="470" width="568" />
+</picture>
+</p>
 <p>Most clusters include several different element types and the same element type can be found on several categories. In this example the performance of the &lsquo;standard approach&rsquo; is not ideal.</p>
 <h2 id="an-alternative">An alternative</h2>
 <p>When working with pure tone modulated whistles, the best approach is likely measuring <a href="https://marce10.github.io/coded_bioacoustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/">dynamic time warping</a> distances on dominant frequency contours. We can do all that at once using <code>df_DTW</code>:</p>
@@ -602,7 +653,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/tsne.plot_hudffd460f298e06dc1befd5f7301cf788_32867_550x498_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/tsne.plot.2eee0252d16f589060ccfe7618a6f99b.png" alt="tsne_plot" loading="lazy" height="498" width="550" />
+</picture>
+</p>
 <p>The classification seems OK. Most clusters contain a single element type, and most types are found in a single cluster. Nonetheless, the classification was not perfect. For instance, clusters 5 and 6 share some element types. However, it&rsquo;s much better compared to the &lsquo;standard approach&rsquo;. In a more formal analysis I will make sure the frequency contours are tracking the signals (using <code>sel_tailor()</code>). This will likely improve the analysis.</p>
 <p>This quick-and-dirty comparison suggests that we (behavioral ecologists) might actually be missing important signal features when using  the <em>spectral/temporal parameters + PCA</em> recipe as the silver bullet in bioacoustic analysis. It also stresses the importance of validating our analyses in some way. Otherwise, there is no way to tell whether the results are simply an artifact of our measuring tools, particularly when no differences are found.</p>
 

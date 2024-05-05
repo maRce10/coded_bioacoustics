@@ -330,7 +330,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p1_hu071f736f92cf2a9a356943f0da6def3c_541279_1000x1000_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p1.ec6f14c14be05582285df2b0c0f5ab4a.png" alt="upd.catalog1" loading="lazy" height="1000" width="1000" />
+</picture>
+</p>
 <p>The new arguments can be used to add a background color that is shared by selections belonging to the same grouping variable level. The following code uses the &ldquo;sound.files&rdquo; column to color selection groups using &ldquo;group.tag&rdquo;. It also makes use of the &ldquo;spec.mar&rdquo; to increase the colored areas around the spectrograms and &ldquo;lab.mar&rdquo; to shrink the area allocated for selection labels and tags</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># modify palette to have softer colors</span>
 </span></span><span class="line"><span class="cl"><span class="n">cmc</span> <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="nf">cm.colors</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span>
@@ -356,7 +373,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p2_hub33527979bb7becf9d7403cfdf6428c4_564400_1000x1000_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p2.28f837fbbd595b9cd644a4e2c2426864.png" alt="upd.catalog2" loading="lazy" height="1000" width="1000" />
+</picture>
+</p>
 <p>Note that the selection tables are sorted to ensure that selection sharing the same grouping factor level are clumped together in the catalog.</p>
 <p>In the example some sound files are highlighted with very similar colors, which makes the visual identification of groups difficult. Using a different palette might solve the problem. Alternatively, the &ldquo;max.group.cols&rdquo; argument can be used to set a maximum number of different colors (independent of the levels of the grouping variable) that will be recycled when the number of colors is smaller than the number of levels. This works as follows</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table[1</span><span class="o">:</span><span class="m">9</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> 
@@ -381,7 +415,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p3_hub33527979bb7becf9d7403cfdf6428c4_539112_1000x1000_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p3.9ef6f4360b5caa2ad72ea1751b98ac34.png" alt="upd.catalog3" loading="lazy" height="1000" width="1000" />
+</picture>
+</p>
 <hr>
 <h3 id="2-arguments-title-byrow-propmar-box-and-rmaxes-to-further-customize-catalog-setup">2) Arguments &ldquo;title&rdquo;, &ldquo;by.row&rdquo;, &ldquo;prop.mar&rdquo;, &ldquo;box&rdquo; and &ldquo;rm.axes&rdquo; to further customize catalog setup</h3>
 <p>As their names suggest, the arguments &ldquo;title&rdquo; and &ldquo;rm.axes&rdquo; allow users to add a title at the top of catalogs and remove the <em>x</em> and <em>y</em> axes. respectively:</p>
@@ -408,7 +459,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p4_hu0e88e897bc89a550fcb4094c885484d5_560499_1000x1000_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p4.a501e99cc17d30ae0ad20c3a06313588.png" alt="upd.catalog4" loading="lazy" height="1000" width="1000" />
+</picture>
+</p>
 <p>The argument &ldquo;by.row&rdquo; allows to fill catalogs either by rows (if TRUE) or by columns (if FALSE).</p>
 <p>By column</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table[1</span><span class="o">:</span><span class="m">9</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> 
@@ -434,7 +502,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p5_hu7da5f03fb89b0462f751cf7b9dcf6c89_560269_1000x1000_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p5.e2a23bfd7ce39eac0b98a47eff88bec3.png" alt="upd.catalog5" loading="lazy" height="1000" width="1000" />
+</picture>
+</p>
 <p>By row</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table[1</span><span class="o">:</span><span class="m">9</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cmc</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span>
@@ -459,7 +544,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p6_huf8e4d30f6dbee48cef2391ecf70439ce_554616_1000x1000_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p6.70f930cec0269de2f806e7c760985ce7.png" alt="upd.catalog6" loading="lazy" height="1000" width="1000" />
+</picture>
+</p>
 <p>The argument &ldquo;box&rdquo; allows users to draw a rectangle around the spectrogram and corresponding labels and tags</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table[1</span><span class="o">:</span><span class="m">9</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cmc</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span>
@@ -484,7 +586,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p7_hu23153f51092508117e261b29be7a0137_527895_1000x1000_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p7.684ed8bafe9eb10fbfd89a93b7bc1225.png" alt="upd.catalog7" loading="lazy" height="1000" width="1000" />
+</picture>
+</p>
 <p>Finally, the argument &ldquo;prop.mar&rdquo; allows to add margins at both sides of the signals (when creating the spectrogram) that is proportional to the duration of the signal. For instance a value of 0.1 in a signal of 1s will add 0.1 s at the beginning and end of the signal. This can be particularly useful when the duration of signals varies a lot. In this example a margin equals to a third of signal duration is used:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">catalog</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">selec.table[1</span><span class="o">:</span><span class="m">9</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">flim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> 
 </span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">tag.pal</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cmc</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span>
@@ -509,7 +628,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p8_hu23153f51092508117e261b29be7a0137_364996_1000x1000_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/Updates_Catalog_p8.dbf484051ece71c913b70479b087e4da.png" alt="upd.catalog8" loading="lazy" height="1000" width="1000" />
+</picture>
+</p>
 
 
         

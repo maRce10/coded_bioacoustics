@@ -343,7 +343,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/frange_catalog_hu71c7dd366bc8917a811ff03fb2ee6c39_383727_847x1094_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/frange_catalog.c3f678729c1f28b17fc42a6343120593.png" alt="frange1" loading="lazy" height="1094" width="847" />
+</picture>
+</p>
 <h3 id="freq_range_detec">freq_range_detec</h3>
 <p>Now we are ready to run the new functions. <code>freq_range_detec</code> works on wave objects. In this example we use it to detect the frequency range of the first selection in &ldquo;ad&rdquo;. But first the selection has to be read as a wave object into <em>R</em>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">w2</span> <span class="o">&lt;-</span> <span class="nf">readWave</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">ad</span><span class="o">$</span><span class="n">sound.files[2]</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">ad</span><span class="o">$</span><span class="n">start[2]</span><span class="p">,</span> 
@@ -368,7 +385,24 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+    <source srcset="/marce10.github.io/coded_bioacustics/img/frange_freq_range_detec_hu0ee101b9284633f8cc840531830ee665_37246_700x480_resize_q75_h2_box_3.webp" type="image/webp" />
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/frange_freq_range_detec.293559d54f9165032b5e4604a6924fe7.png" alt="frange2" loading="lazy" height="480" width="700" />
+</picture>
+</p>
 <p>We can look at the detection for each selection in the &lsquo;ad&rsquo; data frame using a loop as follows:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="kr">for</span><span class="p">(</span><span class="n">i</span> <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">ad</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -398,7 +432,23 @@ if (!doNotTrack) {
 
 
   
-  </p>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <picture>
+  <img class="img-fluid" src="/marce10.github.io/coded_bioacustics/img/frange_2.55dbaeed8452d22756e00eae9fc76a72.gif" alt="frange_gif" loading="lazy" height="480" width="700" />
+</picture>
+</p>
 <p>In most cases the detection is good. However, there are some issues with highly amplitude-modulated signals (e.g. high variation in amplitude across the signal). Some parameter tweeking will be required to improve those detections.</p>
 <h3 id="freq_range">freq_range</h3>
 <p>As mentioned above, the frequency range can be calculated for all selection in a selection table using <code>freq_range</code>:</p>
