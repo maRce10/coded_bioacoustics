@@ -144,3 +144,4 @@ mantel(dm, dspan, permutations = 10000)
 ## Number of permutations: 10000
 ``` 
 
+{{ partial "disqus.html" . }}

@@ -65,7 +65,7 @@ x&lt;-c(&#34;vegan&#34;, &#34;warbleR&#34;) A &lt;- lapply(x, function(y) { if(!
   "headline": "Song similarity using dynamic time warping",
   "description" : "Here I show how to use the dfDTW function in warbleR to compare acoustics signals using dynamic time warping (DTW).\nFirst load these packages (if not installed the code will install it):\nx\u0026lt;-c(\u0026#34;vegan\u0026#34;, \u0026#34;warbleR\u0026#34;) A \u0026lt;- lapply(x, function(y) { if(!y %in% installed.packages()[,\u0026#34;Package\u0026#34;]) install.packages(y) require(y, character.only = T) }) and load example data from warbleR\n# optional, save it in a temporal folder # setwd(tempdir()) data(list = c( \u0026#34;Phae.long1\u0026#34;, \u0026#34;Phae.long2\u0026#34;,\u0026#34;Phae.long3\u0026#34;, \u0026#34;Phae.long4\u0026#34;,\u0026#34;selec.table\u0026#34;)) writeWave(Phae.",
   "inLanguage" : "en",
-  "wordCount":  501 ,
+  "wordCount":  506 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "marce10.github.io\/coded_bioacustics\/img\/blog_sticker_v2.png",
@@ -269,7 +269,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;501&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;506&nbsp;words
   
   
     
@@ -383,7 +383,8 @@ We can calculate &ldquo;acoustic distance&rdquo; using acoustic parameters and t
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">188</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">254</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">308</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">367</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Permutation</span><span class="o">:</span><span class="w"> </span><span class="n">free</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">##</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">permutations</span><span class="o">:</span><span class="w"> </span><span class="err">10000</span><span class="w">
-</span></span></span></code></pre></div>
+</span></span></span></code></pre></div><p>{{ partial &ldquo;disqus.html&rdquo; . }}</p>
+
 
         
           <div class="blog-tags">
@@ -501,25 +502,24 @@ We can calculate &ldquo;acoustic distance&rdquo; using acoustic parameters and t
           
           <div class="disqus-comments">
             <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
+<script type="text/javascript">
+
+(function() {
     
     
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "maRce_10" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'maRce_10';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
           </div>
           
         
