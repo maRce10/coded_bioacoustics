@@ -29,5 +29,26 @@
       <guid>marce10.github.io/coded_bioacustics/post/2017-06-06-individual_sound_files_for_each_selection/</guid>
       <description>A friend of mine wants to &amp;ldquo;create individual sound files for each selection&amp;rdquo; in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most warbleR functions).&#xA;It takes 3 main steps:&#xA;Create a (internal) function that does what we want on a single selection (i.e. a single row of the selection table)&#xA;Add and (X)lapply loop to run the function from step 1 iteratively on each row</description>
     </item>
+    <item>
+      <title>Fixing selections manually</title>
+      <link>marce10.github.io/coded_bioacustics/post/2017-08-03-fixing_selections_manually/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2017-08-03-fixing_selections_manually/</guid>
+      <description>This short post shows how to use the seltailor function to adjust selection frequency and time &amp;lsquo;coordinates&amp;rsquo; in an interactive and iterative manner.&#xA;To be able to run the code you need warbleR 1.1.9 or higher, which hasn&amp;rsquo;t been released on CRAN and it&amp;rsquo;s only available on github. It can be installed using the devtools package as follows&#xA;# install devtools and monitor if are not yet installed # install devtools if is not yet installed if(!</description>
+    </item>
+    <item>
+      <title>Frequency range detection from spectrum</title>
+      <link>marce10.github.io/coded_bioacustics/post/2018-06-29-frequency_range_detection_from_spectrum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2018-06-29-frequency_range_detection_from_spectrum/</guid>
+      <description>We are often interested in getting the frequency range of acoustic signals, either because we have specific predictions about its variation or simply because we want to measure other stuff within that range. Measuring frequency range is typically done by drawing boxes in Raven/Avisoft/Syrinx. An alternative way, and potentially less subjective, is to infer the range from the energy distribution in the frequency domain applying amplitude thresholds on spectrums. I have added two new functions to warbleR that do exactly that:</description>
+    </item>
+    <item>
+      <title>Rraven: Connecting R and Raven Sound Analysis Software</title>
+      <link>marce10.github.io/coded_bioacustics/post/2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2017-11-30-rraven_connecting_r_and_raven_sound_analysis_software/</guid>
+      <description>The Rraven package is designed to facilitate the exchange of data between R and Raven sound analysis software (Cornell Lab of Ornithology). Raven provides very powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as warbleR, seewave and monitoR (among others) provide additional methods of analysis, working as a perfect complement for those found in Raven. Hence, bridging these applications can largely expand the bioacoustician&amp;rsquo;s toolkit.</description>
+    </item>
   </channel>
 </rss>

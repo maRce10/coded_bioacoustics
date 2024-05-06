@@ -44,6 +44,13 @@
       <description>When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and/or sites. The new warbleR function catalog aims to simplify this task.&#xA;This is how it works:&#xA;The function plots a matrix of spectrograms from signals listed in a selection table (a data frame similar to the example data frame selec.</description>
     </item>
     <item>
+      <title>Creating dynamic spectrograms (videos)</title>
+      <link>marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/</guid>
+      <description>This code creates a video with a spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).&#xA;First load the warbleR package&#xA;require(&amp;#34;warbleR&amp;#34;) Download and read the example sound file (long-billed hermit song)</description>
+    </item>
+    <item>
       <title>Pdf files with spectrograms of full recordings</title>
       <link>marce10.github.io/coded_bioacustics/post/2017-01-07-create_pdf_files_with_spectrograms_of_full_recordings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

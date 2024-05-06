@@ -23,6 +23,20 @@
       <description>Bioacoustic research relies on quantifying the structure of acoustic` signals and comparing that structure across behavioral/ecological contexts, groups or species. However, measuring signal structure in a way that fully accounts for the variation in the signals could be a tricky task. Some of the differences that are apparent by visual inspection of spectrograms might not be picked up by some analyses. Hence, choosing the most appropriate analytical approach is a critical step.</description>
     </item>
     <item>
+      <title>Creating dynamic spectrograms (videos)</title>
+      <link>marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2016-12-12-create_dynamic_spectro_in_r/</guid>
+      <description>This code creates a video with a spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).&#xA;First load the warbleR package&#xA;require(&amp;#34;warbleR&amp;#34;) Download and read the example sound file (long-billed hermit song)</description>
+    </item>
+    <item>
+      <title>Evaluating group acoustic signatures using cross-correlation</title>
+      <link>marce10.github.io/coded_bioacustics/post/2019-08-13-group_signature_xcorr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2019-08-13-group_signature_xcorr/</guid>
+      <description>Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: the behavior is more similar within than between groups (although absence of this pattern doesn&amp;rsquo;t necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature.</description>
+    </item>
+    <item>
       <title>Frequency range detection from spectrum</title>
       <link>marce10.github.io/coded_bioacustics/post/2018-06-29-frequency_range_detection_from_spectrum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -30,18 +44,25 @@
       <description>We are often interested in getting the frequency range of acoustic signals, either because we have specific predictions about its variation or simply because we want to measure other stuff within that range. Measuring frequency range is typically done by drawing boxes in Raven/Avisoft/Syrinx. An alternative way, and potentially less subjective, is to infer the range from the energy distribution in the frequency domain applying amplitude thresholds on spectrums. I have added two new functions to warbleR that do exactly that:</description>
     </item>
     <item>
-      <title>Potential issues of the &#39;spectral parameters/PCA&#39; approach</title>
-      <link>marce10.github.io/coded_bioacustics/post/2018-07-04-issues_spectral_parameters-pca/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>marce10.github.io/coded_bioacustics/post/2018-07-04-issues_spectral_parameters-pca/</guid>
-      <description>Somehow measuring a bunch of spectral/temporal parameters and then reducing its dimensionality using principal component analysis has become the standard procedure when looking at variation in signal structure (i.e. measuring acoustic space), particularly in behavioral ecology and comparative bioacoustics. In most cases the approach is used without any kind of ground-truthing that can help validate the analysis. Given the complexity of animal acoustic signals, the approach could miss key signal features.</description>
-    </item>
-    <item>
       <title>Song similarity using dynamic time warping</title>
       <link>marce10.github.io/coded_bioacustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>marce10.github.io/coded_bioacustics/post/2016-09-12-similarity_of_acoustic_signals_with_dynamic_time_warping_dtw/</guid>
       <description>Here I show how to use the dfDTW function in warbleR to compare acoustics signals using dynamic time warping (DTW).&#xA;First load these packages (if not installed the code will install it):&#xA;x&amp;lt;-c(&amp;#34;vegan&amp;#34;, &amp;#34;warbleR&amp;#34;) A &amp;lt;- lapply(x, function(y) { if(!y %in% installed.packages()[,&amp;#34;Package&amp;#34;]) install.packages(y) require(y, character.only = T) }) and load example data from warbleR&#xA;# optional, save it in a temporal folder # setwd(tempdir()) data(list = c( &amp;#34;Phae.long1&amp;#34;, &amp;#34;Phae.long2&amp;#34;,&amp;#34;Phae.long3&amp;#34;, &amp;#34;Phae.long4&amp;#34;,&amp;#34;selec.table&amp;#34;)) writeWave(Phae.</description>
+    </item>
+    <item>
+      <title>Using your own frequency contours on DTW</title>
+      <link>marce10.github.io/coded_bioacustics/post/2019-01-11-custom_contours_for_dtw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2019-01-11-custom_contours_for_dtw/</guid>
+      <description>I got the following question about dynamic time warping on frequency contours:&#xA;&amp;ldquo;what I am looking for is to use ffDTW on a file in which I have a column for the filename and then 20 pitch measurements for each of 10000 files (e.g. 10000 rows). Do you have suggestions?&amp;rdquo;&#xA;There is a workaround in warbleR to do that:&#xA;The function dfDTW() has the argument ts.df (for time series data frame) that allows to input your own frequency contours (or any other sequences of values taken along the signals).</description>
+    </item>
+    <item>
+      <title>Working with higher structural levels in vocal signals</title>
+      <link>marce10.github.io/coded_bioacustics/post/2019-02-16-working_with_songs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2019-02-16-working_with_songs/</guid>
+      <description>Animal vocalizations can be hierarchically structured: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher structural levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in warbleR to explore and measure features above the element level. For simplicity, any level above &amp;rsquo;elements&amp;rsquo; will be refered to as &amp;lsquo;songs&amp;rsquo; in this post as well as in the warbleR functions described here.</description>
     </item>
   </channel>
 </rss>

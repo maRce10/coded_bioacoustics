@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>songs on Coded bioacoustics</title>
+    <link>marce10.github.io/coded_bioacustics/tags/songs/</link>
+    <description>Recent content in songs on Coded bioacoustics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="marce10.github.io/coded_bioacustics/tags/songs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Working with higher structural levels in vocal signals</title>
+      <link>marce10.github.io/coded_bioacustics/post/2019-02-16-working_with_songs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>marce10.github.io/coded_bioacustics/post/2019-02-16-working_with_songs/</guid>
+      <description>Animal vocalizations can be hierarchically structured: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher structural levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in warbleR to explore and measure features above the element level. For simplicity, any level above &amp;rsquo;elements&amp;rsquo; will be refered to as &amp;lsquo;songs&amp;rsquo; in this post as well as in the warbleR functions described here.</description>
+    </item>
+  </channel>
+</rss>
